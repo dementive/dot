@@ -1,0 +1,10 @@
+﻿east_levantine = {
+	807 = PROV807_east_levantine #  Bambyce
+	809 = PROV809_east_levantine #  Europos
+	810 = PROV810_east_levantine #  Zeugma
+	830 = PROV830_east_levantine #  Nisibis
+	884 = PROV884_east_levantine #  Arrapha
+	927 = PROV927_east_levantine #  Skaphe
+	1863 = PROV1863_east_levantine #  Nastae
+	1864 = PROV1864_east_levantine #  Nisus
+}

@@ -1,0 +1,3 @@
+﻿anatolian = {
+	1986 = PROV1986_anatolian # Pogla
+}

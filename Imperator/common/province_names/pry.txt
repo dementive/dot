@@ -1,0 +1,9 @@
+﻿PRY = {
+	244 = PROV244_PRY #  Nikaia
+	253 = PROV253_PRY #  Daskyleion
+	258 = PROV258_PRY #  Polymedion
+	782 = PROV782_PRY #  Apameia Orontes
+	789 = PROV789_PRY #  Hydatos Potamoi
+	#795 = PROV795_PRY #  Alexandreia Isson
+	7908 = PROV7908_PRY #  Prokronnesos/Artake
+}

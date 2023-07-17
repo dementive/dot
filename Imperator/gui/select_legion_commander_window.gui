@@ -1,0 +1,106 @@
+base_sub_window = {
+	name = "select_legion_commander_window"
+	size = { 680 598 }
+	position = { 490 196 }
+
+	blockoverride "Title_text" { text = "SELECT_COMMANDER_HEADER" }	
+	blockoverride "White_buttons"
+	{
+		button_close = {
+			onclick = "[SelectLegionCommanderWindow.Close]"
+			tooltip = "CLOSE"
+		}
+	}
+
+	text_button_square = {
+		visible = "[SelectLegionCommanderWindow.CanDetachCommander]"
+		parentanchor = hcenter|bottom
+		position = { 0 -14 }
+		size = { 300 0 }
+		blockoverride "Center_text" { text = "DISMISS_LEGION_COMMANDER" }
+		blockoverride "On_click"
+		{
+			onclick = "[SelectLegionCommanderWindow.DetachCommander]"
+			tooltip = "[SelectLegionCommanderWindow.GetDetachCommanderTooltip]" # "DISMISS_LEGION_COMMANDER" #DISMISS TOOLTIP
+		}
+	}
+
+flowcontainer = {
+		position = { 18 42 }
+		ignoreinvisible = yes
+		spacing = 4
+		textbox = {
+			using = BaseFontS
+			using = Black_FontColor
+			text = "SORT_BY_SITES"
+			max_width = 194
+			fontsize_min = 15
+			autoresize = yes
+			align = left
+			elide = right
+			parentanchor = vcenter
+		}
+		text_button_sort = {
+			size = { 60 0 }
+			tooltip = CHARACTER_VIEW_SORT_BY_MARTIAL_TOOLTIP
+			
+			blockoverride "Button_text" { visible = no }
+			blockoverride "Icon" { 
+				using = icon_military
+				size = { 34 34 }
+			}
+			blockoverride "On_click" { onclick = "[SelectLegionCommanderWindow.Sort('martial')]" }
+			blockoverride "DownState" { down = "[SelectLegionCommanderWindow.IsSorted('martial')]"}
+		}
+
+		text_button_sort = {
+			size = { 60 0 }
+			tooltip = CHARACTER_VIEW_SORT_BY_POPULARITY_TOOLTIP
+		
+			blockoverride "Button_text" { visible = no }
+			blockoverride "Icon" { 
+				using = icon_popularity
+				size = { 34 34 }
+			}
+			blockoverride "On_click" { onclick = "[SelectLegionCommanderWindow.Sort('popularity')]" }
+			blockoverride "DownState" { down = "[SelectLegionCommanderWindow.IsSorted('popularity')]" }
+		}
+		text_button_sort = {
+			size = { 60 0 }
+			tooltip = CHARACTER_VIEW_SORT_BY_LOYALTY_TOOLTIP
+			blockoverride "Button_text" { visible = no }
+			blockoverride "Icon" { 
+				using = icon_loyalty
+				size = { 34 34 }
+			}
+			blockoverride "On_click" { onclick = "[SelectLegionCommanderWindow.Sort('loyalty')]" }
+			blockoverride "DownState" { down = "[SelectLegionCommanderWindow.IsSorted('loyalty')]" }
+		}
+		
+		text_button_sort = {
+			size = { 60 0 }
+			tooltip = CHARACTER_VIEW_SORT_BY_CORRUPTION_TOOLTIP
+			blockoverride "Button_text" { visible = no }
+			blockoverride "Icon" { 
+				using = icon_corruption
+				size = { 34 34 }
+			}
+			blockoverride "On_click" { onclick = "[SelectLegionCommanderWindow.Sort('corruption')]" }
+			blockoverride "DownState" { down = "[SelectLegionCommanderWindow.IsSorted('corruption')]" }
+		}
+		text_button_sort = {
+			size = { 60 0 }
+			tooltip = CHARACTER_VIEW_SORT_BY_AGE_TOOLTIP
+			blockoverride "Button_text" { visible = no }
+			blockoverride "Icon" { 
+				using = icon_age
+				size = { 34 34 }
+			}
+			blockoverride "On_click" { onclick = "[SelectLegionCommanderWindow.Sort('age')]" }
+			blockoverride "DownState" { down = "[SelectLegionCommanderWindow.IsSorted('age')]" }
+		}
+	}
+	widget = {
+		using = select_character_list_military
+	}
+}

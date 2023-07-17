@@ -1,0 +1,153 @@
+﻿########################################
+# Added from Missions
+########################################
+
+#Ordered by Mission
+
+#Generic Conquest
+loyalty_grateful_governor_generic = {
+	value = 15
+	months = 36
+}
+
+a_long_retirement_l = {
+	value = 15
+	months = 360
+}
+
+system_strengthened_l = {
+	value = 10
+	months = 360
+}
+
+revolution_successful_l = {
+	value = 15
+	months = 60
+}
+
+disappointed_revolution_l = {
+	value = -15
+	months = 60
+}
+
+promonarchist_sentiment_l = {
+	value = 15
+	months = 60
+}
+
+antirepublican_sentiment_l = {
+	value = -25
+	months = 60
+}
+
+antimonarchy_sentiment_l = {
+	value = -25
+	months = 60
+}
+
+republican_sentiment_l = {
+	value = 15
+	months = 60
+}
+
+national_conversion_l = {
+	value = -15
+	months = 60
+}
+
+
+# Athenian Mission
+athenian_mission_01_appreciative_family = {
+	value = 5
+	months = 60
+}
+
+athenian_mission_01_unappreciative_family = {
+	value = -5
+	months = 60
+}
+#Syracuse 1
+loyalty_tyrant_family_upset = {
+	value = -25
+	months = 60
+}
+
+loyalty_tyranny_avoided = {
+	value = -25
+	months = 60
+}
+
+loyalty_me_syr_17_tricked = {
+	value = -50
+	months = 60
+}
+### Greek
+# me_greek_1_black_sea
+loyalty_defended_interests = {
+	value = 5
+	months = 60
+}
+
+loyalty_pleased_family_small = {
+	value = 5
+	months = 60
+}
+
+loyalty_family_admiral = {
+	value = 15
+	months = 60
+}
+
+loyalty_gm_1_pleased_family = {
+	value = 10
+	months = 60
+}
+
+me_gre_1_upset_family_loyalty = {
+	value = -15
+	months = 60
+}
+
+me_gre_3_pleased_family_loyalty = {
+	value = 10
+	months = 60
+}
+
+ant_01_3_philokles_denied_loyalty = {
+	value = -20
+	months = 60
+}
+
+ant_01_3_usurped_throne = {
+	value = -30
+	months = 120
+}
+
+food_protector_accepted = {
+	value = 10
+	months = 120
+}
+
+food_tech_officer = {
+	value = 10
+	months = 120
+}
+
+food_transportation_loyalty = {
+	value = 10
+	months = 120
+}
+
+family_food_holdings_loyalty = {
+	value = 5
+	months = 120
+}
+
+food_holdings_loyalty = {
+	value = 10
+	months = 120
+}
+
+tutor_of_generations = {
+	value = 10 #forever
+}

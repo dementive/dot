@@ -1,0 +1,139 @@
+message_window = {
+	gfxtype = windowgfx
+	name = "score_view"
+	parentanchor = vcenter|hcenter
+	size = { 470 480 }
+	movable = yes
+	tooltip = "SCORE_VIEW_TITLE_TOOLTIP"
+
+	blockoverride "Title_text"
+	{
+		text = "SCORE_VIEW_TITLE"
+	}
+	blockoverride "White_buttons" 
+	{	
+		button_close = {
+			onclick = "[ScoreView.OnClose]"
+			tooltip = "CLOSE"
+		}    
+	}
+
+	vbox = {
+		layoutpolicy_vertical = expanding
+		
+		scrollarea = {
+			using = VerticalScrollAreaCutOff
+			size = { 420 380 }
+
+			scrollbarpolicy_horizontal = always_off
+			scrollbarpolicy_vertical = as_needed
+			
+			scrollbar_vertical = {
+				using = VerticalScrollBar
+			}
+			
+			scrollwidget = {
+				
+				dynamicgridbox = {
+					datamodel = "[ScoreView.GetCountries]"
+					ignoreinvisible = yes
+					
+					item = {
+						widget = {
+							parentanchor = hcenter
+							size = { 400 38 }
+							visible = "[Or(LessThanOrEqualTo_int32(ScoreView.GetScoreRank( Country.Self ),'(int32)10'),Country.IsHuman)]"
+							onmousehierarchyenter = "[SetHighlightCountry( Country.GetCountry )]"
+							onmousehierarchyleave = "[ClearHighlightColors]"
+							tooltip = "SCORE_VIEW_COUNTRY_TOOLTIP"
+
+							list_entry = {
+								size = { 372 38 }
+								position = { 38 0 }
+							}
+
+							tag = {
+								position = { 0 0 }
+								size = { 38 28 }
+								parentanchor = vcenter
+								text = "[ScoreView.GetScoreRank( Country.Self )]"
+							}
+
+							country_flag = {
+								position = { 22 0 }
+								tooltip = "[Country.GetName]"
+
+								blockoverride "flag"
+								{
+									texture = "[Country.AccessCoatOfArms.GetTexture('(int32)56','(int32)56')]"
+									frame = "[Country.AccessCoatOfArms.GetFrame('(int32)56','(int32)56')]"
+									framesize = { 56 56 }
+								}
+								
+								blockoverride "size"
+								{
+									size = { 36 36 }
+								}
+								
+								blockoverride "click"
+								{
+									onclick = "[OpenDiplomacy(Country.GetCountry)]"
+								}
+							}
+
+							icon_and_text = {
+								name = "score"
+								position = { 22 0 }
+								size = { 84 0 }
+								tooltip = "[ReligionView.GetPlayer.GetStabilityTooltipPlayer]"
+								blockoverride "Text" { text = "[Country.GetScore|0]" }
+								blockoverride "Icon" { visible = no }
+								parentanchor = vcenter
+
+							}
+
+							icon = {
+								parentanchor = vcenter
+								position = { 100 0 }
+								size = { 24 24 }
+								texture = "gfx/interface/icons/outliner/l_human_player_self.dds"
+								alwaystransparent = yes
+								visible = "[Country.IsHuman]"
+								tooltip = "[GetPlayerName(Country.GetCountry)]"
+							}
+
+							tag_dark = {
+								parentanchor = hcenter
+								position = { 0 0 }
+								size = { 300 28 }
+								text = "[Country.GetName]"
+								
+								#blockoverride "On_click" { onclick = "[PanToCountry(Country.GetCountry)]" }
+								#blockoverride "Button_text" { text = "[Country.GetName]" }
+								
+								#blockoverride "Center_text" { 
+								#	text = "[Country.GetName]"
+								#}
+								
+								#blockoverride "Left_size_and_visibility"
+								#{
+								#	size = { 27 26 }
+								#	visible = yes
+								#}
+							}
+							goto_button = {
+								parentanchor = right
+								position = { 0 0 }
+								blockoverride "On_click" 
+								{ 
+									onclick = "[PanToCountry(Country.GetCountry)]"
+								}
+
+							}														
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,129 @@
+﻿namespace = dhe_thrace_flavor
+
+dhe_thrace_flavor.1 = {
+    type = country_event
+    title = dhe_thrace_flavor.1.t
+    desc = dhe_thrace_flavor.1.desc
+    picture = throneroom
+    
+    left_portrait = current_ruler
+    right_portrait = scope:onesikritos_historian
+
+    fire_only_once = yes
+
+    trigger = {
+    	tag = TRE
+    	has_land = yes
+		char:41 = { # Lysimachos					
+			is_alive = yes
+			is_ruler = yes
+			employer = root				
+		}
+        any_character = {
+            has_office = office_philosopher
+		}
+    }
+
+    immediate = {
+        random_character = {
+            limit = {
+                has_office = office_philosopher
+            }
+            save_scope_as = onesikritos_historian
+        }
+    }
+
+    option = {      
+        name = dhe_thrace_flavor.1.a
+        current_ruler = {
+        	if = {
+        	    limit = {
+        			NOT = {	has_trait = sarcastic }
+        			number_of_personality_traits < max_number_of_traits_svalue
+        		}
+        		add_trait = sarcastic
+            }
+            add_popularity = popularity_medium
+        }
+        scope:onesikritos_historian = {
+            add_loyalty = loyalty_mocked_history
+            add_prominence = subtract_prominence_medium
+        }
+    }
+
+    option = {      
+        name = dhe_thrace_flavor.1.b
+        highlight = yes
+        trigger = {
+            current_ruler = {
+                has_trait = dementia
+            }
+        }
+        current_ruler = {
+            add_popularity = subtract_popularity_medium
+        }
+        scope:onesikritos_historian = {
+            add_loyalty = loyalty_praised_history
+            add_prominence = prominence_medium
+        }
+		custom_tooltip = dementia_tooltip
+    }
+}
+
+dhe_thrace_flavor.2 = {
+    type = country_event
+    title = dhe_thrace_flavor.2.t
+    desc = dhe_thrace_flavor.2.desc
+    picture = greek_philosophers
+    
+    left_portrait = current_ruler
+    right_portrait = scope:lion_tale_audience
+
+    trigger = {
+        char:41 = { # Lysimachos                    
+            is_alive = yes
+            is_ruler = yes
+            employer = root             
+        }
+        any_character = {
+            power_base > 1
+            is_ruler = no
+        }
+        NOT = { has_variable = "dhe_thrace_flavor_2_cooldown" }
+    }
+
+    immediate = {
+        set_variable = {
+            name = "dhe_thrace_flavor_2_cooldown"
+            days = 1825
+        }
+        random_character = {
+            limit = {
+                power_base > 1
+                is_ruler = no
+            }
+            save_scope_as = lion_tale_audience
+        }
+    }
+
+    option = {      
+        name = dhe_thrace_flavor.2.a
+        custom_tooltip = dhe_thrace_flavor.2.a.tt
+        current_ruler = {
+            add_popularity = popularity_small
+        }
+        scope:lion_tale_audience = {
+            add_loyalty = loyalty_boring_story
+        }
+    }
+    option = {      
+        name = dhe_thrace_flavor.2.b
+        custom_tooltip = dhe_thrace_flavor.2.b.tt
+        current_ruler = {
+            add_popularity = subtract_popularity_small
+        }
+        scope:lion_tale_audience = {
+            add_loyalty = loyalty_enjoyed_story
+        }
+    }
+}

@@ -1,0 +1,82 @@
+base_sub_window = {
+	name = "transfer_occupation_window"
+	size = { 420 290 }
+	parentanchor = bottom|left
+	position = { 133 -40 }
+	widgetanchor = bottom|left
+	
+	blockoverride "Title_text"
+	{
+		text = "TRANSFER_OCCUPATION"
+	}
+
+	blockoverride "White_buttons" 
+	{
+		button_close = {
+			onclick = "[TransferOccupationWindow.OnClose]"
+			tooltip = "CLOSE"
+		}
+	}
+	
+	
+	scrollarea = {
+		position = { 9 38 }
+		size = { 410 250 }
+		scrollbarpolicy_horizontal = always_off
+		
+		scrollbar_vertical = {
+			using = VerticalScrollBar
+		}
+		
+		scrollwidget = {
+			dynamicgridbox = {
+				position = { 0 0 }
+				size = { 400 200 }
+				datamodel = "[TransferOccupationWindow.GetTargets]"
+				
+				item = {
+					widget = {
+						size = { 400 52 }
+						list_button = {
+							size = { 100% 100% }
+							onclick = "[SelectTransferGlue.OnClick]"
+						}
+						country_flag = {
+							position = { 0 2 }
+							tooltip = "[SelectTransferGlue.GetCountry.GetName]"
+							
+							blockoverride "flag"
+							{
+								texture = "[SelectTransferGlue.GetCountry.AccessCoatOfArms.GetTexture('(int32)56','(int32)56')]"
+								frame = "[SelectTransferGlue.GetCountry.AccessCoatOfArms.GetFrame('(int32)56','(int32)56')]"
+								framesize = { 56 56 }
+							}
+							
+							blockoverride "size"
+							{
+								size = { 52 52 }
+							}
+							
+							blockoverride "click"
+							{
+							#onclick = "[OpenDiplomacy(SelectTransferGlue.GetCountry)]"
+							}
+						}
+						textbox = {
+							position = { 60 14 }
+							#size = { 610 16 }
+							margin_top = 4
+							autoresize = yes
+							align = center|nobaseline
+							using = BaseFontM
+							using = Black_FontColor
+							text = "[SelectTransferGlue.GetCountry.GetName]"
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+

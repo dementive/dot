@@ -1,0 +1,8 @@
+﻿###################################################################
+# Actual Value is calculated through the laws party impact script.
+##################################################################
+
+loyalty_corruption_laws = {
+	value = 1
+	yearly_decay = 2
+}

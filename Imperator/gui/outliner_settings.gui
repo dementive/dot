@@ -1,0 +1,72 @@
+
+base_window_black = {
+	gfxtype = windowgfx
+	name = "outliner_settings"
+	
+	parentanchor = top|right
+	position = { -272 146 }
+	
+	size = { 240 336 }
+	movable = yes
+	
+	vbox = {
+		secondary_header = {
+			blockoverride "Title_text" { text = "OUTLINER_SETTINGS_TITLE" }
+			blockoverride "White_buttons" 
+			{
+				button_close = {
+					onclick = "[OutlinerSettings.OnClose]"
+					tooltip = "CLOSE"
+				}
+			}
+		}
+		vbox = {
+			layoutpolicy_vertical = expanding
+			margin_top = -8
+			scrollarea = {
+				size = { 216 282 }
+				
+				scrollbarpolicy_horizontal = always_off
+				using = VerticalScrollAreaCutOff
+				scrollbar_vertical = {
+					using = VerticalScrollBar
+				}
+				blockoverride "BlackVisible" { visible = yes }
+				scrollwidget = {
+					dynamicgridbox = {
+						name = "category_grid"
+						datamodel = "[OutlinerSettings.GetCategories]"
+						
+						item = {
+							widget = {
+								size = { 200 30 }
+								check_box_button = { 
+									size = { 26 26 } 
+									blockoverride "Frame"
+									{
+										frame = "[BoolTo1And2( OutlinerCategory.IsVisible )]"
+									} 
+									blockoverride "On_click"
+									{
+										onclick = "[OutlinerCategory.ToggleVisible]"
+									}
+									
+									tooltip = "[OutlinerCategory.GetTooltip]"
+								}
+								
+								textbox = {
+									position = { 32 2 }
+									autoresize = yes
+									using = BaseFontS
+									text = "[OutlinerCategory.GetName]"
+									tooltip = "[OutlinerCategory.GetTooltip]"
+								}
+							}
+						}
+					}
+				}
+			}
+			
+		}
+	}
+}

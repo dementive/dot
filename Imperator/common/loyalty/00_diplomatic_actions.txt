@@ -1,0 +1,211 @@
+﻿#####################################################################################
+# Actual Value is calculated through the diplomatic action party impact script.
+################################################################################
+
+loyalty_declare_war = {
+	value = 0
+}
+
+########################################
+# Party Impact
+########################################
+
+loyalty_hold_triumph = { 
+	value = 1
+	yearly_decay = 2
+}
+
+loyalty_imprison = { 
+	value = 1
+	yearly_decay = 2
+}
+
+loyalty_execute_character = { 
+	value = 1
+	yearly_decay = 2
+}
+
+loyalty_appoint_dictator = { 
+	value = 1
+	yearly_decay = 2
+}
+
+loyalty_request_peace = { 
+	value = 0
+}
+
+loyalty_alliance = { 
+	value = 0
+}
+
+loyalty_guarantee = { 
+	value = 0
+}
+
+loyalty_demand_annexation = { 
+	value = 0
+}
+
+loyalty_demand_tribute = { 
+	value = 0
+}
+
+loyalty_military_access = { 
+	value = 0
+}
+
+loyalty_offer_military_access = { 
+	value = 0
+}
+
+loyalty_call_ally = { 
+	value = 0
+}
+
+loyalty_sell_province = { 
+	value = 0
+}
+
+loyalty_ransom_prisoner = { 
+	value = 0
+}
+
+loyalty_barbarian_demand_surrender = { 
+	value = 0
+}
+
+loyalty_barbarian_create_client = { 
+	value = 0
+}
+
+loyalty_barbarian_payoff = { 
+	value = 0
+}
+
+loyalty_barbarian_settle = { 
+	value = 0
+}
+
+loyalty_fabricate_claim = { 
+	value = 0
+}
+
+loyalty_invite_to_defensive_league = { 
+	value = 0
+}
+
+loyalty_ask_to_join_defensive_league = { 
+	value = 0
+}
+
+loyalty_leave_defensive_league = { 
+	value = 0
+}
+
+loyalty_improve_relation = { 
+	value = 0
+}
+
+loyalty_intervene_in_war = { 
+	value = 0
+}
+
+loyalty_enforce_peace = { 
+	value = 0
+}
+
+loyalty_threaten_war = { 
+	value = 0
+}
+
+loyalty_support_rebels = { 
+	value = 0
+	yearly_decay = 2
+}
+
+loyalty_abandon_civil_war = { 
+	value = 0
+}
+
+loyalty_default = { 
+	value = 0
+}
+
+loyalty_republican_religious_laws = { 
+	value = 1
+	yearly_decay = 2
+}
+
+loyalty_republican_mediterranean_laws = { 
+	value = 1
+	yearly_decay = 2
+}
+
+loyalty_republic_integration_laws = { 
+	value = 1
+	yearly_decay = 2
+}
+
+loyalty_republic_citizen_laws = { 
+	value = 1
+	yearly_decay = 2
+}
+
+loyalty_republican_land_reforms = { 
+	value = 1
+	yearly_decay = 2
+}
+
+loyalty_republic_military_recruitment_laws = { 
+	value = 1
+	yearly_decay = 2
+}
+
+loyalty_republic_election_reforms = { 
+	value = 1
+	yearly_decay = 2
+}
+
+loyalty_corruption_laws_rom = { 
+	value = 1
+	yearly_decay = 2
+}
+
+loyalty_republican_religious_laws_rom = { 
+	value = 1
+	yearly_decay = 2
+}
+
+loyalty_republican_mediterranean_laws_rom = { 
+	value = 1
+	yearly_decay = 2
+}
+
+loyalty_republic_integration_laws_rom = { 
+	value = 1
+	yearly_decay = 2
+}
+
+loyalty_republic_citizen_laws_rom = { 
+	value = 1
+	yearly_decay = 2
+}
+
+loyalty_republican_land_reforms_rom = { 
+	value = 1
+	yearly_decay = 2
+}
+
+loyalty_republic_military_recruitment_laws_rom = { 
+	value = 1
+	yearly_decay = 2
+}
+
+loyalty_republic_election_reforms_rom = { 
+	value = 1
+	yearly_decay = 2
+}
+
+loyalty_demand_access = {
+	value = 0
+}

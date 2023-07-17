@@ -1,0 +1,18 @@
+﻿#Blockade unit objective.
+
+objective_blockade = {
+	allow = {
+		is_navy = yes
+	}
+	interface_allow = {
+		always = no
+	}
+	
+	#No custom evaluation function.
+	mode = none #none/add/replace
+	
+	#Custom evaluation function. Unit scope. Use scope:province to access the province being evaluated.
+	#Negative => better, positive => worse. If total sum exceeds 1 million unit will not go there. Beware fixed point overflow at 2 million...
+	weight = {
+	}
+}

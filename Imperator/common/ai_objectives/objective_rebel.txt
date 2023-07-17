@@ -1,0 +1,47 @@
+﻿#Rebels' objective.
+
+objective_rebel = {
+	priority = 200 #If above 0, check allow and automatically switch to this objective if there are no objectives with higher priority allowed.
+	
+	allow = {
+		unit_owner = c:REB
+	}
+	interface_allow = {
+		always = no
+	}
+	
+	pure_weight = yes #No hardcoded prioritization among help friend/chase enemy/besiege.
+	
+	search_depth = 2 #Tactical search depth override.
+	
+	#Custom evaluation function.
+	mode = add #none/add/replace
+	
+	#Custom evaluation function. Unit scope. Use scope:province to access the province being evaluated.
+	#Negative => better, positive => worse. If total sum exceeds 1 million unit will not go there. Beware fixed point overflow at 2 million...
+	weight = {
+		#Avoid forts (we will still avoid provinces ZoCed by forts in default AI logic).
+		modifier = {
+			trigger = {
+				scope:province = {
+					fort_level > 0
+				}
+			}
+			add = {
+				value = 20000
+			}
+		}
+		#Seek high population.
+		modifier = {
+			trigger = {
+				always = yes
+			}
+			add = {
+				value = scope:province.total_population
+				multiply = {
+					value = -200
+				}
+			}
+		}
+	}
+}

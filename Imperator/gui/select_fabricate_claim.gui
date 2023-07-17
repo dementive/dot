@@ -1,0 +1,83 @@
+base_sub_window = {
+	gfxtype = windowgfx
+	name = "select_fabricate_claim_window"
+	parentanchor = top|left
+	size = { 510 396 }
+	position = { 338 500 }
+	widgetanchor = top|left
+	
+	blockoverride "Title_text" { text = "FABRICATE_CLAIMTITLE" }
+	blockoverride "White_buttons"
+	{
+		button_close = {
+			onclick = "[SelectFabricateClaimWindow.OnClose]"
+			tooltip = "CLOSE"
+		}
+	}
+
+	scrollarea = {
+		position = { 0 40 }
+		size = { 480 340 }
+		scrollbarpolicy_horizontal = always_off
+		parentanchor = hcenter
+		
+		using = VerticalScrollAreaCutOff
+		
+		scrollbar_vertical = {
+			using = VerticalScrollBar
+		}
+		
+		scrollwidget = {
+			dynamicgridbox = {
+				position = { 10 0 }
+				size = { 470 200 }
+				
+				datamodel = "[SelectFabricateClaimWindow.GetProvinces]"
+				
+				item = {
+					widget = {
+						size = { 400 40 }
+						flowcontainer = {
+						parentanchor = vcenter
+						spacing = 8
+						text_button_square = {
+							size = { 314 0 }
+							parentanchor = vcenter
+							blockoverride "Center_text" { 
+								text = "[SelectClaim.GetState.GetName]" 
+								elide = right
+								max_width = 220
+								fontsize_min = 12
+							}
+							blockoverride "On_click" { onclick = "[SelectClaim.OnClick]" }
+							blockoverride "ClickSound"
+							{
+								clicksound = "event:/SFX/UI/Diplomacy/sfx_ui_diplomacy_fabricate_claim"
+								oversound = "event:/SFX/UI/Generic/sfx_ui_generic_mouse_over"
+							}
+							tooltip = "[SelectClaim.GetCostTooltip]"
+						}
+						
+						goto_button = {
+							size = { 32 32 }
+							parentanchor = vcenter
+							blockoverride "On_click" { onclick = "[SelectClaim.ZoomTo]" }
+							tooltip = "ZOOMTO"
+						}
+						
+						container = {
+							icon_and_text = {
+								size = { 86 0 }
+								#position = { 0  }
+								blockoverride "Icon" { using = icon_population }
+								blockoverride "Text" { text = "[SelectClaim.GetState.GetTotalPopulation]" }
+								tooltip = "POPCOUNT"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+

@@ -1,0 +1,146 @@
+﻿
+ach_pentecontaetia = {
+	possible = {
+		OR = {
+			tag = ATH
+			has_variable = athens_achievement_check
+		}
+	}
+	
+	happened = {
+		current_date < 500.1.1
+		is_subject = no
+		owns = 1835 #Delos
+		owns = 263 #Naxos
+		owns = 376 #Kassandreia
+		owns = 356 #Thasos
+		owns = 349 #Sestos
+		owns = 407 #Chalcis
+		owns = 1974 #Samos
+		owns = 332 #Kition
+		owns = 331 #Salamis
+		owns = 403 #Oreos
+	}
+}
+
+ach_laconic_if = {
+	possible = {
+		OR = {
+			tag = SPA
+			has_variable = sparta_achievement_check
+		}
+	}
+	
+	happened = {
+		current_date < 480.1.1
+		owns = 379 #Pella
+		custom_tooltip = {
+			text = "ach_laconic_if_tooltip"
+			has_variable = ach_pella_sacked
+		}
+	}
+}
+
+ach_tyrant_to_king = {
+	possible = {
+		OR = {
+			tag = SYR
+			tag = SII
+			has_variable = syracuse_achievement_check
+		}
+	}
+	
+	happened = {
+		custom_tooltip = {
+			text = "ach_agathocles_lives"
+			char:56 = { is_alive = yes }
+			root.current_ruler = char:56
+		}
+		owns_or_subject_owns_area = syracuse_area
+		owns_or_subject_owns_area = east_sicily_area
+		owns_or_subject_owns_area = west_sicily_area
+	}
+}
+
+ach_pytheas_legacy = {
+	possible = {
+		OR = {
+			tag = MAS
+			has_variable = massalia_achievement_check
+		}
+	}
+	
+	happened = {
+		current_date < 550.1.1
+		owns = 2132
+		custom_tooltip = {
+			text = "ach_dumnonia_owned"
+			any_owned_province = {
+				is_in_area = dumnonia_area
+			}
+		}
+		custom_tooltip = {
+			text = "ach_cantiacia_owned"
+			any_owned_province = {
+				is_in_area = cantiacia_area
+			}
+		}
+		custom_tooltip = {
+			text = "ach_scandia_owned"
+			any_owned_province = {
+				is_in_region = scandinavia_region
+			}
+		}
+	}
+}
+
+ach_brennus_revenge = {
+	possible = {
+		OR = {
+			country_culture_group = gallic
+			country_culture_group = celto_pannonian_group
+			country_culture_group = belgae_group
+		}
+	}
+	
+	happened = {
+		current_date < 480.1.1
+		custom_tooltip = {
+			text = "ach_brennus_revenge_tt"
+			region:greece_region = {
+				NOT = {
+					any_region_province = {
+						is_holy_site = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+ach_holy_pilgrim = {
+	possible = {
+		religion = judaism
+	}
+	
+	happened = {
+		owns = 1595
+		owns = 1693
+		owns = 942
+		owns = 687
+		owns = 683
+		owns = 946
+		owns = 742
+		owns = 922
+	}
+}
+
+ach_gotta_catch_them_all = {
+	possible = {
+		is_monotheist_religion = no
+	}
+	
+	happened = {
+		num_of_deified_rulers_in_pantheon = 4
+	}
+}

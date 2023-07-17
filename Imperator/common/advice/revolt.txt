@@ -1,0 +1,235 @@
+﻿revolt = {
+	max_advice = 3
+	title = "ADVICE_REVOLT_TITLE"
+	description = "ADVICE_REVOLT_SUMMARY"
+	icon = "gfx/interface/icons/advice/alert_revolt_risk.dds"
+	background = "gfx/interface/advice/alert_icon_bg_red_.dds"
+
+	item = {
+		description = "ADVICE_DISLOYAL_PROV_FALLBACK"
+		title = "ADVICE_DISLOYAL_PROV_FALLBACK_TITLE"
+		icon = "gfx/interface/icons/advice/advice_nothing.dds"
+		fallback = yes
+	}
+
+	item = {
+		initial_view = province
+		highlight_elements = { btn_province_change_governor }
+		description = "ADVICE_ASSIGN_GOVERNOR"
+		title = "ADVICE_ASSIGN_GOVERNOR_TITLE"
+		button_text = "ADVICE_ASSIGN_GOVERNOR_BTN"
+		icon = "gfx/interface/icons/advice/advice_interaction.dds"
+
+		effect = {
+			if = {
+				limit = {
+					scope:target.owner = scope:actor # Needed in special case when only subjects are disloyal
+					scope:target = {
+						has_governor = no
+					}
+				}
+				scope:target.capital_scope = { save_scope_as = result }
+			}
+		}
+	}
+
+	item = {
+		initial_view = religion
+		highlight_elements = { stab_the_pig }
+		description = "ADVICE_REVOLT_STABTHEPIG"
+		title = "ADVICE_REVOLT_STABTHEPIG_TITLE"
+		button_text = "ADVICE_REVOLT_STABTHEPIG_BTN"
+		icon = "gfx/interface/icons/advice/advice_omen.dds"
+
+		effect = {
+			if = {
+				limit = {
+					scope:actor = {
+						can_pay_price = stability
+					}
+				}
+				scope:actor = { save_scope_as = result }
+			}
+		}
+	}
+
+	item = {
+		initial_view = economy
+		highlight_elements = { income_tax_low }
+		description = "ADVICE_DISLOYAL_PROV_TAXES"
+		title = "ADVICE_DISLOYAL_PROV_TAXES_TITLE"
+		button_text = "ADVICE_TAXES_BTN"
+		icon = "gfx/interface/icons/advice/advice_currency.dds"
+
+		effect = {
+			if = {
+				limit = {
+					scope:target.owner = scope:actor # Needed in special case when only subjects are disloyal
+					scope:actor = {
+						NOT = { has_low_economic_policy = income_tax }
+					}
+				}
+				scope:actor = { save_scope_as = result }
+			}
+		}
+	}
+
+	# Advice for disloyal subject
+	item = {
+		initial_view = economy
+		highlight_elements = { income_tribute_low }
+		description = "ADVICE_DISLOYAL_PROV_TAXES"
+		title = "ADVICE_DISLOYAL_PROV_TAXES_TITLE"
+		button_text = "ADVICE_TAXES_BTN"
+		icon = "gfx/interface/icons/advice/advice_currency.dds"
+
+		effect = {
+			if = {
+				limit = {
+					NOT = { scope:target.owner = scope:actor } # Disloyal subject
+					scope:actor = {
+						NOT = { has_low_economic_policy = income_tribute }
+					}
+				}
+				scope:actor = { save_scope_as = result }
+			}
+		}
+	}
+
+	item = {
+		initial_view = province
+		highlight_elements = {
+			btn_province_change_governor_policy
+			local_autonomy
+		}
+		description = "ADVICE_DISLOYAL_PROV_AUTONOMY"
+		title = "ADVICE_DISLOYAL_PROV_AUTONOMY_TITLE"
+		button_text = "ADVICE_POLICY_BTN"
+		icon = "gfx/interface/icons/advice/advice_policy.dds"
+
+		effect = {
+			if = {
+				limit = {
+					scope:target.owner = scope:actor # Needed in special case when only subjects are disloyal
+					scope:target = {
+						NOT = { capital_scope = { governor_policy = harsh_treatment } }
+						can_change_governor_policy = local_autonomy
+					}
+				}
+				scope:target.capital_scope = { save_scope_as = result }
+			}
+		}
+	}
+
+
+	item = {
+		initial_view = religion
+		highlight_elements = { activate_deity }
+		description = "ADVICE_DISLOYAL_PROV_OMEN"
+		title = "ADVICE_OMEN_TITLE"
+		button_text = "ADVICE_OMEN_BTN"
+		icon = "gfx/interface/icons/advice/advice_omen.dds"
+
+		effect = {
+			scope:actor = {
+				random_pantheon_deity = {
+					limit = {
+						scope:actor = { can_activate = PREV }
+						has_active_modifier = global_monthly_state_loyalty
+					}
+					save_scope_as = result
+				}
+			}
+		}
+	}
+
+	item = {
+		initial_view = religion
+		highlight_elements = { replace_deity }
+		chain_length = 2
+		description = "ADVICE_DISLOYAL_PROV_PASSIVE_OMEN"
+		title = "ADVICE_PASSIVE_OMEN_TITLE"
+		button_text = "ADVICE_PASSIVE_OMEN_BTN"
+		icon = "gfx/interface/icons/advice/advice_omen.dds"
+
+		effect = {
+			scope:actor = {
+				if = {
+					limit = {
+						any_pantheon_deity = {
+							has_passive_modifier = global_monthly_state_loyalty
+						}
+					}
+				}
+				else = {
+					random_available_deity = {
+						limit = {
+							has_passive_modifier = global_monthly_state_loyalty
+						}
+						save_scope_as = result
+					}
+				}
+			}
+		}
+	}
+
+	item = {
+		initial_view = province
+		highlight_elements = {
+			btn_province_change_governor_policy
+			harsh_treatment
+		}
+		description = "ADVICE_DISLOYAL_PROV_HARSH"
+		title = "ADVICE_DISLOYAL_PROV_HARSH_TITLE"
+		button_text = "ADVICE_POLICY_BTN"
+		icon = "gfx/interface/icons/advice/advice_policy.dds"
+
+		effect = {
+			if = {
+				limit = {
+					scope:target.owner = scope:actor # Needed in special case when only subjects are disloyal
+					scope:target = {
+						NOT = { capital_scope = { governor_policy = local_autonomy } }
+						can_change_governor_policy = harsh_treatment
+					}
+				}
+				scope:target.capital_scope = { save_scope_as = result }
+			}
+		}
+	}
+
+	item = {
+		initial_view = province
+		highlight_elements = { build_armies }
+		description = "ADVICE_REVOLT_PREPARE_YOUR_ARMY"
+		title = "ADVICE_REVOLT_PREPARE_YOUR_ARMY_TITLE"
+		button_text = "ADVICE_REVOLT_PREPARE_YOUR_ARMY_BTN"
+		icon = "gfx/interface/icons/advice/advice_army.dds"
+
+		effect = {
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							is_previous_controller = root # Occupied
+							has_siege = yes
+						}
+					}
+					manpower >= 1
+					treasury >= 6
+				}
+				scope:actor.capital_scope = { save_scope_as = result }
+			}
+		}
+	}
+
+	item = {
+		description = "ADVICE_DISLOYAL_PROV_DONOTHING"
+		title = "ADVICE_DISLOYAL_PROV_DONOTHING_TITLE"
+		icon = "gfx/interface/icons/advice/advice_nothing.dds"
+
+		effect = {
+			save_scope_as = result
+		}
+	}
+}

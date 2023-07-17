@@ -1,0 +1,59 @@
+base_sub_window = { #TODO is this needed any more?
+	name = "select_preferred_unit_window"
+	parentanchor = top|left
+	size = { 356 619 }
+	position = { 550 137 }
+	widgetanchor = top|left
+	
+	blockoverride "Title_text" { text = "[SelectPreferredUnitWindow.GetTitle]" }
+	blockoverride "White_buttons"
+	{
+		button_close = {
+			onclick = "[SelectPreferredUnitWindow.OnClose]"
+			tooltip = "CLOSE"
+		}
+	}
+	
+    scrollarea = {
+        position = { 12 34 }
+        size = { 332 548 }
+        scrollbarpolicy_horizontal = always_off
+        
+        scrollbar_vertical = {
+            using = VerticalScrollBar
+        }   
+        scrollwidget = {
+            dynamicgridbox = {
+                
+                datamodel = "[SelectPreferredUnitWindow.GetPreferredUnits]"
+                
+                item = {
+                    widget = {
+						size = { 320 68 }
+                        tooltip = "[SelectPreferredUnitGlue.GetPreferredUnit.GetInfo]"
+                        list_button = {
+							onclick = "[SelectPreferredUnitGlue.OnClick]"
+						}
+                        textbox = {
+							using = BaseFontM
+							using = Black_FontColor
+							autoresize = yes
+							parentanchor = vcenter
+							position = { 74 0 }
+                            text = "[SelectPreferredUnitGlue.GetPreferredUnit.GetName]"
+							fontsize_min = 12
+							max_width = 220
+							elide = right
+                        }
+                        
+                        icon = {
+                            size = { 50 50 }
+                            texture = "[GetSubUnitIcon(SelectPreferredUnitGlue.GetPreferredUnit.GetType)]"
+                            position = { 12 8 }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

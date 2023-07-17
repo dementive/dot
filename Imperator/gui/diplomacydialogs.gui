@@ -1,0 +1,95 @@
+message_window = {
+	name = "diplomacy_dialog"
+	parentanchor = center
+
+	state = {
+		name = _show
+	
+		start_sound = { 
+			soundeffect = "event:/SFX/UI/Notifications/sfx_ui_notification_message_appears"
+		}
+	}
+	
+	blockoverride "Title_text"
+	{
+		name = "title"
+	}
+	 
+	vbox = {
+		resizeparent = yes
+		
+		hbox = {
+			margin = { 20 20 }
+			margin_top = 40
+			
+			country_flag = {
+				datacontext = "[DiplomacyDialog.GetCountry]"
+				tooltip = "COUNTRY_SHORTHAND_INFO"
+
+				blockoverride "flag"
+				{
+				texture = "[DiplomacyDialog.GetCountry.AccessCoatOfArms.GetTexture('(int32)56','(int32)56')]"
+				frame = "[DiplomacyDialog.GetCountry.AccessCoatOfArms.GetFrame('(int32)56','(int32)56')]"
+					framesize = { 56 56 }
+				}
+				
+				blockoverride "size"
+				{
+					size = { 56 56 }
+				}
+				
+				blockoverride "click"
+				{
+					onclick = "[OpenDiplomacy(DiplomacyDialog.GetCountry)]"
+				}					
+			}
+			
+			vbox = {
+				using = message_contents
+				
+				margin_left = 15
+				margin_right = 15
+			}
+			
+			icon = {
+				texture = "[DiplomacyDialog.GetIconTexture]"
+				framesize = { 50 50 }
+				size = { 50 50 }
+			}
+			
+		}
+		
+		hbox = {
+			using = message_buttons
+			
+			blockoverride "cancel_title"
+			{
+				text = "[DiplomacyDialog.GetActionName('OptionB')]"
+			}
+			
+			blockoverride "DeclineContents"
+			{
+				visible = "[DiplomacyDialog.ShowAction('OptionB')]"
+				onclick = "[DiplomacyDialog.OnAction('OptionB')]"
+				tooltip = "[DiplomacyDialog.GetToolTip('OptionB')]"
+				clicksound = "event:/SFX/UI/Diplomacy/sfx_ui_diplomacy_offer_decline"
+			}
+			
+			blockoverride "accept_title"
+			{
+				text = "[DiplomacyDialog.GetActionName('OptionA')]"
+			}
+			
+			blockoverride "ConfirmContents"
+			{
+				visible = "[DiplomacyDialog.ShowAction('OptionA')]"
+				onclick = "[DiplomacyDialog.OnAction('OptionA')]"
+				tooltip = "[DiplomacyDialog.GetToolTip('OptionA')]"
+				clicksound = "event:/SFX/UI/Diplomacy/sfx_ui_diplomacy_offer_accept"
+			}
+		}
+	}
+}
+
+
+

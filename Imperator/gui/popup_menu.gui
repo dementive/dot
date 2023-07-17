@@ -1,0 +1,42 @@
+base_sub_window = {
+	name = "popup_menu"
+	alwaystransparent = no
+	reorder_on_mouse = never
+	resizable = no
+	movable = no
+
+	size = { 500 300 }
+	blockoverride "Title_text" {}
+	scrollarea = {
+		position = { 10 34 }
+		size = { 480 252 }
+		scrollbarpolicy_horizontal = always_off
+		
+		scrollbar_vertical = {
+			using = VerticalScrollBar
+		}
+		
+		scrollwidget = {
+			dynamicgridbox = {
+				datamodel = "[PopupMenu.GetModel]"
+			
+				item = {
+					margin_widget = {
+						size = { 462 36 }
+						margin = { 0 4 }
+						text_button_square = {
+							size = { 100% 100% }
+							blockoverride "Center_text" { text = "[PopupMenuItem.GetText]" }
+							blockoverride "On_click"
+							{
+								enabled = "[PopupMenuItem.IsEnabled]"
+								onclick = "[PopupMenuItem.OnClick]"
+							}
+							tooltip = "[PopupMenuItem.GetTooltip]"
+						}
+					}
+				}
+			}
+		}
+	}
+}

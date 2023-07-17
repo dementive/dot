@@ -1,0 +1,97 @@
+base_sub_window = {
+	name = "select_deity_window"
+	movable = yes
+	position = { 138 -180 }
+	parentanchor = bottom
+	blockoverride "Title_text" { text = "SELECT_DEITY_HEADER" }
+	blockoverride "White_buttons"
+	{
+		button_close = {
+			onclick = "[SelectDeityWindow.OnClose]"
+			tooltip = "CLOSE"
+		}
+	}
+
+	flowcontainer = {
+		direction = vertical
+		resizeparent = yes
+		margin_bottom = 56
+		margin_right = 26
+		position = { 12 38 }
+		
+		scrollarea = {
+			size = { 602 900 }
+			maximumsize = { 625 900 }
+			scrollbarpolicy_horizontal = always_off
+			
+			scrollbar_vertical = {
+				using = VerticalScrollBar
+			}
+			using = VerticalScrollAreaCutOff
+			
+			scrollwidget = {
+				
+				dynamicgridbox = {
+					resizeparent = yes
+					datamodel = "[SelectDeityWindow.GetDeityItems]"
+					
+					item = {
+						widget = {
+							size = { 400 72 }
+							
+							list_button = {
+								size = { 100% 66 }
+								parentanchor = vcenter
+								onclick = "[SelectableDeity.OnClick]"
+								tooltip = "[SelectableDeity.GetDeityTooltip]"
+								blockoverride "ClickSound" { clicksound = "event:/SFX/UI/Religion/sfx_ui_religion_holy_site_create" }
+			
+							}
+
+							textbox = {
+								text = "[SelectableDeity.GetDeity.GetName]"
+								visible = "[Not(SelectableDeity.GetDeity.IsDeifiedRuler)]"
+								using = BaseFontM
+								using = Black_FontColor
+								position = { 14 2 }
+								size = { 374 28 }
+								elide = right
+								parentanchor = vcenter
+							}
+							
+							omen_icon = {
+								blockoverride "Icon" { texture = "[GetDeityCategoryIcon(SelectableDeity.GetDeity.GetDeityCategory.GetIcon)]" }
+								visible = "[Not(SelectableDeity.GetDeity.IsDeifiedRuler)]"
+								datacontext = "[SelectableDeity.GetDeity]"
+								position = { -2 6 } 
+								size = { 60 60 }
+								parentanchor = right
+							}
+
+							cpt_button = {
+								visible = "[SelectableDeity.GetDeity.IsDeifiedRuler]"
+								enabled = "[SelectableDeity.GetDeity.IsDeifiedRuler]"
+								datacontext = "[SelectableDeity.GetDeity.GetDeifiedRuler]"
+								position = { 4 0 }
+								size = { 46 70 }
+								parentanchor = vcenter
+							}
+							
+							textbox = {
+								text = "DEIFIED_RULER_TEXT"
+								visible = "[SelectableDeity.GetDeity.IsDeifiedRuler]"
+								using = BaseFontM
+								using = Black_FontColor
+								align = left
+								position = { 58 0 }
+								elide = right
+								size = { 334 38 }
+								parentanchor = vcenter
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

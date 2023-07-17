@@ -1,0 +1,85 @@
+template movement_portrait
+{
+	using = portrait_button_template
+	alwaystransparent = no
+	size = { 86 129 }
+
+	portrait_scale = { 1.0 1.0 }
+	portrait_offset = { 0.0 0.0 }
+
+	portrait_texture = [Character.GetPortrait]
+	background_texture = "gfx/portraits/portrait_background_d.dds"
+	texture = "gfx/portraits/portrait_frame_60.dds"
+	framesize = { 86 129 }
+	frame_tier = [Character.GetPortraitFrameFrame]
+	
+	
+}
+
+template movement_portrait_small
+{
+	using = portrait_button_template
+	alwaystransparent = no
+	size = { 43 65 }
+
+	portrait_scale = { 1.0 1.0 }
+	portrait_offset = { 0.0 0.0 }
+
+	portrait_texture = [Character.GetPortrait]
+	background_texture = "gfx/portraits/portrait_background_d.dds"
+	texture = "gfx/interface/temp/portrait_frame_30.dds"
+	framesize = { 43 65 }
+	frame_tier = [Character.GetPortraitFrameFrame]
+	
+	
+}
+
+template great_work_widget 
+{
+	position = { 0 15 }
+	widgetanchor = center
+
+	icon = {
+		parentanchor = center
+		widgetanchor = center
+		texture = "gfx/interface/province/gw_map_icon.dds"
+		size = { 32 32 }
+		framesize = { 50 50 }
+
+		block "tooltip"{
+			tooltip = "[GetGreatWorkTooltip(SimpleProvinceIcon.GetProvince, SimpleProvinceIcon.GetProvince.GetGreatWork)]"
+		}
+	}
+}
+
+template great_work_construction_widget 
+{
+	position = { 4 0 }
+	size = { 68 22 }
+	widgetanchor = center
+	
+
+	tooltip = "[GreatWork.GetConstructionTooltip]"
+	tooltip_offset = { 20 20 }
+	
+	icon = {
+		size = { 20 20 }
+		#texture = "[GreatWork.GetIcon]"
+		texture = "gfx/interface/province/gw_map_icon.dds"
+	}
+	
+	container = {
+		position = { 20 8 }
+		
+		icon = {
+			texture = "gfx/interface/map/small_bar_frame_h.dds"
+			position = { 0 -5 }
+		}
+		
+		progressbar = {
+			using = building_bar
+			position = { 4 0 }
+			value = "[GreatWork.GetConstructionProgress]"
+		}
+	}
+}

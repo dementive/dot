@@ -1,0 +1,72 @@
+﻿gladiatorial_debut = { 
+
+	on_other_nation = no
+	on_own_nation = yes
+	
+	sound = "event:/SFX/UI/Character/Generic/sfx_ui_character_war"
+	
+	
+	
+	
+	potential_trigger = {
+		hidden:scope:target = {
+			is_alive = yes
+			employer = scope:actor
+			is_adult = yes
+			prisoner = yes
+			NOT = { employer = { tag = REB } }
+			NOT = { employer = { tag = BAR } }
+		}
+	}
+	
+	
+	allowed_trigger = {
+		scope:target = {
+			prisoner = yes
+			trigger_if = {
+				limit = {
+					scope:actor = {
+						gender_equality = no
+					}
+				}
+				is_male = yes
+			}
+		}
+		scope:actor = {
+			can_pay_price = price_arena_match
+		}
+	}
+	
+	
+	#for any character in the scope:target country
+	
+	character_actor_trigger = {
+		NOT = {
+			this = scope:target
+		}
+		is_alive = yes
+		is_adult = yes
+		prisoner = yes
+		trigger_if = {
+			limit = {
+				scope:actor = {
+					gender_equality = no
+				}
+			}
+			is_male = yes
+		}
+	}
+	
+	
+	effect = {
+		custom_tooltip = gladiator_outcome_tooltip
+		
+		scope:actor = {
+			pay_price = price_arena_match
+			trigger_event = {
+				id = gladiator.1
+			}
+		}
+	}
+	
+}	

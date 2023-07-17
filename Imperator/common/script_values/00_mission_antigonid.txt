@@ -1,0 +1,872 @@
+﻿antigonid_01_vision_6_pop_target = {
+	value = 70
+}
+
+antigonid_01_vision_6_pop_current = {
+	value = c:PRY.current_ruler.popularity
+	max = 70
+}
+
+antigonid_01_vision_6_pre_target = {
+	value = 600
+}
+
+antigonid_01_vision_6_pre_current = {
+	value = c:PRY.current_ruler.family.prestige
+	max = 600
+}
+
+antigonid_01_vision_5_subject_num = {
+	value = 0
+	c:PRY = {
+		every_subject = {
+			limit = {
+				country_culture_group = hellenic
+				NOT = { primary_culture = macedonian }
+				capital_scope = {
+					OR = {
+						is_in_region = greece_region
+						is_in_region = asia_region
+					}
+				}
+			}
+			add = 1
+		}
+	}
+	subtract = 1
+	min = 0
+}
+
+antigonid_01_vision_5_country_num = {
+	value = 0
+	every_country = {
+		limit = {
+			country_culture_group = hellenic
+			NOT = { primary_culture = macedonian }
+			capital_scope = {
+				OR = {
+					is_in_region = greece_region
+					is_in_region = asia_region
+				}
+			}
+			NOT = { is_subject_of = c:PRY }
+			NOR = {
+				tag = MAC
+				tag = TRE
+				tag = SEL
+				tag = EGY
+			}
+		}
+		add = 1
+	}
+}
+
+antigonid_01_vision_12_counter = {
+	value = 0
+	region:greece_region = {
+		every_region_province = {
+			limit = {
+				exists = area
+				ant_hellas_trigger = yes
+				is_uninhabitable = no
+				has_owner = yes
+				owner = { ant_other_diad_owner_subject_trigger = yes }
+			}
+			add = 1
+		}
+	}
+}
+
+antigonid_01_vision_9_sub_pop_proportion = {
+	value = 0
+	add = scope:me_ant_01_9_sub_scope.country_population
+	divide = 25
+	min = 1
+	max = 3
+}
+
+antigonid_01_vision_9_ter_pop_proportion = {
+	value = 0
+	add = scope:me_ant_01_9_ter_scope.total_population
+	divide = 10
+	min = 1
+	max = 3
+}
+
+antigonid_01_vision_9_total_pop = {
+	value = 0
+	every_subject = {
+		limit = { has_variable = me_ant_01_9_sub_pop_contributor }
+		add = var:me_ant_01_9_sub_pop_contributor
+	}
+	every_owned_province = {
+		limit = { has_variable = me_ant_01_9_ter_pop_contributor }
+		add = var:me_ant_01_9_ter_pop_contributor
+	}
+}
+
+antigonid_01_vision_13_counter = {
+	scope:me_antigonids_scope = {
+		every_subject = {
+			limit = { ant_01_13_subject_trigger = yes }
+			add = 1
+		}
+	}
+	max = antigonid_01_vision_13_target
+}
+
+antigonid_01_vision_13_target = {
+	value = 3
+}
+
+ant_1_5_overlord_value = {
+	every_subject = {
+		limit = {
+			country_culture_group = hellenic
+			NOR = {
+				is_subject_type = tributary
+				is_subject_type = vassal_tribe
+			}
+		}
+		add = 1
+	}
+}
+
+ant_1_5_synoik_mover_value = {
+	value = 0
+	add = scope:ant_1_5_synoikism_mover_scope.total_population
+	divide = 2
+	max = 3
+}
+
+antigonid_01_vision_5_synoik_value = {
+	value = 0
+	add = scope:me_antigonids_scope.var:ant_1_5_synoik_count
+}
+
+antigonid_02_13_liburnian_target = {
+	value = 50
+}
+
+antigonid_02_13_ship_value = {
+	value = 0
+	add = num_of_ships
+}
+
+antigonid_02_13_liburnian_value = {
+	value = antigonid_02_13_ship_value
+	divide = 4
+	multiply = 3
+}
+
+antigonid_02_13_lib_counter = {
+	value = 0
+	every_unit = {
+		every_sub_unit = {
+			limit = { sub_unit_type = liburnian }
+			add = 1
+		}
+		every_sub_unit = {
+			limit = { sub_unit_type = trireme }
+			add = 1
+		}
+	}
+}
+
+antigonid_02_13_percent_value = {
+	value = 0
+	add = antigonid_02_13_lib_counter
+	divide = antigonid_02_13_ship_value
+	multiply = 100
+}
+
+antigond_02_8_base_value = {
+	value = 0
+	area:europa_area = {
+		every_area_province = { add = 1 }
+	}
+}
+
+antigond_02_8_counter_value = {
+	value = 0
+	area:europa_area = {
+		every_area_province = {
+			limit = {
+				has_owner = yes
+				owner = {
+					OR = {
+						THIS = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+			add = 1
+		}
+	}
+}
+
+antigond_02_8_target_value = {
+	value = antigond_02_8_base_value
+	divide = 3
+	multiply = 4
+}
+
+antigonid_02_8_percent_value = {
+	value = antigond_02_8_counter_value
+	divide = antigond_02_8_base_value
+	multiply = 100
+}
+
+antigonid_02_8_diadochi_value = {
+	value = 0
+	area:europa_area = {
+		every_area_province = {
+			limit = {
+				has_owner = yes
+				owner = { ant_other_diad_owner_subject_trigger = yes }
+			}
+			add = 1
+		}
+	}
+}
+
+me_ant_2_10_svalue = {
+	value = p:390.total_population
+	divide = 2
+	max = 4
+}
+
+antigonid_02_aspiration_1_counter = {
+	value = 0
+	every_country = {
+		limit = {
+			country_culture_group = hellenic
+			capital_scope = {
+				is_in_region = greece_region
+				ant_hellas_trigger = yes
+			}
+			ant_monarchy_oligarchy_trigger = yes
+		}
+		add = 1
+	}
+}
+
+antigonid_02_aspiration_1_final = {
+	value = 0
+	region:greece_region = {
+		every_region_province = {
+			limit = {
+				exists = area
+				ant_hellas_trigger = yes
+				is_uninhabitable = no
+				has_owner = yes
+				owner = {
+					OR = {
+						ant_other_diad_owner_subject_trigger = yes
+						ant_monarchy_oligarchy_trigger = yes
+					}
+				}
+			}
+			add = 1
+		}
+	}
+}
+
+ant_2_7_tracker_svalue = {
+	value = 0
+	region:greece_region = {
+		every_region_province = {
+			limit = {
+				exists = area
+				ant_hellas_trigger = yes
+				is_uninhabitable = no
+				has_owner = yes
+				OR = {
+					owner = ROOT
+					owner = {
+						country_culture_group = hellenic
+						is_subject_of = ROOT
+					}
+				}
+			}
+			add = 1
+		}
+	}
+	max = ant_2_7_target_svalue
+}
+
+ant_2_7_target_svalue = {
+	value = 25
+}
+
+antigonid_4_4_value = {
+	value = 0
+	every_owned_province = {
+		limit = {	
+			is_port = yes
+			OR = {
+				is_in_region = cilicia_region
+				is_in_region = asia_region
+				is_in_region = bithynia_region
+			}
+			NOT = { is_in_area = cyprus_area }
+		}
+		add = 1
+	}
+	every_subject = {
+		every_owned_province = {
+			limit = {	
+				is_port = yes
+				OR = {
+					is_in_region = cilicia_region
+					is_in_region = asia_region
+					is_in_region = bithynia_region
+				}
+				NOT = { is_in_area = cyprus_area }
+			}
+			add = 1
+		}
+	}
+	max = antigonid_4_4_target_value
+}
+
+antigonid_4_4_target_value = {
+	value = 10
+}
+
+antigonid_4_4_value = {
+	value = 0
+	every_owned_province = {
+		limit = {	
+			is_port = yes
+			OR = {
+				is_in_region = cilicia_region
+				is_in_region = asia_region
+				is_in_region = bithynia_region
+			}
+			trigger_if = {
+					limit = { exists = area }
+					NOT = { is_in_area = cyprus_area }
+				}
+		}
+		add = 1
+	}
+	every_subject = {
+		every_owned_province = {
+			limit = {	
+				is_port = yes
+				OR = {
+					is_in_region = cilicia_region
+					is_in_region = asia_region
+					is_in_region = bithynia_region
+				}
+				trigger_if = {
+					limit = { exists = area }
+					NOT = { is_in_area = cyprus_area }
+				}
+			}
+			add = 1
+		}
+	}
+	max = antigonid_4_4_target_value
+}
+
+antigonid_4_4_2_current_value = {
+	value = 0
+	region:asia_region = {
+		every_region_province = {
+			limit = {
+				has_owner = yes
+				OR = {
+					owner = scope:me_antigonids_scope 
+					owner = { is_subject_of = scope:me_antigonids_scope }
+				}
+			}
+			add = 1 
+		}
+	}
+}
+
+antigonid_4_4_2_total_value = {
+	value = 0
+	region:asia_region = {
+		every_region_province = { add = 1 }
+	}
+}
+
+antigonid_4_4_2_percent_value = {
+	value = antigonid_4_4_2_current_value
+	divide = antigonid_4_4_2_total_value
+	multiply = 100
+	max = antigonid_4_4_2_target_value
+}
+
+antigonid_4_4_2_target_value = {
+	value = 75
+}
+
+antigonid_4_3_value = {
+	value = 0
+	p:418 = {
+		if = {
+			limit = { ant_aegean_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:350 = {
+		if = {
+			limit = { ant_aegean_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:368 = {
+		if = {
+			limit = { ant_aegean_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:367 = {
+		if = {
+			limit = { ant_aegean_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:358 = {
+		if = {
+			limit = { ant_aegean_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:359 = {
+		if = {
+			limit = { ant_aegean_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:1996 = {
+		if = {
+			limit = { ant_aegean_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:1987 = {
+		if = {
+			limit = { ant_aegean_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:1981 = {
+		if = {
+			limit = { ant_aegean_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:south_peleponnesos_area = {
+		every_area_province = {
+			limit = { ant_aegean_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:arcadia_area = {
+		every_area_province = {
+			limit = { ant_aegean_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:central_greece_area = {
+		every_area_province = {
+			limit = { ant_aegean_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:boeotia_area = {
+		every_area_province = {
+			limit = { ant_aegean_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:euboea_area = {
+		every_area_province = {
+			limit = { ant_aegean_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:thessaly_area = {
+		every_area_province = {
+			limit = { ant_aegean_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:macedonia_area = {
+		every_area_province = {
+			limit = { ant_aegean_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:chalkidiki_area = {
+		every_area_province = {
+			limit = { ant_aegean_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:rhodope_area = {
+		every_area_province = {
+			limit = { ant_aegean_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:aeolia_area = {
+		every_area_province = {
+			limit = { ant_aegean_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:ionia_area = {
+		every_area_province = {
+			limit = { ant_aegean_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:aegean_islands_area = {
+		every_area_province = {
+			limit = { ant_aegean_port_trigger = yes }
+			add = 1
+		}
+	}
+}
+
+antigonid_4_3_diad_value = {
+	value = 0
+	p:418 = {
+		if = {
+			limit = { ant_aegean_diad_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:350 = {
+		if = {
+			limit = { ant_aegean_diad_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:368 = {
+		if = {
+			limit = { ant_aegean_diad_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:367 = {
+		if = {
+			limit = { ant_aegean_diad_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:358 = {
+		if = {
+			limit = { ant_aegean_diad_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:359 = {
+		if = {
+			limit = { ant_aegean_diad_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:1996 = {
+		if = {
+			limit = { ant_aegean_diad_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:1987 = {
+		if = {
+			limit = { ant_aegean_diad_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:1981 = {
+		if = {
+			limit = { ant_aegean_diad_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:south_peleponnesos_area = {
+		every_area_province = {
+			limit = { ant_aegean_diad_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:arcadia_area = {
+		every_area_province = {
+			limit = { ant_aegean_diad_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:central_greece_area = {
+		every_area_province = {
+			limit = { ant_aegean_diad_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:boeotia_area = {
+		every_area_province = {
+			limit = { ant_aegean_diad_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:euboea_area = {
+		every_area_province = {
+			limit = { ant_aegean_diad_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:thessaly_area = {
+		every_area_province = {
+			limit = { ant_aegean_diad_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:macedonia_area = {
+		every_area_province = {
+			limit = { ant_aegean_diad_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:chalkidiki_area = {
+		every_area_province = {
+			limit = { ant_aegean_diad_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:rhodope_area = {
+		every_area_province = {
+			limit = { ant_aegean_diad_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:aeolia_area = {
+		every_area_province = {
+			limit = { ant_aegean_diad_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:ionia_area = {
+		every_area_province = {
+			limit = { ant_aegean_diad_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:aegean_islands_area = {
+		every_area_province = {
+			limit = { ant_aegean_diad_port_trigger = yes }
+			add = 1
+		}
+	}
+}
+
+antigonid_4_3_ant_value = {
+	value = 0
+	p:418 = {
+		if = {
+			limit = { ant_aegean_ant_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:350 = {
+		if = {
+			limit = { ant_aegean_ant_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:368 = {
+		if = {
+			limit = { ant_aegean_ant_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:367 = {
+		if = {
+			limit = { ant_aegean_ant_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:358 = {
+		if = {
+			limit = { ant_aegean_ant_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:359 = {
+		if = {
+			limit = { ant_aegean_ant_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:1996 = {
+		if = {
+			limit = { ant_aegean_ant_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:1987 = {
+		if = {
+			limit = { ant_aegean_ant_port_trigger = yes }
+			add = 1
+		}
+	}
+	p:1981 = {
+		if = {
+			limit = { ant_aegean_ant_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:south_peleponnesos_area = {
+		every_area_province = {
+			limit = { ant_aegean_ant_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:arcadia_area = {
+		every_area_province = {
+			limit = { ant_aegean_ant_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:central_greece_area = {
+		every_area_province = {
+			limit = { ant_aegean_ant_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:boeotia_area = {
+		every_area_province = {
+			limit = { ant_aegean_ant_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:euboea_area = {
+		every_area_province = {
+			limit = { ant_aegean_ant_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:thessaly_area = {
+		every_area_province = {
+			limit = { ant_aegean_ant_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:macedonia_area = {
+		every_area_province = {
+			limit = { ant_aegean_ant_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:chalkidiki_area = {
+		every_area_province = {
+			limit = { ant_aegean_ant_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:rhodope_area = {
+		every_area_province = {
+			limit = { ant_aegean_ant_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:aeolia_area = {
+		every_area_province = {
+			limit = { ant_aegean_ant_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:ionia_area = {
+		every_area_province = {
+			limit = { ant_aegean_ant_port_trigger = yes }
+			add = 1
+		}
+	}
+	area:aegean_islands_area = {
+		every_area_province = {
+			limit = { ant_aegean_ant_port_trigger = yes }
+			add = 1
+		}
+	}
+}
+
+antigonid_4_3_percent_value = {
+	value = antigonid_4_3_ant_value
+	divide = antigonid_4_3_value
+	multiply = 100
+	max = antigonid_4_3_target_value
+}
+
+antigonid_4_3_target_value = {
+	value = 60
+}
+
+antigonid_4_5_value = {
+	value = 0
+	if = {
+		limit = {
+			c:EGY.num_of_ships >= c:SEL.num_of_ships
+			c:EGY.num_of_ships >= c:MAC.num_of_ships
+			c:EGY.num_of_ships >= c:TRE.num_of_ships
+		}
+		add = c:EGY.num_of_ships
+	}
+	else_if = {
+		limit = {
+			c:SEL.num_of_ships >= c:EGY.num_of_ships
+			c:SEL.num_of_ships >= c:MAC.num_of_ships
+			c:SEL.num_of_ships >= c:TRE.num_of_ships
+		}
+		add = c:SEL.num_of_ships
+	}
+	else_if = {
+		limit = {
+			c:MAC.num_of_ships >= c:EGY.num_of_ships
+			c:MAC.num_of_ships >= c:SEL.num_of_ships
+			c:MAC.num_of_ships >= c:TRE.num_of_ships
+		}
+		add = c:MAC.num_of_ships
+	}
+	else_if = {
+		limit = {
+			c:TRE.num_of_ships >= c:EGY.num_of_ships
+			c:TRE.num_of_ships >= c:MAC.num_of_ships
+			c:TRE.num_of_ships >= c:SEL.num_of_ships
+		}
+		add = c:TRE.num_of_ships
+	}
+}
+
+antigonid_4_5_target_value = {
+	value = antigonid_4_5_value
+	add = 1
+}
+
+antigonid_4_5_bypass_value = {
+	value = antigonid_4_5_value
+	divide = 4
+	multiply = 3
+}
+
+antigonid_4_5_our_value = {
+	add = num_of_ships
+}
+
+antigonid_4_2_target_value = {
+	value = has_monthly_income
+	multiply = 10
+	min = 200
+	max = 1000
+}
+
+ant_3_6_svalue = {
+	value = capital_scope.total_population
+	divide = 4
+	max = 8
+	min = 4
+}

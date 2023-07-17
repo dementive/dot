@@ -1,0 +1,24 @@
+﻿freemen = {
+	base = pops_in_province
+	conditions = { pop_type = freemen }
+}
+citizen = {
+	base = pops_in_province
+	conditions = { pop_type = citizen }
+}
+
+tribesmen = {
+	base = pops_in_province
+	conditions = { pop_type = tribesmen }
+}
+
+slaves = {
+	base = pops_in_province
+	conditions = { pop_type = slaves }
+}
+
+nobles = {
+	base = pops_in_province
+	conditions = { pop_type = nobles }
+}
+

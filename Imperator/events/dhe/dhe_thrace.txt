@@ -1,0 +1,968 @@
+﻿namespace = dhe_thrace
+
+dhe_thrace.1 = {							# Amastris 1
+	type = country_event
+	title = "dhe_thrace.1.t"
+	desc = "dhe_thrace.1.desc"
+	
+	left_portrait = current_ruler
+	right_portrait = scope:dhe_thrace_amastris_scope
+	 
+	picture = throneroom
+	
+	fire_only_once = yes
+	
+	goto_location = scope:dhe_thrace_amastris_scope.employer.capital_scope
+	
+	trigger = {
+		char:41 = { is_alive = yes } # Lysimachus
+		char:82 = { is_alive = yes } # Amastris
+		tag = TRE
+		has_land = yes
+		is_subject = no
+		num_of_cities >= 20
+		current_ruler = char:41 # Lysimachus
+		c:PRY = {
+			has_land = yes
+			is_subject = no
+			current_ruler = { has_same_family = char:37 } # Antigonus
+		}
+		c:HCP = {
+			has_land = yes
+			current_ruler = char:82 # Amastris
+			opinion = { target = root value >= -50 }
+			is_subject = no
+		}
+		NOR = {
+			alliance_with = c:HCP
+			war_with = c:HCP 
+			opinion = { target = HCP value < -50 }
+		}
+		NOT = { has_dlc = "Heirs of Alexander" }
+	}
+	
+	immediate = {
+		current_ruler = { save_scope_as = dhe_thrace_lysimachus_scope }
+		c:HCP.current_ruler = { save_scope_as = dhe_thrace_amastris_scope }
+		c:PRY.current_ruler = { save_scope_as = dhe_thrace_antigonus_scope }
+	}
+	
+	option = {
+		name = "dhe_thrace.1.a"
+		add_political_influence = subtract_influence_medium
+		custom_tooltip = dhe_thrace.1.at1
+		show_as_tooltip = {
+			add_guarantee = c:HCP
+		}
+		custom_tooltip = dhe_thrace.1.at2
+		c:HCP = {
+			trigger_event = {
+				id = dhe_thrace.2
+				days = 5
+			}
+		}
+	}
+
+	option = {
+		name = "dhe_thrace.1.b"
+		current_ruler = { add_popularity = popularity_medium }
+		custom_tooltip = dhe_thrace.1.bt
+		hidden_effect = {
+			c:HCP = {
+				every_owned_province = {
+					limit = { is_in_area = heracleotis_area }
+					add_claim = root
+				}
+			}
+		}
+		c:HCP = {
+			add_opinion = { target = c:PRY modifier = dhe_thrace_threatened_opmod }
+		}
+	}	
+}
+
+dhe_thrace.2 = {							# Amastris 2
+	type = country_event
+	title = "dhe_thrace.2.t"
+	desc = "dhe_thrace.2.desc"
+	
+	left_portrait = scope:dhe_thrace_amastris_scope
+	left_portrait = scope:dhe_thrace_oxyathres_scope
+	right_portrait = scope:dhe_thrace_lysimachus_scope
+	 
+	picture = throneroom
+	
+	goto_location = scope:dhe_thrace_lysimachus_scope.employer.capital_scope
+
+	fire_only_once = yes
+
+	immediate = {
+		primary_heir = { save_scope_as = dhe_thrace_oxyathres_scope }
+	}
+
+	option = {
+		name = "dhe_thrace.2.a"
+		set_as_ruler = scope:dhe_thrace_oxyathres_scope
+		scope:dhe_thrace_amastris_scope = {
+			move_country = scope:dhe_thrace_lysimachus_scope.employer
+			hidden_effect = { remove_character_modifier = foreign_citizen }
+		}
+		show_as_tooltip = {
+			scope:dhe_thrace_lysimachus_scope = { marry_character = scope:dhe_thrace_amastris_scope }
+			scope:dhe_thrace_lysimachus_scope.employer = { add_guarantee = root }
+		}
+		scope:dhe_thrace_lysimachus_scope.employer = {
+			trigger_event = { id = dhe_thrace.3 }
+		}
+	}
+
+	option = {
+		name = "dhe_thrace.2.b"
+		custom_tooltip = dhe_thrace.2.bt
+		hidden_effect = {
+			c:HCP = {
+				every_owned_province = {
+					limit = { is_in_area = heracleotis_area }
+					add_claim = root
+				}
+			}
+		}
+		c:HCP = {
+			add_opinion = { target = c:PRY modifier = dhe_thrace_threatened_opmod }
+		}
+		scope:dhe_thrace_lysimachus_scope.employer = {
+			trigger_event = {
+				id = dhe_thrace.3
+				days = 1
+			}
+		}
+	}	
+}
+
+dhe_thrace.3 = {							# Amastris 3
+	type = country_event
+	title = "dhe_thrace.3.t"
+	desc = {
+		first_valid = {
+			triggered_desc = { # Faltering ruler
+				trigger = {
+					scope:dhe_thrace_oxyathres_scope.employer = { is_guaranteed_by = root }
+				}
+				desc = "dhe_thrace.3.desc_1"
+			}
+			triggered_desc = { # Healthy ruler
+				trigger = {
+					NOT = { 
+						scope:dhe_thrace_oxyathres_scope.employer = { is_guaranteed_by = root }
+					}
+				}
+				desc = "dhe_thrace.3.desc_2"
+			}
+		}
+	}
+	
+	left_portrait = current_ruler
+	left_portrait = scope:thrace_old_wife_scope
+	right_portrait = scope:dhe_thrace_amastris_scope
+	right_portrait = scope:dhe_thrace_hcp_ruler_scope
+	 
+	picture = throneroom
+	
+	fire_only_once = yes
+	
+	goto_location = scope:dhe_thrace_amastris_scope.employer.capital_scope
+
+	immediate = {
+		if = {
+			limit = {
+				scope:dhe_thrace_amastris_scope.employer = root
+			}
+			scope:dhe_thrace_amastris_scope = {
+				show_as_tooltip = {
+					move_country = scope:dhe_thrace_lysimachus_scope.employer
+					hidden_effect = {
+						remove_character_modifier = foreign_citizen 
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = {
+							scope:dhe_thrace_lysimachus_scope = { is_married = yes }
+						}
+						scope:dhe_thrace_lysimachus_scope.spouse = { save_scope_as = thrace_old_wife_scope }
+						scope:dhe_thrace_lysimachus_scope = { divorce_character = scope:thrace_old_wife_scope }
+						scope:thrace_old_wife_scope = { add_loyalty = loyalty_consort_cast_aside }
+					}
+					scope:dhe_thrace_lysimachus_scope = { marry_character = scope:dhe_thrace_amastris_scope }
+					set_as_minor_character = scope:dhe_thrace_amastris_scope
+					scope:dhe_thrace_amastris_scope = { set_home_country = scope:dhe_thrace_lysimachus_scope.employer }
+				}
+			}
+			scope:dhe_thrace_lysimachus_scope.employer = { add_guarantee = c:HCP }	
+			c:HCP.current_ruler = { save_scope_as = dhe_thrace_hcp_ruler_scope }
+			every_country = {
+				limit = {
+					has_land = yes
+					OR = {
+						tag = SYR
+						tag = PRY
+						tag = SEl
+						tag = EGY
+						tag = MAC
+						AND = {
+							capital_scope = {
+								is_in_region = greece_region 
+							}
+							country_culture_group = hellenic
+						}
+					}
+				}
+				trigger_event = { #Trigger infomercial
+					id = dhe_thrace.11
+					days = { 2 10 }
+				}
+			}
+			every_neighbour_country = {
+				limit = {
+					NOR = {
+						tag = SYR
+						tag = PRY
+						tag = SEl
+						tag = EGY
+						tag = MAC
+						tag = HCP
+						AND = {
+							capital_scope = {
+								is_in_region = greece_region 
+							}
+							country_culture_group = hellenic
+						}
+					}
+				}
+				trigger_event = { #Trigger infomercial
+					id = dhe_thrace.11
+					days = { 2 10 }
+				}
+			}
+		}
+		else = {
+			show_as_tooltip = {
+				c:HCP = {
+					add_opinion = { target = c:PRY modifier = dhe_thrace_threatened_opmod }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "dhe_thrace.3.a"
+		trigger = { current_ruler.spouse = scope:dhe_thrace_amastris_scope }
+		current_ruler = { add_popularity = popularity_medium }
+	}
+
+	option = {
+		name = "dhe_thrace.3.b"
+		trigger = { 
+			NOT = { current_ruler.spouse = scope:dhe_thrace_amastris_scope }
+		}
+		current_ruler = { add_popularity = subtract_popularity_small }
+		custom_tooltip = dhe_thrace.2.bt
+		hidden_effect = {
+			c:HCP = {
+				every_owned_province = {
+					limit = { is_in_area = heracleotis_area }
+					add_claim = root
+				}
+			}
+		}
+		scope:dhe_thrace_lysimachus_scope.employer = {
+			trigger_event = {
+				id = dhe_thrace.3
+				days = 5
+			}
+		}
+	}
+}
+
+dhe_thrace.4 = {							# Pergamon Released 1 - Situation
+	type = country_event
+	title = "dhe_thrace.4.t"
+	desc = "dhe_thrace.4.desc"
+	
+	left_portrait = current_ruler
+	right_portrait = scope:dhe_thrace_demetrias_scope
+	right_portrait = scope:dhe_thrace_philaeterus_scope
+	 
+	picture = throneroom
+	
+	fire_only_once = yes
+	
+	goto_location = scope:dhe_thrace_philaeterus_scope.employer.capital_scope
+	
+	trigger = {
+		NOT = { p:278.owner.current_ruler = root.current_ruler }
+	}
+	
+	immediate = {
+		current_ruler = { save_scope_as = dhe_thrace_lysimachus_scope}
+		p:278.owner.current_ruler = { save_scope_as = dhe_thrace_philaeterus_scope }
+		c:PRY.current_ruler = { save_scope_as = dhe_thrace_demetrias_scope }
+	}
+	
+	option = {
+		name = "dhe_thrace.4.a"
+		add_political_influence = subtract_influence_medium
+		custom_tooltip = dhe_thrace.4.at1
+		show_as_tooltip = {
+			make_subject = {
+				target = scope:dhe_thrace_philaeterus_scope.employer
+				type = tributary
+			}
+		}
+		custom_tooltip = dhe_thrace.4.at2
+		scope:dhe_thrace_philaeterus_scope.employer = {
+			trigger_event = {
+				id = dhe_thrace.5
+				days = 1
+			}
+		}
+		ai_chance = { factor = 90 }
+	}
+
+	option = {
+		name = "dhe_thrace.4.b"
+		current_ruler = { add_popularity = popularity_medium}
+		custom_tooltip = dhe_thrace.4.bt
+		hidden_effect = {
+			scope:dhe_thrace_philaeterus_scope.employer = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							is_in_area = mysia_area
+							is_in_area = mysia_abrettene_area
+							is_in_area = aeolia_area
+						}
+					}
+					add_claim = root
+				}
+			}
+		}
+		ai_chance = { factor = 10 }
+	}	
+}
+
+dhe_thrace.5 = {							# Pergamon Released 2 - Offer from Thrace
+	type = country_event
+	title = "dhe_thrace.5.t"
+	desc = "dhe_thrace.5.desc"
+	
+	left_portrait = current_ruler
+	right_portrait = scope:dhe_thrace_lysimachus_scope
+	 
+	picture = throneroom
+	
+	fire_only_once = yes
+	
+	goto_location = scope:dhe_thrace_lysimachus_scope.employer.capital_scope
+	
+	option = {
+		name = "dhe_thrace.5.a"
+		scope:dhe_thrace_lysimachus_scope.employer = {
+			set_variable = {
+				name = dhe_thrace_pergamon_trib_flag
+				days = 180
+			}
+			show_as_tooltip = {
+				make_subject = {
+					target = scope:dhe_thrace_philaeterus_scope.employer
+					type = tributary
+				}
+			}
+		}
+		scope:dhe_thrace_lysimachus_scope.employer = {
+			trigger_event = {
+				id = dhe_thrace.6
+				days = 5
+			}
+		}
+		scope:dhe_thrace_demetrias_scope.employer = {
+			trigger_event = {
+				id = dhe_thrace.7
+				days = 5
+			}
+		}
+		ai_chance = { factor = 90 }
+	}
+
+	option = {
+		name = "dhe_thrace.5.b"
+		custom_tooltip = dhe_thrace.5.bt
+		scope:dhe_thrace_lysimachus_scope.employer = {
+			trigger_event = {
+				id = dhe_thrace.6
+				days = 5
+			}
+		}
+		ai_chance = { factor = 10 }
+	}	
+}
+
+dhe_thrace.6 = {							# Pergamon Released 3 - Response from Pergamon
+	type = country_event
+	title = "dhe_thrace.6.t"
+	desc = {
+		first_valid = {
+			triggered_desc = { # Faltering ruler
+				trigger = {
+					scope:dhe_thrace_philaeterus_scope.employer = { is_subject_of = root }
+				}
+				desc = "dhe_thrace.6.desc_1"
+			}
+			triggered_desc = { # Healthy ruler
+				trigger = {
+					NOT = { 
+						scope:dhe_thrace_philaeterus_scope.employer = { is_subject_of = root }
+					}
+				}
+				desc = "dhe_thrace.6.desc_2"
+			}
+		}
+	}
+	
+	left_portrait = current_ruler
+	right_portrait = scope:dhe_thrace_philaeterus_scope
+	 
+	picture = throneroom
+	
+	fire_only_once = yes
+	
+	goto_location = scope:dhe_thrace_lysimachus_scope.employer.capital_scope
+	
+	immediate = {
+		if = {
+			limit = { has_variable = dhe_thrace_pergamon_trib_flag }
+			make_subject = {
+				target = scope:dhe_thrace_philaeterus_scope.employer
+				type = tributary
+			}
+		}
+	}
+	
+	option = {
+		name = "dhe_thrace.6.a"	
+		trigger = { has_variable = dhe_thrace_pergamon_trib_flag }
+		show_as_tooltip = {
+			c:PRY = {
+				add_opinion = { target = scope:dhe_thrace_lysimachus_scope.employer modifier = dhe_thrace_pergamon_stolen_opmod }
+				add_opinion = { target = scope:dhe_thrace_philaeterus_scope.employer modifier = dhe_thrace_pergamon_stolen_opmod }
+			}
+		}
+	}
+
+	option = {
+		name = "dhe_thrace.6.b"
+		trigger = {
+			NOT = { has_variable = dhe_thrace_pergamon_trib_flag }
+		}
+		current_ruler = { add_popularity = subtract_popularity_small }
+		custom_tooltip = dhe_thrace.4.bt
+		hidden_effect = {
+			scope:dhe_thrace_philaeterus_scope.employer = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							is_in_area = mysia_area
+							is_in_area = mysia_abrettene_area
+							is_in_area = aeolia_area
+						}
+					}
+					add_claim = root
+				}
+			}
+		}
+	}	
+}
+
+dhe_thrace.7 = {							# Pergamon Released 4 - Phrygia Ping
+	type = country_event
+	title = "dhe_thrace.7.t"
+	desc = "dhe_thrace.7.desc"
+	
+	left_portrait = current_ruler
+	right_portrait = scope:dhe_thrace_lysimachus_scope
+	right_portrait = scope:dhe_thrace_philaeterus_scope
+	 
+	picture = throneroom
+	
+	fire_only_once = yes
+	
+	goto_location = scope:dhe_thrace_philaeterus_scope.employer.capital_scope
+	
+	immediate = {
+		show_as_tooltip = {
+			scope:dhe_thrace_lysimachus_scope.employer = {
+				make_subject = {
+					target = scope:dhe_thrace_philaeterus_scope.employer
+					type = tributary
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "dhe_thrace.7.a"	
+		add_opinion = { target = scope:dhe_thrace_lysimachus_scope.employer modifier = dhe_thrace_pergamon_stolen_opmod }
+		add_opinion = { target = scope:dhe_thrace_philaeterus_scope.employer modifier = dhe_thrace_pergamon_stolen_opmod }
+	}
+}
+
+dhe_thrace.8 = {							# Pergamon Conquered
+	type = country_event
+	title = "dhe_thrace.8.t"
+	desc = "dhe_thrace.8.desc"
+	
+	left_portrait = current_ruler
+	right_portrait = scope:dhe_thrace_philaeterus_scope
+	 
+	picture = throneroom
+	
+	goto_location = p:278
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_land = yes
+		tag = TRE
+		p:278.owner = this
+		p:278.region = {
+			any_region_province = {
+				percent > 0.5
+				owner = c:TRE
+			}
+			any_region_province = { 
+				NOT = { owner = c:PRY }
+			}
+		}
+		NOT = {
+			has_dlc = "Heirs of Alexander"
+		}
+	}
+	
+	immediate = {
+		p:278 = { save_scope_as = pergamon_city_scope }
+		current_ruler = { save_scope_as = dhe_thrace_lysimachus_scope }
+		if = {
+			limit = {
+				char:68 = {
+					is_alive = yes
+					prisoner = no
+					is_ruler = no					
+				}
+			}	
+			if = {
+				limit = {
+					NOT = { 
+						char:68 = { employer = root }
+					}
+				}
+				char:68 = {
+					move_country = root
+					remove_character_modifier = foreign_citizen
+					save_scope_as = dhe_thrace_philaeterus_scope
+				}
+				create_family = char:68
+			}
+			else = {
+				char:68 = { save_scope_as = dhe_thrace_philaeterus_scope }
+			}
+		}
+		else_if = {
+			limit = {
+				char:67 = {
+					is_alive = yes
+					prisoner = no
+					is_ruler = no					
+				}
+			}
+			if = {
+				limit = {
+					NOT = { 
+						char:67 = { employer = root }
+					}
+				}
+				char:67 = {
+					move_country = root
+					remove_character_modifier = foreign_citizen
+					save_scope_as = dhe_thrace_philaeterus_scope
+				}
+				create_family = char:67
+			}
+			else = {
+				char:67 = { save_scope_as = dhe_thrace_philaeterus_scope }
+			}
+		}
+		else = {
+			ordered_character = {
+				limit = {
+					is_alive = yes
+					is_ruler = no
+					prisoner = no
+					from_ruler_family = no
+					OR = {
+						is_male = yes
+						AND = {						
+							employer = {
+								gender_equality = yes
+							}
+							is_female = yes
+						}
+					}
+				}
+				order_by = martial
+				save_scope_as = dhe_thrace_philaeterus_scope
+			}
+		}
+	}
+	
+	option = {
+		name = "dhe_thrace.8.a"	
+		hidden_effect = {
+			scope:pergamon_city_scope = {
+				create_country = {
+					pergamon_setup_effect = yes
+					save_scope_as = pergamon_country
+				}
+			}
+			scope:pergamon_country = { set_as_ruler = scope:dhe_thrace_philaeterus_scope }	
+			make_subject = {
+				target = scope:pergamon_country
+				type = client_state
+			}
+			every_owned_province = {
+				limit = { is_in_region = asia_region }
+				set_owned_by = scope:pergamon_country
+				add_claim = ROOT
+			}
+			reset_scoring = scope:pergamon_country 
+		}
+		custom_tooltip = dhe_thrace.8.at
+		ai_chance = { factor = 10 }
+	}
+	
+	option = {
+		name = "dhe_thrace.8.b"	
+		current_ruler = { add_popularity = popularity_small }
+		add_country_modifier = {
+			name = dhe_thrace_administrating_asia_cmod
+			duration = 3650 # 10 years
+		}
+		ai_chance = { factor = 2 }
+	}
+}
+
+dhe_thrace.9 = {							# Odrysian Stronghold
+	type = country_event
+	title = "dhe_thrace.9.t"
+	desc = "dhe_thrace.9.desc"
+	
+	left_portrait = current_ruler
+	right_portrait = scope:dhe_thrace_seuthes_scope
+	 
+	picture = throneroom
+	
+	fire_only_once = yes
+	
+	goto_location = scope:dhe_thrace_seuthes_scope.employer.capital_scope
+	
+	trigger = {
+		has_land = yes
+		tag = TRE
+		num_of_cities >= 40
+		any_subject = {
+			this = c:ODR
+		}
+		NOT = { has_dlc = "Heirs of Alexander" }
+	}
+	
+	immediate = {
+		current_ruler = { save_scope_as = dhe_thrace_lysimachus_scope }
+		c:ODR.current_ruler = { save_scope_as = dhe_thrace_seuthes_scope }
+	}
+	
+	option = {
+		name = "dhe_thrace.9.a"
+		hidden_effect = {
+			c:ODR = {
+				every_owned_province = {
+					limit = { is_in_region = thrace_region }
+					add_claim = root
+				}
+			}
+			release_subject = c:ODR
+		}
+		declare_war_with_wargoal = {
+			war_goal = conquer_wargoal
+			province = c:ODR.capital_scope
+			target = ODR
+		}
+		c:ODR = {
+			trigger_event = { id = dhe_thrace.10 }
+		}
+		ai_chance = { factor = 0 }
+	}
+	
+	option = {
+		name = "dhe_thrace.9.b"
+		trigger = {
+			c:ODR = {
+				any_owned_province = {
+					NOR = { 
+						is_in_area = thracia_area 
+						is_in_area = moesia_orientalis_area
+						is_in_area = moesia_occidentalis_area
+					}
+					is_in_region = thrace_region
+				}
+			}
+		}
+		hidden_effect = {
+			c:ODR = {
+				every_owned_province = {
+					limit = {
+						NOR = { 
+							is_in_area = thracia_area 
+							is_in_area = moesia_orientalis_area
+							is_in_area = moesia_occidentalis_area
+						}
+						is_in_region = thrace_region
+						total_population >= 2
+					}
+					add_province_modifier = {
+						name = dhe_thrace_annexed_pmod
+						duration = 1825 # 5 years
+					}
+					every_pops_in_province = {
+						limit = { pop_type = tribesmen }
+						random = {
+							chance = 66
+							move_pop = c:ODR.capital_scope
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						NOR = { 
+							is_in_area = thracia_area 
+							is_in_area = moesia_orientalis_area
+							is_in_area = moesia_occidentalis_area
+						}
+						is_in_region = thrace_region
+					}
+					set_conquered_by = c:TRE
+					custom = dhe_thrace.9.b.modtt
+					add_province_modifier = {
+						name = dhe_thrace_annexed_pmod
+						duration = 1825 # 5 years
+					}
+				}
+			}
+		}
+		custom_tooltip = "dhe_thrace.9.bt"
+		show_as_tooltip = {
+			c:ODR = {
+				every_owned_province = {
+					limit = {
+						NOR = { 
+							is_in_area = thracia_area 
+							is_in_area = moesia_orientalis_area
+							is_in_area = moesia_occidentalis_area
+						}
+						is_in_region = thrace_region
+					}
+					custom = "dhe_thrace.9.bt3"
+					add_province_modifier = {
+						name = dhe_thrace_annexed_pmod
+						duration = 1825 # 5 years
+					}
+				}
+			}
+		}
+		custom_tooltip = "dhe_thrace.9.bt2"
+		reverse_add_opinion = { target = c:ODR modifier = dhe_thrace_pressured_1_opmod }
+		add_country_modifier = {
+			name = dhe_thrace_annexed_tribes_cmod
+			duration = 3650 # 10 years
+		}
+		c:ODR = {
+			trigger_event = { id = dhe_thrace.10 }
+		}
+		ai_chance = { factor = 75 }
+	}
+	
+	option = {
+		name = "dhe_thrace.9.c"
+		add_political_influence = subtract_influence_large
+		hidden_effect = { release_subject = c:ODR }
+		scope:dhe_thrace_lysimachus_scope.employer = {
+			make_subject = {
+				target = scope:dhe_thrace_seuthes_scope.employer
+				type = client_state
+			}
+		}
+		reverse_add_opinion = { target = c:ODR modifier = dhe_thrace_pressured_2_opmod }
+		c:ODR = {
+			trigger_event = { id = dhe_thrace.10 }
+		}
+		ai_chance = { factor = 20 }
+	}
+	
+	option = {
+		name = "dhe_thrace.9.d"
+		current_ruler = { add_popularity = subtract_popularity_medium }
+		ai_chance = { factor = 5 }
+	}
+}
+
+dhe_thrace.10 = {							# Thracian Action
+	type = country_event
+	title = "dhe_thrace.10.t"
+	desc = {
+		first_valid = {
+			triggered_desc = { # War
+				trigger = { war_with = c:TRE }
+				desc = "dhe_thrace.10.desc_1"
+			}
+			triggered_desc = { # Annexed borders
+				trigger = {
+					c:TRE = { has_country_modifier = dhe_thrace_annexed_tribes_cmod }
+				}
+				desc = "dhe_thrace.10.desc_2"
+			}
+			triggered_desc = { # Integrated
+				trigger = { always = yes }
+				desc = "dhe_thrace.10.desc_3"
+			}
+		}
+	}
+	
+	left_portrait = current_ruler
+	right_portrait = scope:dhe_thrace_lysimachus_scope
+	 
+	picture = throneroom
+	
+	fire_only_once = yes
+	
+	goto_location = scope:dhe_thrace_seuthes_scope.employer.capital_scope
+	
+	immediate = {
+		if = {
+			limit = { war_with = c:TRE }
+			show_as_tooltip = {
+				c:TRE = {
+					declare_war_with_wargoal = {
+						war_goal = conquer_wargoal
+						province = c:ODR.capital_scope
+						target = ODR
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				c:TRE = { has_country_modifier = dhe_thrace_annexed_tribes_cmod }
+			}
+			custom_tooltip = dhe_thrace.10.tt1
+			show_as_tooltip = {
+				add_opinion = { target = c:TRE modifier = dhe_thrace_pressured_1_opmod }
+			}
+			custom_tooltip = dhe_thrace.10.tt2
+			hidden_effect = {
+				c:TRE = {
+					every_owned_province = {
+						limit = {
+							OR = {
+								is_in_area = rhodope_area
+								is_in_area = haemimontus_area
+							}
+						}
+						add_claim = c:ODR
+					}
+					ordered_owned_province = {
+						limit = {
+							any_neighbor_province = { owner = c:ODR } 
+						}
+						order_by = total_population 
+						save_scope_as = dhe_thrace_wargoal_scope
+					}
+				}
+			}
+		}
+		else = {
+			show_as_tooltip = {
+				scope:dhe_thrace_lysimachus_scope.employer = {
+					make_subject = {
+						target = scope:dhe_thrace_seuthes_scope.employer
+						type = client_state
+					}
+				}
+				add_opinion = { target = c:TRE modifier = dhe_thrace_pressured_2_opmod }
+			}
+		}
+	}
+	
+	option = {
+		name = dhe_thrace.10.a
+		trigger = { war_with = c:TRE }
+	}
+	
+	option = {
+		name = dhe_thrace.10.b
+		trigger = { 
+			c:TRE = { has_country_modifier = dhe_thrace_annexed_tribes_cmod }
+		}
+		current_ruler = { add_popularity = subtract_popularity_medium }
+		ai_chance = { factor = 30 }
+	}
+	
+	option = {
+		name = dhe_thrace.10.c
+		trigger = { 
+			c:TRE = { has_country_modifier = dhe_thrace_annexed_tribes_cmod }
+		}
+		hidden_effect = {
+			c:TRE = { release_subject = root }
+		}
+		declare_war_with_wargoal = {
+			war_goal = conquer_wargoal
+			province = scope:dhe_thrace_wargoal_scope
+			target = TRE
+		}
+		ai_chance = { factor = 70 }
+	}
+	
+	option = {
+		name = dhe_thrace.10.d
+		trigger = { 
+			NOR = {
+				war_with = c:TRE
+				c:TRE = { has_country_modifier = dhe_thrace_annexed_tribes_cmod }
+			}
+		}
+		current_ruler = { add_popularity = popularity_medium }
+	}
+}
+
+dhe_thrace.11 = { 					# HCP marriage infomercial
+	type = country_event
+	title = "dhe_thrace.11.t"
+	desc = "dhe_thrace.11.desc"
+	picture = successors
+
+	left_portrait = scope:dhe_thrace_lysimachus_scope
+	right_portrait = scope:dhe_thrace_amastris_scope
+	
+	option = {
+		name = "dhe_thrace.11.a"
+		custom_tooltip = dhe_thrace.11.at
+	}
+}

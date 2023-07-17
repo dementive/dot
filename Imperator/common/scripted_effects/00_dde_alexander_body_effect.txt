@@ -1,0 +1,270 @@
+﻿## 
+body_is_ready_effect = {
+	if = {
+		limit = {
+			province_id = 2075 #YORKSHIRE
+			NOT = {
+				has_variable = alexander_body_location
+			}
+			NOT = {
+				exists = scope:eboracum
+			}
+		}
+		save_scope_as = eboracum
+	}
+	else_if = {
+		limit = {
+			province_id = 6030 #Stockholm
+			NOT = {
+				has_variable = alexander_body_location
+			}
+			NOT = {
+				exists = scope:stockholm
+			}
+		}
+		save_scope_as = stockholm
+	}
+	else_if = {
+		limit = {
+			province_id = 3 #Lavinium
+			NOT = {
+				has_variable = alexander_body_location
+			}
+			owner = {
+				tag = ROM
+			}
+			NOT = {
+				exists = scope:lavinium
+			}
+		}
+		save_scope_as = lavinium
+	}
+	else_if = {
+		limit = {
+			province_id = 516 #Alexandria
+			NOT = {
+				has_variable = alexander_body_location
+			}
+			NOT = {
+				exists = scope:alexandria
+			}
+		}
+		save_scope_as = alexandria
+	}
+	else_if = {
+		limit = {
+			province_id = 428 #methone/Aegae
+			NOT = {
+				has_variable = alexander_body_location
+			}
+			NOT = {
+				exists = scope:aegae
+			}
+		}
+		save_scope_as = aegae
+	}
+	else_if = {
+		limit = {
+			province_id = 918 #Babylon
+			NOT = {
+				has_variable = alexander_body_location
+			}
+			NOT = {
+				exists = scope:babylon
+			}
+		}
+		save_scope_as = babylon
+	}
+	else_if = {
+		limit = {
+			province_id = 6697 #Kafir
+			NOT = {
+				has_variable = alexander_body_location
+			}
+			NOT = {
+				exists = scope:kafir
+			}
+		}
+		save_scope_as = kafir
+	}
+	else_if = {
+		limit = {
+			province_id = 790 #Antigonia
+			NOT = {
+				has_variable = alexander_body_location
+			}
+			NOT = {
+				exists = scope:antigonia
+			}
+		}
+		save_scope_as = antigonia
+	}
+	else_if = {
+		limit = {
+			province_id = 350 #Lysimacheia
+			NOT = {
+				has_variable = alexander_body_location
+			}
+			NOT = {
+				exists = scope:lysimacheia
+			}
+		}
+		save_scope_as = lysimacheia
+	}
+	else_if = {
+		limit = {
+			province_id = 946 #Shushan
+			NOT = {
+				has_variable = alexander_body_location
+			}
+			NOT = {
+				exists = scope:shushan
+			}
+		}
+		save_scope_as = shushan
+	}
+	else_if = {
+		limit = {
+			province_id = 862 #Niniveh
+			NOT = {
+				has_variable = alexander_body_location
+			}
+			NOT = {
+				exists = scope:niniveh
+			}
+		}
+		save_scope_as = niniveh
+	}
+	else_if = { 
+		limit = {
+			province_id = 416 #Athens
+			NOT = {
+				has_variable = alexander_body_location
+			}
+			NOT = {
+				exists = scope:athens
+			}
+		}
+		save_scope_as = athens
+	}
+	else_if = {
+		limit = {
+			province_id = 266 #Rhodos
+			NOT = {
+				has_variable = alexander_body_location
+			}
+			NOT = {
+				exists = scope:rhodos
+			}
+		}
+		save_scope_as = rhodos
+	}
+	
+}
+
+remove_alexander_province_variables_effect = {
+	if = {
+		limit = {
+			has_variable = alexander_body_location
+		}
+		remove_variable = alexander_body_location
+	}
+	if = {
+		limit = {
+			has_variable = mausoleum_constructed
+		}
+		remove_variable = mausoleum_constructed
+	}
+	if = {
+		limit = {
+			has_province_modifier = dde_alexander_mausoleum_built
+		}
+		remove_province_modifier = dde_alexander_mausoleum_built
+	}
+	if = {
+		limit = {
+			has_province_modifier = gods_own_county
+		}
+		remove_province_modifier = gods_own_county
+	}
+	if = {
+		limit = {
+			has_province_modifier = alexander_of_the_north
+		}
+		remove_province_modifier = alexander_of_the_north
+	}
+	if = {
+		limit = {
+			has_province_modifier = roman_alexander
+		}
+		remove_province_modifier = roman_alexander
+	}
+	if = {
+		limit = {
+			has_province_modifier = final_resting_place_alexander
+		}
+		remove_province_modifier = final_resting_place_alexander
+	}
+	if = {
+		limit = {
+			has_province_modifier = burial_of_kings
+		}
+		remove_province_modifier = burial_of_kings
+	}
+	if = {
+		limit = {
+			has_province_modifier = alexander_in_babylon
+		}
+		remove_province_modifier = alexander_in_babylon
+	}
+	if = {
+		limit = {
+			has_province_modifier = alexander_in_kafir
+		}
+		remove_province_modifier = alexander_in_kafir
+	}
+	if = {
+		limit = {
+			has_province_modifier = alexander_in_antigonia
+		}
+		remove_province_modifier = alexander_in_antigonia
+	}
+	if = {
+		limit = {
+			has_province_modifier = alexander_in_lysimacheia
+		}
+		remove_province_modifier = alexander_in_lysimacheia
+	}
+	if = {
+		limit = {
+			has_province_modifier = alexander_in_shushan
+		}
+		remove_province_modifier = alexander_in_shushan
+	}
+	if = {
+		limit = {
+			has_province_modifier = alexander_in_niniveh
+		}
+		remove_province_modifier = alexander_in_niniveh
+	}
+	if = {
+		limit = {
+			has_province_modifier = alexander_in_athens
+		}
+		remove_province_modifier = alexander_in_athens
+	}
+	if = {
+		limit = {
+			has_province_modifier = alexander_in_rhodos
+		}
+		remove_province_modifier = alexander_in_rhodos
+	}
+	hidden_effect = {
+		if = {
+			limit = {	
+				is_model_shown = "wonder_tomb_of_alexander"
+			}
+			hide_model = "wonder_tomb_of_alexander"
+		}
+	}
+}

@@ -1,0 +1,256 @@
+﻿civil_war_progress = {
+	max_advice = 3
+	title = "ADVICE_CIVILWAR_TITLE"
+	description = "ADVICE_CIVILWAR_SUMMARY"
+	icon = "gfx/interface/icons/advice/alert_civil_war_risk.dds" 	# Alert icon - Should match the clicked alert icon
+	background = "gfx/interface/advice/alert_icon_bg_red_.dds"		# Alert icon background - Should match the clicked alert in color
+
+	item = {
+		description = "ADVICE_CIVILWAR_FALLBACK"
+		title = "ADVICE_CIVILWAR_FALLBACK_TITLE"
+		icon = "gfx/interface/icons/advice/advice_nothing.dds"
+		fallback = yes
+	}
+
+	item = {
+		initial_view = character
+		highlight_elements = { bribe_character }
+		description = "ADVICE_BRIBE"
+		title = "ADVICE_BRIBE_TITLE"
+		button_text = "ADVICE_BRIBE_BTN"
+		icon = "gfx/interface/icons/advice/advice_interaction.dds"
+
+		effect = {
+			if = {
+				limit = {
+					scope:actor.current_ruler = {
+						wealth >= 100
+						NOR = {
+							has_trait = orator
+							has_trait = silver_tongued
+						}
+					}
+					scope:actor = {
+						can_pay_price = bribe_pi
+					}
+					scope:target = {
+						relative_power_base > 0
+						prisoner = no
+						is_adult = yes
+						NOT = { has_variable = ca_character_bribed }
+						NOR = {
+							has_trait = righteous
+							has_trait = honest
+						}
+					}
+				}
+				scope:target = { save_scope_as = result }
+			}
+		}
+	}
+
+	item = {
+		initial_view = character
+		highlight_elements = { orator_bribe_character }
+		description = "ADVICE_BRIBE"
+		title = "ADVICE_BRIBE_TITLE"
+		button_text = "ADVICE_BRIBE_BTN"
+		icon = "gfx/interface/icons/advice/advice_interaction.dds"
+
+		effect = {
+			if = {
+				limit = {
+					scope:actor.current_ruler = {
+						OR = {
+							has_trait = orator
+							has_trait = silver_tongued
+						}
+					}
+					scope:actor = {
+						can_pay_price = bribe_pi
+					}
+					scope:target = {
+						relative_power_base > 0
+						prisoner = no
+						is_adult = yes
+						NOT = { has_variable = ca_character_bribed }
+						NOR = {
+							has_trait = suspicious
+							has_trait = sceptical
+							has_trait = deceitful
+						}
+					}
+				}
+				scope:target = { save_scope_as = result }
+			}
+		}
+	}
+
+	item = {
+		initial_view = character
+		highlight_elements = { grant_stipends }
+		description = "ADVICE_STIPENDS"
+		title = "ADVICE_STIPENDS_TITLE"
+		button_text = "ADVICE_STIPENDS_BTN"
+		icon = "gfx/interface/icons/advice/advice_interaction.dds"
+
+		effect = {
+			if = {
+				limit = {
+					scope:actor = {
+						can_pay_price = price_stipends
+						treasury >= has_monthly_income_6_svalue	# this requires scope:actor instead of root
+					}
+					scope:target = {
+						is_head_of_family = yes
+						from_ruler_family = no
+						prisoner = no
+						NOR = {
+							has_character_modifier = increased_family_wages
+							has_character_modifier = disloyal_successor_cmod
+						}
+					}
+				}
+				scope:target = { save_scope_as = result }
+			}
+		}
+	}
+
+	item = {
+		initial_view = character
+		highlight_elements = { grant_holding }
+		description = "ADVICE_GRANT_HOLDING"
+		title = "ADVICE_GRANT_HOLDING_TITLE"
+		button_text = "ADVICE_GRANT_HOLDING_BTN"
+		icon = "gfx/interface/icons/advice/advice_interaction.dds"
+
+		effect = {
+			if = {
+				limit = {
+					scope:target = {
+						is_alive = yes
+						employer = scope:actor
+						NOT = { employer = { tag = REB } }
+						NOT = { employer = { tag = BAR } }
+						NOT = { employer = { tag = MER } }
+						is_mercenary = no
+						is_adult = yes
+						is_head_of_family = yes
+						can_add_entire_loyalty_bonus = granted_holding_l
+					}
+					possible_holdings > 1
+					treasury >= character_holding_price_svalue_ci
+
+					scope:actor = {
+						any_owned_province = {
+							NOT = {
+								this = scope:actor.capital_scope
+							}
+							NOT = {
+								exists = holding_owner
+							}
+						}
+					}
+				}
+				scope:target = { save_scope_as = result }
+			}
+		}
+	}
+
+	item = {
+		initial_view = character
+		highlight_elements = { befriend }
+		description = "ADVICE_BEFRIEND"
+		title = "ADVICE_BEFRIEND_TITLE"
+		button_text = "ADVICE_BEFRIEND_BTN"
+		icon = "gfx/interface/icons/advice/advice_interaction.dds"
+
+		effect = {
+			if = {
+				limit = {
+					current_ruler = {
+						NOT = {
+							is_friend = scope:target
+							has_variable = currently_befriending
+						}
+						can_get_friends = yes
+					}
+					in_diplomatic_range = scope:target.employer
+					scope:target = {
+						is_alive = yes
+						NOR = {
+							has_variable = being_befriended
+							is_rival = root.current_ruler
+						}
+					}
+				}
+				scope:target = { save_scope_as = result }
+			}
+		}
+	}
+
+	item = {
+		initial_view = character
+		highlight_elements = { free_hands }
+		description = "ADVICE_FREEHANDS"
+		title = "ADVICE_FREEHANDS_TITLE"
+		button_text = "ADVICE_FREEHANDS_BTN"
+		icon = "gfx/interface/icons/advice/advice_interaction.dds"
+
+		effect = {
+			if = {
+				limit = {
+					scope:target = {
+						OR = {
+							has_any_office = yes
+							has_tech_office = yes
+							is_governor = yes
+							is_clan_chief = yes
+						}
+						NOT = {
+							has_triggered_character_modifier = free_hands_cmod
+						}
+					}
+				}
+				scope:target = { save_scope_as = result }
+			}
+		}
+	}
+
+	item = {
+		initial_view = province
+		highlight_elements = { build_armies }
+		description = "ADVICE_CIVILWAR_PREPARE_YOUR_ARMY"
+		title = "ADVICE_CIVILWAR_PREPARE_YOUR_ARMY_TITLE"
+		button_text = "ADVICE_CIVILWAR_PREPARE_YOUR_ARMY_BTN"
+		icon = "gfx/interface/icons/advice/advice_army.dds"
+
+		effect = {
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							is_previous_controller = root # Occupied
+							has_siege = yes
+						}
+					}
+					manpower >= 1
+					treasury >= 6
+				}
+				scope:actor.capital_scope = { save_scope_as = result }
+			}
+		}
+	}
+
+	item = {
+		description = "ADVICE_CIVILWAR_DONOTHING"
+		title = "ADVICE_CIVILWAR_DONOTHING_TITLE"
+		icon = "gfx/interface/icons/advice/advice_nothing.dds"
+
+		effect = {
+			if = {
+				save_scope_as = result
+			}
+		}
+	}
+}

@@ -1,0 +1,289 @@
+﻿# _category = { ... } creates a new group with name category ( lead with '_' to create a group )
+# first and third indicates first person or third person, default is no or global pronoun
+# past indicates past tense, default is future/present
+# neg indicates that this is used for negative output values, ie "gain x gold" versus "lose x gold"
+# the value given to the localization of a neg version will always be positive
+
+add_stability = {
+	global = ADD_STABILITY_EFFECT_POSITIVE
+	global_neg = ADD_STABILITY_EFFECT_NEGATIVE
+}
+
+
+add_treasury = {
+	global = ADD_TREASURY_EFFECT_POSITIVE
+	global_neg = ADD_TREASURY_EFFECT_NEGATIVE
+}
+
+add_tyranny = {
+	global = ADD_TYRANNY_EFFECT_POSITIVE
+	global_neg = ADD_TYRANNY_EFFECT_NEGATIVE
+}
+
+remove_country_modifier = {
+	global = REMOVE_COUNTRY_MODIFIER
+}
+
+add_country_modifier = {
+	global = ADD_COUNTRY_MODIFIER
+}
+
+set_as_ruler = {
+	global = SET_AS_RULER_EFFECT
+}
+
+set_as_coruler = {
+	global = SET_AS_CORULER_EFFECT
+}
+change_government = {
+	global = CHANGE_GOVERNMENT_EFFECT
+}
+
+change_law = {
+	global = CHANGE_LAW_EFFECT
+}
+
+
+
+pay_price = {
+	global = PAY_PRICE_EFFECT
+}
+
+refund_price = {
+	global = REFUND_PRICE_EFFECT
+}
+
+
+add_research = {
+	global = ADD_RESEARCH_EFFECT_POSITIVE
+	global_neg = ADD_RESEARCH_EFFECT_NEGATIVE
+}
+
+imprison =
+{
+	global = IMPRISON_EFFECT
+}
+
+
+release_prisoner =
+{
+	global = RELEASE_PRISONER_EFFECT
+}
+
+
+add_opinion = {
+	global = THEY_GAIN_OPINION_EFFECT
+	global_neg = THEY_LOSE_OPINION_EFFECT
+}
+
+add_opinion_no_duration = {
+	global = THEY_GAIN_OPINION_NO_DURATION_EFFECT
+	global_neg = THEY_LOSE_OPINION_NO_DURATION_EFFECT
+}
+
+remove_opinion = {
+	global = REMOVE_OPINION_MODIFIER_EFFECT
+}
+
+add_manpower = {
+	global = ADD_MANPOWER_EFFECT_POSITIVE
+	global_neg = ADD_MANPOWER_EFFECT_NEGATIVE
+}
+
+add_party_approval = {
+	global = ADD_PARTY_APPROVAL_POSITIVE
+	global_neg = ADD_PARTY_APPROVAL_NEGATIVE
+}
+
+add_truce = {
+	global = ADD_TRUCE_EFFECT
+}
+
+set_primary_culture = {
+	global = SET_PRIMARY_CULTURE_EFFECT
+}
+
+set_country_religion = {
+	global = SET_COUNTRY_RELIGION_EFFECT
+}
+
+add_centralization = {
+	global = ADD_CENTRALIZATION_EFFECT_POSITIVE
+	global_neg = ADD_CENTRALIZATION_EFFECT_NEGATIVE
+}
+
+add_legitimacy = {
+	global = ADD_LEGITIMACY_EFFECT_POSITIVE
+	global_neg = ADD_LEGITIMACY_EFFECT_NEGATIVE
+}
+
+set_graphical_culture = {
+	global = SET_GRAPHICAL_COUNTRY_EFFECT
+}
+
+create_character = {
+	global = CREATE_CHARACTER_EFFECT
+}
+
+set_party_agenda = {
+	global = SET_PARTY_AGENDA_EFFECT
+}
+
+pick_random_agenda = {
+	global = PICK_RANDOM_AGENDA_EFFECT
+	global_neg = PICK_RANDOM_AGENDA_EFFECT_FALSE
+}
+
+remove_party_leadership = {
+	global = REMOVE_PARTY_LEADERSHIP_EFFECT
+}
+
+declare_war_with_wargoal = {
+	global = DECLARE_WAR_WITH_WARGOAL_EFFECT
+}
+
+declare_war_with_wargoal_province = {
+	global = DECLARE_WAR_WITH_WARGOAL_PROVINCE_EFFECT
+}
+
+add_aggressive_expansion = {
+	global = ADD_AGGRESSIVE_EXPANSION_EFFECT_POSITIVE
+	global_neg = ADD_AGGRESSIVE_EXPANSION_EFFECT_NEGATIVE
+}
+
+
+change_country_name = {
+	global = CHANGE_COUNTRY_NAME_EFFECT
+}
+
+change_country_tag = {
+	global = CHANGE_COUNTRY_TAG_EFFECT
+}
+
+change_country_flag = {
+	global = CHANGE_COUNTRY_FLAG_EFFECT
+}
+change_country_adjective = {
+	global = CHANGE_COUNTRY_ADJ_EFFECT
+}
+
+change_country_color = {
+	global = CHANGE_COUNTRY_COLOR_EFFECT
+}
+
+set_gender_equality = {
+	global = SET_GENDER_EQUALITY
+	global_neg = SET_GENDER_EQUALITY_FALSE
+}
+
+create_unit = {
+	global = CREATE_UNIT_EFFECT
+}
+
+set_capital = {
+	global = SET_CAPITAL_EFFECT
+}
+
+set_controller = {
+	global = SET_CONTROLLER_EFFECT
+}
+
+create_family = {
+	global = CREATE_FAMILY_EFFECT
+}
+
+make_subject = {
+	global = MAKE_SUBJECT_EFFECT
+}
+
+release_subject = {
+	global = RELEASE_SUBJECT_EFFECT
+}
+
+break_alliance = {
+	global = BREAK_ALLIANCE_EFFECT
+}
+
+add_alliance = {
+	global = ADD_ALLIANCE_EFFECT
+}
+
+add_military_access =  {
+	global = ADD_MILITARY_ACCESS_EFFECT
+}
+
+add_guarantee = {
+	global = ADD_GUARANTEE_EFFECT
+}
+
+remove_gurantee = {
+	global = REMOVE_GUARANTEE_EFFECT
+}
+
+add_new_family {
+	global = ADD_NEW_FAMILY_EFFECT
+}
+
+start_civil_war = {
+	global = START_CIVIL_WAR_EFFECT
+}
+
+add_war_exhaustion = {
+	global = WAR_EXHAUSTION_EFFECT_ADD
+	global_neg = WAR_EXHAUSTION_EFFECT_NEGATIVE
+}
+
+add_political_influence = {
+	global = ADD_POLITICAL_INFLUENCE_EFFECT_POSITIVE
+	global_neg = ADD_POLITICAL_INFLUENCE_EFFECT_NEGATIVE
+}
+
+add_military_experience = {
+	global = ADD_MILITARY_EXPERIENCE_EFFECT_POSITIVE
+	global_neg = ADD_MILITARY_EXPERIENCE_EFFECT_NEGATIVE
+}
+
+set_country_heritage = {
+	global = SET_COUNTRY_HERITAGE_EFFECT
+}
+
+set_military_tradition = {
+	set_military_tradition = SET_MILITARY_TRADITION_EFFECT
+}
+
+transfer_treasure_to_character = {
+	global = TRANSFER_TREASURE_CHARACTER_EFFECT
+}
+
+transfer_treasure_to_country = {
+	global = TRANSFER_TREASURE_EFFECT
+}
+
+transfer_treasure_to_province = {
+	global = TRANSFER_TREASURE_PROVINCE_EFFECT
+}
+
+create_country_treasure = {
+	global = CREATE_TREASURE_EFFECT
+}
+
+destroy_treasure = {
+	global = DESTROY_TREASURE_EFFECT
+}
+
+add_to_war = {
+	global = ADD_TO_WAR_EFFECT
+}
+
+add_faction_approval = {
+	global = ADD_FACTION_APPROVAL_EFFECT
+}
+
+set_ignore_senate_approval = {
+	global = SET_IGNORE_SENATE_APPROVAL_EFFECT
+	global_neg = SET_IGNORE_SENATE_APPROVAL_EFFECT_FALSE
+}
+
+add_innovation = {
+	global = ADD_INNOVATIONS_EFFECT
+}

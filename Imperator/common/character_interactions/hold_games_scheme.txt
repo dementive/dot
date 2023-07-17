@@ -1,0 +1,65 @@
+﻿hold_games_scheme = {
+
+	on_other_nation = no
+	on_own_nation = yes
+	
+	message = no
+	
+	sound = "event:/SFX/UI/Character/Generic/sfx_ui_character_scholar"
+	
+	potential_trigger = {
+		hidden:scope:target = {
+			is_ruler = yes
+			is_alive = yes
+			employer = {
+				is_republic = yes
+			}
+			NOT = { employer = { tag = REB } }
+			NOT = { employer = { tag = BAR } }
+			NOT = { has_character_modifier = indisposed_charmod }
+		}
+	}
+	
+	
+	allowed_trigger = {
+		scope:target = {
+			is_ruler = yes
+			wealth >= 100
+			NOT = {
+				has_ambition = scheme_hold_games
+			}
+		}
+	}
+	
+	province_actor_trigger = {
+		is_state_capital = yes
+	}
+	
+	effect = {
+		scope:target = {
+			clear_ambition_effect_ci = yes
+			set_variable = {
+				name = ongoing_scheme_target
+				value = scope:target
+				days = 400
+			} 
+			set_ambition = scheme_hold_games
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					exists = scope:recipient
+				}
+				scope:recipient = {
+					save_scope_as = games_province
+					add_province_modifier = {
+						name = games_being_held_scheme
+						duration = 365
+					}
+				}
+			}
+		}
+		custom_tooltip = hold_games_scheme_ci_tooltip
+	}
+	
+}	

@@ -1,0 +1,413 @@
+﻿### Epirus ###
+epi_mis_1_12_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = epi_mis_1_12_allow_sv_ongoing
+		trigger = { current_num_of_capital_used_building_slots_svalue < current_num_of_capital_total_building_slots_svalue }
+	}
+
+	text = {
+		localization_key = epi_mis_1_12_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+get_me_epi_berenicis_name = {
+	type = country
+
+	text = {
+		localization_key = me_epi_berenicis_name_tre
+		trigger = { 
+			has_variable = berenicis_country_flag
+			var:berenicis_country_flag = c:TRE
+		}
+	}
+
+	text = {
+		localization_key = me_epi_berenicis_name_egy
+		trigger = { 
+			has_variable = berenicis_country_flag
+			var:berenicis_country_flag = c:EGY
+		}
+	}
+
+	text = {
+		localization_key = me_epi_berenicis_name_pry
+		trigger = { 
+			has_variable = berenicis_country_flag
+			var:berenicis_country_flag = c:PRY
+		}
+	}
+
+	text = {
+		localization_key = me_epi_berenicis_name_mac
+		trigger = { 
+			has_variable = berenicis_country_flag
+			var:berenicis_country_flag = c:MAC
+		}
+	}
+
+	text = {
+		localization_key = me_epi_berenicis_name_sel
+		trigger = { 
+			has_variable = berenicis_country_flag
+			var:berenicis_country_flag = c:SEL
+		}
+	}
+
+	text = {
+		localization_key = me_epi_berenicis_name_tln
+		trigger = { 
+			has_variable = berenicis_country_flag
+			var:berenicis_country_flag = c:TLN
+		}
+	}
+
+	text = {
+		localization_key = me_epi_berenicis_name_fallback
+		trigger = { 
+			NOT = { has_variable = berenicis_country_flag }
+		}
+	}
+}
+
+get_me_epi_berenicis_country = {
+	type = country
+
+	text = {
+		localization_key = TRE
+		trigger = { var:berenicis_country_flag = c:TRE }
+	}
+
+	text = {
+		localization_key = EGY
+		trigger = { var:berenicis_country_flag = c:EGY }
+	}
+
+	text = {
+		localization_key = PRY
+		trigger = { var:berenicis_country_flag = c:PRY }
+	}
+
+	text = {
+		localization_key = MAC
+		trigger = { var:berenicis_country_flag = c:MAC }
+	}
+
+	text = {
+		localization_key = SEL
+		trigger = { var:berenicis_country_flag = c:SEL }
+	}
+
+	text = {
+		localization_key = TLN
+		trigger = { var:berenicis_country_flag = c:TLN }
+	}
+}
+
+me_epi_1_3_loyalty = {
+	type = country
+
+	text = {
+		localization_key = me_epi_1_3_loyalty_1_tt
+		trigger = { me_epi_1_3_loyalty_current < me_epi_1_3_loyalty_total }
+	}
+
+	text = { localization_key = me_epi_1_3_loyalty_2_tt }
+}
+
+me_epi_1_5_loyalty = {
+	type = country
+
+	text = {
+		localization_key = me_epi_1_5_loyalty_1_tt
+		trigger = { me_epi_1_5_loyalty_current < me_epi_1_5_loyalty_total }
+	}
+
+	text = { localization_key = me_epi_1_5_loyalty_2_tt }
+}
+
+epi_mis_1_14_cus_loc_2 = {
+	type = country
+
+	text = {
+		localization_key = me_epi_1_14_camps_1_tt
+		trigger = { num_of_training_camps_svalue < 10 }
+	}
+
+	text = { localization_key = me_epi_1_14_camps_2_tt }
+}
+
+epi_mis_1_14_cus_loc_1 = {
+	type = country
+
+	text = {
+		localization_key = epirus_1_epirus_14_allow_tt_1_1
+		trigger = { current_ruler.martial < 10 }
+	}
+
+	text = { localization_key = epirus_1_epirus_14_allow_tt_1_2 }
+}
+
+epirus_1_epirus_1_allow_tt_2_custom = {
+	type = country
+
+	text = {
+		localization_key = epirus_1_epirus_2_allow_tt_1_2
+		trigger = { 
+			has_variable = epi_molossian_ultimatum_flag
+			NOT = { has_variable = pyrrhus_returns_flag }
+		}
+	}
+
+	text = { localization_key = epirus_1_epirus_2_allow_tt_1_1 }
+}
+
+epirus_2_alexandros_relation = {
+	type = country
+
+	text = {
+		localization_key = epirus_2_alexandros_relation_1
+		trigger = { 
+			current_ruler = {
+				OR = { 
+					this = char:70
+					is_child_of = char:70
+				}
+			}
+		}
+	}
+
+	text = {
+		localization_key = epirus_2_alexandros_relation_2
+		trigger = { 
+			current_ruler = {
+				OR = { 
+					this = char:118
+					is_child_of = char:118
+				}
+			}
+		}
+	}
+
+	text = { localization_key = epirus_2_alexandros_relation_3 }
+}
+
+epi_mission_2_8_1_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = epi_mis_2_8_1_allow_sv_ongoing
+		trigger = { epi_mis_2_8_1_current < epi_mis_2_8_1_target }
+	}
+
+	text = {
+		localization_key = epi_mis_2_8_1_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+epi_mission_2_8_2_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = epi_mis_2_8_2_allow_sv_ongoing
+		trigger = { epi_mis_2_8_2_current < epi_mis_2_8_2_target }
+	}
+
+	text = {
+		localization_key = epi_mis_2_8_2_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+epi_mission_2_8_3_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = epi_mis_2_8_3_allow_sv_ongoing
+		trigger = { epi_mis_2_8_3_current < epi_mis_2_8_3_target }
+	}
+
+	text = {
+		localization_key = epi_mis_2_8_3_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+epi_mission_2_8_4_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = epi_mis_2_8_4_allow_sv_ongoing
+		trigger = { epi_mis_2_8_4_current < epi_mis_2_8_4_target }
+	}
+
+	text = {
+		localization_key = epi_mis_2_8_4_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+epi_mission_2_12_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = epi_mis_2_12_allow_sv_ongoing
+		trigger = { epi_mis_2_12_current < epi_mis_2_12_target }
+	}
+
+	text = {
+		localization_key = epi_mis_2_12_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+epi_mission_2_3_1_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = epirus_2_magna_3_1_allow_tt_1
+		trigger = { epirus_2_magna_3_1_allow_trigger = yes }
+	}
+
+	text = {
+		localization_key = epirus_2_magna_3_1_allow_tt_2
+		trigger = { always = yes }
+	}
+}
+
+epi_mission_2_3_2_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = epirus_2_magna_3_2_allow_tt_1
+		trigger = {  epirus_2_magna_3_2_allow_trigger = yes }
+	}
+
+	text = {
+		localization_key = epirus_2_magna_3_2_allow_tt_2
+		trigger = { always = yes }
+	}
+}
+
+epi_mission_2_7_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = epi_mis_2_7_allow_sv_ongoing
+		trigger = { epirus_2_magna_7_svalue < epirus_2_magna_7_target_svalue }
+	}
+
+	text = {
+		localization_key = epi_mis_2_7_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+epi_mission_2_9_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = epi_mis_2_9_allow_sv_ongoing
+		trigger = { epirus_2_magna_9_svalue < epirus_2_magna_9_target_svalue }
+	}
+
+	text = {
+		localization_key = epi_mis_2_9_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+epi_mission_2_4_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = epi_mis_2_4_allow_sv_ongoing
+		trigger = { me_epi_2_4_svalue < me_epi_2_4_target_svalue }
+	}
+
+	text = {
+		localization_key = epi_mis_2_4_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+epi_mission_2_4_2_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = epi_mis_2_4_2_allow_sv_ongoing
+		trigger = { me_epi_2_4_2_svalue < me_epi_2_4_2_target_svalue }
+	}
+
+	text = {
+		localization_key = epi_mis_2_4_2_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+epi_mission_2_14_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = epi_mis_2_14_allow_sv_ongoing
+		trigger = { me_epi_2_14_svalue < me_epi_2_14_target_svalue }
+	}
+
+	text = {
+		localization_key = epi_mis_2_14_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+epi_mission_2_10_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = epi_mis_2_10_allow_sv_ongoing
+		trigger = { me_epi_2_10_svalue < me_epi_2_10_target_svalue }
+	}
+
+	text = {
+		localization_key = epi_mis_2_10_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+epi_mission_2_11_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = epi_mis_2_11_allow_sv_ongoing
+		trigger = { me_epi_2_11_svalue < me_epi_2_11_target_svalue }
+	}
+
+	text = {
+		localization_key = epi_mis_2_11_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+epi_mis_3_12_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = epi_mis_3_12_cus_loc_ongoing
+		trigger = { epi_mis_3_12_cus_loc_ongoing_svalue < epi_mis_3_12_cus_loc_target_svalue }
+	}
+
+	text = { localization_key = epi_mis_3_12_cus_loc_complete }
+}
+
+epi_mis_3_11_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = epi_mis_3_11_cus_loc_ongoing
+		trigger = { epirus_3_greece_11_svalue < epirus_3_greece_11_target_svalue }
+	}
+
+	text = { localization_key = epi_mis_3_11_cus_loc_complete }
+}

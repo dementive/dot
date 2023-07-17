@@ -1,0 +1,63 @@
+﻿#Entirely auxiliary to ai_budget scripts. This defines higher level categories from atomic ones to avoid lots of typing.
+#See ai_budget for a general explanation of the budget system.
+
+#Atomic budget categories:
+#savings
+#building_construction
+#fort_maintenance
+#fort_construction
+#army_maintenance
+#army_construction
+#navy_maintenance
+#navy_construction
+#wages
+#tribute
+#omens
+#endorse_party
+#governor_policy
+#invention
+#military_tradition
+#idea
+#colonization
+#stance
+#war_exhaustion
+#stability
+#legitimacy
+#trade
+#laws
+#claims
+#opinion_diplomacy #Diplo actions that AI uses to influence opinion.
+#diplomacy #Other diplo actions.
+
+
+forts = {
+	contains = fort_maintenance
+	contains = fort_construction
+}
+
+army = {
+	contains = army_maintenance
+	contains = army_construction
+}
+
+navy = {
+	contains = navy_maintenance
+	contains = navy_construction
+}
+
+military = {
+	contains = army
+	contains = navy
+	contains = forts
+}
+
+all_diplomacy = {
+	contains = opinion_diplomacy
+	contains = diplomacy
+	contains = claims
+}
+
+fixed = {
+	contains = wages #While we have control over this, none of current code checks this.
+	contains = tribute #Just something we need to pay no matter wut.
+}

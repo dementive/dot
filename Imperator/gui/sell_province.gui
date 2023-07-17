@@ -1,0 +1,150 @@
+base_sub_window = {
+	name = "sell_province_window"
+	size = { 430 460 }
+	position = { 387 500 }
+	movable = yes
+	
+	blockoverride "Title_text" { text = "[SellProvinceWindow.GetTitle]" }
+	
+	blockoverride "White_buttons"
+	{
+		button_close = {
+			onclick = "[SellProvinceWindow.OnDecline]"
+			tooltip = "CLOSE"
+		}
+	}
+	
+	vbox = {
+		layoutpolicy_vertical = expanding
+		layoutpolicy_horizontal = expanding
+		margin = { 12 12 }
+		margin_top = 42
+		scrollarea = {
+			size = { 408 200 }
+
+			scrollbarpolicy_horizontal = always_off
+			
+			scrollbar_vertical = {
+				using = VerticalScrollBar
+			}
+			using = VerticalScrollAreaCutOff
+			scrollwidget = {
+				vbox = {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = preferred
+						margin_left = 10
+						margin_right = 10
+						spacing = 4
+						margin_top = 4
+						
+						datamodel = "[SellProvinceWindow.GetProvinces]"
+				
+						item = {
+							margin_widget = {	
+								#margin_left = 6
+								margin_right = 3
+								layoutpolicy_horizontal = expanding
+								size = { 0 30 }
+								text_button_square = {
+									size = { 100% 0 }
+									blockoverride "On_click"
+									{
+										onclick = "[SelectSellProvince.OnClick]"
+										enabled = "[SelectSellProvince.IsSelectable]"
+									}
+									blockoverride "Center_text" { text = "[SelectSellProvince.GetName]" }
+									
+									blockoverride "LightenCondition" { trigger_when = "[SelectSellProvince.IsSelected]" }
+									blockoverride "DarkenCondition" { trigger_when = "[Not(SelectSellProvince.IsSelected)]" }
+									
+								} 
+							}
+						}
+					}
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+					}
+				}
+			}
+		}
+		
+		margin_widget = {
+			size = { 0 100 }
+			layoutpolicy_horizontal = expanding
+			margin = { 32 0 }
+			
+			using = NoninteractableBG
+			blockoverride "Margins" { margin = { -16 0 } }
+			textbox = {
+				margin_top = 8
+				using = BaseFontS
+				using = Black_FontColor
+				text = "[SellProvinceWindow.GetDesc]"
+				size = { 100% 100% }
+				#autoresize = yes
+				multiline = yes
+				align = top|left
+				visible = "[SellProvinceWindow.HasSelected]"
+			}
+		}
+		
+		margin_widget = {
+			size = { 0 48 }
+			layoutpolicy_horizontal = expanding
+			margin = { 24 0 }
+			horizontal_slider_plain = {
+				size = { 100% 100% }
+				direction = horizontal
+				min = 0
+				max = 100
+				step = 1
+				wheelstep = 1
+				value = "[SellProvinceWindow.GetPrice]"
+				onvaluechanged = "[SellProvinceWindow.OnPriceChanged]"
+				visible = "[SellProvinceWindow.HasSelected]"
+			}
+		}
+		margin_widget = {
+			size = { 0 40 }
+			layoutpolicy_horizontal = expanding
+			hbox = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = expanding
+				
+				text_button_square = {
+					name = "decline_button"
+					size = { 180 0 }
+					blockoverride "Center_text" { text = "CANCEL_BUTTON" }
+					blockoverride "On_click"
+					{
+						onclick = "[SellProvinceWindow.OnDecline]"
+					}
+				}
+				
+				icon = {
+					framesize = { 46 46 }
+					size = { 41 41 }
+					texture = "gfx/interface/diplomacy/ai_accept_decline_icon.dds"
+					frame = "[SellProvinceWindow.GetAcceptanceFrame]"
+					tooltip = "[SellProvinceWindow.GetAcceptanceTooltip]"
+					visible = "[SellProvinceWindow.HasSelected]"
+				}
+				
+				text_button_square = {
+					name = "accept_button"
+					size = { 180 0 }
+					blockoverride "Center_text" { text = "OK_BUTTON" }
+					blockoverride "On_click"
+					{ 
+						enabled = "[SellProvinceWindow.HasSelected]"
+						onclick = "[SellProvinceWindow.OnAccept]"
+						clicksound = "event:/SFX/UI/Diplomacy/sfx_ui_diplomacy_war_declare_war"
+					}
+				}
+			}
+		}
+	}
+}
+

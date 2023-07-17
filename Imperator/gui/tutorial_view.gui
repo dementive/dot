@@ -1,0 +1,196 @@
+types "tutorial" {
+	type tutorial_item_list = dynamicgridbox {
+		name = "tutorial_grid"
+		ignoreinvisible = yes
+		
+		block "datamodel" {}
+		
+		item = {
+			widget = {
+				size = { 338 42 }
+
+				icon = {
+					name = "not_yet_completed"
+					using = icon_achieve
+					parentanchor = vcenter
+					size = { 40 40 }
+					frame = 1
+					#visible = "[Not(TutorialItem.IsAllowed)]"
+				}
+				icon = {
+					name = "stamp_of_approval"
+					using = icon_achieve
+					parentanchor = vcenter
+					size = { 40 40 }
+					frame = 2
+					visible = "[TutorialItem.IsCompleted]"
+					#visible = "[TutorialItem.IsAllowed]"
+				}
+
+				list_entry = {
+					position = { 40 0 }
+					size = { 254 40 }
+					tooltip = "[TutorialItem.GetEffect]"
+					tag = {
+						size = { 100% 30 }
+						text = "[TutorialItem.GetName]"
+						using = BaseFontS
+						using = Black_FontColor
+						autoresize = yes
+						parentanchor = vcenter
+						position = { 12 0 }
+					}
+				}
+
+				widget = {
+					size = { 36 36 }
+					parentanchor = right|vcenter
+					visible = "[Not(TutorialItem.IsCompleted)]"
+
+					icon = {
+						parentanchor = vcenter
+						position = { -12 2 }
+						size = { 58 44 }
+						texture = "gfx/interface/base_parts/national_treasure_button_texture.dds"
+						visible = "[TutorialItem.IsAllowed]"
+						alpha = 0.45
+						glow = {
+							glow_radius = 4
+							color = { 1 0.8 0 1 }
+							alpha = 1
+							visible = "[TutorialItem.IsAllowed]"
+						}
+					}
+
+					icon_button_square = {
+						size = { 36 36 }
+						position = { 0 0 }
+						blockoverride "Icon" 
+						{
+							visible = no
+						}
+						blockoverride "On_click"
+						{
+							onclick = "[TutorialItem.Complete]"
+							enabled = "[TutorialItem.IsAllowed]"
+						}
+
+					}
+
+					icon_button_square = {
+						size = { 36 36 }
+						position = { 0 0 }
+						tooltip = "TUTORIAL_OBJECTIVE_CAN_BE_COMPLETED"
+						visible = "[TutorialItem.IsAllowed]"
+						blockoverride "Icon" 
+						{
+							#using = button_tiled_texture
+							#framesize = { 200 200 }
+							#size = { 26 26 }
+							#frame = 2 
+							#alpha = 0.4
+							#modify_texture = {
+							#	texture = "gfx/interface/base_parts/check_mark.dds"
+							#	framesize = { 50 50 }
+							#	frame = 2
+							#	blend_mode = alphamultiply
+							#	
+							#}
+						}
+
+						blockoverride "On_click"
+						{
+							enabled = "[TutorialItem.IsAllowed]"
+							onclick = "[TutorialItem.Complete]"
+						}
+						
+					}
+				}
+
+				icon = {
+					size = { 42 42 }
+					parentanchor = right|vcenter
+					texture = "gfx/interface/icons/shared_icons/completed_task.dds"
+					visible = "[TutorialItem.IsCompleted]"
+					tooltip = "TUTORIAL_OBJECTIVE_IS_COMPLETED"		
+				}
+
+				#list_button = {
+				#	position = { 40 0 }
+				#	size = { 284 38 }
+				#	enabled = "[TutorialItem.IsAllowed]"
+				#	tooltip = "[TutorialItem.GetEffect]"
+				#	onclick = "[TutorialItem.Complete]"		
+				#	down = "[TutorialItem.IsCompleted]"
+				#	visible = "[Not( TutorialItem.IsCompleted )]"
+				#}		
+				#list_button = {
+				#	position = { 40 0 }
+				#	size = { 284 38 }
+				#	tooltip = "[TutorialItem.GetEffect]"	
+				#	down = "[TutorialItem.IsCompleted]"
+				#	visible = "[TutorialItem.IsCompleted]"
+				#}	
+				#textbox = {
+				#	text = "[TutorialItem.GetName]"
+				#	using = BaseFontS
+				#	using = Black_FontColor
+				#	autoresize = yes
+				#	parentanchor = center
+				#	position = { 18 0 }
+				#}
+			}
+		}
+	}
+}
+
+base_sub_window = {
+	name = "tutorial_view"
+	parentanchor = top|right
+	size = { 380 570 }
+	position = { -696 46 }
+	widgetanchor = top|left
+	movable = yes
+	blockoverride "Title_text" { text = "TUTORIAL_HEADER_OBJECTIVES" }
+	blockoverride "White_buttons" { 
+		button_close = {
+			onclick = "[TutorialView.OnClose]"
+			onclick = "[ClearHighlightColors]"
+			tooltip = "CLOSE"
+		}
+	}
+	
+	scrollarea = {
+		position = { 10 42 }
+		size = { 358 512 }
+		scrollbarpolicy_horizontal = always_off
+		using = VerticalScrollAreaCutOff
+		scrollbar_vertical = {
+			using = VerticalScrollBar
+		}
+		
+		scrollwidget = {
+			flowcontainer = {
+				position = { 0 10 }
+				spacing = 10
+				direction = vertical
+				
+				tutorial_item_list = {
+					blockoverride "datamodel" {
+						datamodel = "[TutorialView.GetCompletedObjectives]"
+					}
+				}
+				icon = { 
+					texture = "gfx/interface/base_parts/start_menu_horizontal_line_medium.dds"
+					size = { 378 3 } 
+				}
+				tutorial_item_list = {
+					blockoverride "datamodel" {
+						datamodel = "[TutorialView.GetObjectives]"
+					}
+				}
+				
+			}
+		}
+	}
+}

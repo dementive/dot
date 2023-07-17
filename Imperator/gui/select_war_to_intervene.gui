@@ -1,0 +1,78 @@
+base_sub_window = {
+	name = "select_intervene_window"
+	size = { 610 470 }
+	position = { 200 460 }
+	movable = yes
+
+	blockoverride "White_buttons"
+	{
+		button_close = {
+			onclick = "[SelectInterveneWindow.OnClose]"
+		}
+
+	}
+	blockoverride "Title_text"
+	{
+		text = "INTERVENE_IN_WARTITLE"
+	}
+	
+	margin_widget = {
+		size = { 100% 450 }
+		margin = { 12 0 }
+				
+		scrollarea = {
+			parentanchor = hcenter
+			position = { 0 40 }
+			size = { 584 414 }
+			scrollbarpolicy_horizontal = always_off
+			using = VerticalScrollAreaCutOff
+			scrollbar_vertical = {
+				using = VerticalScrollBar
+			}
+			
+			scrollwidget = {
+				dynamicgridbox = {
+					position = { 0 0 }
+					size = { 560 416 }
+					datamodel = "[SelectInterveneWindow.GetWars]"
+					
+					item = {
+						widget = {
+							size = { 560 32 }
+							
+							text_button_square = {
+								position = { 6 2 }
+								size = { 560 28 }
+								blockoverride "Center_text"
+								{
+									text = "[SelectWar.GetName]"
+								}
+								blockoverride "On_click"
+								{
+									onclick = "[SelectWar.OnClick]"
+								}
+								
+								tooltip = "[SelectWar.GetTooltip]"
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		#text_button_square = {
+		#	size = { 200 28 }
+		#	name = "decline_button"
+		#	blockoverride "Center_text"
+		#	{
+		#		text = "CANCEL_BUTTON"
+		#	}
+		#	blockoverride "On_click"
+		#	{
+		#		onclick = "[SelectInterveneWindow.OnClose]"
+		#	}
+		#	parentanchor = bottom|left
+		#}	
+	}
+}
+

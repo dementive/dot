@@ -1,0 +1,66 @@
+base_sub_window = { 
+	gfxtype = windowgfx
+	name = "message_settings_window"
+	parentanchor = top|left
+	size = { 490 270 }
+	movable = yes
+	layer = top
+	blockoverride "Title_text" { 
+		text = "[MessageSettings.GetTitle]" 
+	}
+	blockoverride "White_buttons"
+	{	
+		button_close = {
+			tooltip = "CLOSE"
+			onclick = "[MessageSettings.Close]"
+		}	
+	}
+    blockoverride "Max_text_width" 
+    {
+        max_width = 420
+    }
+
+    text_button_square = {
+        name = "accept_button"
+		size = { 180 28 }
+        blockoverride "Center_text" { text = "OK_BUTTON" }
+        parentanchor = bottom|hcenter
+        position = { 0 -12 }
+        blockoverride "On_click" { 
+			onclick = "[MessageSettings.Save]" 
+		}
+        blockoverride "Shortcut" {
+			shortcut = "confirm"
+        }
+    }
+
+    dynamicgridbox = {
+		datamodel = "[MessageSettings.GetItems]"
+        position = { 0 40 }
+
+        item = {
+            flowcontainer = {
+                spacing = 15
+
+                widget = {
+                    size = { 10 30 }
+                }
+
+                check_box_button = {
+                    blockoverride "Frame" { frame = "[BoolTo1And2( MessageSettingItem.IsChecked )]" }
+                    blockoverride "On_click" { onclick = "[MessageSettingItem.OnCheck(Not(MessageSettingItem.IsChecked))]" }
+                }
+                
+                textbox = {
+                    text = "[MessageSettingItem.GetText]"
+                    using = BaseFontM
+					using = Black_FontColor
+                    align = center|nobaseline
+                    multiline = yes
+                    autoresize = yes
+                    margin = { 0 6 }
+                }
+            }
+        }
+    }
+}

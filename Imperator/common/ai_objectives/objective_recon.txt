@@ -1,0 +1,19 @@
+﻿#Reconaissance unit objective.
+
+objective_recon = {
+	allow = {
+		always = yes
+	}
+	
+	pure_weight = yes #No hardcoded prioritization among help friend/chase enemy/besiege.
+	
+	is_focus_objective = yes #Tries really hard to go to the destination.
+	
+	#No custom evaluation function.
+	mode = none #none/add/replace
+	
+	#Custom evaluation function. Unit scope. Use scope:province to access the province being evaluated.
+	#Negative => better, positive => worse. If total sum exceeds 1 million unit will not go there. Beware fixed point overflow at 2 million...
+	weight = {
+	}
+}

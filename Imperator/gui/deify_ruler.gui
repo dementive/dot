@@ -1,0 +1,52 @@
+base_sub_window = {
+	name = "deify_ruler_window"
+	size = { 680 560 }
+	position = { 700 144 }
+	movable = yes
+	
+	blockoverride "Title_text" { text = "DEIFY_RULER_HEADER" }
+	blockoverride "White_buttons"
+	{
+		spacing = 4
+		button_close = {
+			onclick = "[DeifyRulerWindow.OnClose]"
+			tooltip = "CLOSE"
+		}
+	}
+
+	icon_card = {
+		position = { 20 38 }
+		size = { 100 100 }
+		blockoverride "Icon"
+		{
+			texture = "[GetDeityCategoryIcon(DeifyRulerWindow.GetDeityCategory.GetIcon)]"
+			framesize = { 200 200 }
+			size = { 100% 100% }
+			frame = 2
+		}		
+	}
+
+	flowcontainer = {
+		position = { 130 50 }
+		direction = vertical
+		textbox = {
+			text = "[DeifyRulerWindow.GetSelectedDeity.GetPassiveEffect]"
+			using = BaseFontS
+			using = Black_FontColor
+			autoresize = yes
+		}
+		textbox = {
+			text = "[DeifyRulerWindow.GetSelectedDeity.GetOmenEffect]"
+			using = BaseFontS
+			using = Black_FontColor
+			autoresize = yes 
+		}
+	}
+
+	container = {
+		position = { 0 100 }
+		widget = {
+			using = select_character_list_deity
+		}
+	}
+}

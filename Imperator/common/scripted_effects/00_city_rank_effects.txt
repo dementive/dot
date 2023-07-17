@@ -1,0 +1,38 @@
+﻿establish_city_effect = {
+	if = {
+		limit = {
+			has_province_rank = settlement
+		}
+		set_city_status = city
+	}
+}
+
+increase_province_rank_effect = {
+	if = {
+		limit = {
+			has_province_rank = settlement
+		}
+		set_city_status = city
+	}
+	else_if = {
+		limit = {
+			has_province_rank = city
+		}
+		set_city_status = city_metropolis
+	}
+}
+
+reduce_province_rank_effect = {
+	if = {
+		limit = {
+			has_province_rank = city
+		}
+		set_city_status = settlement
+	}
+	else_if = {
+		limit = {
+			has_province_rank = city_metropolis
+		}
+		set_city_status = city
+	}
+}

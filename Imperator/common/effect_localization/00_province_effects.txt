@@ -1,0 +1,131 @@
+﻿# _category = { ... } creates a new group with name category ( lead with '_' to create a group )
+# first and third indicates first person or third person, default is no or global pronoun
+# past indicates past tense, default is future/present
+# neg indicates that this is used for negative output values, ie "gain x gold" versus "lose x gold"
+# the value given to the localization of a neg version will always be positive
+
+add_civilization_value = {
+	global = ADD_CIV_VALUE_EFFECT
+	global_neg = REM_CIV_VALUE_EFFECT
+}
+
+add_road_towards = {
+	global = ADD_ROAD_TOWARDS_EFFECT
+}
+
+remove_province_modifier = {
+	global = REMOVE_PROVINCE_MODIFIER
+}
+
+add_province_modifier = {
+	global = ADD_PROVINCE_MODIFIER
+}
+
+add_permanent_province_modifier = {
+	global = ADD_PERMANENT_PROVINCE_MODIFIER
+}
+
+set_conquered_by = {
+	global = SET_CONQUERED_BY
+}
+
+set_owned_by = {
+	global = SET_OWNED_BY
+}
+
+
+create_pop = {
+	global = CREATE_POP_EFFECT
+}
+
+add_building_level = {
+	global = ADD_BUILDING_LEVEL_EFFECT
+}
+
+remove_building_level = {
+	global = REMOVE_BUILDING_LEVEL_EFFECT
+}
+
+set_trade_goods = {
+	global = SET_TRADE_GOODS_EFFECT
+}
+
+create_state_pop = {
+	global = CREATE_STATE_POP_EFFECT
+}
+
+
+define_pop = {
+	global = DEFINE_POP_EFFECT
+}
+
+
+add_state_loyalty = {
+	global = ADD_STATE_LOYALTY_EFFECT
+	global_neg = REM_STATE_LOYALTY_EFFECT
+}
+
+add_claim = {
+	global = ADD_CLAIM_EFFECT
+}
+
+remove_claim = {
+	global = REMOVE_CLAIM_EFFECT
+}
+
+set_as_governor = {
+	global = SET_AS_GOVERNOR_EFFECT
+}
+
+show_model = {
+	global = SHOW_MODEL_EFFECT
+}
+
+hide_model = {
+	global = HIDE_MODEL_EFFECT
+}
+
+show_animated_text = {
+	global = ANIMATED_TEXT_EFFECT
+}
+
+add_vfx = {
+	global = ADD_VFX_EFFECT
+}
+
+remove_vfx = {
+	global = REMOVE_VFX_EFFECT
+}
+
+set_city_status = {
+	global = SET_CITY_STATUS_EFFECT
+}
+
+create_country = 
+{
+	global = CREATE_COUNTRY_EFFECT
+}
+
+change_province_name = {
+	global = CHANGE_PROVINCE_NAME_EFFECT
+}
+
+remove_province_deity = {
+	global = REMOVE_PROVINCE_DEITY_EFFECT
+}
+
+set_province_deity = {
+	global = SET_PROVINCE_DEITY_EFFECT
+}
+
+build_great_work = {
+	global = BUILD_GREAT_WORK_EFFECT
+}
+
+begin_great_work_construction = {
+	global = BEGIN_GREAT_WORK_CONSTRUCTION_EFFECT
+}
+
+finish_great_work_construction = {
+	global = FINISH_GREAT_WORK_CONSTRUCTION_EFFECT
+}

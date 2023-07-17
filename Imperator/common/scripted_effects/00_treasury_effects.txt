@@ -1,0 +1,52 @@
+﻿minor_treasury_cost_effect = {
+	add_treasury = {
+		subtract = root.has_monthly_income
+		min = -50
+		max = -5
+	}
+}
+
+small_treasury_cost_effect = {
+	add_treasury = {
+		subtract = root.has_monthly_income
+		multiply = 2
+		min = -100
+		max = -10
+	}
+}
+
+medium_treasury_cost_effect = {
+	add_treasury = {
+		subtract = root.has_monthly_income
+		multiply = 3
+		min = -150
+		max = -15
+	}
+}
+
+large_treasury_cost_effect = {
+	add_treasury = {
+		subtract = root.has_monthly_income
+		multiply = 4
+		min = -200
+		max = -20
+	}
+}
+
+huge_treasury_cost_effect = {
+	add_treasury = {
+		subtract = root.has_monthly_income
+		multiply = 5
+		min = -250
+		max = -25
+	}
+}
+
+gargantuan_treasury_cost_effect = {
+	add_treasury = {
+		subtract = root.has_monthly_income
+		multiply = 6
+		min = -300
+		max = -30
+	}
+}

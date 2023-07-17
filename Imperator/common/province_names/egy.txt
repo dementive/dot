@@ -1,0 +1,12 @@
+﻿EGY = {
+	258 = PROV258_EGY  # Antigoneia Troas
+	288 = PROV288_EGY  # Teos
+	539 = PROV539_EGY  # Krokodeilopolis
+	670 = PROV670_EGY #  Ake
+	718 = PROV718_EGY #  Philadelpheia Palestine
+	795 = PROV795_SEL #  Alexandretta
+	3353 = PROV3353_EGY  # Taucheria
+	3354 = PROV3354_EGY  # Limane Barke
+	1998 = PROV1998_EGY #  Arsinoe Lykiai
+	7517 = PROV7517_EGY #  Arsinoe
+}

@@ -1,0 +1,403 @@
+﻿### Martial ###
+bad_martial_effect = {
+	random_list = {
+		1 = {
+			add_martial = 0
+		}
+		2 = {
+			add_martial = 1
+		}
+		3 = {
+			add_martial = 2
+		}
+		2 = {
+			add_martial = 3
+		}
+		1 = {
+			add_martial = 4
+		}
+	}
+}
+
+average_martial_effect = {
+	random_list = {
+		1 = {
+			add_martial = 2
+		}
+		2 = {
+			add_martial = 3
+		}
+		3 = {
+			add_martial = 4
+		}
+		2 = {
+			add_martial = 5
+		}
+		1 = {
+			add_martial = 6
+		}
+	}
+}
+
+good_martial_effect = {
+	random_list = {
+		1 = {
+			add_martial = 4
+		}
+		2 = {
+			add_martial = 5
+		}
+		3 = {
+			add_martial = 6
+		}
+		2 = {
+			add_martial = 7
+		}
+		1 = {
+			add_martial = 8
+		}
+	}
+}
+
+great_martial_effect = {
+	random_list = {
+		1 = {
+			add_martial = 6
+		}
+		2 = {
+			add_martial = 7
+		}
+		3 = {
+			add_martial = 8
+		}
+		2 = {
+			add_martial = 9
+		}
+		1 = {
+			add_martial = 10
+		}
+	}
+}
+
+amazing_martial_effect = {
+	random_list = {
+		1 = {
+			add_martial = 8
+		}
+		2 = {
+			add_martial = 9
+		}
+		3 = {
+			add_martial = 10
+		}
+		2 = {
+			add_martial = 11
+		}
+		1 = {
+			add_martial = 12
+		}
+	}
+}
+
+### Charisma ###
+bad_charisma_effect = {
+	random_list = {
+		1 = {
+			add_charisma = 0
+		}
+		2 = {
+			add_charisma = 1
+		}
+		3 = {
+			add_charisma = 2
+		}
+		2 = {
+			add_charisma = 3
+		}
+		1 = {
+			add_charisma = 4
+		}
+	}
+}
+
+average_charisma_effect = {
+	random_list = {
+		1 = {
+			add_charisma = 2
+		}
+		2 = {
+			add_charisma = 3
+		}
+		3 = {
+			add_charisma = 4
+		}
+		2 = {
+			add_charisma = 5
+		}
+		1 = {
+			add_charisma = 6
+		}
+	}
+}
+
+good_charisma_effect = {
+	random_list = {
+		1 = {
+			add_charisma = 4
+		}
+		2 = {
+			add_charisma = 5
+		}
+		3 = {
+			add_charisma = 6
+		}
+		2 = {
+			add_charisma = 7
+		}
+		1 = {
+			add_charisma = 8
+		}
+	}
+}
+
+great_charisma_effect = {
+	random_list = {
+		1 = {
+			add_charisma = 6
+		}
+		2 = {
+			add_charisma = 7
+		}
+		3 = {
+			add_charisma = 8
+		}
+		2 = {
+			add_charisma = 9
+		}
+		1 = {
+			add_charisma = 10
+		}
+	}
+}
+
+amazing_charisma_effect = {
+	random_list = {
+		1 = {
+			add_charisma = 8
+		}
+		2 = {
+			add_charisma = 9
+		}
+		3 = {
+			add_charisma = 10
+		}
+		2 = {
+			add_charisma = 11
+		}
+		1 = {
+			add_charisma = 12
+		}
+	}
+}
+
+### Finesse ###
+bad_finesse_effect = {
+	random_list = {
+		1 = {
+			add_finesse = 0
+		}
+		2 = {
+			add_finesse = 1
+		}
+		3 = {
+			add_finesse = 2
+		}
+		2 = {
+			add_finesse = 3
+		}
+		1 = {
+			add_finesse = 4
+		}
+	}
+}
+
+average_finesse_effect = {
+	random_list = {
+		1 = {
+			add_finesse = 2
+		}
+		2 = {
+			add_finesse = 3
+		}
+		3 = {
+			add_finesse = 4
+		}
+		2 = {
+			add_finesse = 5
+		}
+		1 = {
+			add_finesse = 6
+		}
+	}
+}
+
+good_finesse_effect = {
+	random_list = {
+		1 = {
+			add_finesse = 4
+		}
+		2 = {
+			add_finesse = 5
+		}
+		3 = {
+			add_finesse = 6
+		}
+		2 = {
+			add_finesse = 7
+		}
+		1 = {
+			add_finesse = 8
+		}
+	}
+}
+
+great_finesse_effect = {
+	random_list = {
+		1 = {
+			add_finesse = 6
+		}
+		2 = {
+			add_finesse = 7
+		}
+		3 = {
+			add_finesse = 8
+		}
+		2 = {
+			add_finesse = 9
+		}
+		1 = {
+			add_finesse = 10
+		}
+	}
+}
+
+amazing_finesse_effect = {
+	random_list = {
+		1 = {
+			add_finesse = 8
+		}
+		2 = {
+			add_finesse = 9
+		}
+		3 = {
+			add_finesse = 10
+		}
+		2 = {
+			add_finesse = 11
+		}
+		1 = {
+			add_finesse = 12
+		}
+	}
+}
+
+### Zeal ###
+bad_zeal_effect = {
+	random_list = {
+		1 = {
+			add_zeal = 0
+		}
+		2 = {
+			add_zeal = 1
+		}
+		3 = {
+			add_zeal = 2
+		}
+		2 = {
+			add_zeal = 3
+		}
+		1 = {
+			add_zeal = 4
+		}
+	}
+}
+
+average_zeal_effect = {
+	random_list = {
+		1 = {
+			add_zeal = 2
+		}
+		2 = {
+			add_zeal = 3
+		}
+		3 = {
+			add_zeal = 4
+		}
+		2 = {
+			add_zeal = 5
+		}
+		1 = {
+			add_zeal = 6
+		}
+	}
+}
+
+good_zeal_effect = {
+	random_list = {
+		1 = {
+			add_zeal = 4
+		}
+		2 = {
+			add_zeal = 5
+		}
+		3 = {
+			add_zeal = 6
+		}
+		2 = {
+			add_zeal = 7
+		}
+		1 = {
+			add_zeal = 8
+		}
+	}
+}
+
+great_zeal_effect = {
+	random_list = {
+		1 = {
+			add_zeal = 6
+		}
+		2 = {
+			add_zeal = 7
+		}
+		3 = {
+			add_zeal = 8
+		}
+		2 = {
+			add_zeal = 9
+		}
+		1 = {
+			add_zeal = 10
+		}
+	}
+}
+
+amazing_zeal_effect = {
+	random_list = {
+		1 = {
+			add_zeal = 8
+		}
+		2 = {
+			add_zeal = 9
+		}
+		3 = {
+			add_zeal = 10
+		}
+		2 = {
+			add_zeal = 11
+		}
+		1 = {
+			add_zeal = 12
+		}
+	}
+}

@@ -1,0 +1,459 @@
+﻿approval_modifier_ruler = {
+	modifier = { # Ruler is party member
+		trigger = {
+			has_co_ruler_government = no
+			exists = current_ruler.character_party
+			exists = scope:actor.character_party
+			current_ruler.character_party = scope:actor.character_party
+		}
+		add = {
+			value = 0.2 # Value being added
+		}
+		desc = APPROVAL_MODIFIER_RULER_TOOLTIP
+	}
+	modifier = { # Ruler is from another party
+		trigger = {
+			has_co_ruler_government = no
+			exists = current_ruler.character_party
+			exists = scope:actor.character_party
+			NOT = { 
+				current_ruler.character_party = scope:actor.character_party
+			}
+		}
+		add = {
+			value = -0.15 # Value being added
+		}
+		desc = APPROVAL_MODIFIER_OTHER_RULER_TOOLTIP
+	}
+	modifier = { # Ruler or co-ruler is from party in a co-government
+		trigger = {
+			has_co_ruler_government = yes
+			exists = current_ruler.character_party
+			exists = scope:actor.character_party
+			current_ruler.character_party = scope:actor.character_party
+		}
+		add = {
+			value = 0.05 # Value being added
+		}
+		desc = APPROVAL_MODIFIER_RULER_TOOLTIP
+	}
+	modifier = {
+		trigger = {
+			has_co_ruler_government = yes
+			exists = current_co_ruler.character_party
+			exists = scope:actor.character_party
+			current_co_ruler.character_party = scope:actor.character_party
+		}
+		add = {
+			value = 0.05 # Value being added
+		}
+		desc = APPROVAL_MODIFIER_CO_RULER_TOOLTIP
+	}
+	modifier = { # Neither ruler or co-ruler is from the party in a co-government
+		trigger = {
+			has_co_ruler_government = yes
+			exists = current_ruler.character_party
+			exists = current_co_ruler.character_party
+			exists = scope:actor.character_party
+			NOR = {
+				current_ruler.character_party = scope:actor.character_party
+				current_co_ruler.character_party = scope:actor.character_party
+			}
+		}
+		add = {
+			value = -0.1 # Value being added
+		}
+		desc = APPROVAL_MODIFIER_CO_OTHER_RULER_TOOLTIP
+	}
+}
+
+approval_modifier_grateful_family = {
+	modifier = { # Grateful Family Modifier
+		trigger = {
+			any_family = {
+				is_grateful = yes
+			}
+		}
+		add = {
+			every_family = {
+				limit = {
+					is_grateful = yes
+				}
+				add = $VALUE$ # Value being subtracted for every Grateful Family
+			}
+		}
+		desc = APPROVAL_MODIFIER_GRATEFUL_FAMILY
+	}
+}
+
+approval_modifier_scorned_family = {
+	modifier = { # Scorned Family Modifier
+		trigger = {
+			any_family = {
+				is_scorned = yes
+			}
+		}
+		add = {
+			every_family = {
+				limit = {
+					is_scorned = yes
+				}
+				add = $VALUE$ # Value being subtracted for every Scorned Family
+			}
+		}
+		desc = APPROVAL_MODIFIER_SCORNED_FAMILY
+	}
+}
+
+approval_modifier_peace = {
+	modifier = { # Peace Modifier
+		trigger = {
+			war = no
+		}
+		add = {
+			value = $VALUE$ # Value being added if you are not at war
+		}
+		desc = APPROVAL_MODIFIER_PEACE
+	}
+}
+
+approval_modifier_war = {
+	modifier = { # War Modifier
+		trigger = {
+			war = yes
+		}
+		add = {
+			value = $VALUE$ # Value being added if you are not at war
+		}
+		desc = APPROVAL_MODIFIER_WAR
+	}
+}
+
+approval_modifier_war_exhaustion = {
+	modifier = { # War Exhaustion Modifier
+		trigger = {
+			has_war_exhaustion >= 1
+		}
+		add = {
+			value = {
+				subtract = has_war_exhaustion
+				divide = 100
+			}
+		}
+		desc = APPROVAL_MODIFIER_WAR_EXHAUSTION
+	}
+}
+
+approval_modifier_antagonist = { 
+	modifier = {
+		trigger = {
+			is_antagonist = yes
+		}
+		add = {
+			value = 0.25
+		}
+		desc = APPROVAL_MODIFIER_ANTAGONIST
+	}
+}
+
+approval_modifier_high_stability = {
+	modifier = { # High Stability modifier
+		trigger = {
+			stability >= 65
+		}
+		add = {
+			value = {
+				add = stability
+				divide = 400
+			}
+		}
+		desc = APPROVAL_MODIFIER_HIGH_STABILITY
+	}
+}
+
+approval_modifier_low_stability = {
+	modifier = { # Low Stability Modifier
+		trigger = {
+			stability <= 35
+		}
+		add = {
+			value = {
+				subtract = 50
+				add = stability
+				multiply = 0.007
+			}
+		}
+		desc = APPROVAL_MODIFIER_LOW_STABILITY
+	}
+}
+
+approval_modifier_major_character_imprison = {
+	modifier = {
+		trigger = {
+			any_character = {
+				home_country = root
+				is_minor_character = no
+				prisoner = yes
+			}
+		}
+		add = {
+			every_character = {
+				limit = {
+					home_country = root
+					is_minor_character = no
+					prisoner = yes
+				}
+				add = $VALUE$
+			}
+		}
+		desc = APPROVAL_MODIFIER_MAJOR_CHARACTER_IMPRISON
+	}
+}
+
+approval_modifier_minor_character_imprison = {
+	modifier = {
+		trigger = {
+			any_character = {
+				home_country = root
+				is_minor_character = yes
+				prisoner = yes
+			}
+		}
+		add = {
+			every_character = {
+				limit = {
+					home_country = root
+					is_minor_character = yes
+					prisoner = yes
+				}
+				add = $VALUE$
+			}
+		}
+		desc = APPROVAL_MODIFIER_MINOR_CHARACTER_IMPRISON
+	}
+}
+
+approval_modifier_stacked_pantheon = {
+	modifier = {
+		trigger = {
+			any_pantheon_deity = {
+				count = all
+				deity_religion = root.religion
+			}
+		}
+		add = {
+			value = $VALUE$ # Value added for all deities having state religion 
+		}
+		desc = APPROVAL_MODIFIER_STACKED_PANTHEON
+	}
+}
+
+approval_modifier_mixed_pantheon = {
+	modifier = {
+		trigger = {
+			any_pantheon_deity = {
+				count >= 1
+				NOT = { deity_religion = root.religion }
+			}
+		}
+		add = {
+			every_pantheon_deity = {
+				limit = {
+					NOT = { deity_religion = root.religion }
+				}
+				add = $VALUE$ # Value subtracted for each wrong religion deity
+			}
+		}
+		desc = APPROVAL_MODIFIER_MINOR_MIXED_PANTHEON
+	}
+}
+
+approval_modifier_minor_family_ruler = {
+	modifier = {
+		trigger = {
+			has_co_ruler_government = no
+			current_ruler = { is_minor_character = yes }
+			scope:actor = {
+				is_ruler = no
+			}
+		}
+		add = {
+			value = $VALUE$ # Value added for ruler being from great family
+		}
+		desc = APPROVAL_MODIFIER_MINOR_FAMILY_RULER
+	}
+}
+
+approval_modifier_great_family_ruler = {
+	modifier = {
+		trigger = {
+			has_co_ruler_government = no
+			current_ruler = { is_minor_character = no }
+			scope:actor = {
+				is_ruler = no
+			}
+		}
+		add = {
+			value = $VALUE$ # Value added for ruler being from great family
+		}
+		desc = APPROVAL_MODIFIER_GREAT_FAMILY_RULER
+	}
+}
+
+approval_modifier_tyranny_positive = {
+	modifier = {
+		trigger = {
+			tyranny > 0
+		}
+		add = {
+			value = {
+				add = tyranny
+				multiply = 0.005
+			}
+		}
+		desc = APPROVAL_MODIFIER_TYRANNY_POSITIVE
+	}
+}
+
+approval_modifier_tyranny_negative = {
+	modifier = {
+		trigger = {
+			tyranny > 0
+		}
+		add = {
+			value = {
+				add = tyranny
+				multiply = -0.01
+			}
+		}
+		desc = APPROVAL_MODIFIER_TYRANNY_NEGATIVE
+	}
+}
+
+approval_modifier_irreligious_leader = {
+	modifier = {
+		trigger = {
+			current_ruler = {
+				OR = {
+					has_trait = lapsed
+					has_trait = sceptical
+					has_trait = tolerant
+				}
+			}
+		}
+		add = {
+			value = $VALUE$
+		}
+		desc = APPROVAL_MODIFIER_IRRELIGIOUS_LEADER
+	}
+}
+
+approval_modifier_corruption_positive = {
+	modifier = {
+		trigger = {
+			current_ruler = { corruption > 0 }
+		}
+		add = {
+			value = {
+				add = current_ruler.corruption
+				multiply = 0.003
+			}
+		}
+		desc = APPROVAL_MODIFIER_CORRUPTION_POSITIVE
+	}
+}
+
+approval_modifier_corruption_negative = {
+	modifier = {
+		trigger = {
+			current_ruler = { corruption > 0 }
+		}
+		add = {
+			value = {
+				add = current_ruler.corruption
+				multiply = -0.003
+			}
+		}
+		desc = APPROVAL_MODIFIER_CORRUPTION_NEGATIVE
+	}
+}
+
+approval_modifier_converted_capital = {
+	modifier = {
+		trigger = {
+			NOT = { capital_scope.dominant_province_religion = root.religion }
+		}
+		add = {
+			value = $VALUE$ # Value subtracted for capital being non-state religion
+		}
+		desc = APPROVAL_MODIFIER_CONVERTED_CAPITAL
+	}
+}
+
+approval_modifier_capital_culture = {
+	modifier = {
+		trigger = {
+			NOT = { capital_scope.dominant_province_culture = root.culture }
+		}
+		add = {
+			value = $VALUE$ # Value subtracted for capital being non-primary culture
+		}
+		desc = APPROVAL_MODIFIER_CAPITAL_CULTURE
+	}
+}
+
+approval_modifier_party_leader_great_family = {
+	modifier = {
+		trigger = {
+			NOT = {
+				any_character = {
+					is_party_leader = yes
+					is_minor_character = yes
+				}
+			}
+		}
+		add = {
+			value = $VALUE$ # Value added for all party leaders being from great families
+		}
+		desc = APPROVAL_MODIFIER_PARTY_LEADER_GREAT_FAMILY
+	}
+}
+
+approval_modifier_party_leader_minor_family = {
+	modifier = {
+		trigger = {
+			any_character = {
+				is_party_leader = yes
+				is_minor_character = yes
+			}
+		}
+		add = {
+			value = $VALUE$ # Value added for any party leader being from a minor family
+		}
+		desc = APPROVAL_MODIFIER_PARTY_LEADER_MINOR_FAMILY
+	}
+}
+
+approval_modifier_leader_wrong_religion = {
+	modifier = {
+		trigger = {
+			NOT = { current_ruler.religion = root.religion }
+		}
+		add = {
+			value = $VALUE$ # Value added for any party leader being from a minor family
+		}
+		desc = APPROVAL_MODIFIER_LEADER_WRONG_RELIGION
+	}
+}
+
+approval_modifier_leader_wrong_culture = {
+	modifier = {
+		trigger = {
+			NOT = { current_ruler.culture = root.culture }
+		}
+		add = {
+			value = $VALUE$ # Value added for any party leader being from a minor family
+		}
+		desc = APPROVAL_MODIFIER_LEADER_WRONG_CULTURE
+	}
+}

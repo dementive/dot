@@ -1,0 +1,69 @@
+﻿#Disloyal unit objective. Automatically switched to when unit commander goes disloyal.
+
+objective_disloyal = {
+	priority = 100 #If above 0, check allow and automatically switch to this objective if there are no objectives with higher priority allowed.
+	
+	allow = {
+		exists = commander
+		OR = {
+			commander = {
+				loyalty <= 33
+			}
+			AND = {
+				unit_owner = {
+					treasury < 0 
+				}
+				commander = { is_mercenary = yes }
+			}
+		}
+	}
+	interface_allow = {
+		always = no
+	}
+	
+	#Custom evaluation function.
+	mode = add #none/add/replace
+	
+	#Custom evaluation function. Unit scope. Use scope:province to access the province being evaluated.
+	#Negative => better, positive => worse. If total sum exceeds 1 million unit will not go there. Beware fixed point overflow at 2 million...
+	
+	pure_weight = yes
+	
+	weight = {
+		modifier = {
+			trigger = {
+				scope:province = {
+					NOT = { owner = root.unit_owner } #Prefer our homeland (since we want to revolt there).
+				}
+			}
+			add = {
+				value = 2000
+			}
+		}
+		modifier = {
+			trigger = {
+				scope:province = {
+					OR = {
+						has_enemy_army = root.unit_owner #Don't run into enemy armies regardless of where we are.
+					}
+				}
+			}
+			add = {
+				value = 30000
+			}
+		}
+		modifier = {
+			trigger = {
+				scope:province = {
+					AND = {
+						owner = root.unit_owner
+						this = root.unit_owner.capital_scope
+					}
+				}
+			}
+			add = {
+				value = 40000 #CD knows why?
+			}
+		}
+	}
+}

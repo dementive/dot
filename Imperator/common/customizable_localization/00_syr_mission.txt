@@ -1,0 +1,147 @@
+﻿### Sicily ###
+syr_mission_2_6_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = syr_mis_2_6_allow_sv_ongoing
+		trigger = {
+			﻿syr_mis_2_6_current < syr_mis_2_6_target
+		}
+	}
+
+	text = {
+		localization_key = syr_mis_2_6_allow_sv_complete
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+syr_mission_2_10_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = syr_mis_2_10_allow_sv_ongoing
+		trigger = {
+			syr_mis_2_10_current < syr_mis_2_10_target
+		}
+	}
+
+	text = {
+		localization_key = syr_mis_2_10_allow_sv_complete
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+syr_mission_2_8_1_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = syr_mis_2_8_1_allow_sv_ongoing
+		trigger = {
+			syr_mis_2_8_1_current < syr_mis_2_8_1_target
+		}
+	}
+
+	text = {
+		localization_key = syr_mis_2_8_1_allow_sv_complete
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+syr_mission_2_8_2_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = syr_mis_2_8_2_allow_sv_ongoing
+		trigger = {
+			syr_mis_2_8_2_current < syr_mis_2_8_2_target
+		}
+	}
+
+	text = {
+		localization_key = syr_mis_2_8_2_allow_sv_complete
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+syr_mission_3_1_1_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = syr_mis_3_1_1_allow_sv_ongoing
+		trigger = { syr_mis_3_1_1_current < syr_mis_3_1_1_target }
+	}
+
+	text = {
+		localization_key = syr_mis_3_1_1_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+syr_mission_3_1_2_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = syr_mis_3_1_2_allow_sv_ongoing
+		trigger = { syr_mis_3_1_2_current < syr_mis_3_1_2_target }
+	}
+
+	text = {
+		localization_key = syr_mis_3_1_2_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+syr_mission_3_1_3_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = syr_mis_3_1_3_allow_sv_ongoing
+		trigger = { syr_mis_3_1_3_current < syr_mis_3_1_3_target }
+	}
+
+	text = {
+		localization_key = syr_mis_3_1_3_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+syr_mission_3_2_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = syr_mis_3_2_allow_sv_ongoing
+		trigger = { syr_mis_3_2_current < syr_mis_3_2_target }
+	}
+
+	text = {
+		localization_key = syr_mis_3_2_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+syr_mission_4_9_custom_loc = {
+	type = country
+
+	text = {
+		localization_key = syr_mis_4_9_troops_desc
+		trigger = { scope:me_syr_response_scope.var:me_syr_4_9_response = 1 }
+	}
+
+	text = {
+		localization_key = syr_mis_4_9_elephant_desc
+		trigger = { scope:me_syr_response_scope.var:me_syr_4_9_response = 2 }
+	}
+
+	text = {
+		localization_key = syr_mis_4_9_token_desc
+		trigger = { scope:me_syr_response_scope.var:me_syr_4_9_response = 3 }
+	}
+}

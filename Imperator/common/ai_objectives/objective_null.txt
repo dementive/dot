@@ -1,0 +1,19 @@
+﻿#Default unit objective. AI almost uses exclusively this and it specifies the default AI.
+#Internally it is also used to represent units that remain player controlled ("no objective").
+#This file lets you override default AI, but be careful about potential performance issues.
+
+objective_null = {
+	allow = {
+		always = yes #This one is for cancellation when shown in GUI, which is fine.
+	}
+	
+	interface_priority = 1000
+	
+	#No custom evaluation function.
+	mode = none #none/add/replace
+	
+	#Custom evaluation function. Unit scope. Use scope:province to access the province being evaluated.
+	#Negative => better, positive => worse. If total sum exceeds 1 million unit will not go there. Beware fixed point overflow at 2 million...
+	weight = {
+	}
+}

@@ -1,0 +1,50 @@
+﻿governor_grant_nickname = {
+
+	on_other_nation = no
+	on_own_nation = yes
+	
+	message = no
+	
+	sound = "event:/SFX/UI/Character/Generic/sfx_ui_character_scholar"
+	
+	potential_trigger = {
+		hidden:scope:target = {
+			employer = scope:actor
+			is_governor = yes
+			is_ruler = no
+		}
+	}
+	
+	
+	allowed_trigger = {
+		scope:target = {
+			is_governor = yes
+			has_nickname = no
+			trigger_if = {
+				limit = {
+					exists = family
+					employer.current_ruler = { exists = family }
+					from_ruler_family = yes
+				}
+				from_ruler_family = no
+			}
+		}
+		scope:actor.current_ruler = {
+			popularity >= 50
+		}
+	}
+	
+
+	
+	effect = {
+		scope:actor.current_ruler = {
+			add_popularity = -10
+		}
+		scope:target = {
+			add_region_appropriate_nickname_for_governor_effect = yes
+			add_popularity = popularity_medium
+			if = { limit = { is_minor_character = no } family = { add_prestige = prestige_medium } }
+		}
+	}
+	
+}	

@@ -1,0 +1,26 @@
+﻿#Naval landing unit objective. Selectable for navies, hardcoded for armies. AI uses this a lot, be very careful if altering.
+
+objective_naval_landing = {
+	allow = {
+		always = yes
+	}
+	interface_allow = {
+		is_navy = yes
+	}
+	
+	interface_priority = 10
+	
+	pure_weight = yes #No hardcoded prioritization among help friend/chase enemy/besiege.
+	
+	crowding = no #Disables crowding/region assignment logic.
+	
+	is_focus_objective = yes #Tries really hard to go to the destination.
+	
+	#No custom evaluation function.
+	mode = none #none/add/replace
+	
+	#Custom evaluation function. Unit scope. Use scope:province to access the province being evaluated.
+	#Negative => better, positive => worse. If total sum exceeds 1 million unit will not go there. Beware fixed point overflow at 2 million...
+	weight = {
+	}
+}

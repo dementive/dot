@@ -1,0 +1,356 @@
+
+types POPS
+{
+	type pops_login_window = base_sub_window {
+		name = "pops_login_window"
+		parentanchor = center
+		resizable = no
+		minimumsize = { 600 310 }
+		maximumsize = { 600 310 }
+
+		blockoverride "Title_text"
+		{
+			text = "POPS_LOGIN"
+		}
+
+		vbox = {
+			layoutpolicy_vertical = fixed
+			layoutpolicy_horizontal = expanding
+			visible = "[POPSLoginView.IsLogin]"
+			margin_top = 42
+			
+			pops_textbox = {
+				text = "POPS_CREATE_ACCOUNT_CREARE_SUGGESTION"
+				autoresize = yes
+				using = BaseFontM
+				using = Black_FontColor
+				align = center
+			}
+			
+			vbox = {
+				layoutpolicy_vertical = expanding
+				layoutpolicy_horizontal = expanding
+
+				text_button_square = {
+					size = { 168 0 }
+					block "create_account_button" { }
+
+					blockoverride "Center_text" { text = "CREATE_ACCOUNT" }
+					blockoverride "On_click" { onclick = "[OnCreateAccount]" }
+				}
+			}
+			
+			vbox = {
+				layoutpolicy_vertical = fixed
+				layoutpolicy_horizontal = expanding
+				margin_left = 20
+				margin_right = 20
+				margin_top = 8
+				margin_bottom = 20
+				spacing = 10
+				
+				hbox = {
+					textbox = {
+						text = "EMAIL"
+						minimumsize = { 80 28 }
+						maximumsize = { 80 28 }
+						elide = right
+						using = BaseFontM
+						using = Black_FontColor
+					}
+					margin_widget = {
+						size = { 340 40 }
+						using = inputfield
+						name = "pops_login_entry_email"
+						editbox = {
+							position = { 12 0 }
+							size = { 100% 34 }
+							name = "find_text"
+							text = "[POPSLoginView.GetEmail]"
+							using = BaseFontM 
+							using = Black_FontColor
+							fontsize = 20
+							focuspolicy = all
+							alwaystransparent = no
+							multiline = no
+							ontextchanged = "[POPSLoginView.SetEmail]"
+							onreturnpressed = "[POPSLoginView.Login]"
+						}
+					}
+				}
+				
+				hbox = {
+					textbox = {
+						text = "PASSWORD"
+						minimumsize = { 80 28 }
+						maximumsize = { 80 28 }
+						elide = right
+						using = BaseFontM
+						using = Black_FontColor
+					}
+					margin_widget = {
+						size = { 340 40 }
+						using = inputfield
+						name = "pops_login_entry_password"
+						editbox = {
+							position = { 12 0 }
+							size = { 100% 34 }
+							name = "find_text"
+							text = "[POPSLoginView.GetPassword]"
+							using = BaseFontM 
+							using = Black_FontColor
+							fontsize = 20
+							focuspolicy = all
+							alwaystransparent = no
+							multiline = no
+							ontextchanged = "[POPSLoginView.SetPassword]"
+							onreturnpressed = "[POPSLoginView.Login]"
+							password = yes
+						}
+					}
+				}
+				hbox = {
+					pops_error_textbox = {
+						text = "[POPSLoginView.GetErrorMessage]"
+						using = BaseFontM
+						fontcolor = { 1 0.1 0.1 1 }
+						multiline = yes
+						layoutpolicy_horizontal = expanding
+						align = center
+						minimumsize = { 300 22 }
+						autoresize = yes
+					}
+				}
+				
+				text_button_square = {
+					size = { 168 0 }
+					block "reset_password_button" {  }
+					blockoverride "Center_text" { text = "POPS_LOGIN_RESET_PASSWORD" }
+					blockoverride "On_click" { onclick = "[POPSLoginView.SetState( 'password_reset' )]" }
+				}
+
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					spacing = 10
+					margin_top = 14
+					
+					text_button_square = {
+						size = { 168 0 }
+						blockoverride "Center_text" { text = "CANCEL" }
+						blockoverride "On_click" { onclick = "[POPSLoginView.Hide]" }
+					}
+
+					text_button_square = {
+						size = { 168 0 }
+						blockoverride "Center_text" { text = "[POPSLoginView.GetLoginString]" }
+						blockoverride "On_click"
+						{
+							enabled = "[POPSLoginView.IsValidLoginInfo]"
+							onclick = "[POPSLoginView.Login]"
+						}
+					}
+				}
+			}
+		}
+
+		vbox = {
+			layoutpolicy_vertical = expanding
+			layoutpolicy_horizontal = expanding
+			visible = "[POPSLoginView.IsRestoringPassword]"
+			spacing = 10
+			margin = { 15 10 }
+
+			pops_textbox = {
+				layoutpolicy_horizontal = expanding
+				text = "POPS_LOGIN_RESET_PASSWORD_DESC"
+				multiline = yes
+				size = { -1 60 }
+			}
+
+			pops_textbox_entry = {
+				name = "pops_login_entry_email"
+				layoutpolicy_horizontal = expanding
+				maximumsize = { 500 0 }
+
+				blockoverride "title"
+				{
+					text = "EMAIL"
+				}
+
+				blockoverride "editbox_text"
+				{
+					text = "[POPSLoginView.GetEmail]"
+				}
+
+				blockoverride "textbox_size"
+				{
+					size = { 130 30 }
+				}
+
+				blockoverride "pops_editbox"
+				{
+					ontextchanged = "[POPSLoginView.SetEmail]"
+					onreturnpressed = "[POPSLoginView.ResetPassword]"
+				}
+			}
+
+			hbox = {
+				layoutpolicy_vertical = expanding
+				layoutpolicy_horizontal = expanding
+				spacing = 5
+				
+				text_button_square = {
+					size = { 168 0 }
+					blockoverride "Center_text" { text = "CANCEL" }
+					blockoverride "On_click" { onclick = "[POPSLoginView.SetState( 'login' )]" }
+				}
+				
+				text_button_square = {
+					size = { 168 0 }
+					blockoverride "Center_text" { text = "POPS_LOGIN_RESET_PASSWORD_SEND" }
+					blockoverride "On_click" { onclick = "[POPSLoginView.SetState( 'email_sent' )]" }
+				}
+			}
+		}
+
+		vbox = {
+			layoutpolicy_vertical = expanding
+			layoutpolicy_horizontal = expanding
+			visible = "[POPSLoginView.IsEmailSent]"
+			spacing = 10
+			margin = { 15 10 }
+
+			pops_textbox = {
+				layoutpolicy_horizontal = expanding
+				text = "POPS_LOGIN_RESET_PASSWORD_EMAIL_SENT"
+			}
+			
+			text_button_square = {
+				size = { 168 0 }
+				blockoverride "Center_text" { text = "BACK" }
+				blockoverride "On_click" { onclick = "[POPSLoginView.SetState( 'login' )]" }
+			}
+		}
+
+		vbox = {
+			layoutpolicy_vertical = expanding
+			layoutpolicy_horizontal = expanding
+			visible = "[POPSLoginView.IsLoggedIn]"
+			spacing = 10
+			margin = { 15 10 }
+
+			pops_textbox = {
+				text = "EMAIL"
+				align = center
+			}
+
+			pops_textbox = {
+				layoutpolicy_horizontal = expanding
+				minimumsize = { 400 -1 }
+				maximumsize = { 500 -1 }
+				text = "[POPStatusGetUserEmailMasked]"
+				align = center
+			}
+
+			pops_textbox = {
+				text = "USER_NAME"
+				align = center
+			}
+
+			pops_textbox = {
+				text = "[POPStatusGetUserName]"
+				align = center
+			}
+			
+			text_button_square = {
+				size = { 168 0 }
+				blockoverride "Center_text" { text = "POPS_LOGIN_CHANGE_USERNAME" }
+				blockoverride "On_click" { onclick = "[POPSLoginView.SetState( 'change_username' )]" }
+			}
+			
+			text_button_square = {
+				size = { 168 0 }
+				blockoverride "Center_text" { text = "LOGOUT" }
+				blockoverride "On_click" {
+					onclick = "[POPSLoginView.Logout]" 
+					onclick = "[POPSLoginView.SetState( 'login' )]"
+				}
+			}
+			
+			text_button_square = {
+				size = { 168 0 }
+				blockoverride "Center_text" { text = "CLOSE" }
+				blockoverride "On_click" { onclick = "[POPSLoginView.Hide]" }
+			}
+		}
+
+		vbox = {
+			name = "change_username"
+			layoutpolicy_vertical = expanding
+			layoutpolicy_horizontal = expanding
+			visible = "[POPSLoginView.IsChangingUserName]"
+			spacing = 10
+			margin = { 15 10 }
+
+			pops_textbox = {
+				text = "POPS_LOGIN_CHANGE_USER_NAME_DESC"
+				max_width = 500
+				autoresize = yes
+				multiline = yes
+			}
+
+			pops_textbox_entry = {
+				name = "edit_username"
+				maximumsize = { 500 0 }
+				blockoverride "title"
+				{
+					text = "USERNAME"
+				}
+				blockoverride "editbox_text"
+				{
+					text = "[POPStatusGetUserName]"
+				}
+				blockoverride "textbox_size"
+				{
+					size = { 130 30 }
+				}
+				layoutpolicy_horizontal = expanding
+				blockoverride "pops_editbox"
+				{
+					ontextchanged = "[POPSLoginView.OnUserNameChange]"
+					onreturnpressed = "[POPSLoginView.SetUserName]"
+				}
+			}
+
+			pops_button = {
+				text = "UPDATE_USERNAME"
+				layoutpolicy_horizontal = fixed
+				onclick = "[POPSLoginView.SetUserName]"
+			}
+
+			pops_textbox = {
+				visible = "[POPSLoginView.IsSuccessfulSetName]"
+				text = "POPS_LOGIN_CHANGE_USERNAME_SUCCESS"
+			}
+
+			pops_textbox = {
+				text = "[POPSLoginView.GetErrorMessage]"
+				multiline = yes
+				layoutpolicy_horizontal = expanding
+				align = center
+				autoresize = yes
+			}
+
+			pops_textbox = {
+				visible = "[POPSLoginView.IsEmptyUserNamePrompt]"
+				text = "POPS_LOGIN_EMPTY_USERNAME"
+			}
+
+			pops_button = {
+				text = "BACK"
+				layoutpolicy_horizontal = fixed
+				onclick = "[POPSLoginView.SetState( 'logged_in' )]"
+			}
+		}
+	}
+}

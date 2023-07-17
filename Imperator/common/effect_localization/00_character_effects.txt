@@ -1,0 +1,290 @@
+﻿# _category = { ... } creates a new group with name category ( lead with '_' to create a group )
+# first and third indicates first person or third person, default is no or global pronoun
+# past indicates past tense, default is future/present
+# neg indicates that this is used for negative output values, ie "gain x gold" versus "lose x gold"
+# the value given to the localization of a neg version will always be positive
+
+add_gold = {
+	#first_past = I_GAINED_GOLD_EFFECT
+	#first_past_neg = I_LOST_GOLD_EFFECT
+	third_past = THEY_GAINED_GOLD_EFFECT
+	third_past_neg = THEY_LOST_GOLD_EFFECT
+	no_past = GAINED_GOLD_EFFECT
+	no_past_neg = LOST_GOLD_EFFECT
+	#first = I_GAIN_GOLD_EFFECT
+	#first_neg = I_LOSE_GOLD_EFFECT
+	third = THEY_GAIN_GOLD_EFFECT
+	third_neg = THEY_LOSE_GOLD_EFFECT
+	global = GAIN_GOLD_EFFECT
+	global_neg = LOSE_GOLD_EFFECT
+}
+
+pay_gold = {
+	no_past = PAID_GOLD_EFFECT
+	global = PAYS_GOLD_EFFECT
+}
+
+make_pregnant = {
+	global = MAKE_CHARACTER_PREGNANT
+}
+
+set_father = {
+	global =  SET_FATHER_OF_CHARACTER
+}
+
+
+add_trait = {
+	global = ADD_TRAIT
+}
+
+force_add_trait = {
+	global = ADD_TRAIT
+}
+
+remove_trait = {
+	global = REMOVE_TRAIT
+}
+
+
+set_culture = 
+{
+	global = SET_CULTURE
+}
+
+set_culture_same_as = 
+{
+	global = SET_CULTURE_OF_CHARACTER_SAME_AS
+}
+
+
+add_loyalty = {
+	global = THEY_GAIN_LOYALTY_EFFECT
+	global_neg = THEY_LOSE_LOYALTY_EFFECT
+}
+
+add_loyalty_no_duration = {
+	global = THEY_GAIN_LOYALTY_NO_DURATION_EFFECT
+	global_neg = THEY_LOSE_LOYALTY_NO_DURATION_EFFECT
+}
+
+remove_loyalty = {
+	global = REMOVE_LOYALTY_MODIFIER_EFFECT
+}
+
+
+add_popularity = {
+	global = ADD_POPULARITY_EFFECT_POSITIVE
+	global_neg = ADD_POPULARITY_EFFECT_NEGATIVE
+}
+
+add_corruption = {
+	global = ADD_CORRUPTION_EFFECT_POSITIVE
+	global_neg = ADD_CORRUPTION_EFFECT_NEGATIVE
+}
+add_prominence = {
+	global = ADD_PROMINENCE_EFFECT_POSITIVE
+	global_neg = ADD_PROMINENCE_EFFECT_NEGATIVE
+}
+
+add_loyal_veterans = {
+	global = ADD_LOYAL_VETERANS_EFFECT_POSITIVE
+	global_neg = ADD_LOYAL_VETERANS_EFFECT_NEGATIVE
+}
+
+give_office = {
+	global = GIVE_OFFICE_EFFECT
+}
+
+add_charisma = {
+	global = ADD_CHARISMA_EFFECT_POSITIVE
+	global_neg = ADD_CHARISMA_EFFECT_NEGATIVE
+}
+
+add_finesse = {
+	global = ADD_FINESSE_EFFECT_POSITIVE
+	global_neg = ADD_FINESSE_EFFECT_NEGATIVE
+}
+
+add_martial = {
+	global = ADD_MARTIAL_EFFECT_POSITIVE
+	global_neg = ADD_MARTIAL_EFFECT_NEGATIVE
+}
+add_zeal = {
+	global = ADD_ZEAL_EFFECT_POSITIVE
+	global_neg = ADD_ZEAL_EFFECT_NEGATIVE
+}
+
+add_ruler_conviction = {
+	global = ADD_RULER_CONVICTION_EFFECT_POSITIVE
+	global_neg = ADD_RULER_CONVICTION_EFFECT_NEGATIVE
+}
+
+death =
+{
+	global = CHARACTER_DEATH_EFFECT
+	third = CHARACTER_DEATH_EFFECT_THIRD
+}
+
+death_killer =
+{
+	global = CHARACTER_DEATH_EFFECT_KILLER
+	third = CHARACTER_DEATH_EFFECT_KILLER_THIRD
+}
+
+
+marry_character = 
+{
+	global = MARRY_CHARACTER_EFFECT
+}
+divorce_character = {
+	global = DIVORCE_CHARACTER_EFFECT
+}
+
+add_friend = 
+{
+	global = ADD_FRIEND_EFFECT
+}
+
+remove_friend = 
+{
+	global = REMOVE_FRIEND_EFFECT
+}
+
+add_rival = 
+{
+	global = ADD_RIVAL_EFFECT
+}
+
+remove_rival = 
+{
+	global = REMOVE_RIVAL_EFFECT
+}
+
+move_country = 
+{
+	global = MOVE_COUNTRY_EFFECT
+}
+
+move_country_with_message = 
+{
+	global = MOVE_COUNTRY_EFFECT
+}
+change_mercenary_employer = 
+{
+	global = CHANGE_MERCENARY_EMPLOYER_EFFECT
+}
+
+banish  = 
+{
+	global = BANISH_EFFECT
+}
+
+add_party_conviction = {
+	global = ADD_PARTY_CONVICTION_POSITIVE
+	global_neg = ADD_PARTY_CONVICTION_NEGATIVE
+}
+
+add_health = {
+	global = ADD_HEALTH_POSITIVE # VALUE
+	global_neg = ADD_HEALTH_NEGATIVE
+}
+
+remove_character_modifier = {
+	global = REMOVE_CHARACTER_MODIFIER
+}
+
+remove_triggered_character_modifier = {
+	global = REMOVE_TRIGGERED_CHARACTER_MODIFIER
+}
+
+add_character_modifier = {
+	global = ADD_CHARACTER_MODIFIER
+}
+
+add_triggered_character_modifier = {
+	global = ADD_TRIGGERED_CHARACTER_MODIFIER
+}
+
+set_character_religion = {
+	global = SET_CHARACTER_RELIGION
+}
+
+remove_all_offices = {
+	global = REMOVE_ALL_OFFICES_EFFECT
+}
+
+remove_as_governor = {
+	global = REMOVE_AS_GOVERNOR_EFFECT
+}
+
+remove_as_researcher = {
+	global = REMOVE_AS_RESEARCHER_EFFECT
+}
+
+remove_as_mercenary = {
+	global = REMOVE_AS_MERCENARY_EFFECT
+}
+
+set_ambition = {
+	global = SET_AMBITION_EFFECT
+}
+
+clear_ambition = {
+	global = CLEAR_AMBITION_EFFECT
+}
+
+remove_command = {
+	global = CLEAR_COMMAND_EFFECT
+}
+
+add_nickname = {
+	global = ADD_NICKNAME_EFFECT
+}
+
+remove_office = {
+	global = REMOVE_OFFICE_EFFECT
+}
+
+adopt = {
+	global = ADOPT_EFFECT
+}
+
+add_holding = {
+	global = ADD_HOLDING_EFFECT
+}
+
+remove_holding = {
+	global = REMOVE_HOLDING_EFFECT
+}
+
+set_family = {
+	global = SET_FAMILY_EFFECT
+}
+
+set_as_minor_character = { 
+	global = SET_AS_MINOR_CHARACTER_EFFECT
+}
+
+remove_family = {
+	global = REMOVE_FAMILY_EFFECT
+}
+
+add_character_experience = {
+	global = ADD_CHARACTER_EXPERIENCE_EFFECT
+}
+
+adapt_family_name {
+    global = ADAPT_FAMILY_NAME_EFFECT
+}
+
+set_home_country = {
+    global = SET_HOME_COUNTRY_EFFECT
+}
+
+set_party_leader = {
+	global = SET_PARTY_LEADER_EFFECT
+}
+
+deify_character = {
+	global = DEIFY_CHARACTER_EFFECT
+}

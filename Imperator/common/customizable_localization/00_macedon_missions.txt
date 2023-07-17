@@ -1,0 +1,325 @@
+﻿mac_mis_01_6_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = mac_mis_01_6_allow_sv_ongoing
+		trigger = { macedon_01_legacy_6_counter < macedon_01_legacy_6_target }
+	}
+
+	text = {
+		localization_key = mac_mis_01_6_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+mac_mis_01_2_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = me_mac_1_2_custom_both
+		trigger = {
+			c:PAA = { is_subject_of = scope:me_macedon_scope }
+			c:MAD = { is_subject_of = scope:me_macedon_scope }
+		}
+	}
+
+	text = {
+		localization_key = me_mac_1_2_custom_paa
+		trigger = {
+			c:PAA = { is_subject_of = scope:me_macedon_scope }
+		}
+	}
+
+	text = {
+		localization_key = me_mac_1_2_custom_mad
+		trigger = {
+			c:MAD = { is_subject_of = scope:me_macedon_scope }
+		}
+	}
+}
+
+mac_mis_02_1_1_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = me_mac_2_1_1_ongoing
+		trigger = { p:373.total_population < me_mac_2_1_1_target_svalue }
+	}
+
+	text = {
+		localization_key = me_mac_2_1_1_complete
+		trigger = { p:373.total_population >= me_mac_2_1_1_target_svalue }
+	}
+}
+
+mac_mis_02_1_2_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = me_mac_2_1_2_ongoing
+		trigger = { p:379.total_population < me_mac_2_1_1_target_svalue }
+	}
+
+	text = {
+		localization_key = me_mac_2_1_1_complete
+		trigger = { p:379.total_population >= me_mac_2_1_1_target_svalue }
+	}
+}
+
+mac_mis_02_8_cus_loc = {
+	type = country
+	
+	text = {
+		localization_key = me_mac_2_8_ongoing
+		trigger = { me_mac_2_8_svalue < me_mac_2_8_target_svalue }
+	}
+
+	text = {
+		localization_key = me_mac_2_8_complete
+		trigger = { me_mac_2_8_svalue >= me_mac_2_8_target_svalue }
+	}
+}
+
+mac_mis_02_8_3_oracle_cus_loc = {
+	type = country
+	
+	text = {
+		localization_key = pythia_cus_loc
+		trigger = { owns = 424 }
+	}
+
+	text = {
+		localization_key = oracle_cus_loc
+		trigger = {
+			NOT = { owns = 424 }
+		}
+	}
+}
+
+mac_mis_02_8_3_god_cus_loc = {
+	type = country
+	
+	text = {
+		localization_key = get_apollo
+		trigger = { owns = 424 }
+	}
+
+	text = {
+		localization_key = get_zeus
+		trigger = {
+			NOT = { owns = 424 }
+		}
+	}
+}
+
+mac_mis_02_6_cus_loc = {
+	type = country
+	random_valid = yes
+
+	text = {
+		localization_key = mac_mis_02_6_1
+		trigger = {
+			scope:macedon_philosopher_scope = { has_trait = orator }
+		}
+	}
+
+	text = {
+		localization_key = mac_mis_02_6_2
+		trigger = {
+			scope:macedon_philosopher_scope = { has_trait = polymath }
+		}
+	}
+
+	text = {
+		localization_key = mac_mis_02_6_3
+		trigger = {
+			scope:macedon_philosopher_scope = { has_trait = wise }
+		}
+	}
+
+	text = {
+		localization_key = mac_mis_02_6_4
+		trigger = {
+			scope:macedon_philosopher_scope = { has_trait = intelligent }
+		}
+	}
+
+	text = {
+		localization_key = mac_mis_02_6_5
+		trigger = { always = yes }
+	}
+}
+
+mac_mis_02_7_pop_cus_loc = {
+	type = country
+	
+	text = {
+		localization_key = me_mac_2_7_pop_ongoing
+		trigger = { me_mac_2_7_pop_ongoing_svalue < me_mac_2_7_pop_target_svalue }
+	}
+
+	text = {
+		localization_key = me_mac_2_7_pop_complete
+		trigger = { me_mac_2_7_pop_ongoing_svalue >= me_mac_2_7_pop_target_svalue }
+	}
+}
+
+mac_mis_02_7_pre_cus_loc = {
+	type = country
+	
+	text = {
+		localization_key = me_mac_2_7_pre_ongoing
+		trigger = { me_mac_2_7_pre_ongoing_svalue < me_mac_2_7_pre_target_svalue }
+	}
+
+	text = {
+		localization_key = me_mac_2_7_pre_complete
+		trigger = { me_mac_2_7_pre_ongoing_svalue >= me_mac_2_7_pre_target_svalue }
+	}
+}
+
+mac_mis_03_1_cus_loc = {
+	type = country
+	
+	text = {
+		localization_key = me_mac_3_1_ongoing
+		trigger = { me_mac_3_1_ongoing_svalue < me_mac_3_1_target_svalue }
+	}
+
+	text = {
+		localization_key = me_mac_3_1_complete
+		trigger = { me_mac_3_1_ongoing_svalue >= me_mac_3_1_target_svalue }
+	}
+}
+
+mac_mis_03_1_vis_cus_loc = {
+	type = country
+	
+	text = {
+		localization_key = me_mac_3_1_tooltip_vis
+		trigger = { me_mac_3_1_vis_svalue > 0 }
+	}
+
+	text = {
+		localization_key = me_mac_3_1_tooltip_invis
+		trigger = { always = yes }
+	}
+}
+
+mac_mis_03_2_cus_loc = {
+	type = country
+	
+	text = {
+		localization_key = me_mac_3_2_ongoing
+		trigger = { me_mac_3_2_ongoing_svalue < me_mac_3_2_target_svalue }
+	}
+
+	text = {
+		localization_key = me_mac_3_2_complete
+		trigger = { always = yes }
+	}
+}
+
+mac_mis_03_10_cus_loc = {
+	type = country
+	
+	text = {
+		localization_key = me_mac_3_10_ongoing
+		trigger = { me_mac_3_10_svalue < me_mac_2_8_target_svalue }
+	}
+
+	text = {
+		localization_key = me_mac_3_10_complete
+		trigger = { me_mac_3_10_svalue >= me_mac_2_8_target_svalue }
+	}
+}
+
+mac_mis_03_6_cus_loc = {
+	type = country
+	
+	text = {
+		localization_key = me_mac_3_6_ongoing
+		trigger = { me_mac_3_6_ongoing_svalue < me_mac_3_6_target_svalue }
+	}
+
+	text = {
+		localization_key = me_mac_3_6_complete
+		trigger = { always = yes }
+	}
+}
+
+mac_mis_03_10_1_cus_loc = {
+	type = country
+	
+	text = {
+		localization_key = me_mac_3_10_1_ongoing
+		trigger = { me_mac_3_10_1_ongoing_svalue < me_mac_3_10_1_target_svalue }
+	}
+
+	text = {
+		localization_key = me_mac_3_10_1_complete
+		trigger = { always = yes }
+	}
+}
+
+mac_mis_03_13_cus_loc = {
+	type = country
+	
+	text = {
+		localization_key = me_mac_3_13_ongoing
+		trigger = { me_mac_3_13_other_svalue > me_mac_3_13_mac_svalue }
+	}
+
+	text = {
+		localization_key = me_mac_3_13_complete
+		trigger = { me_mac_3_13_other_svalue <= me_mac_3_13_mac_svalue }
+	}
+
+	text = {
+		localization_key = me_mac_3_13_complete
+		trigger = { me_mac_3_13_other_svalue = 0 }
+	}
+}
+
+mac_mis_03_3_cus_loc = {
+	type = country
+	
+	text = {
+		localization_key = me_mac_3_3_ongoing
+		trigger = { me_mac_3_3_svalue > 0 }
+	}
+
+	text = {
+		localization_key = me_mac_3_3_complete
+		trigger = { always = yes }
+	}
+}
+
+mac_mis_03_4_cus_loc = {
+	type = country
+	
+	text = {
+		localization_key = me_mac_3_4_ongoing
+		trigger = { me_mac_3_4_ongoing_svalue < me_mac_3_4_target_svalue }
+	}
+
+	text = {
+		localization_key = me_mac_3_4_complete
+		trigger = { me_mac_3_4_ongoing_svalue >= me_mac_3_4_target_svalue }
+	}
+}
+
+mac_mis_02_8_site_loc = {
+	type = country
+	
+	text = {
+		localization_key = me_macedon_2_mastery.83.custom1
+		trigger = { scope:oracle_scope = p:424 }
+	}
+
+	text = {
+		localization_key = me_macedon_2_mastery.83.custom2
+		trigger = { scope:oracle_scope = p:425 }
+	}
+}
+

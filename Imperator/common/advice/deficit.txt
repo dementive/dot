@@ -1,0 +1,200 @@
+﻿deficit = {
+	max_advice = 3
+	title = "ADVICE_DEFICIT_TITLE"
+	description = "ADVICE_DEFICIT_SUMMARY"
+	icon = "gfx/interface/icons/shared_icons/bankruptcy.dds"
+	background = "gfx/interface/advice/alert_icon_bg_red_.dds"
+
+	item = {
+		title = "ADVICE_DEFICIT_FALLBACK_TITLE"
+		description = "ADVICE_DEFICIT_FALLBACK"
+		icon = "gfx/interface/icons/advice/advice_nothing.dds"
+		fallback = yes
+	}
+
+	item = {
+		initial_view = religion
+		highlight_elements = { activate_deity }
+		description = "ADVICE_DEFICIT_OMEN_TAX"
+		title = "ADVICE_OMEN_TITLE"
+		button_text = "ADVICE_OMEN_BTN"
+		icon = "gfx/interface/icons/advice/advice_omen.dds"
+
+		effect = {
+			scope:actor = {
+				random_pantheon_deity = {
+					limit = {
+						scope:actor = { can_activate = PREV }
+						has_active_modifier = global_tax_modifier
+					}
+					save_scope_as = result
+				}
+			}
+		}
+	}
+
+	item = {
+		initial_view = religion
+		highlight_elements = { activate_deity }
+		description = "ADVICE_DEFICIT_OMEN_COMMERCE"
+		title = "ADVICE_OMEN_TITLE"
+		button_text = "ADVICE_OMEN_BTN"
+		icon = "gfx/interface/icons/advice/advice_omen.dds"
+
+		effect = {
+			scope:actor = {
+				random_pantheon_deity = {
+					limit = {
+						scope:actor = { can_activate = PREV }
+						has_active_modifier = global_commerce_modifier
+					}
+					save_scope_as = result
+				}
+			}
+		}
+	}
+
+	item = {
+		initial_view = religion
+		highlight_elements = { replace_deity }
+		chain_length = 2
+		description = "ADVICE_DEFICIT_PASSIVE_OMEN_TAX"
+		title = "ADVICE_PASSIVE_OMEN_TITLE"
+		button_text = "ADVICE_PASSIVE_OMEN_BTN"
+		icon = "gfx/interface/icons/advice/advice_omen.dds"
+
+		effect = {
+			scope:actor = {
+				if = {
+					limit = {
+						any_pantheon_deity = {
+							OR = {
+								has_passive_modifier = global_tax_modifier
+								has_passive_modifier = global_commerce_modifier
+							}
+						}
+					}
+				}
+				else = {
+					random_available_deity = {
+						limit = {
+							has_passive_modifier = global_tax_modifier
+						}
+						save_scope_as = result
+					}
+				}
+			}
+		}
+	}
+
+	item = {
+		initial_view = religion
+		highlight_elements = { replace_deity }
+		chain_length = 2
+		description = "ADVICE_DEFICIT_PASSIVE_OMEN_COMMERCE"
+		title = "ADVICE_PASSIVE_OMEN_TITLE"
+		button_text = "ADVICE_PASSIVE_OMEN_BTN"
+		icon = "gfx/interface/icons/advice/advice_omen.dds"
+
+		effect = {
+			scope:actor = {
+				if = {
+					limit = {
+						any_pantheon_deity = {
+							OR = {
+								has_passive_modifier = global_commerce_modifier
+								has_passive_modifier = global_tax_modifier
+							}
+						}
+					}
+				}
+				else = {
+					random_available_deity = {
+						limit = {
+							has_passive_modifier = global_commerce_modifier
+						}
+						save_scope_as = result
+					}
+				}
+			}
+		}
+	}
+
+	item = {
+		initial_view = economy
+		title = "ADVICE_DEFICIT_TAXES_TITLE"
+		description = "ADVICE_DEFICIT_TAXES"
+		button_text = "ADVICE_DEFICIT_TAXES_BTN"
+		icon = "gfx/interface/icons/advice/advice_currency.dds"
+
+		effect = {
+			if = {
+				limit = {
+					scope:actor = {
+						NAND = {
+							has_high_economic_policy = income_tax
+							has_high_economic_policy = income_tribute
+
+							has_low_economic_policy = expense_army
+							has_low_economic_policy = expense_navy
+							has_low_economic_policy = expense_fort
+							has_low_economic_policy = expense_wages
+						}
+					}
+				}
+				scope:actor = { save_scope_as = result }
+			}
+		}
+	}
+
+	item = {
+		title = "ADVICE_DEFICIT_DONOTHING_TITLE"
+		description = "ADVICE_DEFICIT_DONOTHING"
+		icon = "gfx/interface/icons/advice/advice_nothing.dds"
+
+		effect = {
+			if = {
+				limit = {
+					scope:actor = {
+						has_monthly_balance > 0
+					}
+				}
+				scope:actor = { save_scope_as = result }
+			}
+		}
+	}
+
+	item = {
+		initial_view = province
+		highlight_elements = { btn_province_build demolish_fortress_building }
+		description = "ADVICE_DEFICIT_DESTROY"
+		title = "ADVICE_DEFICIT_DESTROY_TITLE"
+		button_text = "ADVICE_DEFICIT_DESTROY_BTN"
+		icon = "gfx/interface/icons/advice/advice_build.dds"
+
+		effect = {
+			if = {
+				limit = {
+					has_monthly_balance < 0
+					war = no
+					has_civil_war = no
+				}
+				random_owned_province = {
+					limit = {
+						has_building = fortress_building
+						NOT = {
+							is_capital = yes
+							has_siege = yes
+							is_previous_controller = owner # Occupied
+							any_neighbor_province = { # Is country border
+								has_owner = yes
+								NOT = { owner = root }
+							}
+						}
+					}
+					save_scope_as = result
+				}
+			}
+		}
+	}
+}

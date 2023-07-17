@@ -1,0 +1,127 @@
+﻿
+year_550_egypt = {
+	suite = "ai"
+	interval = monthly
+
+	success = {
+		current_date <= 550.1.1
+		current_date >= 550.1.1
+		c:EGY = {
+			# Egypt starts with 19, so add 10
+			num_of_provinces >= 29
+		}
+	}
+	
+	# Success is checked first, so no need to check province count again here
+	failure = {
+		current_date > 550.1.1
+	}
+}
+
+
+year_550_parthia = {
+	suite = "ai"
+	interval = monthly
+
+	success = {
+		current_date <= 550.1.1
+	
+		c:PAR = {	num_of_cities > 100 }
+	}
+	
+	# Success is checked first, so no need to check province count again here
+	failure = {
+		current_date > 550.1.1
+	}
+}
+
+year_550_maurya = {
+	suite = "ai"
+	interval = monthly
+
+	success = {
+		current_date <= 550.1.1
+	
+		c:MRY = {	
+			# Maurya starts with 53, so add 10+10
+			num_of_provinces >= 73
+		}
+	}
+	
+	# Success is checked first, so no need to check province count again here
+	failure = {
+		current_date > 550.1.1
+	}
+}
+
+year_550_carthage = {
+	suite = "ai"
+	interval = monthly
+
+	success = {
+		current_date <= 550.1.1
+	
+		c:CAR = {	
+			num_of_provinces >= 50
+			any_owned_province = {
+				count = 300
+				OR = {
+					is_in_region = baetica_region
+					is_in_region = tarraconensis_region
+					is_in_region = lusitania_region
+					is_in_region = contestania_region
+					is_in_region = gallaecia_region
+				}
+			}
+		}
+	}
+	# Success is checked first, so no need to check province count again here
+	failure = {
+		current_date > 550.1.1
+	}
+}
+
+
+
+year_550_rome = {
+	suite = "ai"
+	interval = monthly
+
+	success = {
+		current_date <= 550.1.1
+	
+		c:ROM = {	
+			num_of_provinces >= 30
+		}
+		
+		region:central_italy_region = {
+			any_region_province = {
+				count = all
+				owned_or_subject_owned = c:ROM
+			}
+		}
+		
+		region:cisalpine_gaul_region = {
+			any_region_province = {
+				count = all
+				owned_or_subject_owned = c:ROM
+			}
+		}
+		region:magna_graecia_region = {
+			any_region_province = {
+				count = all
+				owned_or_subject_owned = c:ROM
+			}
+		}
+		
+		
+		
+		
+		
+	}
+	
+	# Success is checked first, so no need to check province count again here
+	failure = {
+		current_date > 550.1.1
+	}
+}

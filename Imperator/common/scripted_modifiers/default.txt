@@ -1,0 +1,63 @@
+﻿is_prominent_modifier = {
+	modifier = {
+		factor = 2
+		has_variable = prominent_actor
+		var:prominent_actor = 1
+	}
+}
+
+title_importance_modifier = {
+	modifier = {
+		factor = title_importance_svalue
+	}
+}
+
+likely_murderer = {
+	modifier = {
+		add = 1.5
+		has_trait = cruel
+	}
+	modifier = {
+		add = 1.5
+		has_trait = energetic
+	}
+	modifier = {
+		add = 1.5
+		has_trait = vengeful
+	}
+	modifier = {
+		add = 1.5
+		has_trait = harsh
+	}
+	modifier = {
+		add = 1.5
+		has_trait = ambitious
+	}
+	modifier = {
+		add = 1.5
+		is_party_leader = yes
+	}
+}
+
+likely_thief = {
+	modifier = {
+		add = 5
+		has_trait = corrupt
+	}
+	modifier = {
+		add = 5
+		has_trait = selfish
+	}
+	modifier = {
+		add = 5
+		has_trait = reckless
+	}
+	modifier = {
+		add = 5
+		has_trait = energetic
+	}
+	modifier = {
+		add = 5
+		has_trait = gluttonous
+	}
+}

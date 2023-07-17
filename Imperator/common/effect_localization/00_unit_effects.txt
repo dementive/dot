@@ -1,0 +1,68 @@
+﻿# _category = { ... } creates a new group with name category ( lead with '_' to create a group )
+# first and third indicates first person or third person, default is no or global pronoun
+# past indicates past tense, default is future/present
+# neg indicates that this is used for negative output values, ie "gain x gold" versus "lose x gold"
+# the value given to the localization of a neg version will always be positive
+
+add_morale = {
+	global = ADD_MORALE_EFFECT
+	global_neg = LOSE_MORALE_EFFECT
+}
+
+remove_unit_modifier = {
+	global = REMOVE_UNIT_MODIFIER
+}
+
+add_unit_modifier = {
+	global = ADD_UNIT_MODIFIER
+}
+
+add_subunit = {
+	global = ADD_SUBUNIT_EFFECT
+}
+
+add_loyal_subunit = {
+	global = ADD_LOYAL_SUBUNIT_EFFECT
+}
+
+lock_unit = {
+	global = LOCK_UNIT_EFFECT
+}
+
+unlock_unit = {
+	global = UNLOCK_UNIT_EFFECT
+}
+
+destroy_unit = {
+	global = DESTROY_UNIT_EFFECT
+}
+
+change_unit_owner = {
+	global = CHANGE_UNIT_OWNER_EFFECT
+}
+
+set_unit_size = {
+	global = SET_UNIT_SIZE_EFFECT
+}
+
+damage_unit_percent = {
+	global = DAMAGE_UNIT_PERCENT_EFFECT
+}
+
+damage_unit_morale_percent = {
+	global = DAMAGE_UNIT_MORALE_PERCENT_EFFECT
+}
+
+remove_unit_loyalty = {
+	global = REMOVE_UNIT_LOYALTY_EFFECT
+}
+
+set_as_commander = {
+	global = SET_AS_COMMANDER_EFFECT
+}
+
+
+add_food = {
+	global = ADD_FOOD_EFFECT
+	global_neg = LOSE_FOOD_EFFECT
+}

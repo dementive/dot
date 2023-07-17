@@ -1,0 +1,4 @@
+﻿TRE = {
+	290 = PROV290_TRE #  Ephesus
+	795 = PROV795_SEL #  Alexandretta
+}

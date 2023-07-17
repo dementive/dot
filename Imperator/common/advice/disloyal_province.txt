@@ -1,0 +1,193 @@
+﻿disloyal_province = {
+	max_advice = 3
+	title = "ADVICE_DISLOYAL_PROV_TITLE"
+	description = "ADVICE_DISLOYAL_PROV_SUMMARY"
+	icon = "gfx/interface/icons/modifiers/local_monthly_state_loyalty.dds"
+	background = "gfx/interface/advice/alert_icon_bg_red_.dds"
+
+	item = {
+		description = "ADVICE_DISLOYAL_PROV_FALLBACK"
+		title = "ADVICE_DISLOYAL_PROV_FALLBACK_TITLE"
+		icon = "gfx/interface/icons/advice/advice_nothing.dds"
+		fallback = yes
+	}
+
+	item = {
+		initial_view = province
+		highlight_elements = { btn_province_change_governor }
+		description = "ADVICE_ASSIGN_GOVERNOR"
+		title = "ADVICE_ASSIGN_GOVERNOR_TITLE"
+		button_text = "ADVICE_ASSIGN_GOVERNOR_BTN"
+		icon = "gfx/interface/icons/advice/advice_interaction.dds"
+
+		effect = {
+			if = {
+				limit = {
+					scope:target = {
+						NOT = { exists = governor_or_ruler }
+					}
+				}
+				scope:target.capital_scope = { save_scope_as = result }
+			}
+		}
+	}
+
+	item = {
+		initial_view = province
+		highlight_elements = { btn_province_import precious_metals }
+		description = "ADVICE_IMPORT_METALS"
+		title = "ADVICE_IMPORT_METALS_TITLE"
+		button_text = "ADVICE_IMPORT_BTN"
+		icon = "gfx/interface/icons/advice/advice_currency.dds"
+
+		effect = {
+			if = {
+				limit = {
+					scope:target = {
+						capital_scope = {
+							NOT = {
+								is_previous_controller = root # Occupied
+								has_siege = yes
+							}
+						}
+						can_import_trade_good = precious_metals
+					}
+				}
+				scope:target.capital_scope = { save_scope_as = result }
+			}
+		}
+	}
+
+	item = {
+		initial_view = religion
+		highlight_elements = { activate_deity }
+		description = "ADVICE_DISLOYAL_PROV_OMEN"
+		title = "ADVICE_OMEN_TITLE"
+		button_text = "ADVICE_OMEN_BTN"
+		icon = "gfx/interface/icons/advice/advice_omen.dds"
+
+		effect = {
+			scope:actor = {
+				random_pantheon_deity = {
+					limit = {
+						scope:actor = { can_activate = PREV }
+						has_active_modifier = global_monthly_state_loyalty
+					}
+					save_scope_as = result
+				}
+			}
+		}
+	}
+
+	item = {
+		initial_view = economy
+		highlight_elements = { income_tax_low }
+		description = "ADVICE_DISLOYAL_PROV_TAXES"
+		title = "ADVICE_DISLOYAL_PROV_TAXES_TITLE"
+		button_text = "ADVICE_TAXES_BTN"
+		icon = "gfx/interface/icons/advice/advice_currency.dds"
+
+		effect = {
+			if = {
+				limit = {
+					scope:actor = {
+						NOT = { has_low_economic_policy = income_tax }
+					}
+				}
+				scope:actor = { save_scope_as = result }
+			}
+		}
+	}
+
+	item = {
+		initial_view = province
+		highlight_elements = {
+			btn_province_change_governor_policy
+			local_autonomy
+		}
+		description = "ADVICE_DISLOYAL_PROV_AUTONOMY"
+		title = "ADVICE_DISLOYAL_PROV_AUTONOMY_TITLE"
+		button_text = "ADVICE_POLICY_BTN"
+		icon = "gfx/interface/icons/advice/advice_policy.dds"
+
+		effect = {
+			if = {
+				limit = {
+					scope:target.capital_scope = {
+						NOT = { governor_policy = harsh_treatment }
+					}
+					scope:target = {
+						can_change_governor_policy = local_autonomy
+					}
+				}
+				scope:target.capital_scope = { save_scope_as = result }
+			}
+		}
+	}
+
+	item = {
+		initial_view = religion
+		highlight_elements = { replace_deity }
+		chain_length = 2
+		description = "ADVICE_DISLOYAL_PROV_PASSIVE_OMEN"
+		title = "ADVICE_PASSIVE_OMEN_TITLE"
+		button_text = "ADVICE_PASSIVE_OMEN_BTN"
+		icon = "gfx/interface/icons/advice/advice_omen.dds"
+
+		effect = {
+			scope:actor = {
+				if = {
+					limit = {
+						any_pantheon_deity = {
+							has_passive_modifier = global_monthly_state_loyalty
+						}
+					}
+				}
+				else = {
+					random_available_deity = {
+						limit = {
+							has_passive_modifier = global_monthly_state_loyalty
+						}
+						save_scope_as = result
+					}
+				}
+			}
+		}
+	}
+
+	item = {
+		initial_view = province
+		highlight_elements = {
+			btn_province_change_governor_policy
+			harsh_treatment
+		}
+		description = "ADVICE_DISLOYAL_PROV_HARSH"
+		title = "ADVICE_DISLOYAL_PROV_HARSH_TITLE"
+		button_text = "ADVICE_POLICY_BTN"
+		icon = "gfx/interface/icons/advice/advice_policy.dds"
+
+		effect = {
+			if = {
+				limit = {
+					scope:target.capital_scope = {
+						NOT = { governor_policy = local_autonomy }
+					}
+					scope:target = {
+						can_change_governor_policy = harsh_treatment
+					}
+				}
+				scope:target.capital_scope = { save_scope_as = result }
+			}
+		}
+	}
+
+	item = {
+		description = "ADVICE_DISLOYAL_PROV_DONOTHING"
+		title = "ADVICE_DISLOYAL_PROV_DONOTHING_TITLE"
+		icon = "gfx/interface/icons/advice/advice_nothing.dds"
+
+		effect = {
+				save_scope_as = result
+		}
+	}
+}

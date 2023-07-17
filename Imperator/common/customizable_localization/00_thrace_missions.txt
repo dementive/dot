@@ -1,0 +1,98 @@
+﻿### Hellespont ###
+thracian_01_hellespont_task_8_ship_counter = {
+	type = country
+	text = {
+		localization_key = thracian_01_hellespont_task_8_ship_counter_1
+		trigger = {
+			thracian_01_hellespont_task_8_ship_current < thracian_01_hellespont_task_8_ship_total
+		}
+	}
+	text = {
+		localization_key = thracian_01_hellespont_task_8_ship_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+thracian_01_hellespont_task_14_port_counter = {
+	type = country
+	text = {
+		localization_key = thracian_01_hellespont_task_14_port_counter_1
+		trigger = {
+			thracian_01_hellespont_task_14_port_current < thracian_01_hellespont_task_14_port_total
+		}
+	}
+	text = {
+		localization_key = thracian_01_hellespont_task_14_port_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+thracian_01_hellespont_task_final_diadochi_counter = {
+	type = country
+	text = {
+		localization_key = thracian_01_hellespont_task_final_diadochi_counter_1
+		trigger = {
+			thracian_01_hellespont_task_final_diadochi_current > thracian_01_hellespont_task_final_diadochi_total
+		}
+	}
+	text = {
+		localization_key = thracian_01_hellespont_task_final_diadochi_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+tre_mis_03_1_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = tre_mis_3_1_current_ongoing
+		trigger = { tre_mis_3_1_current < tre_mis_3_1_target }
+	}
+
+	text = {
+		localization_key = tre_mis_3_1_current_complete
+		trigger = { always = yes }
+	}
+}
+
+thracian_02_odrysian_revolts_counter = {
+	type = country
+	text = {
+		localization_key = thracian_02_odrysian_revolts_counter_1
+		trigger = {
+			has_variable = odrysia_revolted
+			var:odrysia_revolted < 2
+		}
+	}
+	text = {
+		localization_key = thracian_02_odrysian_revolts_counter_2
+		trigger = {
+			has_variable = odrysia_revolted
+			var:odrysia_revolted >= 2
+		}
+	}
+}
+
+thracian_02_getic_raids_counter = {
+	type = country
+	text = {
+		localization_key = thracian_02_getic_raids_counter_1
+		trigger = {
+			has_variable = getic_raids
+			var:getic_raids < 3
+		}
+	}
+	text = {
+		localization_key = thracian_02_getic_raids_counter_2
+		trigger = {
+			has_variable = getic_raids
+			var:getic_raids >= 3
+		}
+	}
+}

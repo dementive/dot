@@ -1,0 +1,26 @@
+﻿desecrated = {
+	omen_power = -0.5
+}
+
+holy_site_desecrated = {
+	local_population_happiness = -0.1
+}
+
+province_raided = {
+	local_population_growth = -0.2
+	local_tax_modifier = -0.5
+}
+
+port_province_raided = {
+	local_tax_modifier = -0.5
+	local_citizen_happyness = negative_happiness_huge_svalue
+}
+
+province_pillaged = {
+	local_population_growth = -0.25
+	local_tax_modifier = -0.25
+}
+
+province_razed_ua = {
+	local_monthly_civilization = -0.01
+}

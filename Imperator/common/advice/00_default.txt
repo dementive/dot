@@ -1,0 +1,85 @@
+﻿############################
+#  Simple advice
+############################
+
+unused_trade_slots = {
+	only_highlight = yes
+	highlight_elements = { btn_province_import }
+}
+
+army_without_leader = {
+	only_highlight = yes
+	highlight_elements = { btn_single_unit_replace_leader }
+}
+
+region_lacks_governor = {
+	only_highlight = yes
+	highlight_elements = { btn_province_change_governor }
+}
+
+office_without_office_holder = {
+	only_highlight = yes
+	highlight_elements = { btn_government_assign_holder }
+}
+
+lack_researcher = {
+	only_highlight = yes
+	highlight_elements = { btn_technology_assign_researcher }
+}
+
+have_hostage = {
+	only_highlight = yes
+	highlight_elements = { ransom_button }
+}
+
+unmarried_ruler = {
+	only_highlight = yes
+	highlight_elements = { arrange_marriage }
+}
+
+can_buy_invention = {
+	only_highlight = yes
+	highlight_elements = { technology_invention_list }
+}
+
+can_call_omen = {
+	only_highlight = yes
+	highlight_elements = { invoke_war invoke_economy invoke_culture invoke_fertility }
+	chain_length = 1
+}
+
+can_buy_military_tradition = {
+	only_highlight = yes
+	highlight_elements = { tradition_list }
+}
+
+completed_mission_task = {
+	only_highlight = yes
+	highlight_elements = { btn_mission_finish_task }
+}
+
+free_idea_slot = {
+	only_highlight = yes
+	highlight_elements = { oratory_ideas military_ideas civic_ideas religious_ideas }
+	chain_length = 1
+}
+
+colonize_province = {
+	only_highlight = yes
+	highlight_elements = { btn_province_colonize }
+}
+
+low_army_maintenance = {
+	only_highlight = yes
+	highlight_elements = { expense_army_default }
+}
+
+low_navy_maintenance = {
+	only_highlight = yes
+	highlight_elements = { expense_navy_default }
+}
+
+high_war_exhaustion = {
+	only_highlight = yes
+	highlight_elements = { btn_religion_invoke_devotio }
+}

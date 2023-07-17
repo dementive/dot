@@ -1,0 +1,76 @@
+﻿#Fight rebels unit objective.
+
+objective_fight_rebels = {
+	allow = {
+		is_army = yes
+	}
+	
+	pure_weight = yes #No hardcoded prioritization among help friend/chase enemy/besiege.
+	
+	#No custom evaluation function.
+	mode = replace #none/add/replace
+	
+	#Custom evaluation function. Unit scope. Use scope:province to access the province being evaluated.
+	#Negative => better, positive => worse. If total sum exceeds 1 million unit will not go there. Beware fixed point overflow at 2 million...
+	weight = {
+		modifier = {
+			trigger = {
+				exists = scope:province.controller
+				scope:province.controller = root.unit_owner
+			}
+			add = {
+				value = 10000
+			}
+		}
+		modifier = {
+			trigger = {
+				root.unit_owner = { 
+					war = no 
+					has_civil_war = no
+				}
+				scope:province = { is_state_capital = yes }
+			}
+			add = {
+				value = -1
+			}
+		}
+		modifier = {
+			trigger = {
+				#root = {
+				#	food_percentage > 0.05
+				#}
+				scope:province = {
+					OR = {
+						fort_level = 0
+						AND = {
+							root = { unit_size >= 3 }
+							fort_level = 1
+						}
+						AND = {
+							root = { unit_size >= 5 }
+							fort_level = 2
+						}
+						AND = {
+							root = { unit_size >= 7 }
+							fort_level = 3
+						}
+						AND = {
+							root = { unit_size >= 9 }
+							fort_level = 4
+						}
+					}
+				}
+				exists = scope:province.controller
+				scope:province.controller = { 
+					OR = {
+						war_with = root.unit_owner
+						civil_war_with = root.unit_owner
+					}
+				}
+			}
+			add = {
+				value = -10
+			}
+		} 
+	}
+}

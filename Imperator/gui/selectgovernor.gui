@@ -1,0 +1,149 @@
+base_sub_window = {
+	name = "select_governor_window"
+	size = { 680 598 }
+	position = { 264 400 }
+	
+	blockoverride "Title_text" { text = "SELECT_Governor_HEADER" }
+	
+	blockoverride "White_buttons"
+	{
+		button_close = {
+			onclick = "[SelectGovernorWindow.Close]"
+			tooltip = "CLOSE"
+		}
+	}
+	
+	
+	text_button_square = {
+		parentanchor = hcenter|bottom
+		position = { 0 -14 }
+		size = { 300 0 }
+		blockoverride "Center_text" { text = "DETACH_CHARACTER" }
+		blockoverride "On_click"
+		{
+			enabled = [SelectGovernorWindow.CanDetachCharacter]
+			onclick = [SelectGovernorWindow.DetachCharacter]
+			
+		}
+	}
+	
+	flowcontainer = {
+		position = { 18 42 }
+		ignoreinvisible = yes
+		spacing = 4
+		textbox = {
+			using = BaseFontS
+			using = Black_FontColor
+			text = "SORT_BY_SITES"
+			max_width = 174
+			fontsize_min = 15
+			autoresize = yes
+			align = left
+			elide = right
+			parentanchor = vcenter
+		}
+		text_button_sort = {
+			size = { 60 0 }
+			tooltip = CHARACTER_VIEW_SORT_BY_FINESS_TOOLTIP
+			visible = "[SelectGovernorWindow.IsSpecificSkill('finesse')]"
+			blockoverride "Button_text" { visible = no }
+			blockoverride "Icon" { 
+				using = icon_civic
+				size = { 34 34 }
+			}
+			blockoverride "On_click" { onclick = "[SelectGovernorWindow.Sort('finesse')]" }
+			blockoverride "DownState" { down = "[SelectGovernorWindow.IsSorted('finesse')]" }
+		}
+		text_button_sort = {
+			size = { 60 0 }
+			tooltip = CHARACTER_VIEW_SORT_BY_MARTIAL_TOOLTIP
+			visible = "[SelectGovernorWindow.IsSpecificSkill('martial')]"
+			
+			blockoverride "Button_text" { visible = no }
+			blockoverride "Icon" { 
+				using = icon_military
+				size = { 34 34 }
+			}
+			blockoverride "On_click" { onclick = "[SelectGovernorWindow.Sort('martial')]" }
+			blockoverride "DownState" { down = "[SelectGovernorWindow.IsSorted('martial')]"}
+		}
+
+		text_button_sort = {
+			size = { 60 0 }
+			tooltip = CHARACTER_VIEW_SORT_BY_CHARISMA_TOOLTIP
+			visible = "[SelectGovernorWindow.IsSpecificSkill('charisma')]"
+			
+			blockoverride "Button_text" { visible = no }
+			blockoverride "Icon" { 
+				using = icon_oratory
+				size = { 34 34 }
+			}
+			blockoverride "On_click" { onclick = "[SelectGovernorWindow.Sort('charisma')]" }
+			blockoverride "DownState" { down = "[SelectGovernorWindow.IsSorted('charisma')]" }
+		}
+		text_button_sort = {
+			size = { 60 0 }
+			tooltip = CHARACTER_VIEW_SORT_BY_POPULARITY_TOOLTIP
+			blockoverride "Button_text" { visible = no }
+			blockoverride "Icon" { 
+				using = icon_popularity
+				size = { 34 34 }
+			}
+			blockoverride "On_click" { onclick = "[SelectGovernorWindow.Sort('popularity')]" }
+			blockoverride "DownState" { down = "[SelectGovernorWindow.IsSorted('popularity')]" }
+		}
+		text_button_sort = {
+			size = { 60 0 }
+			tooltip = CHARACTER_VIEW_SORT_BY_LOYALTY_TOOLTIP
+			blockoverride "Button_text" { visible = no }
+			blockoverride "Icon" { 
+				using = icon_loyalty
+				size = { 34 34 }
+			}
+			blockoverride "On_click" { onclick = "[SelectGovernorWindow.Sort('loyalty')]" }
+			blockoverride "DownState" { down = "[SelectGovernorWindow.IsSorted('loyalty')]" }
+		}
+		
+		text_button_sort = {
+			size = { 60 0 }
+			tooltip = CHARACTER_VIEW_SORT_BY_CORRUPTION_TOOLTIP
+			blockoverride "Button_text" { visible = no }
+			blockoverride "Icon" { 
+				using = icon_corruption
+				size = { 34 34 }
+			}
+			blockoverride "On_click" { onclick = "[SelectGovernorWindow.Sort('corruption')]" }
+			blockoverride "DownState" { down = "[SelectGovernorWindow.IsSorted('corruption')]" }
+		}
+
+		text_button_sort = {
+			size = { 60 0 }
+			tooltip = CHARACTER_VIEW_SORT_BY_STATESMANSHIP_TOOLTIP
+			blockoverride "Button_text" { visible = no }
+			blockoverride "Icon" { 
+				using = icon_statesmanship
+				size = { 34 34 }
+			}
+			blockoverride "On_click" { onclick = "[SelectGovernorWindow.Sort('statesmanship')]" }
+			blockoverride "DownState" { down = "[SelectGovernorWindow.IsSorted('statesmanship')]" }
+		}
+
+		text_button_sort = {
+			size = { 60 0 }
+			tooltip = CHARACTER_VIEW_SORT_BY_AGE_TOOLTIP
+			blockoverride "Button_text" { visible = no }
+			blockoverride "Icon" { 
+				using = icon_age
+				size = { 34 34 }
+			}
+			blockoverride "On_click" { onclick = "[SelectGovernorWindow.Sort('age')]" }
+			blockoverride "DownState" { down = "[SelectGovernorWindow.IsSorted('age')]" }
+		}
+	}
+	
+	widget = {
+		using = select_character_list
+		blockoverride "ShowMartial" { visible = yes }
+	}
+}
+

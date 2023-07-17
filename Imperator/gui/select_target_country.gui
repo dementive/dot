@@ -1,0 +1,168 @@
+
+base_sub_window = {
+	name = "select_target_country"
+	parentanchor = center
+	size = { 572 810 }
+	
+	blockoverride "Title_text" { text = "[SelectTargetCountryView.GetTitle]" }
+	blockoverride "White_buttons"
+	{
+		button_close = {
+			onclick = "[SelectTargetCountryView.OnClose]"
+			tooltip = "CLOSE"
+		}
+	}
+	
+	flowcontainer = {
+		position = { 12 38 }
+		spacing = 4
+		
+		text_button_sort = {
+			size = { 302 0 }
+			tooltip = "SORT_BY_COUNTRY_NAME_TT"
+			
+			blockoverride "Button_text" { text = "A_Z_SORT" }
+			blockoverride "Icon" { 
+				texture = "gfx/interface/icons/shared_icons/civilization.dds"
+				visible = no
+			}
+			blockoverride "On_click" { onclick = "[SelectTargetCountryView.Sort('name')]" }
+			blockoverride "DownState" { down = "[SelectTargetCountryView.IsSorted('name')]" }
+		}
+		text_button_sort = {
+			size = { 114 0 }
+			tooltip = "SORT_POPS_TT"
+			
+			blockoverride "Button_text" { visible = no }
+			blockoverride "Icon" { 
+				using = icon_population
+				visible = yes
+			}
+			blockoverride "On_click" { onclick = "[SelectTargetCountryView.Sort('population')]" }
+			blockoverride "DownState" { down = "[SelectTargetCountryView.IsSorted('population')]" }
+		}
+		text_button_sort = {
+			size = { 124 0 }
+			tooltip = "SORT_CITIES_TT"
+			
+			blockoverride "Button_text" { visible = no }
+			blockoverride "Icon" { 
+				using = icon_city
+				visible = yes
+			}
+			blockoverride "On_click" { onclick = "[SelectTargetCountryView.Sort('cities')]" }
+			blockoverride "DownState" { down = "[SelectTargetCountryView.IsSorted('cities')]" }
+		}
+	}
+	
+	widget = {
+		visible = "[IsDataModelEmpty(SelectTargetCountryView.GetTargetCountries)]"
+		size = { 100% 28 }
+		position = { 0 300 }
+		
+		textbox = {
+			position = { 35 2 }
+			autoresize = yes
+			using = BaseFontM
+			text = NO_POSSIBLE_COUNTRIES
+			align = center
+		}
+	}
+
+	scrollarea = {
+		position = { 10 73 }
+		size = { 550 718 }
+		scrollbarpolicy_horizontal = always_off
+		
+		scrollbar_vertical = {
+			using = VerticalScrollBar
+		}
+		using = VerticalScrollAreaCutOff
+		
+		scrollwidget = {
+			dynamicgridbox = {
+				position = { 0 1 }
+				size = { 560 700 }
+				datamodel = "[SelectTargetCountryView.GetTargetCountries]"
+				
+				item = {
+					widget = {
+						size = { 540 46 }
+						list_button = {
+							size = { 100% 100% }
+							onclick = "[SelectTargetCountryGlue.OnClick]"
+							tooltip = "[SelectTargetCountryGlue.GetCountry.GetName]"
+							onmousehierarchyenter = "[SetHighlightCountry( SelectTargetCountryGlue.GetCountry )]"
+							onmousehierarchyleave = "[ClearHighlightColors]"
+						}
+						container = {
+							
+							country_flag = {
+								position = { 6 5 }
+								datacontext = "[SelectTargetCountryGlue.GetCountry]"
+								
+								blockoverride "flag"
+								{
+									texture = "[SelectTargetCountryGlue.GetCountry.AccessCoatOfArms.GetTexture('(int32)120','(int32)120')]"
+									frame = "[SelectTargetCountryGlue.GetCountry.AccessCoatOfArms.GetFrame('(int32)120','(int32)120'))]"
+									framesize = { 120 120 }
+								}
+								
+								blockoverride "size"
+								{
+									size = { 40 40 }
+								}
+								
+								blockoverride "click"
+								{
+									onclick = "[OpenDiplomacy(SelectTargetCountryGlue.GetCountry)]"
+								}
+								
+								blockoverride "hover_leave"
+								{
+									onmousehierarchyleave = "[ClearHighlightColors]"
+								}
+								tooltip = "[SelectTargetCountryGlue.GetCountry.GetDescriptiveName]"
+							}
+							
+							
+							flowcontainer = {
+								position = { 52 10 }
+								
+								widget = {
+									size = { 260 20 }
+									tag_dark = {
+										text = "[SelectTargetCountryGlue.GetCountry.GetName]"
+										tooltip = "[SelectTargetCountryGlue.GetCountry.GetDescriptiveName]"
+										max_width = 260
+										fontsize_min = 10
+										elide = right
+									}
+								}
+								container = {
+									icon_and_text_dark = {
+										size = { 106 0 }
+										blockoverride "Icon" { using = icon_population }
+										blockoverride "Text" { text = "[SelectTargetCountryGlue.GetCountry.GetTotalPopulation]" }
+										tooltip = "[SelectTargetCountryGlue.GetCountry.BuildTotalPopulationToolTip]"
+										position = { 0 -3 }
+									}
+								}
+								container = {
+									icon_and_text_dark = {
+										size = { 106 0 }
+										blockoverride "Icon" { using = icon_city }
+										blockoverride "Text" { text = "[SelectTargetCountryGlue.GetCountry.GetOwnedProvinceCount]" }
+										tooltip = "[SelectTargetCountryGlue.GetCountry.GetOwnedProvinceTooltip]"
+										position = { 0 -3 }
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+

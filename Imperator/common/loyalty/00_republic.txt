@@ -1,0 +1,9 @@
+﻿empower_button_optimates_loyalty_modifier = {
+	value = 5
+	months = 60
+}
+
+empower_button_oligarchs_loyalty_modifier = {
+	value = 5
+	months = 60
+}

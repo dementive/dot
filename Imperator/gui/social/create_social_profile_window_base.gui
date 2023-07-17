@@ -1,0 +1,101 @@
+types Social
+{
+	type create_social_profile_window = base_sub_window
+	{
+		name = "create_social_profile_window"
+		visible = no
+		parentanchor = vcenter|hcenter
+		size = { 500 300 }
+		minimumsize = { 500 -1 }
+
+		
+		blockoverride "Title_text"
+		{
+			text = "CREATE_SOCIAL_PROFILE_WINDOW_TITLE"
+		}
+		
+		vbox = {
+			margin_top = 34
+			social_textbox = {
+				text = "CREATE_SOCIAL_PROFILE_WINDOW_DESCRIPTION"
+				using = BaseFontS
+				using = Black_FontColor
+				size = { 420 100 }
+				multiline = yes
+				align = top
+			}
+			hbox = {
+				layoutpolicy_horizontal = expanding
+				textbox = {
+					text = "SOCIAL_NAME"
+					minimumsize = { 80 28 }
+					maximumsize = { 80 28 }
+					elide = right
+					using = BaseFontM
+					using = Black_FontColor
+				}
+				margin_widget = {
+					size = { 340 40 }
+					using = inputfield
+					name = "pops_login_entry_email"
+					editbox = {
+						position = { 12 0 }
+						size = { 100% 34 }
+						name = "find_text"
+						text = "[CreateSocialProfile.GetName]"
+						using = BaseFontM 
+						using = Black_FontColor
+						fontsize = 20
+						focuspolicy = all
+						alwaystransparent = no
+						multiline = no
+						maxcharacters = 68
+						ontextchanged = "[CreateSocialProfile.SetName]"
+						onreturnpressed = "[CreateSocialProfile.Create]"
+						block "social_editbox_properties"{}
+					}
+				}
+			}
+			container = {
+				visible = "[Not(StringIsEmpty(CreateSocialProfile.GetErrorMessage))]"
+				social_vertical_spacer = {}
+				social_error_textbox = {
+					text = "J_CREATE_SOCIAL_PROFILE_ERROR"
+					multiline = yes
+					layoutpolicy_horizontal = expanding
+					size = { -1 -1 }
+					
+					block "textbox_error"
+					{}
+				}
+			}
+			social_vertical_spacer = {}
+			hbox = {
+				layoutpolicy_horizontal = expanding
+				margin = { 12 12 }
+				text_button_square = {
+					size = { 168 0 }
+					blockoverride "Center_text" { text = "CANCEL" }
+					blockoverride "On_click" { onclick = "[CreateSocialProfileWindow.Hide]" }
+					block "button_cancel"
+					{}
+				}
+				social_horizontal_spacer = {}
+				
+				social_horizontal_spacer = {}
+				text_button_square = {
+					size = { 168 0 }
+					blockoverride "Center_text" { text = "J_CREATE_PROFILE" }
+					blockoverride "On_click"
+					{
+						enabled = "[And(CreateSocialProfile.IsValidName, Not(CreateSocialProfile.IsCreatingProfile))]"
+						onclick = "[CreateSocialProfile.Create]"
+					}
+					block "button_load_create_profile"
+					{}
+				}
+			}
+		}
+		
+	}
+}

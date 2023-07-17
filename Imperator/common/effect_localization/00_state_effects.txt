@@ -1,0 +1,23 @@
+﻿# _category = { ... } creates a new group with name category ( lead with '_' to create a group )
+# first and third indicates first person or third person, default is no or global pronoun
+# past indicates past tense, default is future/present
+# neg indicates that this is used for negative output values, ie "gain x gold" versus "lose x gold"
+# the value given to the localization of a neg version will always be positive
+
+
+remove_state_modifier = {
+	global = REMOVE_STATE_MODIFIER
+}
+
+add_state_modifier = {
+	global = ADD_STATE_MODIFIER
+}
+
+set_state_capital = {
+	global = SET_STATE_CAPITAL_EFFECT
+}
+
+add_state_food = {
+	global = ADD_STATE_FOOD_EFFECT
+	global_neg = REMOVE_STATE_FOOD_EFFECT
+}

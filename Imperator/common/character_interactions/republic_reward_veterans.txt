@@ -1,0 +1,95 @@
+﻿republic_reward_veterans = {
+
+	on_other_nation = no
+	on_own_nation = yes
+	
+	sound = "event:/SFX/UI/Character/Generic/sfx_ui_character_reward"
+	
+	potential_trigger = {
+		hidden:scope:target = {
+			is_alive = yes
+			is_mercenary = no
+			employer = scope:actor
+			NOT = { employer = { tag = REB } }
+			NOT = { employer = { tag = BAR } }
+			employer = {
+				is_tribal = no
+			}
+			OR = {
+				employer = { is_republic = yes }
+				NOT = { this = employer.current_ruler }
+			}
+		}
+	}
+	
+	allowed_trigger = {
+		scope:actor = {
+			can_pay_price = price_reward_veterans
+		}
+		scope:target = {
+			custom_tooltip = {
+				text = "has_loyal_cohorts_or_veterans_tt"
+				OR = {
+					num_loyal_veterans >= 1
+					scope:actor = {
+						any_country_sub_unit = {
+							personal_loyalty = scope:target
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				text = "REWARDED_VETERANS_RECENTLY"
+				NOT = { has_variable = republic_reward_veterans_cooldown }
+			}
+		}
+	}
+	
+	effect = {
+		scope:actor = {
+			pay_price = price_reward_veterans
+		}
+		scope:actor = {
+			hidden_effect = {
+				while = {
+					count = 4
+					limit = {
+						OR = {
+							any_country_sub_unit = {
+								personal_loyalty = scope:target
+							}
+							scope:target = {
+								num_loyal_veterans >= 1
+							}
+						}
+					}
+					if = {
+						limit = {
+							any_country_sub_unit = {
+								personal_loyalty = scope:target
+							}
+						}
+						random_country_sub_unit = {
+							limit = {
+								personal_loyalty = scope:target
+							}
+							remove_subunit_loyalty = yes
+						}
+					}
+					else = {
+						scope:target = {
+							add_loyal_veterans = -1
+						}
+					}
+				}
+			}
+			custom_tooltip = "unit_is_bought_off_tooltip"				
+		}
+		scope:target = {
+			set_variable = {
+				name = republic_reward_veterans_cooldown
+				days = 730
+			}
+		}
+	}	
+}

@@ -1,0 +1,264 @@
+﻿# Actor Country - Root Scope
+# Recipient Country - scope:target
+
+declarewar = {
+	effect = {
+		if = {
+			limit = {
+				has_truce_with = scope:target
+			}
+			#Dislikes War:
+			approval_with_custom_tooltip_effect = {
+				CUSTOM_TOOLTIP = declaring_war_with_truce_tt
+				PARTY = boni_party
+				VALUE = party_disapproval_small_svalue
+			}
+			#Dislikes warring 
+			approval_with_custom_tooltip_effect = {
+				CUSTOM_TOOLTIP = declaring_war_with_truce_tt
+				PARTY = democratic_party
+				VALUE = party_disapproval_small_svalue
+			}
+		}
+		if = {
+			limit = {
+				scope:target = {
+					rank >= root.rank
+				}
+			}
+			
+			#Likes Wars:
+			approval_with_custom_tooltip_effect = {
+				CUSTOM_TOOLTIP = declaring_war_on_same_rank_or_higher_tt
+				PARTY = populares_party
+				VALUE = party_approval_small_svalue
+			}
+			approval_with_custom_tooltip_effect = {
+				CUSTOM_TOOLTIP = declaring_war_on_same_rank_or_higher_tt
+				PARTY = oligarchic_party
+				VALUE = party_approval_small_svalue
+			}
+		}
+	}
+}
+
+requestpeace = {
+	effect = {
+	}
+}
+
+allianceaction = {
+	effect = {
+		if = { #This may look odd, but what it does is it runs the effect if you break an alliance. The first IF is true in the tooltip, the second is true when the effect is run.
+			limit = {
+					scope:target = { alliance_with = root }#abandoning an ally
+			}
+			show_as_tooltip = {
+				approval_effect = {
+					PARTY = optimates_party
+					VALUE = party_disapproval_large_svalue
+				}
+				approval_effect = {
+					PARTY = oligarchic_party
+					VALUE = party_disapproval_large_svalue
+				}
+				approval_effect = {
+					PARTY = boni_party
+					VALUE = party_disapproval_large_svalue
+				}
+				approval_effect = {
+					PARTY = traditionalist_party
+					VALUE = party_disapproval_large_svalue
+				}
+			}
+		}
+		else = {
+			hidden_effect = {
+				approval_effect = {
+					PARTY = optimates_party
+					VALUE = party_disapproval_large_svalue
+				}
+				approval_effect = {
+					PARTY = oligarchic_party
+					VALUE = party_disapproval_large_svalue
+				}
+				approval_effect = {
+					PARTY = boni_party
+					VALUE = party_disapproval_large_svalue
+				}
+				approval_effect = {
+					PARTY = traditionalist_party
+					VALUE = party_disapproval_large_svalue
+				}
+			}
+		}
+	}
+}
+
+annexationaction = {
+	effect = {
+	}
+}
+
+demand_become_subject_action = {
+	effect = {
+	}
+}
+
+guaranteeaction = {
+	effect = {
+	}
+}
+
+milaccess = {
+	effect = {
+	}
+}
+
+offermilaccess = {
+	effect = {
+	}
+}
+
+insultaction = {
+	effect = {
+	}
+}
+
+giftaction = {
+	effect = {
+	}
+}
+
+callaction = {
+	effect = {
+	}
+}
+
+aiaskaction = {
+	effect = {
+	}
+}
+
+sellprov = {
+	effect = {
+		# approval_effect = {
+			# PARTY = boni_party
+			# VALUE = party_disapproval_large_svalue
+		# }
+		# approval_effect = {
+			# PARTY = populares_party
+			# VALUE = party_disapproval_large_svalue
+		# }
+		# approval_effect = {
+			# PARTY = optimates_party
+			# VALUE = party_disapproval_large_svalue
+		# }
+		# approval_effect = {
+			# PARTY = democratic_party
+			# VALUE = party_disapproval_large_svalue
+		# }
+		# approval_effect = {
+			# PARTY = oligarchic_party
+			# VALUE = party_disapproval_large_svalue
+		# }
+		# approval_effect = {
+			# PARTY = traditionalist_party
+			# VALUE = party_disapproval_large_svalue
+		# }
+	}
+}
+
+supportrebels = {
+	effect = {
+	}
+}
+
+ransom = {
+	effect = {
+	}
+}
+
+trade_access = {
+	effect = {
+	}
+}
+
+fabricate_claim = {
+	effect = {
+
+	}
+}
+
+invite_to_defensive_league = {
+	effect = {
+	}
+}
+
+ask_to_join_defensive_league = {
+	effect = {
+	}
+}
+
+leave_defensive_league = {
+	effect = {
+	}
+}
+
+improve_relation = {
+	effect = {
+	}
+}
+
+intervene_in_war = {
+	effect = {
+		if = {
+			limit = {
+				rank >= root.rank
+			}
+			custom_tooltip = declaring_war_on_same_rank_or_higher_tt
+			approval_effect = {
+				PARTY = boni_party
+				VALUE = party_disapproval_medium_svalue
+			}
+			approval_effect = {
+				PARTY = populares_party
+				VALUE = party_approval_small_svalue
+			}
+			approval_effect = {
+				PARTY = oligarchic_party
+				VALUE = party_approval_small_svalue
+			}
+		}
+	}
+}
+
+enforce_peace = {
+	effect = {
+	}
+}
+
+threaten_war = {
+	effect = {
+	}
+}
+
+demand_access = {
+	effect = {
+	}
+}
+
+abandon_civil_war = {
+	effect = {
+	}
+}
+
+transfer_subject_action = {
+	effect = {
+	}
+}
+
+request_subject_action = {
+	effect = {
+	}
+}

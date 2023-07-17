@@ -1,0 +1,99 @@
+base_sub_window = {
+	name = "threaten_war_window"
+	parentanchor = top|left
+	size = { 530 530 }
+	position = { 700 506 }
+	widgetanchor = top|left
+	
+	blockoverride "Title_text" { text = "[ThreatenWarWindow.GetTitle]" }
+
+	scrollarea = {
+		position = { 14 51 }
+		size = { 500 290 }
+		scrollbarpolicy_horizontal = always_off
+		using = VerticalScrollAreaCutOff
+		scrollbar_vertical = {
+			using = VerticalScrollBar
+		}
+		
+		scrollwidget = {
+			dynamicgridbox = {
+				position = { 0 0 }
+				size = { 690 200 }
+				
+				
+				datamodel = "[ThreatenWarWindow.GetTargets]"
+				
+				item = {
+					margin_widget = {
+						size = { 488 38 }
+						tooltip = "[ThreatenTarget.GetInfo]"
+						list_button = {
+							size = { 100% 100% } 
+							onclick = "[ThreatenTarget.OnClick]"
+							down = "[ThreatenTarget.IsSelected]"
+						}
+						textbox = {
+							parentanchor = center
+							using = BaseFontM
+							using = Black_FontColor
+							text = "[ThreatenTarget.GetName]"
+							autoresize = yes
+						}
+					
+					}
+				
+				}
+			}
+		}
+	}
+	
+	textbox = {
+		position = { 0 353 }
+		using = BaseFontM
+		using = Black_FontColor
+		text = "[ThreatenWarWindow.GetDesc]"
+		parentanchor = hcenter
+		size = { 550 150 }
+		autoresize = yes
+		maximumsize = { 460 -1 }
+		multiline = yes
+	}
+	
+	text_button_square = {
+		size = { 200 0 }
+		position = { -14 -14 }
+		name = "accept_button"
+		blockoverride "Center_text" { text = "OK_BUTTON" }
+		blockoverride "On_click" { 
+			onclick = "[ThreatenWarWindow.OnAccept]" 
+			enabled = "[ThreatenWarWindow.HasSelectedProvince]"
+		}
+		parentanchor = bottom|right
+	}
+
+	icon = {
+		position = { 0 476 }
+		parentanchor = hcenter
+		framesize = { 46 46 }
+		size = { 41 41 }
+		texture = "gfx/interface/diplomacy/ai_accept_decline_icon.dds"
+		frame = "[ThreatenWarWindow.GetAcceptanceFrame]"
+		tooltip = "[ThreatenWarWindow.GetAcceptanceTooltip]"
+		visible = "[ThreatenWarWindow.HasSelectedProvince]"
+	}
+	
+	text_button_square = {
+		size = { 200 0 }
+		position = { 14 -14 }
+		name = "decline_button"
+		blockoverride "Center_text" { text = "CANCEL_BUTTON" }
+		blockoverride "On_click" {
+			onclick = "[ThreatenWarWindow.OnDecline]"
+		}
+		parentanchor = bottom|left
+	}
+
+
+}
+

@@ -1,0 +1,178 @@
+base_window = {
+	gfxtype = windowgfx
+	name = "ransom_prisoner_window"
+	parentanchor = top|left
+	size = { 480 410 }
+	position = { 383 469 }
+	widgetanchor = top|left
+	movable = yes
+	
+	vbox = {
+		using = MainWindowHeaderBox
+		layoutpolicy_horizontal = expanding
+		
+		blockoverride "Title_text"
+		{
+			text = "[RansomPrisonerWindow.GetTitle]"
+		}
+		blockoverride "White_buttons" 
+		{
+			
+		}
+		
+		vbox = {
+			layoutpolicy_vertical = expanding
+			layoutpolicy_horizontal = expanding
+			margin = { 12 12 }
+			scrollarea = {
+				size = { 420 180 }
+
+				scrollbarpolicy_horizontal = always_off
+				
+				scrollbar_vertical = {
+					using = VerticalScrollBar
+				}
+				
+				scrollwidget = {
+					vbox = {
+						vbox = {
+							layoutpolicy_horizontal = expanding
+							layoutpolicy_vertical = preferred
+							margin_left = 10
+							margin_right = 10
+							spacing = 2
+							
+							datamodel = "[RansomPrisonerWindow.GetPrisoners]"
+							
+							item = {
+								# SelectRansomPrisoner.GetPrisoner will give you the character in case you want to add a portrait
+								
+								widget = {	
+									tooltip = "[SelectRansomPrisoner.GetTooltip]"
+									spacing = 8
+									layoutpolicy_horizontal = expanding
+									size = { 0 30 }
+									button_radial = {
+										
+										
+										blockoverride "On_click"
+										{
+											onclick = "[SelectRansomPrisoner.OnClick]"
+											enabled = "[SelectRansomPrisoner.IsSelectable]"
+										}
+										
+										blockoverride "ShowDot"
+										{
+											trigger_when = "[SelectRansomPrisoner.IsSelected]"
+										} 
+										
+										blockoverride "HideDot" 
+										{
+											trigger_when = "[Not(SelectRansomPrisoner.IsSelected)]"
+										} 
+										
+									} 
+									textbox = {
+										text = "[SelectRansomPrisoner.GetName]"
+										using = BaseFontM
+										using = Black_FontColor
+										size = { 100% 32 }
+										using = NoninteractableBG
+										align = right|nobaseline
+										margin_right = 12
+										blockoverride "Margins" {
+											margin_left = -30
+											margin_top = 4
+											
+										}
+									}
+								}
+							}
+						}
+						vbox = {
+							layoutpolicy_horizontal = expanding
+							layoutpolicy_vertical = expanding
+						}
+					}
+				}
+			}
+			
+			textbox = {
+				margin_top = 8
+				using = BaseFontM
+				using = Black_FontColor
+				text = "[RansomPrisonerWindow.GetDesc]"
+				size = { 0 100 }
+				layoutpolicy_horizontal = expanding
+				#autoresize = yes
+				multiline = yes
+				align = top|left
+			}
+			
+			scrollbar = {
+				size = { 420 14 }
+				direction = horizontal
+				min = 0
+				max = 100
+				step = 1
+				wheelstep = 1
+				
+				onvaluechanged = "[RansomPrisonerWindow.OnPriceChanged]"
+				
+				
+				track = {
+					using = SettingsValueTrack
+				}
+
+				slider = {
+					using = SettingsValueSlider
+				}
+				
+					dec_button = {
+						using = SettingsValueDecButton
+					}
+
+					inc_button = {
+						using = SettingsValueIncButton
+					}
+			}
+			
+			hbox = {
+				layoutpolicy_horizontal = expanding
+				layoutpolicy_vertical = fixed
+				
+				text_button_square = {
+					name = "decline_button"
+					size = { 180 0 }
+					blockoverride "Center_text" { text = "CANCEL_BUTTON" }
+					blockoverride "On_click"
+					{
+						onclick = "[RansomPrisonerWindow.OnDecline]"
+					}
+				}
+				
+				icon = {
+					framesize = { 46 46 }
+					size = { 41 41 }
+					texture = "gfx/interface/diplomacy/ai_accept_decline_icon.dds"
+					frame = "[RansomPrisonerWindow.GetAcceptanceFrame]"
+					tooltip = "[RansomPrisonerWindow.GetAcceptanceTooltip]"
+				}
+				
+				text_button_square = {
+					name = "accept_button"
+					size = { 180 0 }
+					blockoverride "Center_text" { text = "OK_BUTTON" }
+					blockoverride "On_click"
+					{ 
+						enabled = "[RansomPrisonerWindow.CanAccept]"
+						onclick = "[RansomPrisonerWindow.OnAccept]"
+						clicksound = "event:/SFX/UI/Diplomacy/sfx_ui_diplomacy_war_declare_war"
+					}
+				}
+			}
+			
+		}
+	}
+}
+

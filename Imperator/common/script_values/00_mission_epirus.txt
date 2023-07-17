@@ -1,0 +1,716 @@
+﻿epi_mis_4_12_cus_loc_1_ongoing_svalue = {
+	value = 0
+	add = root.capital_scope.total_population
+}
+
+epi_mis_4_12_cus_loc_1_target_svalue = {
+	value = 25
+}
+
+me_epi_1_3_loyalty_current = {
+	value = 0
+	if = {
+		limit = { exists = job_holder:office_marshal }
+		job_holder:office_marshal = { add = loyalty }
+	}
+	max = me_epi_1_3_loyalty_total
+}
+
+me_epi_1_3_loyalty_total = {
+	value = 60
+}
+
+me_epi_1_5_loyalty_current = {
+	value = 0
+	if = {
+		limit = { exists = job_holder:office_steward }
+		job_holder:office_steward = { add = loyalty }
+	}
+	max = me_epi_1_5_loyalty_total
+}
+
+me_epi_1_5_loyalty_total = {
+	value = 60
+}
+
+num_of_training_camps_svalue = {
+	every_owned_province = {
+		limit = { num_of_military_building > 0 }
+		add = num_of_military_building
+		multiply = 2
+	}
+	every_owned_province = {
+		limit = { num_of_barracks_building > 0 }
+		add = num_of_barracks_building
+	}
+	max = 10
+}
+
+current_ruler_martial_svalue = {
+	add = current_ruler.martial
+	max = 10
+}
+
+current_num_of_capital_used_building_slots_svalue = {
+	value = 0
+	add = root.capital_scope.num_of_used_building_slots
+	max = current_num_of_capital_total_building_slots_svalue
+}
+
+current_num_of_capital_total_building_slots_svalue = {
+	value = 0
+	add = root.capital_scope.num_of_total_building_slots
+	
+}
+
+me_epi_16_province_count_svalue = {
+	c:TLN = {
+        every_owned_province = {
+            limit = {
+	            OR = {
+	                province_id = 422
+	                province_id = 455
+	                province_id = 1445
+	                province_id = 3192
+	                province_id = 467
+	                province_id = 464
+	                province_id = 421
+	            }
+	        }
+	        add = 1
+        }
+    }
+}
+
+me_epi_brt_lca_land_svalue = {
+	if = {
+		limit = {
+			c:BRT = { has_land = yes }
+		}
+		c:BRT = {
+        	every_owned_province = { add = 1 }
+        }
+    }
+    if = {
+		limit = {
+			c:LCA = { has_land = yes }
+		}
+		c:LCA = {
+        	every_owned_province = { add = 1 }
+        }
+    }
+}
+
+epi_mis_2_8_1_current = {
+	value = 0
+	if = {
+		limit = {
+			scope:me_epirus_scope = {
+				num_of_unit_type = { type = trireme value > 0 }
+			}
+		}
+		scope:me_epirus_scope = {
+			every_unit = {
+				limit = { 
+					is_navy = yes 
+					any_sub_unit = { sub_unit_type = trireme }
+				}
+				every_sub_unit = {
+					limit = { sub_unit_type = trireme }
+					add = 1
+				}
+			}
+		}
+	}
+	max = epi_mis_2_8_1_target
+}
+
+epi_mis_2_8_1_target = { value = 8 }
+
+epi_mis_2_8_2_current = {
+	value = 0
+	if = {
+		limit = {
+			scope:me_epirus_scope = {
+				num_of_unit_type = { type = tetrere value > 0 }
+			}
+		}
+		scope:me_epirus_scope = {
+			every_unit = {
+				limit = { 
+					is_navy = yes 
+					any_sub_unit = { sub_unit_type = tetrere }
+				}
+				every_sub_unit = {
+					limit = { sub_unit_type = tetrere }
+					add = 1
+				}
+			}
+		}
+	}
+	max = epi_mis_2_8_2_target
+}
+
+epi_mis_2_8_2_target = { value = 4 }
+
+epi_mis_2_8_3_current = {
+	value = 0
+	if = {
+		limit = {
+			scope:me_epirus_scope = {
+				num_of_unit_type = { type = hexere value > 0 }
+			}
+		}
+		scope:me_epirus_scope = {
+			every_unit = {
+				limit = { 
+					is_navy = yes 
+					any_sub_unit = { sub_unit_type = hexere }
+				}
+				every_sub_unit = {
+					limit = { sub_unit_type = hexere }
+					add = 1
+				}
+			}
+		}
+	}
+	max = epi_mis_2_8_3_target
+}
+
+epi_mis_2_8_3_target = { value = 2 }
+
+epi_mis_2_8_4_current = {
+	value = 0
+	if = {
+		limit = { num_of_ships > 0 }
+		scope:me_epirus_scope = {
+			every_unit = {
+				limit = { is_navy = yes }
+				every_sub_unit = { add = 1 }
+			}
+		}
+	}
+	max = epi_mis_2_8_4_target
+}
+
+epi_mis_2_8_4_target = { value = 20 }
+
+epi_mis_2_12_current = {
+	value = 0
+	if = {
+		limit = { 
+			scope:me_epirus_scope = {
+				any_owned_province = { is_in_region = magna_graecia_region }
+			}
+		}
+		scope:me_epirus_scope = {
+			every_owned_province = {
+				limit = { is_in_region = magna_graecia_region }
+				add = 1
+			}
+		}
+	}
+	if = {
+		limit = { 
+			scope:me_epirus_scope = {
+				any_subject = {
+					any_owned_province = { is_in_region = magna_graecia_region }
+				}
+			}
+		}
+		scope:me_epirus_scope = {
+			every_subject = {
+				limit = {
+					any_owned_province = { is_in_region = magna_graecia_region }
+				}
+				every_owned_province = {
+					limit = { is_in_region = magna_graecia_region }
+					add = 1
+				}
+			}
+		}
+	}
+	max = epi_mis_2_12_target
+}
+
+epi_mis_2_12_target = { value = 5 }
+
+epirus_2_magna_7_svalue = {
+	if = {
+		limit = {
+			any_owned_province = { is_in_region = africa_region }
+		}
+		every_owned_province = {
+			limit = { is_in_region = africa_region }
+			add = 1
+		}
+	}
+	max = epirus_2_magna_7_target_svalue
+}
+
+epirus_2_magna_7_target_svalue = { value = 5 }
+
+epirus_2_magna_9_svalue = {
+	if = {
+		limit = {
+			any_owned_province = { 
+				is_in_region = magna_graecia_region
+				NOR = { 
+					is_in_area = syracuse_area
+					is_in_area = west_sicily_area
+					is_in_area = east_sicily_area
+				}
+			}
+		}
+		every_owned_province = {
+			limit = { 
+				is_in_region = magna_graecia_region
+				NOR = { 
+					is_in_area = syracuse_area
+					is_in_area = west_sicily_area
+					is_in_area = east_sicily_area
+				}
+			}
+			add = 1
+		}
+	}
+	if = {
+		limit = {
+			any_subject = {
+				country_culture_group = hellenic
+				any_owned_province = {
+					is_in_region = magna_graecia_region
+					NOR = { 
+						is_in_area = syracuse_area
+						is_in_area = west_sicily_area
+						is_in_area = east_sicily_area
+					}
+				}
+			}
+		}
+		every_subject = {
+			limit = {
+				country_culture_group = hellenic
+				any_owned_province = {
+					is_in_region = magna_graecia_region
+					NOR = { 
+						is_in_area = syracuse_area
+						is_in_area = west_sicily_area
+						is_in_area = east_sicily_area
+					}
+				}
+			}
+			every_owned_province = {
+				limit = { 
+					is_in_region = magna_graecia_region
+					NOR = { 
+						is_in_area = syracuse_area
+						is_in_area = west_sicily_area
+						is_in_area = east_sicily_area
+					}
+				}
+				add = 1
+			}
+		}
+	}
+	max = epirus_2_magna_9_target_svalue
+}
+
+epirus_2_magna_9_target_svalue = { value = 10 }
+
+me_epi_2_4_svalue = {
+	if = {
+		limit = {
+			any_owned_province = { is_in_region = magna_graecia_region }
+		}
+		every_owned_province = {
+			limit = { 
+				is_in_region = magna_graecia_region
+				NOR = { 
+					is_in_area = syracuse_area
+					is_in_area = west_sicily_area
+					is_in_area = east_sicily_area
+				}
+			}
+			add = 1
+		}
+	}
+	if = {
+		limit = {
+			any_subject = {
+				country_culture_group = hellenic
+				any_owned_province = {
+					is_in_region = magna_graecia_region
+					NOR = { 
+						is_in_area = syracuse_area
+						is_in_area = west_sicily_area
+						is_in_area = east_sicily_area
+					}
+				}
+			}
+		}
+		every_subject = {
+			limit = {
+				country_culture_group = hellenic
+				any_owned_province = {
+					is_in_region = magna_graecia_region
+					NOR = { 
+						is_in_area = syracuse_area
+						is_in_area = west_sicily_area
+						is_in_area = east_sicily_area
+					}
+				}
+			}
+			every_owned_province = {
+				limit = { 
+					is_in_region = magna_graecia_region
+					NOR = { 
+						is_in_area = syracuse_area
+						is_in_area = west_sicily_area
+						is_in_area = east_sicily_area
+					}
+				}
+				add = 1
+			}
+		}
+	}
+	max = me_epi_2_4_target_svalue
+}
+
+me_epi_2_4_target_svalue = { value = 20 }
+
+me_epi_2_4_2_svalue = {
+	region:magna_graecia_region = {
+		every_region_province = {
+			limit = {
+				exists = scope:me_epirus_scope
+				AND = {
+					has_owner = yes
+					OR = {
+						owner = scope:me_epirus_scope
+						owner = {
+							is_subject_of = scope:me_epirus_scope 
+							country_culture_group = hellenic
+						}
+					}
+				}
+				OR = {
+					province_id = 78
+					province_id = 56
+					province_id = 55
+					province_id = 54
+					province_id = 38
+					province_id = 52
+					province_id = 75
+					province_id = 12
+					province_id = 63
+				}
+			}
+			add = 1
+		}
+	}
+	max = me_epi_2_4_2_target_svalue
+}
+
+me_epi_2_4_2_target_svalue = { value = 6 }
+
+me_epi_2_4_2_svalue = {
+	region:magna_graecia_region = {
+		every_region_province = {
+			limit = {
+				exists = scope:me_epirus_scope
+				has_owner = yes
+				OR = {
+					owner = scope:me_epirus_scope
+					owner = {
+						is_subject_of = scope:me_epirus_scope 
+						country_culture_group = hellenic
+					}
+				}
+				OR = {
+					province_id = 78
+					province_id = 56
+					province_id = 55
+					province_id = 54
+					province_id = 38
+					province_id = 52
+					province_id = 75
+					province_id = 12
+					province_id = 63
+				}
+			}
+			add = 1
+		}
+	}
+	max = me_epi_2_4_2_target_svalue
+}
+
+me_epi_2_4_2_target_svalue = { value = 6 }
+
+me_epi_2_14_svalue = {
+	region:magna_graecia_region = {
+		every_region_province = {
+			limit = {
+				has_owner = yes
+				OR = {
+					owner = root
+					owner = {
+						is_subject_of = root 
+						country_culture_group = hellenic
+					}
+				}
+				OR = {
+					province_id = 84
+					province_id = 82
+					province_id = 80
+					province_id = 86
+					province_id = 96
+					province_id = 97
+					province_id = 91
+					province_id = 93
+					province_id = 92
+				}
+			}
+			add = 1
+		}
+	}
+	max = me_epi_2_14_target_svalue
+}
+
+me_epi_2_14_target_svalue = { value = 6 }
+
+me_epi_2_10_svalue = {
+	region:magna_graecia_region = {
+		every_region_province = {
+			limit = {
+				has_owner = yes
+				OR = {
+					owner = root
+					owner = {
+						is_subject_of = root 
+						country_culture_group = hellenic
+					}
+				}
+				OR = {
+					province_id = 76
+					province_id = 54
+					province_id = 38
+				}
+			}
+			add = 1
+		}
+	}
+	max = me_epi_2_10_target_svalue
+}
+
+me_epi_2_10_target_svalue = { value = 3 }
+
+epirus_2_magna_9_list_svalue = {
+	every_in_list = {
+		list = epirus_2_magna_9_list
+		add = 1
+	}
+}
+
+me_epi_2_11_svalue = {
+	if = {
+		limit = {
+			any_owned_province = {
+				is_in_region = magna_graecia_region
+				NOR = {
+					is_in_area = syracuse_area
+					is_in_area = east_sicily_area
+					is_in_area = west_sicily_area
+				}
+			}
+		}
+		every_owned_province = {
+			limit = {
+				is_in_region = magna_graecia_region
+				NOR = {
+					is_in_area = syracuse_area
+					is_in_area = east_sicily_area
+					is_in_area = west_sicily_area
+				}
+			}
+			add = 1
+		}
+	}
+	if = {
+		limit = {
+			any_subject = {
+				country_culture_group = hellenic
+				any_owned_province = {
+					is_in_region = magna_graecia_region
+					NOR = {
+						is_in_area = syracuse_area
+						is_in_area = east_sicily_area
+						is_in_area = west_sicily_area
+					}
+				}
+			}
+		}
+		every_subject = {
+			limit = {
+				country_culture_group = hellenic
+				any_owned_province = {
+					is_in_region = magna_graecia_region
+					NOR = {
+						is_in_area = syracuse_area
+						is_in_area = east_sicily_area
+						is_in_area = west_sicily_area
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					is_in_region = magna_graecia_region
+					NOR = {
+						is_in_area = syracuse_area
+						is_in_area = east_sicily_area
+						is_in_area = west_sicily_area
+					}
+				}
+				add = 1
+			}
+		}
+	}
+	max = me_epi_2_11_target_svalue
+}
+
+me_epi_2_11_target_svalue = { value = 40 }
+
+epi_mis_3_12_cus_loc_ongoing_svalue = {
+	value = 0
+	every_owned_province = {
+		limit = {
+			OR = {
+				province_id = 462
+				province_id = 457
+				province_id = 456
+				province_id = 7803
+				province_id = 463
+				province_id = 459
+				province_id = 461
+			}
+		}
+		add = 1
+	}
+	every_subject = {
+		limit = {
+			any_owned_province = {
+				OR = {
+					province_id = 462
+					province_id = 457
+					province_id = 456
+					province_id = 7803
+					province_id = 463
+					province_id = 459
+					province_id = 461
+				}
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					province_id = 462
+					province_id = 457
+					province_id = 456
+					province_id = 7803
+					province_id = 463
+					province_id = 459
+					province_id = 461
+				}
+			}
+			add = 1
+		}
+	}
+	max = epi_mis_3_12_cus_loc_target_svalue
+}
+
+epi_mis_3_12_cus_loc_target_svalue = { value = 7 }
+
+epirus_3_greece_3_svalue = {
+	every_owned_province = {
+		limit = {
+			is_in_region = greece_region
+			NOR = {
+				is_in_area = epirus_area
+				is_in_area = aetolia_area
+				is_in_area = crete_area
+			}
+		}
+		add = 1
+	}
+	every_subject = {
+		limit = {
+			any_owned_province = {
+				is_in_region = greece_region
+				NOR = {
+					is_in_area = epirus_area
+					is_in_area = aetolia_area
+					is_in_area = crete_area
+				}
+			}
+		}
+		every_owned_province = {
+			limit = {
+				is_in_region = greece_region
+				NOR = {
+					is_in_area = epirus_area
+					is_in_area = aetolia_area
+					is_in_area = crete_area
+				}
+			}
+			add = 1
+		}
+	}
+}
+
+epirus_3_greece_11_svalue = {
+	region:greece_region = {
+		every_region_province = {
+			limit = {
+				has_owner = yes
+				OR = {
+					owner = scope:me_epirus_scope
+					owner = { 
+						is_subject_of = scope:me_epirus_scope
+						country_culture_group = hellenic
+					}
+				}
+			}
+			add = 1
+		}
+	}
+	max = epirus_3_greece_11_target_svalue
+}
+
+epirus_3_greece_11_target_svalue = { value = 50 }
+
+epirus_3_3_svalue = {
+	value = 1
+	every_country_state = {
+        limit = {
+            any_state_province = {
+                OR = {
+                    is_in_region = greece_region
+                    is_in_region = magna_graecia_region
+                    NOR = { is_in_area = epirus_area }
+                }
+            }
+        }
+        add = 0.25
+    }
+    every_subject = {
+        limit = {
+            NOR = { 
+                is_subject_type = client_state
+                is_subject_type = tributary
+            }
+            country_culture_group = hellenic
+        }
+        add = 0.5
+    }
+    max = 15
+}

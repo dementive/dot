@@ -1,0 +1,15 @@
+﻿#Defend borders unit objective.
+
+objective_defend_borders = {
+	allow = {
+		is_army = yes
+	}
+	
+	#No custom evaluation function.
+	mode = none #none/add/replace
+	
+	#Custom evaluation function. Unit scope. Use scope:province to access the province being evaluated.
+	#Negative => better, positive => worse. If total sum exceeds 1 million unit will not go there. Beware fixed point overflow at 2 million...
+	weight = {
+	}
+}

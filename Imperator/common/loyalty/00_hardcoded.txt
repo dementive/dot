@@ -1,0 +1,128 @@
+﻿########################################
+# These are hardcoded, removing may cause problems..
+########################################
+
+########################################
+# Static Checks
+########################################
+loyalty_base = {
+	value = 55
+}
+
+loyalty_current_ruler = {
+	value = 100
+}
+
+loyalty_mercenary = {
+	value = 100
+}
+
+loyalty_senate_decision_fallback = {
+	value = 1
+}
+
+# Applied if character's faction approval > 50 ( values are what you get at full effect - 0% approval )
+loyalty_from_high_party_approval = {
+	value = 5
+}
+
+# Applied if character's faction approval < 50 ( values are what you get at full effect - 0% approval )
+loyalty_from_low_party_approval = {
+	value = -15
+}
+
+loyalty_from_power_base = {
+	value = -0.55		#multiplied with powerbase
+}
+
+loyalty_scaled_by_powerbase_of_supporters = {
+	value = -0.18 #multiplied with powerbase
+}
+
+loyalty_non_loyal_cohorts = {
+	value = 15		#scaled by fraction of army
+}
+
+loyalty_same_party_as_ruler = { #Replaced by faction approval loyalty
+	value = 0
+}
+loyalty_same_party_as_co_ruler_loyal = {
+	value = 5
+}
+
+loyalty_same_party_as_co_ruler_disloyal = {
+	value = -10
+}
+
+loyalty_not_from_ruler_party = {  #Replaced by faction approval loyalty
+	value = 0
+}
+
+loyalty_friend_of_ruler = {
+	value = 15
+}
+
+loyalty_rival_of_ruler = {
+	value = -10
+}
+
+loyalty_rival_of_ruler_rival = {
+	value = 5
+}
+
+loyalty_friend_of_ruler_rival = {
+	value = 8
+}
+
+loyalty_with_foreign_ruler_friend = {
+	value = -5
+}
+
+loyalty_scorned_family = {
+	value = -5
+}
+
+loyalty_grateful_family = {
+	value = 15
+}
+
+# Applies for the second and third in line of succession in monarchies
+loyalty_pretender_modifier = {
+	value = -10
+}
+
+loyalty_primary_heir_modifier = {
+	value = 20
+}
+
+loyalty_family_married_to_ruler_or_heir = {
+	value = 10
+}
+
+loyalty_not_parent_of_primary_heir = {
+	value = -15
+}
+loyalty_character_culture_happiness = { #Character loyalty is scaled by the culture happiness of that culture 
+	value = 10
+}
+
+loyalty_dead = {
+	value = 0
+}
+
+loyalty_clan_chief_no_levy = {
+	value = -8
+}
+
+########################################
+# Added from Actions
+########################################
+loyalty_started_civil_war = {
+	value = 100
+	yearly_decay = 5
+}
+
+loyalty_civil_war_loyalist= {
+	value = 20
+	yearly_decay = 1
+}

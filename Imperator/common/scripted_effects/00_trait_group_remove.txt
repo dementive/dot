@@ -1,0 +1,41 @@
+﻿## cs_ denotes country scope, default is character scope
+
+remove_illness_trait_effect = {
+	if = {
+		limit = {
+			has_trait = limp
+		}
+		remove_trait = limp
+	}
+	else_if = {
+		limit = {
+			has_trait = plague
+		}
+		remove_trait = plague
+	}
+	else_if = {
+		limit = {
+			has_trait = leper
+		}
+		remove_trait = leper
+	}
+	else_if = {
+		limit = {
+			has_trait = pneumonia
+		}
+		remove_trait = pneumonia
+	}
+	else_if = {
+		limit = {
+			has_trait = schizophrenic
+		}
+		remove_trait = schizophrenic
+	}
+	else_if = {
+		limit = {
+			has_trait = wounded
+		}
+		remove_trait = wounded
+	}
+	## Can't cure the rest.
+}

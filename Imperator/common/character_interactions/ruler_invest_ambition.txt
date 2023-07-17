@@ -1,0 +1,54 @@
+﻿ruler_invest_ambition = {
+
+	on_other_nation = no
+	on_own_nation = yes
+	
+	sound = "event:/SFX/UI/Character/Unique/sfx_ui_character_bribe"
+	
+	potential_trigger = {
+		hidden:scope:target = {
+			employer = scope:actor
+			is_alive = yes
+			is_ruler = yes
+			is_mercenary = no
+			NOT = { employer = { tag = REB } }
+			NOT = { employer = { tag = BAR } }
+		}
+		
+	}
+	
+	allowed_trigger = {
+		scope:target = {
+			trigger_if = { 
+				limit = { is_adult = no }
+				is_adult = yes
+			}
+			corruption <= 90
+			trigger_if = {
+				limit = {
+					has_ambition = scheme_ruler_invest
+				}
+				custom_tooltip = {
+					text = "scheme_ruler_invest_has_tt"
+					NOT = {
+						has_ambition = scheme_ruler_invest
+					}
+				}
+			}
+		}
+	}
+	
+	effect = {
+		scope:target = {
+			clear_ambition_effect_ci = yes
+			set_variable = {
+				name = ongoing_scheme_target
+				value = scope:target
+				days = 770
+			}
+			set_ambition = scheme_ruler_invest
+		}
+		custom_tooltip = "scheme_ruler_invest_potential_rewards_tt"
+	}
+	
+}	

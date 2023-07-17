@@ -1,0 +1,515 @@
+﻿### Sea ###
+
+egypt_mission_1_sea_task_1_trade_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_1_sea_task_1_trade_counter_1
+		trigger = {
+			egypt_mission_1_sea_task_1_current_trade < egypt_mission_1_sea_task_1_trade_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_1_sea_task_1_trade_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_1_sea_task_1_foundry_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_1_sea_task_1_foundry_counter_1
+		trigger = {
+			egypt_mission_1_sea_task_1_foundry_current < egypt_mission_1_sea_task_1_foundry_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_1_sea_task_1_foundry_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_1_sea_task_2_pirates_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_1_sea_task_2_pirates_counter_1
+		trigger = {
+			egypt_mission_1_sea_task_2_pirates_current > egypt_mission_1_sea_task_2_pirates_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_1_sea_task_2_pirates_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_1_sea_task_4_ship_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_1_sea_task_4_ship_counter_1
+		trigger = {
+			egypt_mission_1_sea_task_4_ship_current < egypt_mission_1_sea_task_4_ship_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_1_sea_task_4_ship_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_1_sea_task_4_galley_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_1_sea_task_4_galley_counter_1
+		trigger = {
+			egypt_mission_1_sea_task_4_galley_current < egypt_mission_1_sea_task_4_galley_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_1_sea_task_4_galley_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_1_sea_task_5_province_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_1_sea_task_5_province_counter_1
+		trigger = {
+			egypt_mission_1_sea_task_5_province_current > egypt_mission_1_sea_task_5_province_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_1_sea_task_5_province_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_1_sea_task_5_area_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_1_sea_task_5_area_counter_1
+		trigger = {
+			egypt_mission_1_sea_task_5_area_current > egypt_mission_1_sea_task_5_area_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_1_sea_task_5_area_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_1_sea_task_12_7902_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_1_sea_task_12_7902_counter_1
+		trigger = {
+			egypt_mission_1_sea_task_12_7902_current < egypt_mission_1_sea_task_12_7902_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_1_sea_task_12_7902_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_1_sea_task_12_442_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_1_sea_task_12_442_counter_1
+		trigger = {
+			egypt_mission_1_sea_task_12_442_current < egypt_mission_1_sea_task_12_442_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_1_sea_task_12_442_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_1_sea_task_12_451_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_1_sea_task_12_451_counter_1
+		trigger = {
+			egypt_mission_1_sea_task_12_451_current < egypt_mission_1_sea_task_12_451_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_1_sea_task_12_451_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_1_sea_task_13_diadochi_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_1_sea_task_13_diadochi_counter_1
+		trigger = {
+			egypt_mission_1_sea_task_13_diadochi_current > egypt_mission_1_sea_task_13_diadochi_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_1_sea_task_13_diadochi_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+### Pharaoh ###
+
+egypt_mission_2_pharaoh_task_2_farm_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_2_pharaoh_task_2_farm_counter_1
+		trigger = {
+			egypt_mission_2_pharaoh_task_2_farm_current < egypt_mission_2_pharaoh_task_2_farm_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_2_pharaoh_task_2_farm_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_2_pharaoh_task_2_slave_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_2_pharaoh_task_2_slave_counter_1
+		trigger = {
+			egypt_mission_2_pharaoh_task_2_slave_current < egypt_mission_2_pharaoh_task_2_slave_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_2_pharaoh_task_2_slave_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_2_pharaoh_task_3_commerce_building_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_2_pharaoh_task_3_commerce_building_counter_1
+		trigger = {
+			egypt_mission_2_pharaoh_task_3_current_commerce_building < egypt_mission_2_pharaoh_task_3_total_commerce_building
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_2_pharaoh_task_3_commerce_building_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_2_pharaoh_task_3_town_hall_building_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_2_pharaoh_task_3_town_hall_building_counter_1
+		trigger = {
+			egypt_mission_2_pharaoh_task_3_current_town_hall_building < egypt_mission_2_pharaoh_task_3_total_town_hall_building
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_2_pharaoh_task_3_town_hall_building_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_2_pharaoh_task_7_trade_routes_counter_wda = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_2_pharaoh_task_7_trade_routes_counter_wda_1
+		trigger = {
+			egypt_mission_2_pharaoh_task_7_current_trade_routes_wda < egypt_mission_2_pharaoh_task_7_total_trade_routes_wda
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_2_pharaoh_task_7_trade_routes_counter_wda_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_2_pharaoh_task_7_trade_routes_counter_cda = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_2_pharaoh_task_7_trade_routes_counter_cda_1
+		trigger = {
+			egypt_mission_2_pharaoh_task_7_current_trade_routes_cda < egypt_mission_2_pharaoh_task_7_total_trade_routes_cda
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_2_pharaoh_task_7_trade_routes_counter_cda_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_2_pharaoh_task_8_luxor_commerce_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_2_pharaoh_task_8_luxor_commerce_counter_1
+		trigger = {
+			egypt_mission_2_pharaoh_task_8_luxor_commerce_current < egypt_mission_2_pharaoh_task_8_luxor_commerce_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_2_pharaoh_task_8_luxor_commerce_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_2_pharaoh_task_8_luxor_hall_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_2_pharaoh_task_8_luxor_hall_counter_1
+		trigger = {
+			egypt_mission_2_pharaoh_task_8_luxor_hall_current < egypt_mission_2_pharaoh_task_8_luxor_hall_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_2_pharaoh_task_8_luxor_hall_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_2_pharaoh_task_8_aswan_commerce_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_2_pharaoh_task_8_aswan_commerce_counter_1
+		trigger = {
+			egypt_mission_2_pharaoh_task_8_aswan_commerce_current < egypt_mission_2_pharaoh_task_8_aswan_commerce_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_2_pharaoh_task_8_aswan_commerce_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_2_pharaoh_task_8_aswan_hall_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_2_pharaoh_task_8_aswan_hall_counter_1
+		trigger = {
+			egypt_mission_2_pharaoh_task_8_aswan_hall_current < egypt_mission_2_pharaoh_task_8_aswan_hall_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_2_pharaoh_task_8_aswan_hall_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+get_ptolemaia_count_suffix = {
+	type = country
+
+	text = {
+		localization_key = ptolemaia_suffix_1
+		trigger = { ptolemaia_divided_floor_svalue = ptolemaia_divided_1_svalue }
+	}
+	text = {
+		localization_key = ptolemaia_suffix_2
+		trigger = { ptolemaia_divided_floor_svalue = ptolemaia_divided_2_svalue }
+	}
+	text = {
+		localization_key = ptolemaia_suffix_3
+		trigger = { ptolemaia_divided_floor_svalue = ptolemaia_divided_3_svalue }
+	}
+	text = {
+		localization_key = ptolemaia_suffix_0
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+### Empire ###
+
+egypt_mission_3_empire_task_1_port_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_3_empire_task_1_port_counter_1
+		trigger = {
+			egypt_mission_3_empire_task_1_port_current < egypt_mission_3_empire_task_1_port_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_3_empire_task_1_port_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+### Border ###
+egypt_mission_4_border_task_3_fortress_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_4_border_task_3_fortress_counter_1
+		trigger = {
+			egypt_mission_4_border_task_3_fortress_current < egypt_mission_4_border_task_3_fortress_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_4_border_task_3_fortress_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_4_border_task_5_s_trade_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_4_border_task_5_s_trade_counter_1
+		trigger = {
+			egypt_mission_4_border_task_5_s_trade_current < egypt_mission_4_border_task_5_s_trade_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_4_border_task_5_s_trade_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_4_border_task_5_n_trade_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_4_border_task_5_n_trade_counter_1
+		trigger = {
+			egypt_mission_4_border_task_5_n_trade_current < egypt_mission_4_border_task_5_n_trade_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_4_border_task_5_n_trade_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_4_border_task_8_pirates_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_4_border_task_8_pirates_counter_1
+		trigger = {
+			egypt_mission_4_border_task_8_pirates_current > egypt_mission_4_border_task_8_pirates_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_4_border_task_8_pirates_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+egypt_mission_4_border_task_10_port_counter = {
+	type = country
+
+	text = {
+		localization_key = egypt_mission_4_border_task_10_port_counter_1
+		trigger = {
+			egypt_mission_4_border_task_10_port_current < egypt_mission_4_border_task_10_port_total
+		}
+	}
+
+	text = {
+		localization_key = egypt_mission_4_border_task_10_port_counter_2
+		trigger = {
+			always = yes
+		}
+	}
+}

@@ -1,0 +1,126 @@
+base_sub_window = { 
+	name = "great_work_select_leader_window"
+	size = { 680 598 }
+	parentanchor = center
+	blockoverride "Title_text" 
+	{ 
+	text = "GREAT_WORK_SELECT_LEADER_HEADER"
+	}
+	blockoverride "White_buttons" 
+	{
+		button_close = {
+			shortcut = "close_window"
+			onclick = "[GreatWorkSelectLeaderWindow.Close]"
+			tooltip = "CLOSE"
+		}
+	}	
+
+	text_button_square = {
+		parentanchor = bottom|hcenter
+		size = { 300 28 }
+		position = { 0 -16 }
+		tooltip = "[GreatWorkSelectLeaderWindow.GetDetachLeaderTooltip]"
+		blockoverride "Center_text" 
+		{ 
+			text = "DETACH_CHARACTER"
+		}
+		
+		blockoverride "On_click" 
+		{ 
+			onclick = "[GreatWorkSelectLeaderWindow.DetachLeader]"
+			enabled = "[GreatWorkSelectLeaderWindow.CanDetachLeader]"
+		}
+		
+	}
+
+	flowcontainer = {
+		position = { 18 42 }
+		ignoreinvisible = yes
+		spacing = 4
+		textbox = {
+			using = BaseFontS
+			using = Black_FontColor
+			text = "SORT_BY_SITES"
+			max_width = 174
+			fontsize_min = 15
+			autoresize = yes
+			align = left
+			elide = right
+			parentanchor = vcenter
+		}
+
+		text_button_sort = {
+			size = { 60 0 }
+			tooltip = CHARACTER_VIEW_SORT_BY_FINESS_TOOLTIP
+			blockoverride "Button_text" { visible = no }
+			blockoverride "Icon" { 
+				using = icon_civic
+				size = { 34 34 }
+			}
+			blockoverride "On_click" { onclick = "[GreatWorkSelectLeaderWindow.Sort('finesse')]" }
+			blockoverride "DownState" { down = "[GreatWorkSelectLeaderWindow.IsSorted('finesse')]" }
+		}
+
+		text_button_sort = {
+			size = { 60 0 }
+			tooltip = CHARACTER_VIEW_SORT_BY_POPULARITY_TOOLTIP
+			blockoverride "Button_text" { visible = no }
+			blockoverride "Icon" { 
+				using = icon_popularity
+				size = { 34 34 }
+			}
+			blockoverride "On_click" { onclick = "[GreatWorkSelectLeaderWindow.Sort('popularity')]" }
+			blockoverride "DownState" { down = "[GreatWorkSelectLeaderWindow.IsSorted('popularity')]" }
+		}
+		text_button_sort = {
+			size = { 60 0 }
+			tooltip = CHARACTER_VIEW_SORT_BY_LOYALTY_TOOLTIP
+			blockoverride "Button_text" { visible = no }
+			blockoverride "Icon" { 
+				using = icon_loyalty
+				size = { 34 34 }
+			}
+			blockoverride "On_click" { onclick = "[GreatWorkSelectLeaderWindow.Sort('loyalty')]" }
+			blockoverride "DownState" { down = "[GreatWorkSelectLeaderWindow.IsSorted('loyalty')]" }
+		}
+		
+		text_button_sort = {
+			size = { 60 0 }
+			tooltip = CHARACTER_VIEW_SORT_BY_CORRUPTION_TOOLTIP
+			blockoverride "Button_text" { visible = no }
+			blockoverride "Icon" { 
+				using = icon_corruption
+				size = { 34 34 }
+			}
+			blockoverride "On_click" { onclick = "[GreatWorkSelectLeaderWindow.Sort('corruption')]" }
+			blockoverride "DownState" { down = "[GreatWorkSelectLeaderWindow.IsSorted('corruption')]" }
+		}
+
+		text_button_sort = {
+			size = { 60 0 }
+			tooltip = CHARACTER_VIEW_SORT_BY_STATESMANSHIP_TOOLTIP
+			blockoverride "Button_text" { visible = no }
+			blockoverride "Icon" { 
+				using = icon_statesmanship
+				size = { 34 34 }
+			}
+			blockoverride "On_click" { onclick = "[GreatWorkSelectLeaderWindow.Sort('statesmanship')]" }
+			blockoverride "DownState" { down = "[GreatWorkSelectLeaderWindow.IsSorted('statesmanship')]" }
+		}
+
+		text_button_sort = {
+			size = { 60 0 }
+			tooltip = CHARACTER_VIEW_SORT_BY_AGE_TOOLTIP
+			blockoverride "Button_text" { visible = no }
+			blockoverride "Icon" { 
+				using = icon_age
+				size = { 34 34 }
+			}
+			blockoverride "On_click" { onclick = "[GreatWorkSelectLeaderWindow.Sort('age')]" }
+			blockoverride "DownState" { down = "[GreatWorkSelectLeaderWindow.IsSorted('age')]" }
+		}
+	}
+	margin_widget = {
+		using = select_character_list
+	}
+}

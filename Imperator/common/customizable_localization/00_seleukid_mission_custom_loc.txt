@@ -1,0 +1,586 @@
+﻿# 1
+
+seleukid_mission_01_babylonia_task_2_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_01_babylonia_task_2_loc_1
+		trigger = {
+			seleukid_mission_01_babylonia_task_2_current_svalue < seleukid_mission_01_babylonia_task_2_total_svalue
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_01_babylonia_task_2_loc_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+seleukid_mission_01_babylonia_task_5_seleukeia = {
+	type = country
+	text = {
+		localization_key = seleukid_mission_01_babylonia_task_5_seleukeia_1
+		trigger = {
+			seleukid_mission_01_babylonia_task_5_current_building_seleukeia < seleukid_mission_01_babylonia_task_5_total_building_seleukeia
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_01_babylonia_task_5_seleukeia_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+seleukid_mission_01_babylonia_task_5_babylonia = {
+	type = country
+	text = {
+		localization_key = seleukid_mission_01_babylonia_task_5_babylonia_1
+		trigger = {
+			seleukid_mission_01_babylonia_task_5_current_building_babylonia < seleukid_mission_01_babylonia_task_5_total_building_babylonia
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_01_babylonia_task_5_babylonia_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+seleukid_mission_01_babylonia_task_6_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_01_babylonia_task_6_loc_1
+		trigger = {
+			seleukid_mission_01_babylonia_task_6_current < seleukid_mission_01_babylonia_task_6_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_01_babylonia_task_6_loc_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+seleukid_mission_01_babylonia_task_7_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_01_babylonia_task_7_loc_1
+		trigger = {
+			seleukid_mission_01_babylonia_task_7_current < seleukid_mission_01_babylonia_task_7_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_01_babylonia_task_7_loc_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+seleukid_mission_01_babylonia_task_7_construction_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_01_babylonia_task_7_construction_loc_1
+		trigger = {
+			region:mesopotamia_region = {
+                any_region_province = {
+                    owner = root
+                    has_construction = yes
+                }
+            }
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_01_babylonia_task_7_construction_loc_2
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+seleukid_mission_01_babylonia_task_10_loc = {
+	type = province
+
+	text = {
+		localization_key = seleukid_mission_01_babylonia_task_10_loc_1
+		trigger = {
+			seleukid_mission_01_babylonia_task_10_current < seleukid_mission_01_babylonia_task_10_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_01_babylonia_task_10_loc_2
+	}
+}
+
+# 2
+seleukid_mission_02_syria_task_4_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_02_syria_task_4_loc_1
+		trigger = {
+			seleukid_mission_02_syria_task_4_current < seleukid_mission_02_syria_task_4_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_02_syria_task_4_loc_2
+	}
+}
+
+seleukid_mission_02_syria_task_6_population_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_02_syria_task_6_loc_1
+		trigger = {
+			seleukid_mission_02_syria_task_6_population_current < seleukid_mission_02_syria_task_6_population_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_02_syria_task_6_loc_2
+	}
+}
+
+seleukid_mission_02_syria_task_6_buildings_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_02_syria_task_6_buildings_loc_1
+		trigger = {
+			seleukid_mission_02_syria_task_6_buildings_current < seleukid_mission_02_syria_task_6_buildings_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_02_syria_task_6_buildings_loc_2
+	}
+}
+
+seleukid_mission_02_syria_task_6_building_check_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_02_syria_task_6_building_check_loc_1
+		trigger = {
+			p:789 = { has_construction = yes }
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_02_syria_task_6_building_check_loc_2
+	}
+}
+
+seleukid_mission_02_syria_task_7_loc = {
+	type = province
+
+	text = {
+		localization_key = seleukid_mission_02_syria_task_7_loc_1
+		trigger = {
+			exists = owner
+			owner = { NOT = { has_variable = sel_unique_mech } }
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_02_syria_task_7_loc_2
+		trigger = {
+			seleukid_mission_02_syria_task_7_current < seleukid_mission_02_syria_task_7_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_02_syria_task_7_loc_3
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+seleukid_mission_02_syria_task_7_fort_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_02_syria_task_7_fort_loc_1
+		trigger = {
+			seleukid_mission_02_syria_task_7_fort_current < seleukid_mission_02_syria_task_7_fort_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_02_syria_task_7_fort_loc_2
+	}
+}
+
+seleukid_mission_02_syria_task_10_buildings_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_02_syria_task_10_buildings_loc_1
+		trigger = {
+			seleukid_mission_02_syria_task_10_current < seleukid_mission_02_syria_task_10_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_02_syria_task_10_buildings_loc_2
+	}
+}
+
+seleukid_mission_02_syria_task_10_building_check_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_02_syria_task_10_building_check_loc_1
+		trigger = {
+			p:1880 = { has_construction = yes }
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_02_syria_task_10_building_check_loc_2
+	}
+}
+
+# 3
+seleukid_mission_03_anatolia_buildings_loc = {
+	type = province
+
+	text = {
+		localization_key = seleukid_mission_03_anatolia_buildings_loc_01
+		trigger = {
+			seleukid_mission_03_anatolia_buildings_current < seleukid_mission_03_anatolia_buildings_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_03_anatolia_buildings_loc_02
+	}
+}
+
+seleukid_mission_03_anatolia_buildings_check_loc = {
+	type = province
+
+	text = {
+		localization_key = seleukid_mission_03_anatolia_buildings_check_loc_01
+		trigger = {
+			has_construction = yes
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_03_anatolia_buildings_check_loc_02
+	}
+}
+
+seleukid_mission_03_anatolia_province_loyalty_loc = {
+	type = province
+
+	text = {
+		localization_key = seleukid_mission_03_anatolia_province_loyalty_01
+		trigger = {
+			seleukid_mission_03_anatolia_province_loyalty_current < seleukid_mission_03_anatolia_province_loyalty_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_03_anatolia_province_loyalty_02
+	}
+}
+
+seleukid_mission_03_anatolia_task_4_forts_trigger_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_03_anatolia_task_4_forts_trigger_loc_01
+		trigger = {
+			seleukid_mission_03_anatolia_task_4_fort_current < seleukid_mission_03_anatolia_task_4_fort_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_03_anatolia_task_4_forts_trigger_loc_02
+	}
+}
+
+seleukid_mission_03_anatolia_task_4_cities_trigger_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_03_anatolia_task_4_cities_trigger_loc_01
+		trigger = {
+			seleukid_mission_03_anatolia_task_4_cities_current < seleukid_mission_03_anatolia_task_4_cities_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_03_anatolia_task_4_cities_trigger_loc_02
+	}
+}
+
+seleukid_mission_03_anatolia_task_9_forts_trigger_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_03_anatolia_task_9_forts_trigger_loc_01
+		trigger = {
+			seleukid_mission_03_anatolia_task_9_fort_current < seleukid_mission_03_anatolia_task_9_fort_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_03_anatolia_task_9_forts_trigger_loc_02
+	}
+}
+
+seleukid_mission_03_anatolia_task_9_cities_trigger_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_03_anatolia_task_9_cities_trigger_loc_01
+		trigger = {
+			seleukid_mission_03_anatolia_task_9_cities_current < seleukid_mission_03_anatolia_task_9_cities_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_03_anatolia_task_9_cities_trigger_loc_02
+	}
+}
+
+seleukid_mission_03_anatolia_task_13_forts_trigger_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_03_anatolia_task_13_forts_trigger_loc_01
+		trigger = {
+			seleukid_mission_03_anatolia_task_13_fort_current < seleukid_mission_03_anatolia_task_13_fort_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_03_anatolia_task_13_forts_trigger_loc_02
+	}
+}
+
+seleukid_mission_03_anatolia_task_13_cities_trigger_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_03_anatolia_task_13_cities_trigger_loc_01
+		trigger = {
+			seleukid_mission_03_anatolia_task_13_cities_current < seleukid_mission_03_anatolia_task_13_cities_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_03_anatolia_task_13_cities_trigger_loc_02
+	}
+}
+
+seleukid_mission_03_anatolia_task_15_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_03_anatolia_task_15_loc_01
+		trigger = {
+			seleukid_mission_03_anatolia_task_15_current < seleukid_mission_03_anatolia_task_15_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_03_anatolia_task_15_loc_02
+	}
+}
+
+# 4 
+seleukid_mission_04_palestine_task_3_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_04_palestine_task_3_loc_01
+		trigger = {
+			seleukid_mission_04_palestine_task_3_current < seleukid_mission_04_palestine_task_3_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_04_palestine_task_3_loc_02
+	}
+}
+
+seleukid_mission_04_palestine_task_4_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_04_palestine_task_4_loc_01
+		trigger = {
+			seleukid_mission_04_palestine_task_4_current < seleukid_mission_04_palestine_task_4_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_04_palestine_task_4_loc_02
+	}
+}
+
+seleukid_mission_04_palestine_task_6_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_04_palestine_task_6_loc_01
+		trigger = {
+			seleukid_mission_04_palestine_task_6_current < seleukid_mission_04_palestine_task_6_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_04_palestine_task_6_loc_02
+	}
+}
+
+seleukid_mission_04_palestine_task_7_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_04_palestine_task_7_loc_01
+		trigger = {
+			seleukid_mission_04_palestine_task_7_current < seleukid_mission_04_palestine_task_7_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_04_palestine_task_7_loc_02
+	}
+}
+
+seleukid_mission_04_palestine_task_7_aramaic_integration_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_04_palestine_task_7_aramaic_integration_loc_01
+		trigger = {
+			NOT = {
+				any_integrated_culture = {
+					is_culture = aramaic
+				}
+			}
+			seleukid_mission_04_palestine_task_7_integration_aramaic > 0
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_04_palestine_task_7_aramaic_integration_loc_02
+	}
+}
+
+seleukid_mission_04_palestine_task_7_phoenician_integration_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_04_palestine_task_7_phoenician_integration_loc_01
+		trigger = {
+			NOT = {
+				any_integrated_culture = {
+					is_culture = phoenician
+				}
+			}
+			seleukid_mission_04_palestine_task_7_integration_phoenician > 0
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_04_palestine_task_7_phoenician_integration_loc_02
+	}
+}
+
+seleukid_mission_04_palestine_task_7_hebrew_integration_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_04_palestine_task_7_hebrew_integration_loc_01
+		trigger = {
+			NOT = {
+				any_integrated_culture = {
+					is_culture = hebrew
+				}
+			}
+			seleukid_mission_04_palestine_task_7_integration_hebrew > 0
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_04_palestine_task_7_hebrew_integration_loc_02
+	}
+}
+
+seleukid_mission_04_palestine_task_10_integration_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_04_palestine_task_10_integration_loc_01
+		trigger = {
+			NOT = {
+				any_integrated_culture = {
+					is_culture = nabatean
+				}
+			}
+			seleukid_mission_04_palestine_task_10_integration_current > 0
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_04_palestine_task_10_integration_loc_02
+	}
+}
+
+seleukid_mission_04_palestine_task_10_loc = {
+	type = country
+
+	text = {
+		localization_key = seleukid_mission_04_palestine_task_10_loc_01
+		trigger = {
+			NOT = {
+				any_subject = {
+					primary_culture = nabatean
+				}
+			}
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_04_palestine_task_10_loc_02
+		trigger = {
+			any_subject = {
+				primary_culture = nabatean
+			}
+			seleukid_mission_04_palestine_task_10_subject_current < seleukid_mission_04_palestine_task_10_subject_total
+		}
+	}
+
+	text = {
+		localization_key = seleukid_mission_04_palestine_task_10_loc_03
+		trigger = {
+			any_subject = {
+				primary_culture = nabatean
+			}
+			seleukid_mission_04_palestine_task_10_subject_current >= seleukid_mission_04_palestine_task_10_subject_total
+		}
+	}
+}

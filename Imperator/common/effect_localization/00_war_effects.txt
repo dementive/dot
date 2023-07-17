@@ -1,0 +1,17 @@
+﻿# _category = { ... } creates a new group with name category ( lead with '_' to create a group )
+# first and third indicates first person or third person, default is no or global pronoun
+# past indicates past tense, default is future/present
+# neg indicates that this is used for negative output values, ie "gain x gold" versus "lose x gold"
+# the value given to the localization of a neg version will always be positive
+
+start_war = {
+	global = START_WAR_EFFECT
+}
+
+remove_from_war = {
+	global = REMOVE_FROM_WAR_EFFECT
+}
+
+force_white_peace = {
+	global = FORCE_WHITE_PEACE_EFFECT
+}

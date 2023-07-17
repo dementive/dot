@@ -1,0 +1,10 @@
+﻿#Epirus
+loyalty_centralize_court = {
+	value = 10
+	months = 120
+}
+
+loyalty_pyrrhus_travelling = {
+	value = 40
+	months = 120
+}

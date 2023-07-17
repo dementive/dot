@@ -1,0 +1,360 @@
+####
+#### Add a dev button to open this
+####
+
+
+
+
+base_window = {
+	gfxtype = windowgfx
+	position = { 70 110 }
+	size = { 820 500 }
+	name = "ui_library"
+	visible = yes
+	top_window_header = {
+
+		blockoverride "Title_text"
+		{
+			text = "ToDo"
+		}
+
+		blockoverride "White_buttons"
+		{
+			button_back = { 
+				# ToDo: Add Click Functionality
+			}
+			
+			button_close = {
+				# ToDo: Add Click Functionality
+			}				
+		}
+	}
+
+	sub_header = {
+		position = { 20 360 }
+		size = { 300 32 }
+		
+		blockoverride "Title_text" 
+		{
+			text = "Test text"
+		}
+		
+		blockoverride "Max_text_width"
+		{
+			max_width = 208
+		}
+		
+		blockoverride "Icon_visible"
+		{
+			visible = yes
+		}
+		
+		blockoverride "Icon"
+		{
+			using = temp_icon
+		}
+	}
+	
+	sub_header_v = {
+		position = { 410 240 }
+		size = { 300 200 }
+		
+		blockoverride "Title_text" 
+		{
+			text = "Test text"
+		}
+		
+		blockoverride "Max_text_width"
+		{
+			max_width = 250
+		}
+		
+		blockoverride "Icon_visible"
+		{
+			visible = yes
+		}
+		
+		blockoverride "Icon"
+		{
+			using = temp_icon
+		}
+	}
+
+	alert = {
+		position = { 360 60 }
+		tooltip = "Test"
+	}
+	
+	alert = {
+		position = { 410 60 }
+		blockoverride "Color" { frame = 5}
+	}
+
+	alert = {
+		position = { 460 60 }
+		blockoverride "Color" { frame = 8}
+	}
+
+	alert_diplomatic = {
+		position = { 510 60 }
+	}
+	
+	
+	
+	country_flag_reworked = {
+		position = { 440 400 }
+		
+		blockoverride "Size" 
+		{
+			size = { 80 80 } 
+		}
+	}
+	
+	
+	
+	icon_button_square = {
+		position = { 560 60 }
+		#blockoverride "Icon" { }
+		#blockoverride "On_click" { }
+	}		
+	
+	flat_icon_button_square = {
+		position = { 620 60 }
+		
+		blockoverride "Icon" { texture = "gfx/interface/icons/unit_abilities/force_march.dds" }
+	}
+	
+	check_box_button = {
+		position = { 360 240 }
+		
+		blockoverride "Frame" 
+		{
+			frame = 2
+		}	
+	}
+
+
+	textbox = {
+		position = { 20 70 }
+		#size = { 80 80 }
+		maximumsize = { 300 -1 }
+		text = "1. Diplomatic Alert flag shouldn't highlight. 2. Fix checkbox Button check highlight.          3. Change the size of all flat icons like unit abilities to 50x50 from 40x40.                               4. Write doc for all the types.                                  5. Edit Idea Icons art."
+		autoresize = yes
+		using = BaseFontS
+		using = Black_FontColor
+		multiline = yes
+		
+		using = NoninteractableBG
+	}
+	
+
+
+
+
+	
+	
+	idea_tile = {
+		position = { 20 220 }
+		
+		blockoverride "Neutral_icon_bg_visible" { visible = yes }
+		
+		blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/civic.dds" }
+		
+		blockoverride "Button" 
+		{  
+			
+		}
+		
+		#blockoverride "Drop_shadow" { visible = no }
+		
+		#blockoverride "No_idea" { visible = no }
+	}
+	
+	idea_tile = {
+		position = { 100 220 }
+		
+		blockoverride "Positive_icon_bg_visible" { visible = yes }
+		
+		blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/military.dds" }
+		
+		blockoverride "Button" 
+		{  
+			
+		}
+		
+		#blockoverride "Drop_shadow" { visible = no }
+		
+		blockoverride "No_idea" { visible = no }
+	}		
+	
+	idea_tile = {
+		position = { 180 220 }
+		
+		blockoverride "Neutral_icon_bg_visible" { visible = yes }
+		
+		blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/religious.dds" }
+		
+		blockoverride "Button" 
+		{  
+			
+		}
+		
+		#blockoverride "Drop_shadow" { visible = no }
+		
+		#blockoverride "No_idea" { visible = no }
+	}
+	
+	idea_tile = {
+		position = { 260 220 }
+		
+		blockoverride "Neutral_icon_bg_visible" { visible = yes }
+		
+		blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/oratory.dds" }
+		
+		blockoverride "Button" 
+		{  
+			enabled = no 
+			# ToDo: This is not the right way to do this. This is just a visual example.
+		}
+		
+		blockoverride "Drop_shadow" { visible = no }
+		
+		blockoverride "No_idea" { visible = no }
+	}		
+	
+	
+	
+	
+	
+	
+
+	category_button_square = {
+		position = { 20 400 }
+		size = { 300 26 } 
+		
+		# ToDo: Add Click Functionality
+
+		blockoverride "Button_text" { text = "Text" }			
+	}		
+	
+	
+	
+	
+	text_button_square = {
+		name = "test_button_1"
+		position = { 20 440 }
+		size = { 360 26 }
+		
+		blockoverride "On_click" { }
+		blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/leader.dds" }
+		blockoverride "Button_text" { text = "Button Text" }
+		
+		blockoverride "Center_text" { 
+			visible = yes
+			fontsize = 22
+
+		}
+		#blockoverride "Left_text" { visible = yes }
+		#blockoverride "Center_text_and_icon" { visible = yes }
+		#blockoverride "Left_text_and_icon" { visible = yes }	
+		
+		blockoverride "Left_size_and_visibility"
+		{
+			size = { 60 26 }
+			visible = yes
+		}
+		
+		blockoverride "Left_text_and_color"
+		{
+			text = "123"
+			using = Negative_FontColor
+		}			
+		
+		blockoverride "Right_text_and_color"
+		{
+			text = "456"
+			using = Negative_FontColor
+		}			
+		
+		blockoverride "Right_size_and_visibility"
+		{
+			size = { 60 26 }
+			visible = yes
+		}
+
+	}		
+	
+	
+	
+	
+	
+	
+	scrollarea = {
+		position = { 570 340 }
+		size = { 120 140 }
+		scrollbarpolicy_horizontal = always_off
+		
+		using = VerticalScrollAreaCutOff
+
+		scrollbar_vertical = {
+			using = VerticalScrollBar
+		}
+		
+		scrollwidget = {
+			
+			flowcontainer = {		
+				direction = vertical
+				spacing = 5
+				
+				icon = {
+					size = { 50 50 }
+					using = button_tiled_texture
+					framesize = { 200 200 }
+					frame = 4
+				}
+				icon = {
+					size = { 50 50 }
+					using = button_tiled_texture
+					framesize = { 200 200 }
+					frame = 4
+				}
+				icon = {
+					size = { 50 50 }
+					using = button_tiled_texture
+					framesize = { 200 200 }
+					frame = 4
+				}
+				icon = {
+					size = { 50 50 }
+					using = button_tiled_texture
+					framesize = { 200 200 }
+					frame = 4
+				}
+			}
+		}
+	}
+	
+	
+	
+	icon_and_text = {
+		position = { 340 300 }
+		size = { 120 36 }
+		
+		blockoverride "Text"
+		{
+			align = center
+			text = "888.88%"
+		}			
+	}
+	
+	icon_and_text = {
+		position = { 340 340 }
+		size = { 220 36 }
+		
+		blockoverride "Text"
+		{
+			align = left
+			text = "lllllllllllllllllllllllllll"
+		}
+	}
+}

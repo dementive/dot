@@ -1,0 +1,444 @@
+﻿### triggered character modifiers
+
+disloyal_successor_cmod = {
+	
+	monthly_character_prominence = 0.5
+	monthly_character_popularity = 0.25
+	
+	cancellation_trigger = {
+		NOT = { has_variable = disloyal_successor_trig_mod_cooldown }
+		OR = {
+			loyalty >= 50
+			employer = {
+				has_civil_war = yes
+			}
+		}
+	}
+	
+	on_cancellation_effect = {
+		if = {
+			limit = {
+				is_general = yes
+				employer = {
+					has_civil_war = no
+				}
+			}
+			every_character_unit = { remove_unit_loyalty = yes }
+		}
+		save_scope_as = placated_pretender
+		employer = {
+			trigger_event = { id = succession_crisis.6 }
+		}
+	}
+	
+}
+
+disloyal_family_head_cmod = {
+	#character_loyalty = -15
+	monthly_character_prominence = 0.2
+	
+	cancellation_trigger = {
+		OR = {
+			loyalty >= 33
+			is_ruler = yes
+			employer = {
+				has_civil_war = yes
+			}
+		}
+	}
+	
+	on_cancellation_effect = {
+		if = {
+			limit = { has_loyalty = disloyal_family_head_cmod }
+			remove_loyalty = disloyal_family_head_cmod
+		}
+	}
+	
+}
+
+being_financially_supported = {
+	monthly_character_wealth = 50
+	
+	cancellation_trigger = {
+		OR = {
+			NOT = {
+				has_variable = being_financially_supported_var
+			}
+			NOT = {
+				exists = var:being_financially_supported_var
+			}
+			is_alive = no
+			loyalty > 50
+			prisoner = yes
+			var:being_financially_supported_var = {
+				is_alive = no
+			}
+			var:being_financially_supported_var = {
+				is_general = yes
+			}
+			var:being_financially_supported_var = {
+				is_admiral = yes
+			}
+			var:being_financially_supported_var = {
+				loyalty > 50
+			}
+			var:being_financially_supported_var = {
+				wealth <= 500
+			}
+			var:being_financially_supported_var = {
+				NOT = {
+					employer = root.employer
+				}
+			}
+			var:being_financially_supported_var = {
+				NOT = {
+					is_friend = root
+				}
+			}
+			var:being_financially_supported_var = {
+				prisoner = yes
+			}
+			var:being_financially_supported_var = {
+				is_pretender = yes
+			}
+			employer = {
+				NOT = {
+					is_monarchy = yes
+				}
+			}
+			is_pretender = no
+		}
+	}
+	
+}
+
+financially_supporting = {
+	monthly_character_wealth = -50
+	
+	cancellation_trigger = {
+		
+		OR = {
+			NOT = {
+				has_variable = financially_supporting_var
+			}
+			NOT = {
+				exists = var:financially_supporting_var
+			}
+			is_alive = no
+			loyalty > 50
+			wealth <= 500
+			prisoner = yes
+			is_pretender = yes
+			is_general = yes
+			is_admiral = yes
+			var:financially_supporting_var = {
+				is_alive = no
+			}
+			var:financially_supporting_var = {
+				prisoner = yes
+			}
+			var:financially_supporting_var = {
+				loyalty > 50
+			}
+			var:financially_supporting_var = {
+				NOT = {
+					employer = root.employer
+				}
+			}
+			var:financially_supporting_var = {
+				NOT = {
+					is_friend = root
+				}
+			}
+			employer = {
+				NOT = {
+					is_monarchy = yes
+				}
+			}
+			var:financially_supporting_var = {
+				is_pretender = no
+			}
+		}
+	
+	}
+}
+
+returned_mercenary_successor = {
+	monthly_character_prominence = 0.5
+	martial = 2
+	finesse = 2
+	monthly_character_popularity = 0.5
+	support_for_character_as_heir = 250
+	
+	cancellation_trigger = {
+		OR = {
+			is_ruler = yes
+			loyalty > 60
+		}
+	}
+	
+}
+
+inspire_disloyalty_modifier = {
+	monthly_character_wealth = 5
+	
+	cancellation_trigger = {
+		OR = {
+			is_ruler = yes
+			is_alive = no
+			trigger_if = {
+				limit = {
+					exists = employer
+					employer = {
+						has_variable = inspiring_foreign_character
+					}
+				}
+				employer = { var:inspiring_foreign_character = ROOT }
+			}
+		}
+	}
+	on_cancellation_effect = {
+		if = {
+			limit = { has_loyalty = loyalty_inspire_disloyalty }
+			remove_loyalty = loyalty_inspire_disloyalty
+		}
+		if = {
+			limit = {
+				employer = {
+					has_variable = inspiring_foreign_character
+					var:inspiring_foreign_character = ROOT
+				}
+			}
+			employer = {
+				remove_variable = inspiring_foreign_character
+			}
+		}
+	}
+	
+}
+
+exalted_clan_chief = {
+	#character_loyalty = 20
+	monthly_character_popularity = 0.05
+	
+	cancellation_trigger = {
+		is_clan_chief = no
+		is_ruler = yes
+		
+	}
+	on_cancellation_effect = {
+		if = {
+			limit = { has_loyalty = chief_exalted }
+			remove_loyalty = chief_exalted
+		}
+	}
+}
+
+insulted_clan_chief = {
+	#character_loyalty = -10
+	monthly_character_popularity = -0.02
+	
+	cancellation_trigger = {
+		is_clan_chief = no
+		is_ruler = yes
+	}
+	on_cancellation_effect = {
+		if = {
+			limit = { has_loyalty = insulted_clan_chief }
+			remove_loyalty = insulted_clan_chief
+		}
+	}
+}
+
+currently_on_trial = {
+	#character_loyalty = -20
+	monthly_character_popularity = -0.25
+	
+	cancellation_trigger = {
+		OR = {
+			NOR = {
+				is_general = yes
+				is_admiral = yes
+				is_governor = yes
+				has_any_office = yes
+				has_tech_office = yes
+			}
+			is_alive = no
+			is_mercenary = yes
+			prisoner = yes
+			has_character_modifier = disloyal_successor_cmod
+		}
+	}
+	
+	on_cancellation_effect = {
+		if = {
+			limit = {
+				has_variable = trial_chance_modifier
+			}
+			remove_variable = trial_chance_modifier
+		}
+		if = {
+			limit = { has_loyalty = currently_on_trial }
+			remove_loyalty = currently_on_trial
+		}
+	}
+	
+} 
+
+free_hands_cmod = {
+	monthly_corruption = 0.2
+	
+	cancellation_trigger = {
+		NOR = {
+			has_any_office = yes
+			has_tech_office = yes
+			is_governor = yes
+			is_clan_chief = yes
+		}
+	}
+	
+	on_cancellation_effect = {
+		if = {
+			limit = {
+				is_alive = yes
+			}
+			add_loyalty = free_hands_revoked
+		}
+		if = {
+			limit = { has_loyalty = given_free_hands }
+			remove_loyalty = given_free_hands
+		}
+	}
+	
+}
+
+was_once_great = {
+	prominence = -10
+	support_for_character_as_heir = -10
+	health = -0.1
+	charisma = -1
+	
+	cancellation_trigger = {
+		is_minor_character = no
+	}
+	
+}
+
+honor_guard_character = {
+	martial = 1
+	cancellation_trigger = {
+		employer = {
+			NOT = {
+				any_integrated_culture = {
+					is_culture = root
+					has_country_culture_modifier = honor_guard
+				}
+			}
+		}
+	}
+}
+
+traitor_in_civil_war_modifier = {
+	senate_influence = -0.5
+	prominence = -10
+	support_for_character_as_heir = -10
+	monthly_character_popularity = -0.03
+	cancellation_trigger = {
+		has_character_modifier = foreign_citizen
+	}
+}
+
+nominated_heir_modifier = {
+		
+	succession_value = 1000
+		
+	cancellation_trigger = {
+		OR = {
+			is_ruler = yes
+			is_alive = no
+			has_character_modifier = foreign_citizen
+			employer = { has_law = elective_succession_law }
+			employer = { is_monarchy = no }
+		}
+	}
+}
+
+nominated_candidate_modifier = {
+		
+	succession_value = 5
+		
+	cancellation_trigger = {
+		OR = {
+			is_ruler = yes
+			is_alive = no
+			has_character_modifier = foreign_citizen
+			employer = { NOT = { has_law = elective_succession_law } }
+			employer = { is_monarchy = no }
+		}
+	}
+}
+
+#From Great Works
+martial_training_1 = {
+	martial = 1
+}
+
+martial_training_2 = {
+	martial = 2
+}
+
+martial_training_3 = {
+	martial = 3
+}
+
+martial_training_4 = {
+	martial = 4
+}
+
+finesse_training_1 = {
+	finesse = 1
+}
+
+finesse_training_2 = {
+	finesse = 2
+}
+
+finesse_training_3 = {
+	finesse = 3
+}
+
+finesse_training_4 = {
+	finesse = 4
+}
+
+charisma_training_1 = {
+	charisma = 1
+}
+
+charisma_training_2 = {
+	charisma = 2
+}
+
+charisma_training_3 = {
+	charisma = 3
+}
+
+charisma_training_4 = {
+	charisma = 4
+}
+
+zeal_training_1 = {
+	zeal = 1
+}
+
+zeal_training_2 = {
+	zeal = 2
+}
+
+zeal_training_3 = {
+	zeal = 3
+}
+
+zeal_training_4 = {
+	zeal = 4
+}

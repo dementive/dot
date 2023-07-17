@@ -1,0 +1,51 @@
+﻿add_legion_history = {
+	global = ADD_LEGION_HISTORY_EFFECT
+}
+
+add_distinction = {
+	global = ADD_DISTINCTION_EFFECT
+}
+
+remove_distinction = {
+	global = REMOVE_DISTINCTION_EFFECT
+}
+
+raise_legion = {
+	global = RAISE_LEGION_EFFECT
+}
+
+disband_legion = {
+	global = DISBAND_LEGION_EFFECT
+}
+
+unit_add_to_legion = {
+	global = UNIT_ADD_TO_LEGION_EFFECT
+}
+
+character_add_to_legion = {
+	global = CHARACTER_ADD_TO_LEGION_EFFECT
+}
+
+create_legion_unit_effect = {
+	global = CREATE_LEGION_UNIT_EFFECT
+}
+
+add_commander = {
+	global = ADD_LEGION_COMMANDER_EFFECT
+}
+
+remove_commander = {
+	global = REMOVE_LEGION_COMMANDER_EFFECT
+}
+
+add_legion_unit = {
+	global = ADD_LEGION_UNIT_EFFECT
+}
+
+remove_legion_unit = {
+	global = REMOVE_LEGION_UNIT_EFFECT
+}
+
+move_legion = {
+	global = MOVE_LEGION_EFFECT
+}

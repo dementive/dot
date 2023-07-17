@@ -1,0 +1,130 @@
+
+base_window = {
+    gfxtype = windowgfx
+    name = "ai_settings_menu"
+    alwaystransparent = no
+    reorder_on_mouse = never
+    resizable = no
+    movable = no
+    parentanchor = center
+    widgetanchor = center
+	layer = top
+    size = { 490 625 }
+
+    vbox = {
+		using = MainWindowHeaderBox
+		layoutpolicy_horizontal = expanding
+		
+		blockoverride "Title_text"
+		{
+			text = "AI_SETTINGS"
+		}
+		blockoverride "White_buttons" 
+		{
+			button_close = {
+				onclick = "[AISettingsMenu.Close]"
+				tooltip = "CLOSE"
+			} 
+		}
+		vbox = {
+			layoutpolicy_vertical = expanding
+			layoutpolicy_horizontal = expanding
+			margin_top = 12
+			margin_bottom = 84
+			margin_left = 20
+			margin_right = 12
+			scrollarea = {
+				layoutpolicy_vertical = expanding
+				layoutpolicy_horizontal = expanding
+				scrollbarpolicy_horizontal = always_off
+				
+				scrollbar_vertical = {
+					using = VerticalScrollBar
+				}
+
+				scrollwidget = {
+					vbox = {
+						vbox = {
+							layoutpolicy_vertical = fixed
+							layoutpolicy_horizontal = expanding
+							datamodel = "[AISettingsMenu.GetItems]"
+							
+							item = {
+								margin_widget = {
+									layoutpolicy_horizontal = expanding
+									size = { 0 32 }
+									margin_left = 14
+									margin_right = 24
+									textbox = {
+										text = "[AISettingsMenuItem.GetText]"
+										using = BaseFontM
+										using = Black_FontColor
+										size = { 100% 32 }
+										using = NoninteractableBG
+										align = left
+										multiline = yes
+										tooltip = "[AISettingsMenuItem.GetTooltip]"
+										blockoverride "Margins"
+										{
+											margin_right = -38
+											margin_bottom = 2
+											margin_top = 1
+											margin_left = 10
+										}
+										position = { 4 0 }
+									}
+									
+									check_box_button = { 
+										parentanchor = right|vcenter
+										position = { 0 0 }
+										blockoverride "Frame"
+										{
+											frame = "[BoolTo1And2( AISettingsMenuItem.GetValue )]"
+										} 
+										blockoverride "On_click"
+										{
+											onclick = "[AISettingsMenuItem.SetValue(Not(AISettingsMenuItem.GetValue))]"
+										}
+										
+										tooltip = "[AISettingsMenuItem.GetTooltip]"
+									}
+								}
+							}
+						}
+						vbox = {
+							layoutpolicy_vertical = expanding
+							layoutpolicy_horizontal = expanding
+						}
+					}
+				}
+			}
+			
+		}
+		
+	}
+	
+	flowcontainer = {
+		parentanchor = hcenter|bottom
+		widgetanchor = hcenter|bottom
+		spacing = 8
+		position = { 0 -24 }
+		
+		text_button_square = {
+			name = "reset_button"
+			blockoverride "Center_text" { text = "RESET_TO_DEFAULT" }
+			blockoverride "On_click" { onclick = "[AISettingsMenu.Reset]" }
+			size = { 220 26 }
+		}
+
+		text_button_square = {
+			name = "save_button"
+			blockoverride "Center_text" { text = "SAVE_AND_CLOSE" }
+			blockoverride "On_click"
+			{ 
+				onclick = "[AISettingsMenu.Save]"
+				shortcut = "confirm"
+			}
+			size = { 220 26 }
+		}
+	}
+}

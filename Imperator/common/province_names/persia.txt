@@ -1,0 +1,17 @@
+﻿persia = {
+	927 = PROV927_persia #  Skaphe
+	937 = PROV937_persia #  Uruk
+	946 = PROV946_persia #  Shushan
+	963 = PROV963_persia #  Failaka
+	972 = PROV972_persia #  Arac
+	1594 = PROV1594_persia #  Kangavar
+	1595 = PROV1595_persia #  Ecbatana
+	1596 = PROV1596_persia #  Deh Bozen
+	1725 = PROV1725_persia #  Portus Altus
+	1737 = PROV1737_persia #  Ziganne
+	4404 = PROV4404_persia #  Hastinapura
+	4410 = PROV4410_persia #  Indabara
+	4963 = PROV4963_persia #  Nihavand
+	4991 = PROV4991_persia #  Rhagai
+	4993 = PROV4993_persia #  Apameia
+}

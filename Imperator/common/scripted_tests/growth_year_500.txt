@@ -1,0 +1,181 @@
+﻿
+year_500_egypt_10_provinces = {
+	suite = "ai"
+	interval = monthly
+
+	success = {
+		current_date <= 500.1.1
+		
+		c:EGY = {
+			# Egypt starts with 19, so add 10
+			num_of_provinces >= 29
+		}
+	}
+	
+	# Success is checked first, so no need to check province count again here
+	failure = {
+		current_date > 500.1.1
+	}
+}
+
+
+year_500_parthia = {
+	suite = "ai"
+	interval = monthly
+
+	success = {
+		current_date <= 500.1.1
+	
+		c:PAR = {	num_of_cities > 0 }
+	}
+	
+	# Success is checked first, so no need to check province count again here
+	failure = {
+		current_date > 500.1.1
+	}
+}
+
+year_500_maurya = {
+	suite = "ai"
+	interval = monthly
+
+	success = {
+		current_date <= 500.1.1
+	
+		c:MRY = {	
+			# Maurya starts with 53, so add 10
+			num_of_provinces >= 63
+		}
+	}
+	
+	# Success is checked first, so no need to check province count again here
+	failure = {
+		current_date > 500.1.1
+	}
+}
+
+year_500_carthage = {
+	suite = "ai"
+	interval = monthly
+
+	success = {
+		current_date <= 500.1.1
+	
+		c:CAR = {	
+			num_of_provinces >= 50
+			any_owned_province = {
+				count = 100
+				OR = {
+					is_in_region = baetica_region
+					is_in_region = tarraconensis_region
+					is_in_region = lusitania_region
+					is_in_region = contestania_region
+					is_in_region = gallaecia_region
+				}
+			}
+		}
+	}
+	# Success is checked first, so no need to check province count again here
+	failure = {
+		current_date > 500.1.1
+	}
+}
+
+
+
+year_500_rome = {
+	suite = "ai"
+	interval = monthly
+
+	success = {
+		current_date <= 500.1.1
+	
+		c:ROM = {	
+			num_of_provinces >= 10
+		}
+		
+		area:roma_area = {
+			any_area_province = {
+				count = all
+				owned_or_subject_owned = c:ROM
+			}
+		}
+		area:south_etruria_area = {
+			any_area_province = {
+				count = all
+				owned_or_subject_owned = c:ROM
+			}
+		}
+		area:north_etruria_area = {
+			any_area_province = {
+				count = all
+				owned_or_subject_owned = c:ROM
+			}
+		}
+		area:aternum_area = {
+			any_area_province = {
+				count = all
+				owned_or_subject_owned = c:ROM
+			}
+		}
+		area:ariminum_area = {
+			any_area_province = {
+				count = all
+				owned_or_subject_owned = c:ROM
+			}
+		}
+		area:asculum_area = {
+			any_area_province = {
+				count = all
+				owned_or_subject_owned = c:ROM
+			}
+		}
+		area:neapolis_area = {
+			any_area_province = {
+				count = all
+				owned_or_subject_owned = c:ROM
+			}
+		}
+		area:cannae_area = {
+			any_area_province = {
+				count = all
+				owned_or_subject_owned = c:ROM
+			}
+		}
+		area:tarentum_area = {
+			any_area_province = {
+				count = all
+				owned_or_subject_owned = c:ROM
+			}
+		}		
+		area:heraclea_area = {
+			any_area_province = {
+				count = all
+				owned_or_subject_owned = c:ROM
+			}
+		}	
+		area:croton_area = {
+			any_area_province = {
+				count = all
+				owned_or_subject_owned = c:ROM
+			}
+		}	
+		
+		
+		
+		
+		
+		
+		
+				
+		
+		
+		
+		
+	}
+	
+	# Success is checked first, so no need to check province count again here
+	failure = {
+		current_date > 500.1.1
+	}
+}

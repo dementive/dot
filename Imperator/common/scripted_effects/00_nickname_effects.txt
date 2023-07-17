@@ -1,0 +1,1084 @@
+﻿add_triumph_nickname_effect = {
+	if = {
+		limit = { has_culture_group = latin }
+		custom_tooltip = may_gain_cognomen
+	}
+	else = { custom_tooltip = may_gain_nickname }
+	hidden_effect = {
+		random_list = {
+			10 = {
+				trigger = {
+					employer = {
+						NOT  = {
+							has_variable = maximus_taken
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_culture_group = latin
+					}
+					add_nickname = NICKNAME_MAXIMUS
+					employer = {
+						set_variable = {
+							name = maximus_taken
+						}
+					}
+				}
+				else = {
+					add_nickname = NICKNAME_THE_VICTORIOUS
+				}
+			}
+			10 = {
+				trigger = {
+					employer = {
+						NOT  = {
+							has_variable = metellus_taken
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_culture_group = latin
+					}
+					add_nickname = NICKNAME_METELLUS
+					employer = {
+						set_variable = {
+							name = metellus_taken
+						}
+					}
+				}
+				else = {
+					add_nickname = NICKNAME_THE_SOLDIER
+				}
+			}
+			10 = {
+				trigger = {
+					employer = {
+						NOT  = {
+							has_variable = merula_taken
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_culture_group = latin
+					}
+					add_nickname = NICKNAME_MERULA
+					employer = {
+						set_variable = {
+							name = merula_taken
+						}
+					}
+				}
+				else = {
+					add_nickname = NICKNAME_THE_JACKDAW
+				}
+			}
+			10 = {
+				trigger = {
+					employer = {
+						NOT  = {
+							has_variable = licinus_taken
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_culture_group = latin
+					}
+					add_nickname = NICKNAME_LICINUS
+					employer = {
+						set_variable = {
+							name = licinus_taken
+						}
+					}
+				}
+				else = {
+					add_nickname = NICKNAME_THE_VIOLENT
+				}
+			}
+			10 = {
+				trigger = {
+					employer = {
+						NOT  = {
+							has_variable = dolabella_taken
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_culture_group = latin
+					}
+					add_nickname = NICKNAME_DOLABELLA
+					employer = {
+						set_variable = {
+							name = dolabella_taken
+						}
+					}
+				}
+				else = {
+					add_nickname = NICKNAME_THE_AXE
+				}
+			}
+			10 = {
+				trigger = {
+					employer = {
+						NOT  = {
+							has_variable = cornicen_taken
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_culture_group = latin
+					}
+					add_nickname = NICKNAME_CORNICEN
+					employer = {
+						set_variable = {
+							name = cornicen_taken
+						}
+					}
+				}
+				else = {
+					add_nickname = NICKNAME_THE_BUGLER
+				}
+			}
+			10 = {
+				trigger = {
+					employer = {
+						NOT  = {
+							has_variable = malleolus_taken
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_culture_group = latin
+					}
+					add_nickname = NICKNAME_MALLEOLUS
+					employer = {
+						set_variable = {
+							name = malleolus_taken
+						}
+					}
+				}
+				else = {
+					add_nickname = NICKNAME_THE_HAMMER
+				}
+			}
+			10 = {
+				trigger = {
+					age >= 60
+					employer = {
+						NOT  = {
+							has_variable = priscus_taken
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_culture_group = latin
+					}
+					add_nickname = NICKNAME_PRISCUS
+					employer = {
+						set_variable = {
+							name = priscus_taken
+						}
+					}
+				}
+				else = {
+					add_nickname = NICKNAME_THE_ANCIENT
+				}
+			}
+			10 = {
+				trigger = {
+					employer = {
+						NOT  = {
+							has_variable = severus_taken
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_culture_group = latin
+					}
+					add_nickname = NICKNAME_SEVERUS
+					employer = {
+						set_variable = {
+							name = severus_taken
+						}
+					}
+				}
+				else = {
+					add_nickname = NICKNAME_THE_STRICT
+				}
+			}
+			10 = {
+				trigger = {
+					employer = {
+						NOT  = {
+							has_variable = triarius_taken
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_culture_group = latin
+					}
+					add_nickname = NICKNAME_TRIARIUS
+					employer = {
+						set_variable = {
+							name = triarius_taken
+						}
+					}
+				}
+				else = {
+					add_nickname = NICKNAME_THE_SHIELD
+				}
+			}
+			10 = {
+				trigger = {
+					employer = {
+						NOT  = {
+							has_variable = taurus_taken
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_culture_group = latin
+					}
+					add_nickname = NICKNAME_TAURUS
+					employer = {
+						set_variable = {
+							name = taurus_taken
+						}
+					}
+				}
+				else = {
+					add_nickname = NICKNAME_THE_SHIELD
+				}
+			}
+			10 = {
+				trigger = {
+					employer = {
+						NOT  = {
+							has_variable = tuditanus_taken
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_culture_group = latin
+					}
+					add_nickname = NICKNAME_TUDITANUS
+					employer = {
+						set_variable = {
+							name = tuditanus_taken
+						}
+					}
+				}
+				else = {
+					add_nickname = NICKNAME_THE_MACE
+				}
+			}
+			10 = {
+				trigger = {
+					employer = {
+						NOT  = {
+							has_variable = regulus_taken
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_culture_group = latin
+					}
+					add_nickname = NICKNAME_REGULUS
+					employer = {
+						set_variable = {
+							name = regulus_taken
+						}
+					}
+				}
+				else = {
+					add_nickname = NICKNAME_THE_PRINCE
+				}
+			}
+			10 = {
+				trigger = {
+					employer = {
+						NOT  = {
+							has_variable = poplicola_taken
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_culture_group = latin
+					}
+					add_nickname = NICKNAME_POPLICOLA
+					employer = {
+						set_variable = {
+							name = poplicola_taken
+						}
+					}
+				}
+				else = {
+					add_nickname = NICKNAME_THE_POPULAR
+				}
+			}
+			10 = {
+				trigger = {
+					employer = {
+						NOT  = {
+							has_variable = poplicola_taken
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_culture_group = latin
+					}
+					add_nickname = NICKNAME_POPLICOLA
+					employer = {
+						set_variable = {
+							name = poplicola_taken
+						}
+					}
+				}
+				else = {
+					add_nickname = NICKNAME_THE_POPULAR
+				}
+			}
+			10 = {
+				trigger = {
+					employer = {
+						NOT  = {
+							has_variable = novellus_taken
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_culture_group = latin
+					}
+					add_nickname = NICKNAME_NOVELLUS
+					employer = {
+						set_variable = {
+							name = novellus_taken
+						}
+					}
+				}
+				else = {
+					add_nickname = NICKNAME_THE_INNOVATIVE
+				}
+			}
+			10 = {
+				trigger = {
+					employer = {
+						NOT  = {
+							has_variable = lepidus_taken
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_culture_group = latin
+					}
+					add_nickname = NICKNAME_LEPIDUS
+					employer = {
+						set_variable = {
+							name = lepidus_taken
+						}
+					}
+				}
+				else = {
+					add_nickname = NICKNAME_THE_CHARMING
+				}
+			}
+			10 = {
+				trigger = {
+					employer = {
+						NOT  = {
+							has_variable = habitus_taken
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_culture_group = latin
+					}
+					add_nickname = NICKNAME_HABITUS
+					employer = {
+						set_variable = {
+							name = habitus_taken
+						}
+					}
+				}
+				else = {
+					add_nickname = NICKNAME_THE_MUSCULAR
+				}
+			}
+			2 = {
+				trigger = {
+					employer = {
+						NOT  = {
+							has_variable = flaccus_taken
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_culture_group = latin
+					}
+					add_nickname = NICKNAME_FLACCUS
+					employer = {
+						set_variable = {
+							name = flaccus_taken
+						}
+					}
+				}
+				else = {
+					add_nickname = NICKNAME_THE_FLOPPY
+				}
+			}
+			10 = {
+				trigger = {
+					employer = {
+						NOT  = {
+							has_variable = crassus_taken
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_culture_group = latin
+					}
+					add_nickname = NICKNAME_CRASSUS
+					employer = {
+						set_variable = {
+							name = crassus_taken
+						}
+					}
+				}
+				else = {
+					add_nickname = NICKNAME_THE_MAGNANIMOUS
+				}
+			}
+			10 = {
+				trigger = {
+					employer = {
+						NOT  = {
+							has_variable = brutus_taken
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_culture_group = latin
+					}
+					add_nickname = NICKNAME_BRUTUS
+					employer = {
+						set_variable = {
+							name = brutus_taken
+						}
+					}
+				}
+				else = {
+					add_nickname = NICKNAME_THE_DULL
+				}
+			}
+			10 = {
+				trigger = {
+					employer = {
+						NOT  = {
+							has_variable = aculeo_taken
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_culture_group = latin
+					}
+					add_nickname = NICKNAME_ACULEO
+					employer = {
+						set_variable = {
+							name = aculeo_taken
+						}
+					}
+				}
+				else = {
+					add_nickname = NICKNAME_THE_HOSTILE
+				}
+			}
+		}	
+	}
+}
+
+add_british_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_BRITANNICUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_BRITON
+	}
+}
+
+add_gallic_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_GALLICUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_GAUL
+	}
+}
+
+add_belgian_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_BELGICUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_BELGAE
+	}
+}
+
+add_german_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_GERMANICUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_GERMAN
+	}
+}
+
+add_rhaetian_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_RHAETICUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_RHAETIAN
+	}
+}
+
+add_italian_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_ITALICUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_ITALIOTE
+	}
+}
+
+add_illyrian_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_ILLYRICUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_ILLYRIAN
+	}
+}
+
+add_hispanic_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_HISPANICUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_IBERIAN
+	}
+}
+
+add_mauretanian_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_MAURETANICUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_MAURETANIAN
+	}
+}
+
+add_numidian_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_NUMIDIUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_NUMIDIAN
+	}
+}
+
+add_venedian_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_VENEDICUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_VENEDIAN
+	}
+}
+
+add_dacian_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_DACIUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_DACIAN
+	}
+}
+
+add_greek_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_HELLENICUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_HELLENE
+	}
+}
+
+add_cyrene_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_CYRENAICUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_CYRENE
+	}
+}
+
+add_egyptian_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_AEGYPTUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_EGYPTIAN
+	}
+}
+
+add_nubian_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_NUBIANUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_NUBIAN
+	}
+}
+
+add_arabian_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_ARABICUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_ARABIAN
+	}
+}
+
+add_syrian_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_SYRIANUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_SYRIAN
+	}
+}
+
+add_asian_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_ASIATICUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_ASIAN
+	}
+}
+
+add_sarmatian_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_SARMATICUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_SARMATIAN
+	}
+}
+
+add_bosporan_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_BOSPORANUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_BOSPORAN
+	}
+}
+
+add_caucasian_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_CAUCASIANUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_CAUCASIAN
+	}
+}
+
+add_scythian_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_SCYTHIANUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_SCYTHIAN
+	}
+}
+
+add_persica_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_PERSICUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_PERSIAN
+	}
+}
+
+add_bactrian_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_BACTRIANUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_BACTRIAN
+	}
+}
+
+add_gedrosian_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_GEDROSIANUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_GEDROSIAN
+	}
+}
+
+add_indian_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_INDICUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_INDIAN
+	}
+}
+
+add_dravidian_nickname_effect = {
+	if = {
+		limit = {
+			has_culture_group = latin
+		}
+		add_nickname = NICKNAME_DRAVIDICUS
+	}
+	else = {
+		add_nickname = NICKNAME_THE_DRAVIDIAN
+	}
+}
+
+add_region_appropriate_nickname_for_governor_effect = {
+	if = {
+		limit = {
+			location = {
+				is_in_britain_trigger = yes
+			}
+		}
+		add_british_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_gaul_trigger = yes
+			}
+		}
+		add_gallic_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_belgium_trigger = yes
+			}
+		}
+		add_belgian_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_germany_trigger = yes
+			}
+		}
+		add_german_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_rhaetia_trigger = yes
+			}
+		}
+		add_rhaetian_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_italy_trigger = yes
+			}
+		}
+		add_italian_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_illyria_trigger = yes
+			}
+		}
+		add_illyrian_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_hispania_trigger = yes
+			}
+		}
+		add_hispanic_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_mauretania_trigger = yes
+			}
+		}
+		add_mauretanian_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_numidia_trigger = yes
+			}
+		}
+		add_numidian_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_venedia_trigger = yes
+			}
+		}
+		add_venedian_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_dacia_trigger = yes
+			}
+		}
+		add_dacian_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_greece_trigger = yes
+			}
+		}
+		add_greek_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_cyrenaica_trigger = yes
+			}
+		}
+		add_cyrene_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_egypt_trigger = yes
+			}
+		}
+		add_egyptian_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_nubia_trigger = yes
+			}
+		}
+		add_nubian_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_arabia_trigger = yes
+			}
+		}
+		add_arabian_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_syria_trigger = yes
+			}
+		}
+		add_syrian_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_asia_trigger = yes
+			}
+		}
+		add_asian_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_sarmatia_trigger = yes
+			}
+		}
+		add_sarmatian_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_bosporus_trigger = yes
+			}
+		}
+		add_bosporan_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_caucasia_trigger = yes
+			}
+		}
+		add_caucasian_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_scythia_trigger = yes
+			}
+		}
+		add_scythian_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_persica_trigger = yes
+			}
+		}
+		add_persica_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_bactria_trigger = yes
+			}
+		}
+		add_bactrian_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_gedrosia_trigger = yes
+			}
+		}
+		add_gedrosian_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_india_trigger = yes
+			}
+		}
+		add_indian_nickname_effect = yes
+	}
+	else_if = {
+		limit = {
+			location = {
+				is_in_dravidia_trigger = yes
+			}
+		}
+		add_dravidian_nickname_effect = yes
+	}
+	else = {
+		add_triumph_nickname_effect = yes
+	}
+}

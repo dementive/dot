@@ -1,0 +1,7 @@
+﻿aryan = {
+	4300 = PROV4300_aryan #  Pushkalavati
+	4323 = PROV4323_aryan #  Takht-i-Bahi
+	4386 = PROV4386_aryan #  Jampur
+	4399 = PROV4399_aryan #  Jaipura
+	4405 = PROV4405_aryan #  Indraprastha
+}

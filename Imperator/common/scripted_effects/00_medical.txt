@@ -1,0 +1,770 @@
+﻿###
+
+add_correct_trait_effect = {
+	if = {
+		limit = {
+			has_variable = which_disease
+			var:which_disease = 1
+			NOT = {
+				has_trait = mentagra
+			}
+		}
+		add_trait = mentagra
+	}
+	else_if = {
+		limit = {
+			has_variable = which_disease
+			var:which_disease = 2
+			NOT = {
+				has_trait = arthritis
+			}
+		}
+		add_trait = arthritis
+	}
+	else_if = {
+		limit = {
+			has_variable = which_disease
+			var:which_disease = 3
+			NOT = {
+				has_trait = pox
+			}
+		}
+		add_trait = pox
+	}
+	else_if = {
+		limit = {
+			has_variable = which_disease
+			var:which_disease = 4
+			NOT = {
+				has_trait = dysentery
+			}
+		}
+		add_trait = dysentery
+	}
+	else_if = {
+		limit = {
+			has_variable = which_disease
+			var:which_disease = 5
+			NOT = {
+				has_trait = infection
+			}
+		}
+		add_trait = infection
+	}
+	else_if = {
+		limit = {
+			has_variable = which_disease
+			var:which_disease = 6
+			NOT = {
+				has_trait = inflammation
+			}
+		}
+		add_trait = inflammation
+	}
+	if = {
+		limit = {
+			has_variable = which_disease
+		}
+		remove_variable = which_disease
+	}
+}
+
+add_correct_second_stage_disease_effect = {
+	if = {
+		limit = {
+			has_variable = second_stage_disease
+			var:second_stage_disease = 1
+		}
+		if = {
+			limit = {
+				has_trait = infection
+			}
+			remove_trait = infection
+		}
+		else_if = {
+			limit = {
+				has_trait = inflammation
+			}
+			remove_trait = inflammation
+		}
+		add_trait = pneumonia
+	}
+	else_if = {
+		limit = {
+			has_variable = second_stage_disease
+			var:second_stage_disease = 2
+		}
+		if = {
+			limit = {
+				has_trait = infection
+			}
+			remove_trait = infection
+		}
+		else_if = {
+			limit = {
+				has_trait = inflammation
+			}
+			remove_trait = inflammation
+		}
+		add_trait = leper
+	}
+	else_if = {
+		limit = {
+			has_variable = second_stage_disease
+			var:second_stage_disease = 3
+		}
+		if = {
+			limit = {
+				has_trait = infection
+			}
+			remove_trait = infection
+		}
+		else_if = {
+			limit = {
+				has_trait = inflammation
+			}
+			remove_trait = inflammation
+		}
+		add_trait = pox
+	}
+	else_if = {
+		limit = {
+			has_variable = second_stage_disease
+			var:second_stage_disease = 4
+		}
+		add_trait = gangrene
+	}
+	if = {
+		limit = {
+			has_variable = second_stage_disease
+		}
+		remove_variable = second_stage_disease
+	}
+}
+
+add_result_affliction_effect = {
+	if = {
+		limit = {
+			has_variable = medical_result_acquired
+			var:medical_result_acquired = 1
+			NOT = {
+				has_trait = barren
+			}
+		}
+		add_trait = barren
+	}
+	else_if = {
+		limit = {
+			has_variable = medical_result_acquired
+			var:medical_result_acquired = 2
+			NOT = {
+				has_trait = castrated
+			}
+		}
+		add_trait = castrated
+	}
+	else_if = {
+		limit = {
+			has_variable = medical_result_acquired
+			var:medical_result_acquired = 3
+			NOT = {
+				has_trait = frail
+			}
+		}
+		add_trait = frail
+	}
+	else_if = {
+		limit = {
+			has_variable = medical_result_acquired
+			var:medical_result_acquired = 4
+			NOT = {
+				has_trait = blind
+			}
+		}
+		if = {
+			limit = { has_trait = one_eyed }
+			remove_trait = one_eyed
+			add_trait = blind
+		}
+		else = {
+			add_trait = one_eyed
+		}
+	}
+	else_if = {
+		limit = {
+			has_variable = medical_result_acquired
+			var:medical_result_acquired = 5
+			NOT = {
+				has_trait = paralysis
+			}
+		}
+		add_trait = paralysis
+	}
+	else_if = {
+		limit = {
+			has_variable = medical_result_acquired
+			var:medical_result_acquired = 6
+			NOT = {
+				has_trait = blind
+			}
+		}
+		if = {
+			limit = { has_trait = one_eyed }
+			remove_trait = one_eyed
+		}	
+		add_trait = blind
+	}
+	else_if = {
+		limit = {
+			has_variable = medical_result_acquired
+			var:medical_result_acquired = 7
+			NOT = {
+				has_trait = brain_damaged
+			}
+		}
+		add_trait = brain_damaged
+	}
+	if = {
+		limit = {
+			has_variable = medical_result_acquired
+		}
+		remove_variable = medical_result_acquired
+	}
+}
+
+recover_from_affliction_effect = {
+	random_list = {
+		30 = {
+			trigger = {
+				has_trait = mentagra
+			}
+			remove_trait = mentagra
+		}
+		20 = {
+			trigger = {
+				has_trait = dysentery
+			}
+			remove_trait = dysentery
+		}
+		20 = {
+			trigger = {
+				has_trait = infection
+			}
+			remove_trait = infection
+		}
+		10 = {
+			trigger = {
+				has_trait = inflammation
+			}
+			remove_trait = inflammation
+		}
+		10 = {
+			trigger = {
+				has_trait = pneumonia
+			}
+			remove_trait = pneumonia
+		}
+		10 = {
+			trigger = {
+				has_trait = gangrene
+			}
+			remove_trait = gangrene
+		}
+		20 = {
+			trigger = {
+				has_trait = pox
+			}
+			remove_trait = pox
+		}
+		5 = {
+			trigger = {
+				has_trait = hemorrhagic_fever
+			}
+			remove_trait = hemorrhagic_fever
+		}
+		5 = {
+			trigger = {
+				has_trait = plague
+			}
+			remove_trait = plague
+		}
+	}
+	if = {
+		limit = {
+			has_variable = seeking_treatment
+		}
+		remove_variable = seeking_treatment
+	}
+	if = {
+		limit = {
+			has_variable = manually_sought_treatment
+		}
+		remove_variable = manually_sought_treatment
+	}
+}
+
+set_treatment_variable_effect = {
+	if = {
+		limit = {
+			has_trait = hemorrhagic_fever
+		}
+		set_variable = {
+			name = seeking_treatment
+			value = 1
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = plague
+		}
+		set_variable = {
+			name = seeking_treatment
+			value = 2
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = pneumonia
+		}
+		set_variable = {
+			name = seeking_treatment
+			value = 3
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = dysentery
+		}
+		set_variable = {
+			name = seeking_treatment
+			value = 4
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = gangrene
+		}
+		set_variable = {
+			name = seeking_treatment
+			value = 5
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = leper
+		}
+		set_variable = {
+			name = seeking_treatment
+			value = 6
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = infection
+		}
+		set_variable = {
+			name = seeking_treatment
+			value = 7
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = inflammation
+		}
+		set_variable = {
+			name = seeking_treatment
+			value = 8
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = wounded
+		}
+		set_variable = {
+			name = seeking_treatment
+			value = 9
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = pox
+		}
+		set_variable = {
+			name = seeking_treatment
+			value = 10
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = arthritis
+		}
+		set_variable = {
+			name = seeking_treatment
+			value = 11
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = mentagra
+		}
+		set_variable = {
+			name = seeking_treatment
+			value = 12
+		}
+	}
+}
+
+treatment_successful_effect = {
+	if = {
+		limit = {
+			var:seeking_treatment = 1
+			has_trait = hemorrhagic_fever
+		}
+		remove_trait = hemorrhagic_fever
+	}
+	else_if = {
+		limit = {
+			var:seeking_treatment = 2
+			has_trait = plague
+		}
+		remove_trait = plague
+	}
+	else_if = {
+		limit = {
+			var:seeking_treatment = 3
+			has_trait = pneumonia
+		}
+		remove_trait = pneumonia
+	}
+	else_if = {
+		limit = {
+			var:seeking_treatment = 4
+			has_trait = dysentery
+		}
+		remove_trait = dysentery
+	}
+	else_if = {
+		limit = {
+			var:seeking_treatment = 5
+			has_trait = gangrene
+		}
+		remove_trait = gangrene
+	}
+	else_if = {
+		limit = {
+			var:seeking_treatment = 6
+			has_trait = leper
+		}
+		remove_trait = leper
+	}
+	else_if = {
+		limit = {
+			var:seeking_treatment = 7
+			has_trait = infection
+		}
+		remove_trait = infection
+	}
+	else_if = {
+		limit = {
+			var:seeking_treatment = 8
+			has_trait = inflammation
+		}
+		remove_trait = inflammation
+	}
+	else_if = {
+		limit = {
+			var:seeking_treatment = 9
+			has_trait = wounded
+		}
+		remove_trait = wounded
+	}
+	else_if = {
+		limit = {
+			var:seeking_treatment = 10
+			has_trait = pox
+		}
+		remove_trait = pox
+	}
+	else_if = {
+		limit = {
+			var:seeking_treatment = 11
+			has_trait = arthritis
+		}
+		remove_trait = arthritis
+	}
+	else_if = {
+		limit = {
+			var:seeking_treatment = 12
+			has_trait = mentagra
+		}
+		remove_trait = mentagra
+	}
+	if = {
+		limit = {
+			has_variable = seeking_treatment
+		}
+		remove_variable = seeking_treatment
+	}
+	if = {
+		limit = {
+			has_variable = manually_sought_treatment
+		}
+		remove_variable = manually_sought_treatment
+	}
+}
+
+randomise_result_from_treatment_effect = {
+	random_list = {
+		10 = {
+			trigger = {
+				NOT = {
+					has_trait = barren
+				}
+				is_female = yes
+			}
+			set_variable = {
+				name = medical_accident_problem
+				value = 1
+			}
+		}
+		10 = {
+			trigger = {
+				NOT = {
+					has_trait = castrated
+				}
+				is_female = no
+			}
+			set_variable = {
+				name = medical_accident_problem
+				value = 2
+			}
+		}
+		10 = {
+			trigger = {
+				NOT = {
+					has_trait = blind
+				}
+			}	
+			set_variable = {
+				name = medical_accident_problem
+				value = 3
+			}
+		}
+		10 = {
+			trigger = {
+				NOT = {
+					has_trait = maimed
+				}
+			}
+			set_variable = {
+				name = medical_accident_problem
+				value = 4
+			}
+		}
+		10 = {
+			trigger = {
+				NOT = {
+					has_trait = blind
+				}
+			}
+			set_variable = {
+				name = medical_accident_problem
+				value = 5
+			}
+		}
+		10 = {
+			trigger = {
+				NOT = {
+					has_trait = frail
+				}
+			}
+			set_variable = {
+				name = medical_accident_problem
+				value = 6
+			}
+		}
+		10 = {
+			trigger = {
+				NOT = {
+					has_trait = brain_damaged
+				}
+			}
+			set_variable = {
+				name = medical_accident_problem
+				value = 7
+			}
+		}
+	}
+}
+
+randomise_result_from_treatment_trait_effect = {
+	if = {
+		limit = { var:medical_accident_problem = 1 }
+		add_trait = barren
+	}
+	else_if = {
+		limit = { var:medical_accident_problem = 2 }
+		add_trait = castrated
+	}
+	else_if = {
+		limit = { var:medical_accident_problem = 3 }
+		if = {
+			limit = { has_trait = one_eyed }
+			remove_trait = one_eyed
+		}
+		add_trait = blind
+	}
+	else_if = {
+		limit = { var:medical_accident_problem = 4 }
+		add_trait = maimed
+	}
+	else_if = {
+		limit = { var:medical_accident_problem = 5 }
+		if = { 
+			limit = { has_trait = one_eyed }
+			remove_trait = one_eyed
+			add_trait = blind
+		}
+		else = { add_trait = one_eyed }
+	}
+	else_if = {
+		limit = { var:medical_accident_problem = 6 }
+		add_trait = frail
+	}
+	else_if = {
+		limit = { var:medical_accident_problem = 7 }
+		add_trait = brain_damaged
+	}
+}
+
+mystic_healing_effect = {
+	if = {
+		limit = {
+			has_trait = lunatic
+		}
+		remove_trait = lunatic
+	}
+	if = {
+		limit = {
+			has_trait = schizophrenic
+		}
+		remove_trait = schizophrenic
+	}
+	if = {
+		limit = {
+			has_trait = invalid
+		}
+		remove_trait = invalid
+	}
+	if = {
+		limit = {
+			has_trait = epileptic
+		}
+		remove_trait = epileptic
+	}
+	if = {
+		limit = {
+			has_trait = hemorrhagic_fever
+		}
+		remove_trait = hemorrhagic_fever
+	}
+	if = {
+		limit = {
+			has_trait = plague
+		}
+		remove_trait = plague
+	}
+	if = {
+		limit = {
+			has_trait = mentagra
+		}
+		remove_trait = mentagra
+	}
+	if = {
+		limit = {
+			has_trait = arthritis
+		}
+		remove_trait = arthritis
+	}
+	if = {
+		limit = {
+			has_trait = pox
+		}
+		remove_trait = pox
+	}
+	if = {
+		limit = {
+			has_trait = dysentery
+		}
+		remove_trait = dysentery
+	}
+	if = {
+		limit = {
+			has_trait = infection
+		}
+		remove_trait = infection
+	}
+	if = {
+		limit = {
+			has_trait = inflammation
+		}
+		remove_trait = inflammation
+	}
+	if = {
+		limit = {
+			has_trait = wounded
+		}
+		remove_trait = wounded
+	}
+	if = {
+		limit = {
+			has_trait = pneumonia
+		}
+		remove_trait = pneumonia
+	}
+	if = {
+		limit = {
+			has_trait = gangrene
+		}
+		remove_trait = gangrene
+	}
+	if = {
+		limit = {
+			has_trait = leper
+		}
+		remove_trait = leper
+	}
+	if = {
+		limit = {
+			has_trait = paralysis
+		}
+		remove_trait = paralysis
+	}
+	if = {
+		limit = {
+			has_trait = brain_damaged
+		}
+		remove_trait = brain_damaged
+	}
+}
+
+remove_treatment_variables_effect = {
+	if = {
+		limit = {
+			has_trait = seeking_treatment_trait
+		}
+		remove_trait = seeking_treatment_trait
+	}
+	if = {
+		limit = {
+			has_variable = seeking_treatment
+		}
+		remove_variable = seeking_treatment 
+	}
+	if = {
+		limit = {
+			has_variable = manually_sought_treatment
+		}
+		remove_variable = manually_sought_treatment
+	}
+}

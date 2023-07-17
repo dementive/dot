@@ -1,0 +1,12 @@
+﻿death_natural_causes = {
+	default = yes
+	natural = yes
+}
+
+death_old_age = {
+	natural = yes
+	natural_death_trigger = {
+		age > 65
+	}
+	priority = 1
+}

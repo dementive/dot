@@ -1,0 +1,104 @@
+message_window = {
+	gfxtype = windowgfx
+	name = "barbarian_pay_off_window"
+	parentanchor = center
+	size = { 730 270 }
+	movable = no
+
+	blockoverride "Title_text"
+	{
+		text = "[BarbarianPayOffWindow.GetTitle]"
+	}
+	
+	flowcontainer = {
+		position = { 0 154 }
+		parentanchor = hcenter
+		spacing = 12
+
+		icon = {
+			parentanchor = vcenter
+			size = { 41 41 }
+			using = icon_treasury
+		}
+		
+		scrollbar = {
+			parentanchor = vcenter
+			size = { 240 14 }
+			direction = horizontal
+			min = 0
+			max = 100
+			step = 1
+			wheelstep = 1
+			value = "[BarbarianPayOffWindow.GetPricePercent]"
+			onvaluechanged = "[BarbarianPayOffWindow.OnPriceChanged]"
+			
+			track = {
+				using = SettingsValueTrack
+			}
+			
+			slider = {
+				using = SettingsValueSlider
+			}
+			
+			dec_button = {
+				using = SettingsValueDecButton
+			}
+			
+			inc_button = {
+				using = SettingsValueIncButton
+			}
+		}
+		icon = {
+			parentanchor = vcenter
+			framesize = { 46 46 }
+			size = { 41 41 }
+			texture = "gfx/interface/diplomacy/ai_accept_decline_icon.dds"
+			frame = "[BarbarianPayOffWindow.GetAcceptanceFrame]"
+			tooltip = "[BarbarianPayOffWindow.GetAcceptanceTooltip]"
+		}
+	}
+		
+	textbox = {
+		position = { 0 50 }
+		parentanchor = hcenter
+		using = BaseFontM
+		using = Black_FontColor
+		text = "[BarbarianPayOffWindow.GetDesc]"
+		size = { 680 80 }
+		align = center
+		#autoresize = yes
+		multiline = yes
+		using = NoninteractableBG
+	}
+
+	text_button_square = {
+		size = { 180 28 }
+		position = { -160 -16 }
+		name = "accept_button"
+		blockoverride "Center_text"
+		{
+			text = "OK_BUTTON"
+		}
+		blockoverride "On_click"
+		{
+			onclick = "[BarbarianPayOffWindow.OnAccept]"
+		}
+		parentanchor = bottom|right
+	}
+	
+	text_button_square = {
+		size = { 180 28 }
+		position = { 160 -16 }
+		name = "decline_button"
+		blockoverride "Center_text"
+		{
+			text = "CANCEL_BUTTON"
+		}
+		blockoverride "On_click"
+		{
+			onclick = "[BarbarianPayOffWindow.OnDecline]"
+		}
+		parentanchor = bottom|left
+	}
+}
+

@@ -1,0 +1,226 @@
+﻿### Epirus ###
+ant_mis_01_6_pop_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = ant_mis_01_6_pop_allow_sv_ongoing
+		trigger = { antigonid_01_vision_6_pop_current < antigonid_01_vision_6_pop_target }
+	}
+
+	text = {
+		localization_key = ant_mis_01_6_pop_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+ant_mis_01_6_pre_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = ant_mis_01_6_pre_allow_sv_ongoing
+		trigger = { antigonid_01_vision_6_pre_current < antigonid_01_vision_6_pre_target }
+	}
+
+	text = {
+		localization_key = ant_mis_01_6_pre_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+ant_mis_01_12_pre_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = ant_mis_01_12_allow_sv_ongoing
+		trigger = { antigonid_01_vision_12_counter > 0 }
+	}
+
+	text = {
+		localization_key = ant_mis_01_12_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+ant_mis_01_2_pops_loc = {
+	type = country
+
+	text = {
+		localization_key = ant_mis_01_2_pops
+		trigger = { scope:me_ant_01_9_ter_scope.var:me_ant_01_9_ter_pop_contributor > 1 }
+	}
+
+	text = {
+		localization_key = ant_mis_01_2_pop
+		trigger = { always = yes }
+	}
+
+}
+
+ant_mis_01_13_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = ant_mis_01_13_allow_sv_ongoing
+		trigger = { antigonid_01_vision_13_counter < antigonid_01_vision_13_target }
+	}
+
+	text = {
+		localization_key = ant_mis_01_13_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+ant_mis_02_8_percent_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = ant_mis_02_8_percent_allow_sv_ongoing
+		trigger = { antigond_02_8_counter_value <= antigond_02_8_target_value }
+	}
+
+	text = {
+		localization_key = ant_mis_02_8_percent_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+ant_mis_02_1_pre_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = ant_mis_02_1_allow_sv_ongoing
+		trigger = { antigonid_02_aspiration_1_counter > 0 }
+	}
+
+	text = {
+		localization_key = ant_mis_02_1_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+ant_mis_02_7_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = ant_mis_02_7_allow_sv_ongoing
+		trigger = { ant_2_7_tracker_svalue < ant_2_7_target_svalue }
+	}
+
+	text = {
+		localization_key = ant_mis_02_7_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+ant_mis_02_8_diadochi_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = ant_mis_02_8_diadochi_allow_sv_ongoing
+		trigger = { antigonid_02_8_diadochi_value > 0 }
+	}
+
+	text = {
+		localization_key = ant_mis_02_8_diadochi_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+ant_mis_02_13_ship_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = ant_mis_02_13_ship_allow_sv_complete
+		trigger = { antigonid_02_13_ship_value < antigonid_02_13_liburnian_target }
+	}
+
+	text = {
+		localization_key = ant_mis_02_13_ship_allow_sv_ongoing
+		trigger = { always = yes }
+	}
+}
+
+ant_mis_02_13_percent_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = ant_mis_02_13_percent_allow_sv_complete
+		trigger = { antigonid_02_13_ship_value > antigonid_02_13_liburnian_value }
+	}
+
+	text = {
+		localization_key = ant_mis_02_13_percent_allow_sv_ongoing
+		trigger = { always = yes }
+	}
+}
+
+ant_mis_03_03_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = ant_mis_03_03_allow_sv_ongoing
+		trigger = { antigonid_4_3_diad_value >= 1 }
+	}
+
+	text = {
+		localization_key = ant_mis_03_03_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+ant_mis_03_04_2_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = ant_mis_03_04_2_allow_sv_ongoing
+		trigger = { antigonid_4_4_2_percent_value < antigonid_4_4_2_target_value }
+	}
+
+	text = {
+		localization_key = ant_mis_03_04_2_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+ant_mis_03_05_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = ant_mis_03_05_allow_sv_ongoing
+		trigger = { antigonid_4_5_our_value < antigonid_4_5_target_value }
+	}
+
+	text = {
+		localization_key = ant_mis_03_05_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+ant_mis_03_03_2_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = ant_mis_03_03_2_allow_sv_ongoing
+		trigger = { antigonid_4_3_percent_value < antigonid_4_3_target_value }
+	}
+
+	text = {
+		localization_key = ant_mis_03_03_2_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
+ant_mis_03_04_cus_loc = {
+	type = country
+
+	text = {
+		localization_key = ant_mis_03_04_allow_sv_ongoing
+		trigger = { antigonid_4_4_value < antigonid_4_4_target_value }
+	}
+
+	text = {
+		localization_key = ant_mis_03_04_allow_sv_complete
+		trigger = { always = yes }
+	}
+}
+
