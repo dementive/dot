@@ -1,0 +1,5 @@
+[user]
+	name = dementive
+	email = nathanvandrei@yahoo.com
+[core]
+	autocrlf = true
