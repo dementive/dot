@@ -1,18 +1,10 @@
 ## FIRST LINE/ROW: Info & Status
 # First param ─┌
 [username]
-format = " [╭─dementive]($style)"
+format = " [╭─]($style)"
 show_always = true
 style_root = "bold red"
 style_user = "bold red"
-
-# Second param
-[hostname]
-disabled = false
-format = "($style) in "
-ssh_only = false
-style = "bold dimmed red"
-trim_at = "-"
 
 # Third param
 [directory]
@@ -32,13 +24,6 @@ behind = "⇣${count}"
 deleted = "x"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 style = "white"
-
-# Last param in the first line/row
-[cmd_duration]
-disabled = false
-format = "took [$duration]($style)"
-min_time = 1
-
 
 ## SECOND LINE/ROW: Prompt
 # Somethere at the beginning
