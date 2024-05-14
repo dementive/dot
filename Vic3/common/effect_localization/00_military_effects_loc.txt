@@ -1,7 +1,0 @@
-﻿create_assignment = {
-	third = EFFECT_CREATE_ASSIGNMENT
-}
-
-project_power = {
-	third = EFFECT_PROJECT_POWER
-}

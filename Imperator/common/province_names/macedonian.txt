@@ -1,3 +1,0 @@
-﻿macedonian = {
-	285 = PROV285_macedonian #  Kyme
-}

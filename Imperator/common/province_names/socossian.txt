@@ -1,3 +1,0 @@
-﻿socossian = {
-	3061 = PROV3061_socossian #  Tingis
-}

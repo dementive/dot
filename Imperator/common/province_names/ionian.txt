@@ -1,3 +1,0 @@
-﻿ionian = {
-	285 = PROV285_ionian #  Kyme
-}

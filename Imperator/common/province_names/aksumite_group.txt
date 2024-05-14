@@ -1,3 +1,0 @@
-﻿aksumite_group = {
-	7517 = PROV7517_aksumite_group #  Arsinoe
-}

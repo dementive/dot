@@ -1,9 +1,0 @@
-﻿add_cultural_obsession = {
-	global = ADD_CULTURAL_OBSESSION
-	third = ADD_CULTURAL_OBSESSION
-}
-
-remove_cultural_obsession = {
-	global = REMOVE_CULTURAL_OBSESSION
-	third = REMOVE_CULTURAL_OBSESSION
-}

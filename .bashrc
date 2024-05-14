@@ -24,13 +24,11 @@ alias fgrep='grep -F --color=auto'
 alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 alias grep='grep --color=auto'
 alias grubup="sudo update-grub"
-alias hw='hwinfo --short'
 alias psmem10='ps auxf | sort -nr -k 4 | head -10'
 alias psmem='ps auxf | sort -nr -k 4'
 alias rmpkg="sudo pacman -Rdd"
 alias tarnow='tar -acf '
 alias untar='tar -zxvf '
-alias upd='/usr/bin/update'
 alias vdir='vdir --color=auto'
 
 # Cleanup orphaned packages
