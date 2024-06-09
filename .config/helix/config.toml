@@ -1,0 +1,110 @@
+theme = "monokai_soda"
+
+# Editor settings
+[editor]
+mouse = true
+completion-replace = true
+popup-border = "all"
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name"]
+right = ["version-control", "diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "Normal"
+mode.insert = "Insert"
+mode.select = "Select"
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "bar"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+
+# Keybindings
+[keys.normal]
+# common to all non-insert modes
+C-s = ":w"
+";" = "insert_mode"
+i = "move_line_up"
+k = "move_line_down"
+j = "move_char_left"
+l = "move_char_right"
+# common to all modes
+C-a = "select_all"
+"A-;" = "goto_line_end"
+A-h = "goto_line_start"
+C-z = "undo"
+C-y = "redo"
+C-c = "yank_to_clipboard"
+C-v = "paste_clipboard_after"
+
+[keys.select]
+# common to all non-insert modes
+C-s = ":w"
+";" = "insert_mode"
+i = "move_line_up"
+k = "move_line_down"
+j = "move_char_left"
+l = "move_char_right"
+# common to all modes
+C-a = "select_all"
+"A-;" = "goto_line_end"
+A-h = "goto_line_start"
+C-z = "undo"
+C-y = "redo"
+C-c = "yank_to_clipboard"
+C-v = "paste_clipboard_after"
+
+[keys.insert]
+"C-;" = "normal_mode"
+# Alternative Arrow key movement
+"C-left" = "goto_line_start"
+"C-right" = "goto_line_end"
+"C-up" = "page_cursor_half_up"
+"C-down" = "page_cursor_half_down"
+
+# Better keyboard navigation and selection without mouse
+"C-l" = "move_char_right"
+"C-j" = "move_char_left"
+"C-i" = "move_line_up"
+"C-k" = "move_line_down"
+
+# Fast move for alt+ctrl
+"A-i" = "page_cursor_half_up"
+"A-k" = "page_cursor_half_down"
+"A-l" = "move_next_word_end"
+"A-j" = "move_prev_word_start"
+
+# Top/bottom of file
+"C-A-9" = "goto_window_top"
+"C-A-," = "goto_window_bottom"
+
+# # Move and select
+"C-S-l" = "extend_char_right"
+"C-S-j" = "extend_char_left"
+"C-S-i" = "extend_line_up"
+"C-S-k" = "extend_line_down"
+
+# Move beginning/end of line and select
+"C-S-h" = "extend_to_line_start"
+"C-S-;" = "extend_to_line_end"
+"A-S-h" = "extend_to_line_start"
+"A-S-;" = "extend_to_line_end"
+
+# common to all modes
+C-a = "select_all"
+"A-;" = "goto_line_end"
+A-h = "goto_line_start"
+C-z = "undo"
+C-y = "redo"
+C-c = "yank_to_clipboard"
+C-v = "paste_clipboard_after"

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="thunar" version="1.0">
+  <property name="last-view" type="string" value="ThunarIconView"/>
+  <property name="last-icon-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_150_PERCENT"/>
+  <property name="last-window-maximized" type="bool" value="false"/>
+  <property name="last-separator-position" type="int" value="165"/>
+  <property name="misc-single-click" type="bool" value="true"/>
+  <property name="misc-thumbnail-max-file-size" type="uint64" value="104857600"/>
+  <property name="misc-open-new-window-as-tab" type="bool" value="true"/>
+  <property name="last-restore-tabs" type="bool" value="true"/>
+  <property name="shortcuts-icon-size" type="string" value="THUNAR_ICON_SIZE_32"/>
+  <property name="tree-icon-size" type="string" value="THUNAR_ICON_SIZE_24"/>
+  <property name="last-toolbar-item-order" type="string" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17"/>
+  <property name="last-toolbar-visible-buttons" type="string" value="0,1,1,1,1,0,0,0,0,0,0,0,0,0,1,0,1,1"/>
+  <property name="last-show-hidden" type="bool" value="true"/>
+  <property name="last-tabs-left" type="array">
+    <value type="string" value="file:///home/dementive/.local/share/feral-interactive/Total%20War%20ROME%20REMASTERED/Mods/My%20Mods/ImperatorPortraits/data/ui/roman/portraits/cards/young/generals"/>
+    <value type="string" value="file:///home/dementive/.local/share/feral-interactive/Total%20War%20ROME%20REMASTERED/Mods/My%20Mods/ImperatorPortraits/data/ui/roman/portraits/portraits/young/generals"/>
+    <value type="string" value="file:///home/dementive/.steam/steam/steamapps/common/Total%20War%20ROME%20REMASTERED/share/data"/>
+    <value type="string" value="file:///home/dementive/Pictures"/>
+    <value type="string" value="file:///home/dementive/.local/share/Paradox%20Interactive/Imperator/mod/Invictus/gfx/interface/portrait"/>
+  </property>
+  <property name="last-focused-tab-left" type="int" value="0"/>
+  <property name="last-focused-tab-right" type="int" value="0"/>
+  <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_38_PERCENT"/>
+  <property name="last-details-view-visible-columns" type="string" value="THUNAR_COLUMN_DATE_MODIFIED,THUNAR_COLUMN_NAME,THUNAR_COLUMN_SIZE,THUNAR_COLUMN_TYPE"/>
+  <property name="last-details-view-column-widths" type="string" value="50,50,124,50,50,86,50,50,1350,50,50,78,50,137"/>
+  <property name="misc-directory-specific-settings" type="bool" value="false"/>
+  <property name="last-sort-column" type="string" value="THUNAR_COLUMN_NAME"/>
+  <property name="last-sort-order" type="string" value="GTK_SORT_ASCENDING"/>
+  <property name="last-window-width" type="int" value="1920"/>
+  <property name="last-window-height" type="int" value="1080"/>
+  <property name="last-side-pane" type="string" value="void"/>
+  <property name="last-splitview-separator-position" type="int" value="550"/>
+</channel>

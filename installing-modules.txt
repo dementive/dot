@@ -1,3 +1,0 @@
-sudo pacman -S python-'package'
-
-https://unix.stackexchange.com/questions/76389/recommended-way-of-installing-python-packages-on-arch
