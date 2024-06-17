@@ -33,18 +33,6 @@ style = "Beam"
 [env]
 TERM = "xterm-256color"
 
-[font.bold]
-family = "JetBrainsMono Nerd Font"
-
-[font.bold_italic]
-family = "JetBrainsMono Nerd Font"
-
-[font.italic]
-family = "JetBrainsMono Nerd Font"
-
-[font.normal]
-family = "JetBrainsMono Nerd Font"
-
 [[keyboard.bindings]]
 action = "Paste"
 key = "V"
