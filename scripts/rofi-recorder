@@ -90,13 +90,13 @@ option7="Exit"
 
 if [ "$1" = "wayland" ]; then
 	options="$option5\n$option6"
-	choice=$(printf "$options" | rofi -i -theme-str '@import "~/Documents/Arch/.config/rofi/record-stop.rasi"' -dmenu -no-show-icons -no-sidebar-mode -lines 4 -width 30 -p " ") 
+	choice=$(printf "$options" | rofi -i -theme-str '@import "~/.config/rofi/record-stop.rasi"' -dmenu -no-show-icons -no-sidebar-mode -lines 4 -width 30 -p " ") 
 elif [ ! -f /tmp/recordingpid ] ; then
 	options="$option1\n$option2\n$option3\n$option5\n$option6\n$option7"
-	choice=$(printf "$options" | rofi -i -theme-str '@import "~/Documents/Arch/.config/rofi/record.rasi"' -dmenu -no-show-icons -no-sidebar-mode -lines 4 -width 30 -p " ") 
+	choice=$(printf "$options" | rofi -i -theme-str '@import "~/.config/rofi/record.rasi"' -dmenu -no-show-icons -no-sidebar-mode -lines 4 -width 30 -p " ") 
 else
 	options="$option4\n$option7"
-	choice=$(printf "$options" | rofi -i -theme-str '@import "~/Documents/Arch/.config/rofi/record-stop.rasi"' -dmenu -no-show-icons -no-sidebar-mode -lines 4 -width 30 -p " ") 
+	choice=$(printf "$options" | rofi -i -theme-str '@import "~/.config/rofi/record-stop.rasi"' -dmenu -no-show-icons -no-sidebar-mode -lines 4 -width 30 -p " ") 
 fi
 
 if [ "$1" = "wayland" ]; then

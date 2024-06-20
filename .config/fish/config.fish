@@ -35,10 +35,10 @@ if test -d ~/Applications/depot_tools
 end
 
 
-## Starship prompt
-#if status --is-interactive
-#    source ("/usr/bin/starship" init fish --print-full-init | psub)
-#end
+# Starship prompt
+if status --is-interactive
+   source ("/usr/bin/starship" init fish --print-full-init | psub)
+end
 
 ## Functions
 # Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang
@@ -142,5 +142,3 @@ alias dark="brightnessctl s 10%-"
 # Sound
 alias sounddown="amixer -q set Master 10%-"
 alias soundup="amixer -q set Master 10%+"
-
-alias subl="~/Templates/sublime_text/sublime_text"
