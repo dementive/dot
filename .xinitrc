@@ -16,4 +16,4 @@
 
 # exec dwm
 
-exec leftwm
+exec awesome
