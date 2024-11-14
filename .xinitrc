@@ -1,19 +1,9 @@
-#!/bin/env bash
+#!/bin/sh 
 
-# # Run dunst
-# if [ -x "$(command -v dunst)" ]; then
-#   dunst &
-# fi
+# Set themes
+export QT_QPA_PLATFORMTHEME=qt6ct
+export GTK_THEME=Material-Black-Blueberry
+gsettings set org.gnome.desktop.interface gtk-theme 'Material-Black-Blueberry'
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
-# # Start compositor
-# if [ -x "$(command -v xcompmgr)" ]; then
-#   xcompmgr -f -I 0.03 &
-# elif [ -x "$(command -v picom)" ]; then
-#   picom &
-# elif [ -x "$(command -v compton)" ]; then
-#   compton &
-# fi
-
-# exec dwm
-
-exec awesome
+exec leftwm
