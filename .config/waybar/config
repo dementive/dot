@@ -7,7 +7,7 @@
   "gtk-layer-shell": true,
   "passthrough": false,
   "fixed-center": true,
-  "modules-left": ["custom/launcher", "hyprland/workspaces", "hyprland/window"],
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
   "modules-center": [],
   "modules-right": ["custom/updates", "custom/keyboard-layout", "battery", "pulseaudio", "clock", "tray", "custom/power"],
   "hyprland/workspaces": {
@@ -37,13 +37,6 @@
 		"icon":true,
 		"icon-size" : 20
     },
-    "idle_inhibitor": {
-       "format": "{icon}",
-       "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
     "tray": {
         "icon-size": 20,
         "spacing": 5
@@ -57,81 +50,25 @@
         "interval": 1,
         "on-click": "",
     },
-    "cpu": {
-        "format": "🖳{usage}%",
-        "on-click": "foot -e htop"
-    },
-    "memory": {
-        "format": "🖴 {: >3}%",
-        "on-click": "foot -e htop"
-    },
-    "temperature": {
-        "thermal-zone": 7,  // Check with: # cat /sys/class/hwmon/hwmon*/temp1_input
-        "hwmon-path": "/sys/class/hwmon/hwmon7/temp1_input",
-        "critical-threshold": 80,
-        "format-critical": "{temperatureC}°C ",
-        "format": "{temperatureC}°C "
-    },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{icon} {percent: >3}%",
-        "format-icons": ["", ""],
-        "on-scroll-down": "brightnessctl -c backlight set 1%-",
-        "on-scroll-up": "brightnessctl -c backlight set +1%",
-        "on-click": "~/.config/waybar/scripts/backlight-hint.sh"
-    },
     "battery": {
-    	//"icon": false,
+    	"icon": false,
         "states": {
             "good": 80,
             "warning": 20,
             "critical": 10
         },
-        "format": "{icon}{capacity: >3}%",
+        //"format": "{icon}{capacity: >3}%",
         "format-icons": ["", "", "", "", ""]
     },
-    "network": {
-        //"interface": "wlp0s20f3", // (Optional) To force the use of this interface  "format-wifi": "  {essid}",
-        "format": "⚠Disabled",
-        "format-wifi": "",
-        "format-ethernet": "",
-        "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "⚠Disabled",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "family": "ipv4",
-        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
-        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
-        //"min-length": 2,
-        //"max-length": 2,
-        "on-click": "nm-connection-editor"
-    },
-   "custom/updates": {
-       "format": "{} {icon}",
-       "return-type": "json",
-       "format-icons": {
-           "has-updates": "󱍷",
-           "updated": "󰂪",
-        "interval": 7200,
-       },
-       "exec-if": "which waybar-module-pacman-updates",
-       "exec": "waybar-module-pacman-updates",
-       "on-click": "foot -e update"
-   },
     "custom/power": {
       	"format":"⏻",
-       	"on-click": "nwgbar",
+       	"on-click": "nwg-bar",
       	"tooltip": false,
    },
-    "custom/launcher": {
-    "format":"    ",
-    	"on-click": "exec nwg-drawer -c 7 -is 70 -spacing 23",
-    	"on-click-right": "pkill -SIGUSR1 waybar",
-    	"tooltip": false,
-    },
     "pulseaudio": {
         "scroll-step": 3, // %, can be a float
         //"format": "{icon} {volume}% {format_source}",
-        "format": "{icon} {volume}% {format_source}",
+        "format": "{volume}% {format_source}",
         //"format": "{volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
