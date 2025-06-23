@@ -1,0 +1,135 @@
+[gd_resource type="EditorSettings" load_steps=3 format=3]
+
+[sub_resource type="InputEventKey" id="InputEventKey_qboam"]
+keycode = 4194326
+
+[sub_resource type="InputEventKey" id="InputEventKey_1p57p"]
+physical_keycode = 81
+unicode = 81
+
+[resource]
+interface/editor/single_window_mode = true
+interface/theme/preset = "Custom"
+interface/theme/base_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+interface/theme/accent_color = Color(0.101886, 0.495163, 0.773821, 1)
+interface/theme/contrast = 0.35
+docks/filesystem/textfile_extensions = "txt,md,cfg,ini,log,json,yml,yaml,toml,xml,loc"
+text_editor/theme/color_theme = "Monokai"
+text_editor/theme/highlighting/symbol_color = Color(0.92549, 0.933333, 0.92549, 1)
+text_editor/theme/highlighting/keyword_color = Color(0.976471, 0.14902, 0.447059, 1)
+text_editor/theme/highlighting/control_flow_keyword_color = Color(1, 0.55, 0.8, 1)
+text_editor/theme/highlighting/base_type_color = Color(0.4, 0.85098, 0.937255, 1)
+text_editor/theme/highlighting/engine_type_color = Color(0.682353, 0.505882, 1, 1)
+text_editor/theme/highlighting/user_type_color = Color(0.78, 1, 0.93, 1)
+text_editor/theme/highlighting/comment_color = Color(0.458824, 0.443137, 0.368627, 1)
+text_editor/theme/highlighting/doc_comment_color = Color(0.6, 0.7, 0.8, 0.8)
+text_editor/theme/highlighting/string_color = Color(0.901961, 0.858824, 0.454902, 1)
+text_editor/theme/highlighting/background_color = Color(0.0666667, 0.0666667, 0.0666667, 1)
+text_editor/theme/highlighting/completion_background_color = Color(0.239216, 0.239216, 0.239216, 1)
+text_editor/theme/highlighting/completion_selected_color = Color(1, 1, 1, 0.0666667)
+text_editor/theme/highlighting/completion_existing_color = Color(1, 1, 1, 0.137255)
+text_editor/theme/highlighting/completion_scroll_color = Color(1, 1, 1, 0.0666667)
+text_editor/theme/highlighting/completion_font_color = Color(0.807843, 0.807843, 0.807843, 1)
+text_editor/theme/highlighting/text_color = Color(0.92549, 0.933333, 0.92549, 1)
+text_editor/theme/highlighting/line_number_color = Color(0.666667, 0.666667, 0.666667, 0.4)
+text_editor/theme/highlighting/safe_line_number_color = Color(0.77451, 0.929412, 0.77451, 0.75)
+text_editor/theme/highlighting/caret_color = Color(0.972549, 0.972549, 0.941176, 1)
+text_editor/theme/highlighting/text_selected_color = Color(0.92549, 0.933333, 0.92549, 1)
+text_editor/theme/highlighting/selection_color = Color(0.286275, 0.282353, 0.243137, 1)
+text_editor/theme/highlighting/current_line_color = Color(0.196078, 0.196078, 0.196078, 1)
+text_editor/theme/highlighting/line_length_guideline_color = Color(0.223529, 0.223529, 0.223529, 1)
+text_editor/theme/highlighting/word_highlighted_color = Color(0.243137, 0.254902, 0.254902, 1)
+text_editor/theme/highlighting/number_color = Color(0.682353, 0.505882, 1, 1)
+text_editor/theme/highlighting/function_color = Color(0.4, 0.85098, 0.937255, 1)
+text_editor/theme/highlighting/member_variable_color = Color(0.4, 0.85098, 0.937255, 1)
+text_editor/theme/highlighting/mark_color = Color(1, 0.196078, 0.196078, 0.219608)
+text_editor/theme/highlighting/breakpoint_color = Color(1, 0.301961, 0.337255, 1)
+text_editor/theme/highlighting/code_folding_color = Color(0.501961, 0.501961, 0.501961, 1)
+text_editor/theme/highlighting/search_result_color = Color(0.403922, 0.223529, 0.0901961, 1)
+text_editor/theme/highlighting/search_result_border_color = Color(0, 0, 0, 0)
+text_editor/external/exec_path = "/usr/bin/subl"
+text_editor/completion/add_string_name_literals = true
+text_editor/completion/add_node_path_literals = true
+editors/3d_gizmos/gizmo_settings/bone_axis_length = 0.1
+editors/tiles_editor/display_grid = false
+editors/tiles_editor/highlight_selected_layer = false
+editors/animation/default_animation_step = 0.0333333
+run/bottom_panel/action_on_play = 0
+network/connection/network_mode = 1
+export/android/java_sdk_path = ""
+export/android/android_sdk_path = ""
+export/android/debug_keystore = "/home/dm/.local/share/godot/keystores/debug.keystore"
+export/android/debug_keystore_pass = "android"
+export/macos/rcodesign = ""
+export/web/http_port = 8060
+export/web/tls_key = ""
+export/web/tls_certificate = ""
+export/windows/rcedit = ""
+export/windows/osslsigncode = ""
+export/windows/wine = ""
+_default_feature_profile = "gd_editor_profile"
+_use_favorites_root_selection = false
+network/debug_adapter/request_timeout = 1000
+editors/grid_map/editor_side = 1
+text_editor/theme/highlighting/gdscript/function_definition_color = Color(0.65098, 0.886275, 0.180392, 1)
+text_editor/theme/highlighting/gdscript/node_path_color = Color(0.992157, 0.592157, 0.121569, 1)
+terrain3d/config/alt_key_bind = 0
+terrain3d/dock/slot = 8
+terrain3d/dock/tile_size = 120.0
+terrain3d/dock/floating = false
+terrain3d/dock/always_on_top = true
+terrain3d/tool_settings/color = Color(1, 0.26, 0.26, 1)
+terrain3d/tool_settings/size = 18.1
+terrain3d/tool_settings/strength = 75.0
+terrain3d/tool_settings/dynamic_angle = false
+terrain3d/tool_settings/jitter = 50.0
+terrain3d/tool_settings/enable_texture = true
+terrain3d/tool_settings/slope = Vector2(40, 90)
+terrain3d/tool_settings/enable_angle = true
+terrain3d/tool_settings/angle = 337.5
+terrain3d/tool_settings/height = -1.99999
+terrain3d/tool_settings/scale = 80.0
+terrain3d/tool_settings/enable_scale = true
+_editor_settings_advanced_mode = false
+_project_settings_advanced_mode = true
+_export_template_download_directory = "/home/dm/.cache/godot"
+_script_setup_templates_dictionary = {}
+_script_setup_use_script_templates = false
+shortcuts = [{
+"name": "spatial_editor/viewport_zoom_modifier_1",
+"shortcuts": [SubResource("InputEventKey_qboam")]
+}, {
+"name": "spatial_editor/viewport_zoom_modifier_2",
+"shortcuts": []
+}, {
+"name": "spatial_editor/tool_select",
+"shortcuts": [SubResource("InputEventKey_1p57p")]
+}]
+metadata/script_setup_templates_dictionary = {
+"AudioStreamPlayer": "0NodeDefault",
+"Button": "0NodeDefault",
+"Camera2D": "0NodeDefault",
+"Camera3D": "0NodeDefault",
+"CharacterBody2D": "0CharacterBody2DBasic Movement",
+"Control": "0NodeDefault",
+"GridContainer": "0NodeDefault",
+"HBoxContainer": "0NodeDefault",
+"LineEdit": "0NodeDefault",
+"MainMenu": "0NodeDefault",
+"MarginContainer": "0NodeDefault",
+"MeshInstance3D": "0NodeDefault",
+"MultiMeshInstance3D": "0NodeDefault",
+"MusicPlayer": "0ObjectEmpty",
+"Node": "0NodeDefault",
+"Node3D": "0NodeDefault",
+"PanelContainer": "0NodeDefault",
+"Path3D": "0NodeDefault",
+"Planet": "0NodeDefault",
+"PlanetView": "0NodeDefault",
+"SceneTree": "0ObjectEmpty",
+"Sprite3D": "0NodeDefault",
+"StaticBody3D": "0NodeDefault",
+"TextureRect": "0NodeDefault",
+"Tree": "0NodeDefault"
+}
+metadata/export_template_download_directory = "/home/dm/.cache/godot"

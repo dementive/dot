@@ -3,6 +3,7 @@
 set fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT 1
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -Ua fish_features no-keyboard-protocols # fixes sublime-text bug: https://forum.sublimetext.com/t/latest-dev-builds-broke-terminus-with-fish-shell/75587/6
 
 ## Export variable need for themes
 set -x GTK_THEME Material-Black-Blueberry
@@ -13,6 +14,9 @@ set -x QT_QPA_PLATFORM_THEME qt6ct
 set -U __done_min_cmd_duration 10000
 set -U __done_notification_urgency_level low
 
+
+# Godot shared library loading
+export LD_LIBRARY_PATH="/home/dm/dev/godot/bin"
 
 ## Environment setup
 # Apply .profile: use this to put fish compatible .profile stuff in
@@ -142,3 +146,8 @@ alias dark="brightnessctl s 10%-"
 # Sound
 alias sounddown="amixer -q set Master 10%-"
 alias soundup="amixer -q set Master 10%+"
+
+# gc build
+
+alias bd="./bd.sh"
+alias run="./run.sh"
