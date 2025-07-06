@@ -1,6 +1,11 @@
 #!/bin/bash
 
-wallpaper_dir="/home/dm/.config/000_wallpapers/"
-random_num=$((RANDOM % 8 + 1))
-wallpaper_path="${wallpaper_dir}${random_num}.jpg"
-swaybg -i "$wallpaper_path"
+WALLPAPER_DIR="/home/dm/.config/000_wallpapers"
+mapfile -t WALLPAPERS < <(find "$WALLPAPER_DIR" -type f -iname "*.jpg")
+
+if [ ${#WALLPAPERS[@]} -gt 0 ]; then
+    RANDOM_WALLPAPER="${WALLPAPERS[RANDOM % ${#WALLPAPERS[@]}]}"
+    if [ -f "$RANDOM_WALLPAPER" ]; then
+        wbg "$RANDOM_WALLPAPER"
+    fi
+fi

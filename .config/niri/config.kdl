@@ -199,31 +199,16 @@ layout {
     }
 }
 
-// Add lines like this to spawn processes at startup.
-// Note that running niri as a session supports xdg-desktop-autostart,
-// which may be more convenient to use.
-// See the binds section below for more spawn examples.
-
-// This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
-spawn-at-startup "makshi"
-spawn-at-startup "wpaperd"
 
-// If monitor plugged in turn off laptop screen
 spawn-at-startup "bash" "/home/dm/Documents/dot/scripts/monitor.sh"
+spawn-at-startup "bash" "/home/dm/Documents/dot/scripts/wallpaper.sh"
 
 // spawn-at-startup "gsettings set org.gnome.desktop.interface gtk-theme 'Material-Black-Blueberry'"
 // spawn-at-startup "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
 // spawn-at-startup "gsettings set org.gnome.desktop.interface icon-theme 'candy-icons'"
 
 prefer-no-csd
-
-// Uncomment this line to ask the clients to omit their client-side decorations if possible.
-// If the client will specifically ask for CSD, the request will be honored.
-// Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
-// This option will also fix border/focus ring drawing behind some semitransparent windows.
-// After enabling or disabling this, you need to restart the apps for this to take effect.
-// prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
@@ -300,8 +285,8 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "wofi"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Super+A { spawn "pkill" "-SIGUSR1" "waybar"; }
 
     // This doens't work idk what is wrong, maybe niri bug?
