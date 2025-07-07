@@ -1,0 +1,81 @@
+{
+	"debugger_configurations":
+	[
+		{
+			"args":
+			[
+				"scenes/map.tscn"
+			],
+			"cwd": "/home/dm/dev/gsg/game",
+			"expressions": "simple",
+			"name": "lldb",
+			"program": "/home/dm/dev/godot/bin/godot.linuxbsd.editor.x86_64.llvm",
+			"request": "launch",
+			"sourceLanguages":
+			[
+				"cpp"
+			],
+			"type": "lldb"
+		},
+		{
+			"args":
+			[
+				"-e ./project.godot"
+			],
+			"cwd": "/home/dm/dev/gsg/game",
+			"expressions": "simple",
+			"name": "lldb gsg editor",
+			"program": "/home/dm/dev/godot/bin/godot.linuxbsd.editor.x86_64.llvm",
+			"request": "launch",
+			"sourceLanguages":
+			[
+				"cpp"
+			],
+			"type": "lldb"
+		}
+	],
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"*.os",
+				".gitattributes",
+				".godot"
+			],
+			"folder_exclude_patterns":
+			[
+				".cache",
+				"__pycache__"
+			],
+			"path": "/home/dm/dev/gsg"
+		},
+		{
+			"file_exclude_patterns":
+			[
+				".git-blame-ignore-revs",
+				".mailmap",
+				".scons_env.json",
+				".scons_node_count",
+				".sconsign5.dblite",
+				"AUTHORS.md",
+				"CHANGELOG.md",
+				"CONTRIBUTING.md",
+				"DONORS.md",
+				"COPYRIGHT.txt",
+				"config.log",
+				"godot.manifest",
+				"LOGO_LICENSE.txt",
+				"LICENSE.txt"
+			],
+			"folder_exclude_patterns":
+			[
+				".cache",
+				"__pycache__",
+				".github",
+				".sconf_temp"
+			],
+			"path": "/home/dm/dev/godot"
+		}
+	],
+}
