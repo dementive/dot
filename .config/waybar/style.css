@@ -1,8 +1,6 @@
 * {
   min-height: 0;
-  font-family: "Symbols Nerd Font Mono", "Meslo LG S";
   font-size: 16px;
-  font-weight: 500;
 }
 
 window#waybar {
@@ -10,7 +8,7 @@ window#waybar {
   transition-duration: 0.5s;
   /* background-color: #1e1e2e; */
   /* background-color: rgba(35, 35, 35, 0.9); */
-  background-color: rgba(22, 22, 22, 0.9);
+  background-color: rgba(22, 22, 22, 0.0);
 }
 
 window#waybar.hidden {
@@ -51,7 +49,6 @@ window#waybar.hidden {
 #clock,
 #pulseaudio,
 #custom-logo,
-#custom-power,
 #custom-spotify,
 #custom-updates,
 #cpu,
@@ -97,11 +94,6 @@ window#waybar.empty #window {
 
 #custom-logo {
   color: #89b4fa;
-}
-
-#custom-power {
-  color: #c4265e;
-  font-size: 14px;
 }
 
 @keyframes blink {

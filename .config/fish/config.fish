@@ -109,9 +109,6 @@ alias ip='ip -color'
 [ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
 
 # Common use
-alias tarnow='tar -acf '
-alias uptar='tar -acf '
-alias untar='tar -xvf '
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -123,11 +120,6 @@ alias grep='grep --color=auto'
 alias fgrep='grep -F --color=auto'
 alias egrep='grep -E --color=auto'
 alias big="expac -H M '%m\t%n' | sort -h | nl" # Sort installed packages according to size in MB
-alias hx='helix'
-
-# Cleanup orphaned packages
-alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
-alias pacman-clean='sudo pacman -Rns (pacman -Qtdq)'
 
 # Get the error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
@@ -136,16 +128,13 @@ alias t="tldr"
 alias l="ls -a"
 alias c="clear"
 alias e="exit"
-# Full screenshot
-alias fs="scrot -b '%Y:%m:%d:%H:%M:%S.png' -e 'mv $f ~/Pictures/'"
-# Rectangle screenshot
-alias rs="scrot --select -b '%Y:%m:%d:%H:%M:%S.png' -e 'mv $f ~/Pictures/'"
-# Brightness
-alias light="brightnessctl s +10%"
-alias dark="brightnessctl s 10%-"
-# Sound
-alias sounddown="amixer -q set Master 10%-"
-alias soundup="amixer -q set Master 10%+"
+
+# xbps
+
+alias xbi="sudo xbps-install"
+alias xbu="sudo xbps-install -Su"
+alias xbs="xbps-query -Rs"
+alias xbd="sudo xbps-remove -Oo"
 
 # gc build
 

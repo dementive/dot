@@ -10,39 +10,23 @@ up_icon="/usr/share/icons/Papirus/48x48/status/notification-audio-volume-high.sv
 mute_icon="/usr/share/icons/Papirus/48x48/status/notification-audio-volume-muted.svg"
 
 get_volume () {
-  if [ $using_pulse_audio == "True" ]; then
-    volume=$(pactl list sinks | grep '^[[:space:]]Volume:' | \
-        head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')
-    volume+="%"
-  else
-    volume=$(amixer get Master | awk -F"[][]" '/(Mono|Front Left):/ { print $2 }' | tr -d '[]')
-  fi
+  volume=$(pactl list sinks | grep '^[[:space:]]Volume:' | \
+      head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')
+  volume+="%"
 
   echo $volume
 }
 
 raise_sound () {
-  if [ $using_pulse_audio == "True" ]; then
-    pactl set-sink-volume @DEFAULT_SINK@ +${step}%
-  else
-    amixer set Master ${step}%+ > /dev/null
-  fi
+  pactl set-sink-volume @DEFAULT_SINK@ +${step}%
 }
 
 lower_sound () {
-  if [ $using_pulse_audio == "True" ]; then
-    pactl set-sink-volume @DEFAULT_SINK@ -${step}%
-  else
-    amixer set Master ${step}%- > /dev/null
-  fi
+  pactl set-sink-volume @DEFAULT_SINK@ -${step}%
 }
 
 mute_sound () {
-  if [ $using_pulse_audio == "True" ]; then
-    pactl set-sink-mute @DEFAULT_SINK@ toggle
-  else
-    amixer set Master toggle > /dev/null
-  fi
+  pactl set-sink-mute @DEFAULT_SINK@ toggle
 }
 
 if [ $# -eq 0 ]; then
@@ -58,19 +42,19 @@ case ${1} in
     if [ $volume != "0%" ]; then
       down_icon="/usr/share/icons/Papirus/48x48/status/notification-audio-volume-medium.svg"
     fi
-    dunstify -r 9983 -t 2000 -h "int:value:$volume" "Volume: $volume" -i ${down_icon}
+    notify-send -r 9983 -t 2000 -h "int:value:$volume" "Volume: $volume" -i ${down_icon}
     ;;
   "raise")
     raise_sound
     volume=$(get_volume)
-    dunstify -r 9983 -t 2000 -h "int:value:$volume" "Volume: $volume" -i ${up_icon}
+    notify-send -r 9983 -t 2000 -h "int:value:$volume" "Volume: $volume" -i ${up_icon}
     ;;
   "mute")
     mute_sound
     if [ $muted == "True" ]; then
-    	dunstify -r 9983 -t 2000 "Unmuted" -i ${down_icon}
+    	notify-send -r 9983 -t 2000 "Unmuted" -i ${down_icon}
     else
-    	dunstify -r 9983 -t 2000 "Muted" -i ${mute_icon}
+    	notify-send -r 9983 -t 2000 "Muted" -i ${mute_icon}
     fi
     ;;
   *)

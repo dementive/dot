@@ -7,36 +7,9 @@
   "gtk-layer-shell": true,
   "passthrough": false,
   "fixed-center": true,
-  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-left": [],
   "modules-center": [],
-  "modules-right": ["custom/updates", "custom/keyboard-layout", "battery", "pulseaudio", "clock", "tray", "custom/power"],
-  "hyprland/workspaces": {
-    "format": "{icon}",
-    "on-click": "activate",
-    "all-outputs": true,
-    "sort-by-number": true,
-    "format-icons": {
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7",
-      "8": "8",
-      "9": "9",
-      "10": "10",
-      "focused": "",
-      "default": ""
-    },
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1",
-    },
-    "hyprland/window": {
-        "format": "{}",
-		"icon":true,
-		"icon-size" : 20
-    },
+  "modules-right": ["battery", "pulseaudio", "clock", "tray",],
     "tray": {
         "icon-size": 20,
         "spacing": 5
@@ -60,11 +33,6 @@
         //"format": "{icon}{capacity: >3}%",
         "format-icons": ["", "", "", "", ""]
     },
-    "custom/power": {
-      	"format":"⏻",
-       	"on-click": "nwg-bar",
-      	"tooltip": false,
-   },
     "pulseaudio": {
         "scroll-step": 3, // %, can be a float
         //"format": "{icon} {volume}% {format_source}",
