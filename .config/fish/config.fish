@@ -58,15 +58,7 @@ set -U FZF_CTRL_T_OPTS "
   --bind 'start:reload:rg --files'
   --bind 'enter:execute(subl4 {})'"
 
-bind ctrl-f "fzf --disabled --query '$argv' \
-    --no-scrollbar
-    --style full \
-    --bind 'start:reload:rg --column --line-number --no-heading --smart-case {q}' \
-    --bind 'change:reload:sleep 0.1; rg --column --line-number --no-heading --smart-case {q} || true' \
-    --delimiter : \
-    --preview 'bat --color=always {1} --highlight-line {2}' \
-    --preview-window 'right,60%,border-bottom,+{2}+3/3,~3' \
-    --bind 'enter:execute(subl4 {1}:{2})'"
+bind ctrl-f "fzf --disabled --query '$argv' --no-scrollbar --style full --bind 'start:reload:rg --column --line-number --no-heading --smart-case {q}' --bind 'change:reload:sleep 0.1; rg --column --line-number --no-heading --smart-case {q} || true' --delimiter : --preview 'bat --color=always {1} --highlight-line {2}' --preview-window 'right,60%,border-bottom,+{2}+3/3,~3'--bind 'enter:execute(subl4 {1}:{2})'"
 
 ## Functions
 # Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang
