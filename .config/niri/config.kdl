@@ -98,7 +98,7 @@ hotkey-overlay {
     skip-at-startup
 }
 
-// spawn-at-startup "xwayland-satellite"
+spawn-at-startup "xwayland-satellite"
 environment {
     DISPLAY ":0"
 

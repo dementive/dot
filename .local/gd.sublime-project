@@ -32,6 +32,22 @@
 				"cpp"
 			],
 			"type": "lldb"
+		},
+		{
+			"args":
+			[
+				"-e ./project.godot"
+			],
+			"cwd": "/home/dm/dev/godot-demo-projects/3d/platformer/",
+			"expressions": "simple",
+			"name": "godot lldb",
+			"program": "/home/dm/dev/godot/bin/godot.linuxbsd.editor.x86_64",
+			"request": "launch",
+			"sourceLanguages":
+			[
+				"cpp"
+			],
+			"type": "lldb"
 		}
 	],
 	"folders":

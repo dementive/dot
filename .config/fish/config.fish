@@ -14,6 +14,7 @@ set -x QT_QPA_PLATFORM_THEME qt6ct
 set -U __done_min_cmd_duration 10000
 set -U __done_notification_urgency_level low
 
+set -U EDITOR subl4
 
 # Godot shared library loading
 export LD_LIBRARY_PATH="/home/dm/dev/godot/bin"
@@ -43,6 +44,29 @@ end
 if status --is-interactive
    source ("/usr/bin/starship" init fish --print-full-init | psub)
 end
+
+# Fzf commands:
+# (alt+c) to use as cd.
+# (ctrl+r) to browse command histroy
+fzf --fish | source
+
+# Ctrl T to browse files and open selected ones in sublime
+set -U FZF_CTRL_T_OPTS "
+  --no-scrollbar
+  --style full
+  --preview='bat --color=always {}'
+  --bind 'start:reload:rg --files'
+  --bind 'enter:execute(subl4 {})'"
+
+bind ctrl-f "fzf --disabled --query '$argv' \
+    --no-scrollbar
+    --style full \
+    --bind 'start:reload:rg --column --line-number --no-heading --smart-case {q}' \
+    --bind 'change:reload:sleep 0.1; rg --column --line-number --no-heading --smart-case {q} || true' \
+    --delimiter : \
+    --preview 'bat --color=always {1} --highlight-line {2}' \
+    --preview-window 'right,60%,border-bottom,+{2}+3/3,~3' \
+    --bind 'enter:execute(subl4 {1}:{2})'"
 
 ## Functions
 # Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang
@@ -95,18 +119,8 @@ function copy
     end
 end
 
-## Useful aliases
-# Replace ls with exa
-#alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
-#alias la='exa -a --color=always --group-directories-first --icons' # all files and dirs
-#alias ll='exa -l --color=always --group-directories-first --icons' # long format
-#alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
-#alias l.='exa -ald --color=always --group-directories-first --icons .*' # show only dotfiles
-alias ip='ip -color'
-
 # Replace some more things with better alternatives
-#alias cat='bat --style header --style snip --style changes --style header'
-[ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
+alias cat='bat --style header --style snip --style changes --style header'
 
 # Common use
 alias ..='cd ..'
@@ -121,9 +135,8 @@ alias fgrep='grep -F --color=auto'
 alias egrep='grep -E --color=auto'
 alias big="expac -H M '%m\t%n' | sort -h | nl" # Sort installed packages according to size in MB
 
-# Get the error messages from journalctl
-alias jctl="journalctl -p 3 -xb"
 
+alias subl="subl4"
 alias t="tldr"
 alias l="ls -a"
 alias c="clear"
@@ -136,7 +149,7 @@ alias xbu="sudo xbps-install -Su"
 alias xbs="xbps-query -Rs"
 alias xbd="sudo xbps-remove -Oo"
 
-# gc build
+# build
 
-alias bd="./bd.sh"
+alias bd="./bd.py"
 alias run="./run.sh"
