@@ -55,10 +55,16 @@ set -U FZF_CTRL_T_OPTS "
   --no-scrollbar
   --style full
   --preview='bat --color=always {}'
-  --bind 'start:reload:rg --files'
+  --bind 'start:reload:fd --fixed-strings --type f'
   --bind 'enter:execute(subl4 {})'"
 
-bind ctrl-f "fzf --disabled --query '$argv' --no-scrollbar --style full --bind 'start:reload:rg --column --line-number --no-heading --smart-case {q}' --bind 'change:reload:sleep 0.1; rg --column --line-number --no-heading --smart-case {q} || true' --delimiter : --preview 'bat --color=always {1} --highlight-line {2}' --preview-window 'right,60%,border-bottom,+{2}+3/3,~3'--bind 'enter:execute(subl4 {1}:{2})'"
+set -U FZF_ALT_C_OPTS "
+  --no-scrollbar
+  --style full
+  --bind 'start:reload:fd --fixed-strings --type d'"
+
+bind ctrl-c "fzf --no-scrollbar --style full --bind 'start:reload:fd --fixed-strings --type d'"
+bind ctrl-f "fzf --disabled --no-scrollbar --style full --bind 'start:reload:rg --column --line-number --no-heading --smart-case {q}' --bind 'change:reload:sleep 0.1; rg --column --line-number --no-heading --smart-case {q} || true' --delimiter : --preview 'bat --color=always {1} --highlight-line {2}' --preview-window 'right,60%,border-bottom,+{2}+3/3,~3' --bind 'enter:execute(subl4 {1}:{2})'"
 
 ## Functions
 # Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang
@@ -114,34 +120,20 @@ end
 # Replace some more things with better alternatives
 alias cat='bat --style header --style snip --style changes --style header'
 
-# Common use
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='grep -F --color=auto'
-alias egrep='grep -E --color=auto'
-alias big="expac -H M '%m\t%n' | sort -h | nl" # Sort installed packages according to size in MB
-
 
 alias subl="subl4"
-alias t="tldr"
-alias l="ls -a"
-alias c="clear"
 alias e="exit"
-
-# xbps
+alias c="clear"
 
 alias xbi="sudo xbps-install"
 alias xbu="sudo xbps-install -Su"
 alias xbs="xbps-query -Rs"
 alias xbd="sudo xbps-remove -Oo"
-
-# build
 
 alias bd="./bd.py"
 alias run="./run.sh"
