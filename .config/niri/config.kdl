@@ -98,7 +98,7 @@ hotkey-overlay {
     skip-at-startup
 }
 
-spawn-at-startup "xwayland-satellite"
+//spawn-at-startup "xwayland-satellite"
 environment {
     DISPLAY ":0"
 
@@ -134,14 +134,15 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+return hotkey-overlay-title="Open a Terminal: foot" { spawn "footclient"; }
     Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
-
-    // This doens't work idk what is wrong, maybe niri bug?
-    // Mod+f3 { spawn "brightnessctl" "--device='asus::kbd_backlight'" "set 2"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "/home/dm/Documents/dot/scripts/volume.sh" "raise"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "/home/dm/Documents/dot/scripts/volume.sh" "lower"; }
     XF86AudioMute        allow-when-locked=true { spawn "/home/dm/Documents/dot/scripts/volume.sh" "mute"; }
+
+    Mod+F1 allow-when-locked=true { spawn "/home/dm/Documents/dot/scripts/kb_brightness.sh" "0"; }
+    Mod+F2 allow-when-locked=true { spawn "/home/dm/Documents/dot/scripts/kb_brightness.sh" "1"; }
+    Mod+F3 allow-when-locked=true { spawn "/home/dm/Documents/dot/scripts/kb_brightness.sh" "2"; }
+    Mod+F4 allow-when-locked=true { spawn "/home/dm/Documents/dot/scripts/kb_brightness.sh" "3"; }
 
     Mod+F7 allow-when-locked=true { spawn "/home/dm/Documents/dot/scripts/brightness.sh" "down"; }
     Mod+F8 allow-when-locked=true { spawn "/home/dm/Documents/dot/scripts/brightness.sh" "up"; }

@@ -39,10 +39,8 @@ if test -d ~/Applications/depot_tools
     end
 end
 
-
-# Starship prompt
-if status --is-interactive
-   source ("/usr/bin/starship" init fish --print-full-init | psub)
+function fish_prompt
+    string join '' -- (set_color green) (prompt_pwd --full-length-dirs 50) (set_color normal) ' '
 end
 
 # Fzf commands:
@@ -63,7 +61,6 @@ set -U FZF_ALT_C_OPTS "
   --style full
   --bind 'start:reload:fd --fixed-strings --type d'"
 
-bind ctrl-c "fzf --no-scrollbar --style full --bind 'start:reload:fd --fixed-strings --type d'"
 bind ctrl-f "fzf --disabled --no-scrollbar --style full --bind 'start:reload:rg --column --line-number --no-heading --smart-case {q}' --bind 'change:reload:sleep 0.1; rg --column --line-number --no-heading --smart-case {q} || true' --delimiter : --preview 'bat --color=always {1} --highlight-line {2}' --preview-window 'right,60%,border-bottom,+{2}+3/3,~3' --bind 'enter:execute(subl4 {1}:{2})'"
 
 ## Functions
