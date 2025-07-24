@@ -11,6 +11,9 @@
 			"name": "lldb",
 			"program": "/home/dm/dev/godot/bin/godot.linuxbsd.editor.x86_64.llvm",
 			"request": "launch",
+			"env": {
+				"LD_LIBRARY_PATH": "/home/dm/dev/godot/bin"
+			},
 			"sourceLanguages":
 			[
 				"cpp"
@@ -27,22 +30,9 @@
 			"name": "lldb gsg editor",
 			"program": "/home/dm/dev/godot/bin/godot.linuxbsd.editor.x86_64.llvm",
 			"request": "launch",
-			"sourceLanguages":
-			[
-				"cpp"
-			],
-			"type": "lldb"
-		},
-		{
-			"args":
-			[
-				"-e ./project.godot"
-			],
-			"cwd": "/home/dm/dev/godot-demo-projects/3d/platformer/",
-			"expressions": "simple",
-			"name": "godot lldb",
-			"program": "/home/dm/dev/godot/bin/godot.linuxbsd.editor.x86_64",
-			"request": "launch",
+			"env": {
+				"LD_LIBRARY_PATH": "/home/dm/dev/godot/bin"
+			},
 			"sourceLanguages":
 			[
 				"cpp"
