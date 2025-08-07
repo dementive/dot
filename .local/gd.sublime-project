@@ -6,14 +6,15 @@
 			[
 				"scenes/map.tscn"
 			],
-			"cwd": "/home/dm/dev/gsg/game",
+			"cwd": "/home/dm/dev/gre/game",
+			"env":
+			{
+				"LD_LIBRARY_PATH": "/home/dm/dev/godot/bin"
+			},
 			"expressions": "simple",
 			"name": "lldb",
 			"program": "/home/dm/dev/godot/bin/godot.linuxbsd.editor.x86_64.llvm",
 			"request": "launch",
-			"env": {
-				"LD_LIBRARY_PATH": "/home/dm/dev/godot/bin"
-			},
 			"sourceLanguages":
 			[
 				"cpp"
@@ -25,14 +26,27 @@
 			[
 				"-e ./project.godot"
 			],
-			"cwd": "/home/dm/dev/gsg/game",
-			"expressions": "simple",
-			"name": "lldb gsg editor",
-			"program": "/home/dm/dev/godot/bin/godot.linuxbsd.editor.x86_64.llvm",
-			"request": "launch",
-			"env": {
+			"cwd": "/home/dm/dev/gre/game",
+			"env":
+			{
 				"LD_LIBRARY_PATH": "/home/dm/dev/godot/bin"
 			},
+			"expressions": "simple",
+			"name": "lldb gre editor",
+			"program": "/home/dm/dev/godot/bin/godot.linuxbsd.editor.x86_64.llvm",
+			"request": "launch",
+			"sourceLanguages":
+			[
+				"cpp"
+			],
+			"type": "lldb"
+		},
+		{
+			"cwd": "/home/dm/dev/gre/game/bin/linux",
+			"expressions": "simple",
+			"name": "gre export",
+			"program": "/home/dm/dev/gre/game/bin/linux/gre_dbg.x86_64",
+			"request": "launch",
 			"sourceLanguages":
 			[
 				"cpp"
@@ -46,6 +60,7 @@
 			"file_exclude_patterns":
 			[
 				"*.os",
+				"*.pch",
 				".gitattributes",
 				".godot"
 			],
@@ -54,7 +69,7 @@
 				".cache",
 				"__pycache__"
 			],
-			"path": "/home/dm/dev/gsg"
+			"path": "/home/dm/dev/gre"
 		},
 		{
 			"file_exclude_patterns":
