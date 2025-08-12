@@ -10,8 +10,8 @@ fzf \
     --query "${1:-}" \
     --no-scrollbar \
     --style full \
-    --bind "start:reload:rg --column --line-number --no-heading --smart-case {q}" \
-    --bind "change:reload:sleep 0.1; rg --column --line-number --no-heading --smart-case {q} || true" \
+    --bind "start:reload:rg --glob '!flecs.h' --glob '!flecs.c' --iglob '!/build/*' --iglob '!/licenses/*' --glob '!*.import' --glob '!*.tres' --glob '!*.uid' --glob '!*.godot' --glob '!*.tscn' --column --line-number --no-heading --smart-case {q}" \
+    --bind "change:reload:sleep 0.1; rg --glob '!flecs.h' --glob '!flecs.c' --iglob '!/build/*' --iglob '!/licenses/*' --glob '!*.import' --glob '!*.tres' --glob '!*.uid' --glob '!*.godot' --glob '!*.tscn' --column --line-number --no-heading --smart-case {q} || true" \
     --delimiter : \
     --preview 'bat --color=always {1} --highlight-line {2}' \
     --preview-window 'right,60%,border-bottom,+{2}+3/3,~3' \
