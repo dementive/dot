@@ -18,7 +18,7 @@ input {
     }
 
     warp-mouse-to-focus
-    focus-follows-mouse max-scroll-amount="95%"
+    focus-follows-mouse max-scroll-amount="0%"
 }
 
 cursor {
@@ -73,7 +73,7 @@ spawn-at-startup "batsignal" "-p"
 spawn-at-startup "foot" "--server"
 
 spawn-at-startup "bash" "/home/dm/Documents/dot/scripts/monitor.sh"
-spawn-at-startup "bash" "/home/dm/Documents/dot/scripts/wall.py"
+spawn-at-startup "/home/dm/Documents/dot/scripts/wall.py"
 
 spawn-at-startup "gsettings set org.gnome.desktop.interface gtk-theme 'Material-Black-Blueberry'"
 spawn-at-startup "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"

@@ -4,6 +4,29 @@
 		{
 			"args":
 			[
+				"scenes/map.tscn",
+				"--headless",
+				"--quit",
+				"--mgen"
+			],
+			"cwd": "/home/dm/dev/gre/game",
+			"env":
+			{
+				"LD_LIBRARY_PATH": "/home/dm/dev/godot/bin"
+			},
+			"expressions": "simple",
+			"name": "mgen",
+			"program": "/home/dm/dev/godot/bin/godot.linuxbsd.editor.x86_64.llvm",
+			"request": "launch",
+			"sourceLanguages":
+			[
+				"cpp"
+			],
+			"type": "lldb"
+		},
+		{
+			"args":
+			[
 				"scenes/map.tscn"
 			],
 			"cwd": "/home/dm/dev/gre/game",
@@ -12,7 +35,7 @@
 				"LD_LIBRARY_PATH": "/home/dm/dev/godot/bin"
 			},
 			"expressions": "simple",
-			"name": "lldb",
+			"name": "gre",
 			"program": "/home/dm/dev/godot/bin/godot.linuxbsd.editor.x86_64.llvm",
 			"request": "launch",
 			"sourceLanguages":
@@ -32,7 +55,7 @@
 				"LD_LIBRARY_PATH": "/home/dm/dev/godot/bin"
 			},
 			"expressions": "simple",
-			"name": "lldb gre editor",
+			"name": "editor",
 			"program": "/home/dm/dev/godot/bin/godot.linuxbsd.editor.x86_64.llvm",
 			"request": "launch",
 			"sourceLanguages":
@@ -46,6 +69,38 @@
 			"expressions": "simple",
 			"name": "gre export",
 			"program": "/home/dm/dev/gre/game/bin/linux/gre_dbg.x86_64",
+			"request": "launch",
+			"sourceLanguages":
+			[
+				"cpp"
+			],
+			"type": "lldb"
+		},
+		{
+			"cwd": "/home/dm/dev/lt",
+			"expressions": "simple",
+			"name": "lt_test",
+			"program": "/home/dm/dev/lt/build/test",
+			"request": "launch",
+			"sourceLanguages":
+			[
+				"cpp"
+			],
+			"type": "lldb"
+		},
+		{
+			"args":
+			[
+				"-e ./project.godot"
+			],
+			"cwd": "/home/dm/dev/godot-cpp/test/project",
+			"env":
+			{
+				"LD_LIBRARY_PATH": "/home/dm/dev/godot/bin"
+			},
+			"expressions": "simple",
+			"name": "godot-cpp-test",
+			"program": "/home/dm/dev/godot/bin/godot.linuxbsd.editor.x86_64.llvm",
 			"request": "launch",
 			"sourceLanguages":
 			[
@@ -97,6 +152,12 @@
 				".sconf_temp"
 			],
 			"path": "/home/dm/dev/godot"
+		},
+		{
+			"path": "/home/dm/dev/lt"
+		},
+		{
+			"path": "/home/dm/dev/godot-cpp"
 		}
 	],
 }
