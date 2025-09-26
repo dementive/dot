@@ -109,6 +109,63 @@
 			"type": "lldb"
 		}
 	],
+	"build_systems":
+	[
+	    {
+	        "name": "Build",
+	        "target": "terminus_exec",
+	        "cancel": "terminus_cancel_build",
+	        "working_dir": "/home/dm/dev/gre",
+	        "shell_cmd": "/home/dm/dev/gre/bd.py",
+	        "selector": "source.c++",
+	        "env": {
+	        	"LD_LIBRARY_PATH": "/home/dm/dev/godot/bin"
+	        },
+	        "variants": [
+	        	{
+	        		"name": "Engine",
+	        		"shell_cmd": "/home/dm/dev/gre/bd.py engine",
+	        	},
+	        	{
+	        		"name": "PCH",
+	        		"shell_cmd": "/home/dm/dev/gre/bd.py build_pch",
+	        	},
+	        	{
+	        		"name": "Test",
+	        		"shell_cmd": "/home/dm/dev/gre/bd.py test",
+	        	},
+	        ]
+	    },
+	    {
+	        "name": "Run",
+	        "target": "terminus_exec",
+	        "cancel": "terminus_cancel_build",
+	        "working_dir": "/home/dm/dev/gre",
+	        "shell_cmd": "/home/dm/dev/gre/run.sh game",
+	        "selector": "source.c++",
+	        "env": {
+	        	"LD_LIBRARY_PATH": "/home/dm/dev/godot/bin"
+	        },
+	        "variants": [
+	        	{
+	        		"name": "Build and Run",
+	        		"shell_cmd": "/home/dm/dev/gre/bd.py && /home/dm/dev/gre/run.sh game",
+	        	},
+	        	{
+	        		"name": "Editor",
+	        		"shell_cmd": "/home/dm/dev/gre/run.sh",
+	        	},
+	        	{
+	        		"name": "Test",
+	        		"shell_cmd": "/home/dm/dev/gre/run.sh test",
+	        	},
+	        	{
+	        		"name": "Map Generation",
+	        		"shell_cmd": "/home/dm/dev/gre/run.sh mgen",
+	        	},
+	        ]
+	    },
+	],
 	"folders":
 	[
 		{
