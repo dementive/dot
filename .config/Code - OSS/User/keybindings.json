@@ -1,0 +1,255 @@
+[
+    {
+        "key": "ctrl+i",
+        "command": "cursorUp",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "cursorDown",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "cursorLeft",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "cursorRight",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+;",
+        "command": "cursorEnd",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "cursorHome",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+j",
+        "command": "cursorMove",
+        "args": {
+            "to": "left",
+            "by": "character",
+            "value": 10
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+l",
+        "command": "cursorMove",
+        "args": {
+            "to": "right",
+            "by": "character",
+            "value": 10
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+i",
+        "command": "cursorMove",
+        "args": {
+            "to": "up",
+            "by": "line",
+            "value": 10
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+k",
+        "command": "cursorMove",
+        "args": {
+            "to": "down",
+            "by": "line",
+            "value": 10
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "cursorMove",
+        "args": {
+            "to": "left",
+            "by": "character",
+            "select": true
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "cursorMove",
+        "args": {
+            "to": "right",
+            "by": "character",
+            "select": true
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "cursorMove",
+        "args": {
+            "to": "up",
+            "by": "line",
+            "select": true
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "cursorMove",
+        "args": {
+            "to": "down",
+            "by": "line",
+            "select": true
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+shift+j",
+        "command": "cursorMove",
+        "args": {
+            "to": "left",
+            "by": "character",
+            "select": true,
+            "value": 10
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+shift+l",
+        "command": "cursorMove",
+        "args": {
+            "to": "right",
+            "by": "character",
+            "select": true,
+            "value": 10
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+shift+i",
+        "command": "cursorMove",
+        "args": {
+            "to": "up",
+            "by": "line",
+            "select": true,
+            "value": 10
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+shift+k",
+        "command": "cursorMove",
+        "args": {
+            "to": "down",
+            "by": "line",
+            "select": true,
+            "value": 10
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+;",
+        "command": "cursorEndSelect",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+h",
+        "command": "cursorHomeSelect",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "editor.action.deleteLines",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+up",
+        "command": "cursorTop",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+down",
+        "command": "cursorBottom",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+d",
+        "command": "workbench.view.debug",
+        "when": "viewContainer.workbench.view.debug.enabled"
+    },
+    {
+        "key": "alt+a",
+        "command": "workbench.view.explorer",
+        "when": "viewContainer.workbench.view.explorer.enabled"
+    },
+    {
+        "key": "alt+q",
+        "command": "workbench.files.action.showActiveFileInExplorer"
+    },
+    {
+        "key": "alt+t",
+        "command": "workbench.action.createTerminalEditor"
+    },
+    {
+        "key": "alt+d",
+        "command": "editor.action.revealDefinition"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "editor.action.showHover"
+    },
+    // Search docs
+    {
+        "key": "alt+g",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.terminal.newInActiveWorkspace",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text": "cd /home/dm/Documents/gd-md-docs && /home/dm/Documents/dot/scripts/fzf-find.sh && exit\u000D"
+                    }
+                }
+            ]
+        }
+    },
+    // Search symbols in project
+    {
+        "key": "ctrl+1",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.terminal.newInActiveWorkspace",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text": "cd /home/dm/dev/gre && /home/dm/Documents/dot/scripts/fzf-find.sh && exit\u000D"
+                    }
+                }
+            ]
+        }
+    },
+    // Search files in project
+    {
+        "key": "ctrl+2",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.terminal.newInActiveWorkspace",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text": "cd /home/dm/dev/gre && /home/dm/Documents/dot/scripts/fzf-files.sh && exit\u000D"
+                    }
+                }
+            ]
+        }
+    }
+]

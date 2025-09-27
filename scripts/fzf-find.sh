@@ -3,7 +3,7 @@
 which fzf &>/dev/null || { echo "Error: fzf is not installed"; exit 1; }
 which rg &>/dev/null || { echo "Error: ripgrep is not installed"; exit 1; }
 which bat &>/dev/null || { echo "Error: bat is not installed"; exit 1; }
-which subl4 &>/dev/null || { echo "Error: sublime is not installed"; exit 1; }
+which code-oss &>/dev/null || { echo "Error: code-oss is not installed"; exit 1; }
 
 fzf \
     --disabled \
@@ -15,4 +15,4 @@ fzf \
     --delimiter : \
     --preview 'bat --color=always {1} --highlight-line {2}' \
     --preview-window 'right,60%,border-bottom,+{2}+3/3,~3' \
-    --bind 'enter:become(subl4 {1}:{2})'
+    --bind 'enter:become(code-oss --goto {1}:{2})'

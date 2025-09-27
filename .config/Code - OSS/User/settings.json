@@ -1,0 +1,93 @@
+{
+    "editor.semanticHighlighting.enabled": true,
+    "workbench.iconTheme": "Monokai Classic Icons",
+    "workbench.colorTheme": "Monokai Classic",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.foldingHighlight": false,
+    "editor.foldingImportsByDefault": true,
+    "editor.inlayHints.enabled": "off",
+    "editor.smoothScrolling": true,
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 190,
+    "editor.cursorBlinking": "solid",
+    "editor.cursorSmoothCaretAnimation": "explicit",
+    "editor.cursorStyle": "line-thin",
+    "editor.fontFamily": "\"JetBrains Mono\"",
+    "editor.fontLigatures": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.minimap.autohide": true,
+    "editor.suggest.preview": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 2500,
+    "files.autoSaveWhenNoErrors": true,
+    "files.autoSaveWorkspaceFilesOnly": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "window.title": " ",
+    "window.dialogStyle": "custom",
+    "window.menuBarVisibility": "toggle",
+    "explorer.excludeGitIgnore": true,
+    "terminal.external.linuxExec": "foot",
+    "terminal.integrated.defaultProfile.linux": "fish",
+    "terminal.integrated.defaultLocation": "editor",
+    "terminal.integrated.enableImages": true,
+    "terminal.integrated.gpuAcceleration": "on",
+    "terminal.integrated.fontLigatures.enabled": true,
+    "terminal.integrated.mouseWheelZoom": true,
+    "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+    "terminal.integrated.shellIntegration.enabled": false,
+    "terminal.integrated.smoothScrolling": true,
+    "editor.occurrencesHighlight": "off",
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+        },
+        "fish": {
+            "path": "fish"
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        }
+    },
+    "update.mode": "none",
+    "update.showReleaseNotes": false,
+    "telemetry.telemetryLevel": "off",
+    "telemetry.feedback.enabled": false,
+    "window.commandCenter": false,
+    "window.titleBarStyle": "native",
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.cache": true
+    },
+    "files.associations": {
+        "*.dc": "groovy"
+    },
+    "window.customTitleBarVisibility": "never",
+    "workbench.colorCustomizations": {
+        "[*]": {
+            "editor.background": "#161616",
+            "panel.background": "#161616",
+            "sideBar.background": "#161616",
+            "activityBar.background": "#161616",
+            "statusBar.background": "#161616",
+            "terminal.background": "#161616",
+            "editorGutter.background": "#161616",
+            "editorGroupHeader.tabsBackground": "#161616",
+            "tab.activeBackground": "#161616",
+            "tab.inactiveBackground": "#161616",
+            "tab.activeForeground": "#dddddd",
+            "tab.activeBorder": "#808080",
+            "tab.activeModifiedBorder": "#808080",
+            "tab.hoverForeground": "#808080",
+            "tab.hoverBackground": "#161616",
+            "tab.hoverBorder": "#808080"
+        }
+    },
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.cursorStyleInactive": "none",
+    "workbench.activityBar.location": "hidden",
+    "security.workspace.trust.untrustedFiles": "open",
+}

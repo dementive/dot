@@ -1,0 +1,6 @@
+aaron-bond.better-comments
+geequlim.godot-tools
+llvm-vs-code-extensions.lldb-dap
+llvm-vs-code-extensions.vscode-clangd
+monokai.theme-monokai-pro-vscode
+streetsidesoftware.code-spell-checker
