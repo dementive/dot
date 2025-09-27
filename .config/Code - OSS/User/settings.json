@@ -19,7 +19,7 @@
     "editor.minimap.autohide": true,
     "editor.suggest.preview": true,
     "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 2500,
+    "files.autoSaveDelay": 500,
     "files.autoSaveWhenNoErrors": true,
     "files.autoSaveWorkspaceFilesOnly": true,
     "files.trimFinalNewlines": true,
@@ -46,10 +46,6 @@
         },
         "fish": {
             "path": "fish"
-        },
-        "tmux": {
-            "path": "tmux",
-            "icon": "terminal-tmux"
         }
     },
     "update.mode": "none",
@@ -60,18 +56,23 @@
     "window.titleBarStyle": "native",
     "files.exclude": {
         "**/__pycache__": true,
-        "**/.cache": true
+        "**/.cache": true,
+        "**/.venv": true,
+        "**/.ruff_cache": true,
+        "**/.vscode": true
     },
     "files.associations": {
         "*.dc": "groovy"
     },
-    "window.customTitleBarVisibility": "never",
+    "editor.multiCursorModifier": "ctrlCmd",
     "workbench.colorCustomizations": {
         "[*]": {
             "editor.background": "#161616",
             "panel.background": "#161616",
+            "editorSuggestWidget.background": "#161616",
             "sideBar.background": "#161616",
             "activityBar.background": "#161616",
+            "quickInput.background": "#161616",
             "statusBar.background": "#161616",
             "terminal.background": "#161616",
             "editorGutter.background": "#161616",
@@ -83,11 +84,32 @@
             "tab.activeModifiedBorder": "#808080",
             "tab.hoverForeground": "#808080",
             "tab.hoverBackground": "#161616",
-            "tab.hoverBorder": "#808080"
+            "tab.hoverBorder": "#808080",
+            "input.background": "#161616",
+            "inputValidation.errorBackground": "#161616",
+            "inputValidation.warningBackground": "#161616",
+            "inputValidation.infoBackground": "#161616",
+            "dropdown.background": "#161616",
+            "dropdown.border": "#161616",
+            "list.dropBackground": "#161616",
+            "list.hoverBackground": "#161616",
+            "list.inactiveSelectionBackground": "#161616",
+            "list.activeSelectionBackground": "#161616",
+            "list.focusBackground": "#161616",
+            "editor.findMatchBackground": "#161616",
+            "editorWidget.background": "#161616",
+            "panelStickyScroll.background": "#161616",
+            "editorStickyScroll.background": "#161616",
+            "terminalStickyScroll.background": "#161616",
+            "editorHoverWidget.background": "#161616",
+            "editorBracketMatch.background": "#161616",
+            "editorBracketMatch.border": "#555",
         }
     },
+    "editor.renderLineHighlight": "gutter",
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.cursorStyleInactive": "none",
-    "workbench.activityBar.location": "hidden",
     "security.workspace.trust.untrustedFiles": "open",
+    "workbench.activityBar.location": "hidden",
+    "workbench.layoutControl.enabled": false,
 }

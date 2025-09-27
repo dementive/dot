@@ -1,4 +1,5 @@
 [
+    // Basic movement
     {
         "key": "ctrl+i",
         "command": "cursorUp",
@@ -19,13 +20,56 @@
         "command": "cursorRight",
         "when": "editorTextFocus"
     },
+    // Autocomplete movement
     {
-        "key": "ctrl+;",
+        "key": "ctrl+i",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetVisible"
+    },
+    // Command pallete movement
+    {
+        "key": "ctrl+i",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+    // Quick movement
+    {
+        "key": "alt+;",
         "command": "cursorEnd",
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+h",
+        "key": "alt+h",
         "command": "cursorHome",
         "when": "editorTextFocus"
     },
@@ -69,6 +113,7 @@
         },
         "when": "editorTextFocus"
     },
+    // Move and select
     {
         "key": "ctrl+shift+j",
         "command": "cursorMove",
@@ -109,26 +154,15 @@
         },
         "when": "editorTextFocus"
     },
+    // Move and select by words
     {
         "key": "alt+shift+j",
-        "command": "cursorMove",
-        "args": {
-            "to": "left",
-            "by": "character",
-            "select": true,
-            "value": 10
-        },
+        "command": "cursorWordLeftSelect",
         "when": "editorTextFocus"
     },
     {
         "key": "alt+shift+l",
-        "command": "cursorMove",
-        "args": {
-            "to": "right",
-            "by": "character",
-            "select": true,
-            "value": 10
-        },
+        "command": "cursorWordRightSelect",
         "when": "editorTextFocus"
     },
     {
@@ -137,8 +171,7 @@
         "args": {
             "to": "up",
             "by": "line",
-            "select": true,
-            "value": 10
+            "select": true
         },
         "when": "editorTextFocus"
     },
@@ -148,11 +181,11 @@
         "args": {
             "to": "down",
             "by": "line",
-            "select": true,
-            "value": 10
+            "select": true
         },
         "when": "editorTextFocus"
     },
+    // Move and select line
     {
         "key": "ctrl+shift+;",
         "command": "cursorEndSelect",
@@ -163,11 +196,64 @@
         "command": "cursorHomeSelect",
         "when": "editorTextFocus"
     },
+    // Quick move and select
     {
-        "key": "ctrl+shift+d",
-        "command": "editor.action.deleteLines",
+        "key": "ctrl+alt+shift+j",
+        "command": "cursorMove",
+        "args": {
+            "to": "left",
+            "by": "character",
+            "select": true,
+            "value": 10
+        },
         "when": "editorTextFocus"
     },
+    {
+        "key": "ctrl+alt+shift+l",
+        "command": "cursorMove",
+        "args": {
+            "to": "right",
+            "by": "character",
+            "select": true,
+            "value": 10
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+shift+i",
+        "command": "cursorMove",
+        "args": {
+            "to": "up",
+            "by": "line",
+            "select": true,
+            "value": 10
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+shift+k",
+        "command": "cursorMove",
+        "args": {
+            "to": "down",
+            "by": "line",
+            "select": true,
+            "value": 10
+        },
+        "when": "editorTextFocus"
+    },
+    // Bracket selection
+    {
+        "key": "alt+s",
+        "command": "editor.action.smartSelect.expand",
+        "when": "editorTextFocus"
+    },
+    // Bracket movement
+    {
+        "key": "ctrl+m",
+        "command": "editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+    },
+    // Move to top/bottom of file
     {
         "key": "ctrl+up",
         "command": "cursorTop",
@@ -178,19 +264,22 @@
         "command": "cursorBottom",
         "when": "editorTextFocus"
     },
+    // Move to front/end of line
     {
-        "key": "alt+d",
-        "command": "workbench.view.debug",
-        "when": "viewContainer.workbench.view.debug.enabled"
+        "key": "ctrl+right",
+        "command": "cursorEnd",
+        "when": "editorTextFocus"
     },
     {
-        "key": "alt+a",
-        "command": "workbench.view.explorer",
-        "when": "viewContainer.workbench.view.explorer.enabled"
+        "key": "ctrl+left",
+        "command": "cursorHome",
+        "when": "editorTextFocus"
     },
+    // Actions
     {
-        "key": "alt+q",
-        "command": "workbench.files.action.showActiveFileInExplorer"
+        "key": "ctrl+shift+d",
+        "command": "editor.action.deleteLines",
+        "when": "editorTextFocus"
     },
     {
         "key": "alt+t",
@@ -203,6 +292,27 @@
     {
         "key": "ctrl+h",
         "command": "editor.action.showHover"
+    },
+    // Sidebar commands
+    {
+        "key": "alt+x",
+        "command": "workbench.view.debug",
+        "when": "!view.workbench.debug.welcome.visible"
+    },
+    {
+        "key": "alt+x",
+        "command": "workbench.action.closeSidebar",
+        "when": "view.workbench.debug.welcome.visible"
+    },
+    {
+        "key": "alt+a",
+        "command": "workbench.view.explorer",
+        "when": "!explorerViewletVisible"
+    },
+    {
+        "key": "alt+a",
+        "command": "workbench.action.closeSidebar",
+        "when": "explorerViewletVisible"
     },
     // Search docs
     {
