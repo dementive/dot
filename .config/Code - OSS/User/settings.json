@@ -70,6 +70,7 @@
             "editor.background": "#161616",
             "panel.background": "#161616",
             "editorSuggestWidget.background": "#161616",
+            "editorSuggestWidget.border": "#555",
             "sideBar.background": "#161616",
             "activityBar.background": "#161616",
             "quickInput.background": "#161616",
@@ -102,8 +103,15 @@
             "editorStickyScroll.background": "#161616",
             "terminalStickyScroll.background": "#161616",
             "editorHoverWidget.background": "#161616",
+            "editorHoverWidget.border": "#555",
             "editorBracketMatch.background": "#161616",
             "editorBracketMatch.border": "#555",
+            "editorBracketHighlight.foreground1": "#ddd",
+            "editorBracketHighlight.foreground2": "#ddd",
+            "editorBracketHighlight.foreground3": "#ddd",
+            "editorBracketHighlight.foreground4": "#ddd",
+            "editorBracketHighlight.foreground5": "#ddd",
+            "editorBracketHighlight.foreground6": "#ddd"
         }
     },
     "editor.renderLineHighlight": "gutter",
@@ -112,4 +120,24 @@
     "security.workspace.trust.untrustedFiles": "open",
     "workbench.activityBar.location": "hidden",
     "workbench.layoutControl.enabled": false,
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "colorIdentifiersMode.tokenKinds": [
+        "parameter"
+    ],
+    "colorIdentifiersMode.method": "hash",
+    "colorIdentifiersMode.paletteMode": "manual",
+    "colorIdentifiersMode.manualColors": [
+        "#feb434",
+        "#FF8800",
+        "#FF9D2E",
+        "#ED9B0C",
+        "#FFAB00",
+        "#FFB92E",
+        "#FFB929",
+        "#FFAA00",
+        "#FFB92E",
+        "#FFAE00"
+    ],
+    "editor.bracketPairColorization.enabled": true
 }

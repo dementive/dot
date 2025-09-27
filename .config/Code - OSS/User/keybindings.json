@@ -293,6 +293,22 @@
         "key": "ctrl+h",
         "command": "editor.action.showHover"
     },
+    // Tasks
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.tasks.runTask",
+        "args": "test"
+    },
+    {
+        "key": "alt+b",
+        "command": "workbench.action.tasks.runTask",
+        "args": "build"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "workbench.action.tasks.runTask",
+        "args": "run game"
+    },
     // Sidebar commands
     {
         "key": "alt+x",
