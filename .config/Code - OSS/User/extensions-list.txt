@@ -1,7 +1,8 @@
 aaron-bond.better-comments
+adamcaviness.theme-monokai-dark-soda
 geequlim.godot-tools
-llvm-vs-code-extensions.lldb-dap
 llvm-vs-code-extensions.vscode-clangd
 matthewnespor.vscode-color-identifiers-mode
-monokai.theme-monokai-pro-vscode
+ms-pyright.pyright
 streetsidesoftware.code-spell-checker
+tal7aouy.icons

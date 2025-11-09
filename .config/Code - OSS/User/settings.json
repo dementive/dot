@@ -1,7 +1,7 @@
 {
+    "files.simpleDialog.enable": true,
+    "explorer.autoReveal": false,
     "editor.semanticHighlighting.enabled": true,
-    "workbench.iconTheme": "Monokai Classic Icons",
-    "workbench.colorTheme": "Monokai Classic",
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
     "editor.foldingHighlight": false,
     "editor.foldingImportsByDefault": true,
@@ -14,10 +14,9 @@
     "editor.cursorStyle": "line-thin",
     "editor.fontFamily": "\"JetBrains Mono\"",
     "editor.fontLigatures": true,
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
     "editor.minimap.autohide": true,
     "editor.suggest.preview": true,
+    "editor.formatOnSave": true,
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 500,
     "files.autoSaveWhenNoErrors": true,
@@ -63,6 +62,21 @@
     },
     "files.associations": {
         "*.dc": "groovy"
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "constant.numeric",
+                    "constant.language.boolean",
+                    "constant.language",
+                    "constant.character.escape"
+                ],
+                "settings": {
+                    "foreground": "#B280FF"
+                }
+            }
+        ]
     },
     "editor.multiCursorModifier": "ctrlCmd",
     "workbench.colorCustomizations": {
@@ -139,5 +153,10 @@
         "#FFB92E",
         "#FFAE00"
     ],
-    "editor.bracketPairColorization.enabled": true
+    "editor.bracketPairColorization.enabled": true,
+    "git.confirmSync": false,
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Monokai Dark Soda",
+    "workbench.iconTheme": "icons"
 }

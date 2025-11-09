@@ -113,6 +113,46 @@
         },
         "when": "editorTextFocus"
     },
+    {
+        "key": "alt+left",
+        "command": "cursorMove",
+        "args": {
+            "to": "left",
+            "by": "character",
+            "value": 10
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+right",
+        "command": "cursorMove",
+        "args": {
+            "to": "right",
+            "by": "character",
+            "value": 10
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+up",
+        "command": "cursorMove",
+        "args": {
+            "to": "up",
+            "by": "line",
+            "value": 10
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+down",
+        "command": "cursorMove",
+        "args": {
+            "to": "down",
+            "by": "line",
+            "value": 10
+        },
+        "when": "editorTextFocus"
+    },
     // Move and select
     {
         "key": "ctrl+shift+j",
@@ -305,9 +345,9 @@
         "args": "build"
     },
     {
-        "key": "ctrl+r",
+        "key": "ctrl+shift+r",
         "command": "workbench.action.tasks.runTask",
-        "args": "run game"
+        "args": "run"
     },
     // Sidebar commands
     {
@@ -330,6 +370,17 @@
         "command": "workbench.action.closeSidebar",
         "when": "explorerViewletVisible"
     },
+    {
+        "key": "alt+q",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "list.collapseAll",
+                "revealInExplorer"
+            ]
+        }
+    },
+
     // Search docs
     {
         "key": "alt+g",
