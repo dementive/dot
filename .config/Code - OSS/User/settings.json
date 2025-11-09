@@ -70,10 +70,24 @@
                     "constant.numeric",
                     "constant.language.boolean",
                     "constant.language",
-                    "constant.character.escape"
+                    "constant.character.escape",
+                    "variable.other.constant",
+                    "variable.other.enummember"
                 ],
                 "settings": {
                     "foreground": "#B280FF"
+                }
+            },
+            {
+                "scope": [
+                    "entity.name.scope-resolution.cpp",
+                    "support.class",
+                    "support.type",
+                    "storage.type.built-in.primitive.cpp"
+                ],
+                "settings": {
+                    "foreground": "#66D9EF",
+                    "fontStyle": ""
                 }
             }
         ]
