@@ -63,35 +63,52 @@
     "files.associations": {
         "*.dc": "groovy"
     },
-    "editor.tokenColorCustomizations": {
-        "textMateRules": [
-            {
-                "scope": [
-                    "constant.numeric",
-                    "constant.language.boolean",
-                    "constant.language",
-                    "constant.character.escape",
-                    "variable.other.constant",
-                    "variable.other.enummember"
-                ],
-                "settings": {
-                    "foreground": "#B280FF"
-                }
-            },
-            {
-                "scope": [
-                    "entity.name.scope-resolution.cpp",
-                    "support.class",
-                    "support.type",
-                    "storage.type.built-in.primitive.cpp"
-                ],
-                "settings": {
-                    "foreground": "#66D9EF",
-                    "fontStyle": ""
-                }
-            }
-        ]
-    },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "constant.numeric",
+          "constant.language.boolean",
+          "constant.language",
+          "constant.character.escape",
+          "variable.other.constant",
+          "variable.other.enummember"
+        ],
+        "settings": {
+          "foreground": "#B280FF"
+        }
+      },
+      {
+        "scope": [
+          "constant.other.option",
+          "markup.inline.raw.string.markdown",
+        ],
+        "settings": {
+          "foreground": "#F92672"
+        }
+      },
+      {
+        "scope": [
+          "markup.list.numbered.markdown"
+        ],
+        "settings": {
+          "foreground": "#F8F8F2"
+        }
+      },
+      {
+        "scope": [
+          "entity.name.scope-resolution.cpp",
+          "support.class",
+          "support.type",
+          "storage.type.built-in.primitive.cpp"
+        ],
+        "settings": {
+          "foreground": "#66D9EF",
+          "fontStyle": ""
+        }
+      }
+    ]
+  },
     "editor.multiCursorModifier": "ctrlCmd",
     "workbench.colorCustomizations": {
         "[*]": {
