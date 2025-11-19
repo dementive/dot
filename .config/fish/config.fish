@@ -1,9 +1,27 @@
-## Set values
+### TP STUFF
+
+# ASDF configuration code
+if test -z $ASDF_DATA_DIR
+    set _asdf_shims "$HOME/.asdf/shims"
+else
+    set _asdf_shims "$ASDF_DATA_DIR/shims"
+end
+
+# Do not use fish_add_path (added in Fish 3.2) because it
+# potentially changes the order of items in PATH
+if not contains $_asdf_shims $PATH
+    set -gx --prepend PATH $_asdf_shims
+end
+set --erase _asdf_shims
+
+set -U AWS_VAULT_KEYCHAIN_NAME login
+
+### END TP STUFF
+
 # Hide welcome message
 set fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT 1
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
-set -Ua fish_features no-keyboard-protocols # fixes sublime-text bug: https://forum.sublimetext.com/t/latest-dev-builds-broke-terminus-with-fish-shell/75587/6
 
 ## Export variable need for themes
 set -x GTK_THEME Material-Black-Blueberry
@@ -14,7 +32,7 @@ set -x QT_QPA_PLATFORM_THEME qt6ct
 set -U __done_min_cmd_duration 10000
 set -U __done_notification_urgency_level low
 
-set -U EDITOR subl4
+set -U EDITOR code-oss
 
 # Godot shared library loading
 export LD_LIBRARY_PATH="/home/dm/dev/godot/bin"
@@ -47,21 +65,6 @@ end
 # (alt+c) to use as cd.
 # (ctrl+r) to browse command histroy
 fzf --fish | source
-
-# Ctrl T to browse files and open selected ones in sublime
-set -U FZF_CTRL_T_OPTS "
-  --no-scrollbar
-  --style full
-  --preview='bat --color=always {}'
-  --bind 'start:reload:fd --fixed-strings --type f'
-  --bind 'enter:execute(subl4 {})'"
-
-set -U FZF_ALT_C_OPTS "
-  --no-scrollbar
-  --style full
-  --bind 'start:reload:fd --fixed-strings --type d'"
-
-bind ctrl-f "fzf --disabled --no-scrollbar --style full --bind 'start:reload:rg --column --line-number --no-heading --smart-case {q}' --bind 'change:reload:sleep 0.1; rg --column --line-number --no-heading --smart-case {q} || true' --delimiter : --preview 'bat --color=always {1} --highlight-line {2}' --preview-window 'right,60%,border-bottom,+{2}+3/3,~3' --bind 'enter:execute(subl4 {1}:{2})'"
 
 ## Functions
 # Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang
@@ -123,12 +126,11 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
-alias subl="subl4"
 alias e="exit"
 alias c="clear"
 
 alias xbi="sudo xbps-install"
-alias xbu="sudo xbps-install -Su"
+alias xbu="sudo flatpak update && xbps-install -Su"
 alias xbs="xbps-query -Rs"
 alias xbd="sudo xbps-remove -Oo"
 
